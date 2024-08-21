@@ -3,8 +3,8 @@ import Usermodel from "../models/usermodel.js"
 
 
 export const Userregister = async (req, res) => {
-    const { username, phone, email, password } = req.body
-    if (!username || !phone || !email || !password) {
+    const { username, phone, email, password,role } = req.body
+    if (!username || !phone || !email || !role || !password) {
         return res.json({ msg: "Plase fill all fields" })
     }
 
@@ -13,10 +13,11 @@ export const Userregister = async (req, res) => {
             "username": username,
             "email": email,
             "phone": phone,
-            "password": password
+            "password": password,
+            "role":role
         })
         res.status(200).json({
-            status: true,
+            success: true,
             msg: "user added",
             data: userdata,
 
@@ -50,11 +51,33 @@ export const UserLogin = async (req, res) => {
 
 }
 
+export const Updateuser = async (req,res) => {
+    const { username, phone, email, password, id} = req.body
+    try {
+        const updateuser = await Usermodel.updateOne({ _id: id }, {
+            $set: {
+                username: username,
+                phone: phone,
+                email: email,
+                password:password
+            }
+        })
+        res.json({
+            success:true,
+            data:updateuser,
+            msg:`${username} is updated`
+        })
+    }
+    catch(e){
+
+    }
+}
+
 export const Getallusers = async (req, res) => {
 
     const alldata = await Usermodel.find()
     res.json({
-        status: true,
+        success: true,
         msg: "All user Fetched",
         data: alldata
     })
