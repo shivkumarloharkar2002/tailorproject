@@ -12,9 +12,9 @@ background-color: rgba(36, 148, 148, 0.54);
 
 .cust_date{
     /* border: 1px solid; */
-    width: 95%;
+    width: 90%;
     position: absolute;
-    top: -10px;
+    /* top: -0px; */
    text-align: right;
 }
 .cust_price{
