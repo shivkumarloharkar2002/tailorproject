@@ -1,0 +1,44 @@
+/* .cards{
+    height: 144px;
+    width: 172px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(36, 148, 148, 0.54);
+    margin: 20px 10px;
+    box-shadow: 2px 2px 6px 1px gray;
+    font-family: serif;
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.MainHome {
+    /* border: 2px solid black; */
+    /* width: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 130px;
+}
+
+.HCard {
+    border: 1px solid rgb(142, 138, 138);
+    background-color: rgba(36, 148, 148, 0.54);
+    text-align: center;
+    height: auto;
+    width: 60vh;
+    margin: 20px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 2px rgba(51, 50, 50, 0.3);
+    /* width: auto; */
+}
+
+.Homeimg {
+    width: 25vh;
+}
+
+.HText{
+    /* font-size: 20px; */
+    font-weight: 800;
+    font-family: Kaisei Decol;
+}
