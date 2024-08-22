@@ -1,0 +1,18 @@
+.fabric_main{
+    text-align: center;
+    display: inline-block;
+    border: 1px solid ;
+    margin: 10px;
+}
+
+.fabricimg{
+    height: 200px;
+    width: 27.4vw;
+}
+
+@media screen and (max-width:800px){
+    .fabricimg{
+        height: 20vh;
+        width: 83vw;
+    }
+}

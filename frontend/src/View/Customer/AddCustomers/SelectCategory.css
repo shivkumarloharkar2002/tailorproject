@@ -1,0 +1,14 @@
+@media screen and (max-width:800px){
+    .select_cat_main{
+        /* border: 5px dotted plum; */
+        width: 10vw;
+        margin: auto;
+        overflow-x: hidden;
+    }
+}
+
+.select_cat_main{
+    /* border: 5px dotted plum; */
+    width: 75.2vw;
+    margin: auto;
+}
