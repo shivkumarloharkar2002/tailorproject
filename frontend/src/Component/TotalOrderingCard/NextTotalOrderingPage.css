@@ -1,0 +1,56 @@
+.Npage {
+    border: 1px solid rgb(152, 150, 150);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 70vw;
+    margin: auto;
+
+}
+
+.Next {
+    font-family: Kaisei Decol;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(36, 148, 148, 0.54);
+
+}
+.NextOrder{
+    display: flex;
+    justify-content: space-around;
+}
+.Nprice{
+    border: 1px solid grey;
+    background-color: rgba(89, 151, 181, 0.735);
+    padding: 9px;
+    font-family: Kaisei Decol;
+    border-radius: 20px;
+    
+
+}
+.Nspan{
+    margin-left: 30px;
+    /* font-family: Kaisei Decol; */
+
+}
+.Nsize{
+    margin: 20px;
+    font-family: Kaisei Decol;
+
+}
+.NLastpage{
+    display: flex;
+    justify-content: space-evenly;
+}
+.LastN{
+    background-color: black;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+}
+.LastText{
+    color: white;
+    /* padding: 20px; */
+    font-family: Kaisei Decol;
+}

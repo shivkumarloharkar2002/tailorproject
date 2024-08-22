@@ -5,9 +5,11 @@ import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
 import Measurement from "../View/Customer/AddCustomers/Measurement";
 import Login from "../View/Login/Login";
-import Home from "../View/TodayOrderPage/TodayOrder";
 import OrderCard from "../Component/OrderCard/OrderCard";
 import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
+import TodayOrder from "../View/TodayOrderPage/TodayOrder";
+import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
+import Home from "../View/Home/Home";
 
 
 
@@ -27,6 +29,25 @@ const routes = createBrowserRouter([
     {
       path:'/measurement',
       element:<Measurement/>
+<<<<<<< HEAD
+=======
+    },
+    {
+      path: '/seecustomer_details',
+      element: <ViewCustomer/>
+    },
+    {
+      path:'/order',
+      element:<TodayOrder/>
+    },
+    {
+      path:'/orderslip',
+      element:<NextOrderingPage/>
+    },
+    {
+      path:'/',
+      element:<Home/>
+>>>>>>> b55e65004fe6f770a109057b58f27cd008007d21
     }
   ])
 

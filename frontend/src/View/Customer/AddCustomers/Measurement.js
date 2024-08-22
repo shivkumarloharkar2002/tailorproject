@@ -48,7 +48,7 @@ export default function Measurement() {
             </div>
             
             </div>
-            <Link to='/or'><button className='size_btn'>Submit</button></Link>
+            <Link to='/orderslip'><button className='size_btn'>Submit</button></Link>
             
     </div>
     </div>
