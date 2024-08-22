@@ -5,11 +5,18 @@ import AddCustomer from "../View/Customer/AddCustomers/AddCustomer";
 import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
 import Measurement from "../View/Customer/AddCustomers/Measurement";
+import Login from "../View/Login/Login";
+import Home from "../View/TodayOrderPage/TodayOrder";
+import OrderCard from "../Component/OrderCard/OrderCard";
+import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 
 
-// import Home from "../View/Home/Home"
 
 const routes = createBrowserRouter([
+    {
+      path:'/login',
+      element:<Login/>
+    },
     {
       path:'/customerinfo',
       element:<AddCustomer/>
@@ -25,6 +32,18 @@ const routes = createBrowserRouter([
     {
       path:'/measurement',
       element:<Measurement/>
+    },
+    {
+      path: '/seecustomer_details',
+      element: <ViewCustomer/>
+    },
+    {
+      path:'/order',
+      element:<Home/>
+    },
+    {
+      path:'/orderslip',
+      element:<OrderCard/>
     }
   ])
 

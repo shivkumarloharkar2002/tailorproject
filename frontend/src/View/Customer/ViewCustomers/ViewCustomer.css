@@ -1,0 +1,60 @@
+.merge_inpimg {
+    padding: 0 20px;
+    height: 8vh;
+    border-radius: 20px;
+    width: 35vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:40px auto;
+    box-shadow: 4px 4px 13px 0.2px rgb(193, 188, 188);
+}
+
+.viewc_img {
+    height: 50px;
+    /* position: absolute; */
+    /* left: -10px; */
+    display: block;
+
+}
+
+.viewc_input {
+    /* position: relative; */
+    height: 8vh;
+    width: 30vw;
+    padding: 0 0px;
+    font-size: 30px;
+    display: block;
+    border: none;
+    outline: none;
+}
+
+
+/* custcard */
+
+.cust_info{
+    position: relative;
+border-radius: 20px;
+padding: 10px 0 0 20px;
+border: 1px solid black;
+height: 13vh;
+width: 60vw;
+margin: auto;
+background-color: rgba(36, 148, 148, 0.54);
+/* height: ; */
+}
+
+.cust_date{
+    /* border: 1px solid; */
+    width: 95%;
+    position: absolute;
+    top: -10px;
+   text-align: right;
+}
+.cust_price{
+    width: 95%;
+    position: absolute;
+    text-align: right;
+    bottom: -7px;
+}

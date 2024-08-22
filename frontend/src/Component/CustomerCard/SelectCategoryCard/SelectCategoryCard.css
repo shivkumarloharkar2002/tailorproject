@@ -1,4 +1,5 @@
 .category_img{
+    text-decoration: none;
     border-radius: 10px;
     height: 350px;
     width: 320px;
@@ -7,6 +8,10 @@
     
 }
 
+.category_head{
+    color: black;
+    text-align: center;
+}
 .category_main{
     /* border: 3px solid blue ; */
     width: 350px;
@@ -25,17 +30,21 @@
 @media screen  and (max-width:800px){
     .category_img{
         border-radius: 10px;
-        height: 150px;
-        width: 150px;
+        height: 35vh;
+        width: 70vw;
         border: 2px solid black;
     }
     .category_main{
         /* border: 3px solid blue ; */
-        width: 150px;
+        width: 70vw;
         display: inline-block;
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin: 9px  ;
        
+    }
+    .category_head{
+        color: black;
+        text-align: center;
     }
 }
