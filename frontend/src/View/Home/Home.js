@@ -10,6 +10,7 @@ import img6 from './worker.png'
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.js"
 import Header from '../../Component/Header/Header'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
@@ -19,17 +20,17 @@ export default function Home() {
                 <div className='HCard'>
                     <img className= 'Homeimg' src={img1} />
                     <h3 className='HText'>Add Customer</h3>
-                    <h5>See Details </h5>
+                   <Link to='/customerinfo'> <h5>See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className= 'Homeimg' src={img2} />
                     <h3 className='HText'>View Customer</h3>
-                    <h5>See Details </h5>
+                    <Link to='/seecustomer_details'><h5>See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className= 'Homeimg' src={img3} />
                     <h3 className='HText'>Today Order</h3>
-                    <h5>See Details </h5>
+                   <Link to='/order'> <h5>See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className= 'Homeimg' src={img3} />

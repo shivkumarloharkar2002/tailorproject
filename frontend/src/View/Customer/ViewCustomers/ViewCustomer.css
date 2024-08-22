@@ -19,12 +19,13 @@
 
 }
 
-.viewc_input {
-    /* position: relative; */
+.view_input {
+    position: relative;
     height: 8vh;
     width: 30vw;
-    padding: 0 0px;
-    font-size: 30px;
+    top: -50px;
+    padding: 10px 0px;
+    font-size: 25px;
     display: block;
     border: none;
     outline: none;
