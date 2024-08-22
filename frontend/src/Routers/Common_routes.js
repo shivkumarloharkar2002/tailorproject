@@ -5,15 +5,20 @@ import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
 import Measurement from "../View/Customer/AddCustomers/Measurement";
 import Login from "../View/Login/Login";
-import OrderCard from "../Component/OrderCard/OrderCard";
+import Invoice from '../View/Invoice/Invoice'
 import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
+import Register from "../View/Register/Register";
 
 
 
 const routes = createBrowserRouter([
+  {
+   path:'/',
+   element:<Home/>
+  },
     {
       path:'/customerinfo',
       element:<AddCustomer/>
@@ -28,13 +33,7 @@ const routes = createBrowserRouter([
     },
     {
       path:'/measurement',
-      element:<Measurement/>
-<<<<<<< HEAD
-=======
-    },
-    {
-      path: '/seecustomer_details',
-      element: <ViewCustomer/>
+      element:<Measurement/> 
     },
     {
       path:'/order',
@@ -45,10 +44,22 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
-      path:'/',
-      element:<Home/>
->>>>>>> b55e65004fe6f770a109057b58f27cd008007d21
-    }
+      path:'/login',
+      element:<Login/>
+    },
+    {
+      path: "/register",
+      element: <Register/>
+    },
+  
+    {
+      path: "/invoice",
+      element: <Invoice/>
+    },
+  {
+    path:'/seecustomer_details',
+    element:<ViewCustomer/>
+  }
   ])
 
   function CommonRoutes(){
