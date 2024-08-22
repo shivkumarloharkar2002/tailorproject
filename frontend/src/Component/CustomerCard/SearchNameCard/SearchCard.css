@@ -1,0 +1,25 @@
+.cust_info{
+    position: relative;
+border-radius: 20px;
+padding: 10px 0 0 20px;
+border: 1px solid black;
+height: 13vh;
+width: 60vw;
+margin:10px auto;
+background-color: rgba(36, 148, 148, 0.54);
+/* height: ; */
+}
+
+.cust_date{
+    /* border: 1px solid; */
+    width: 95%;
+    position: absolute;
+    top: -10px;
+   text-align: right;
+}
+.cust_price{
+    width: 95%;
+    position: absolute;
+    text-align: right;
+    bottom: -7px;
+}
