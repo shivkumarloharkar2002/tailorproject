@@ -6,9 +6,13 @@
         overflow-x: hidden;
     }
 }
+*{
+    text-decoration: none;
+}
 
 .select_cat_main{
+    /* text-decoration: none; */
     /* border: 5px dotted plum; */
-    width: 75.2vw;
+    width: 75.5vw;
     margin: auto;
 }
