@@ -8,7 +8,7 @@ UserRoutes.post("/create", Userregister)
 // http://localhost:5555/api/userroutes/login
 UserRoutes.post("/login",UserLogin)
 
-http://localhost:5555/api/userroutes/updateuser
+// http://localhost:5555/api/userroutes/updateuser
 UserRoutes.put("/updateuser",Updateuser)
 
 // http://localhost:5555/api/userroutes/getallusers
