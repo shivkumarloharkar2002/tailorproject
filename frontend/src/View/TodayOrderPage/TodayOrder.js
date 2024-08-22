@@ -39,7 +39,7 @@ const CardData = [
 ]
 
 
-export default function Home() {
+export default function TodayOrder() {
 
     return (
         <>
