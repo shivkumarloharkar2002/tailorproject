@@ -19,21 +19,21 @@ export default function Header() {
                 <a class=" active ncolor" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-                <a class="ncolor active" href="/about">Order</a>
+                <a class="ncolor active" href="/">Order</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-                <a class="ncolor  active" href="/tours">Customer</a>
+                <a class="ncolor  active" href="/customerinfo">Customer</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
                 <a class="ncolor  active" href="/tours">Invoice</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-              <img className='proImg' src={profile}></img>
+             <a href="/login"> <img className='proImg' src={profile}></img></a>
               </li>
 
 
             </ul>
-            <form class="d-flex">
+            {/* <form class="d-flex"> */}
               {/* <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
               {/* <a class="nav-link active" href="#">Login</a> */}
               {/* <button class=" ncolor mx-5 fs-5" href="#">Login</button> */}
@@ -42,7 +42,7 @@ export default function Header() {
               {/* <a class=" nregistation fs-5" href="#" >Registation</a> */}
           
 
-            </form>
+            {/* </form> */}
           </div>
         </div>
       </nav>
