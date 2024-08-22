@@ -21,7 +21,7 @@ function Register() {
     if (edit === true) {
       try {
         const registerData = await axios.put(
-          `http://localhost:5555/api/userroutes/updateuser/${user_id}`,
+          `http://localhost:5555/api/userroutes/updateuser`,
           {
             username,
             email,
