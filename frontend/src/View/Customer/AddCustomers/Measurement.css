@@ -1,0 +1,10 @@
+.size_main{
+    display: flex;
+    border: 2px solid;
+}
+
+.size_img{
+    border: 1px solid purple;
+    height: 300px;
+    width: 300px;
+}
