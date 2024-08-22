@@ -1,0 +1,23 @@
+
+.mainOrder {
+    /* height: 40px; */
+    border: 2px solid rgb(152, 150, 150);
+    border-radius: 50px;
+    margin: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .Orderimg {
+    height: 70px;
+  
+  }
+  
+  .Otext {
+    font-family: Kaisei Decol;
+    color: grey;
+    font-size: 29px;
+    /* margin: auto; */
+    margin-left: 20px;
+  }
