@@ -1,18 +1,32 @@
 @media screen and (max-width:950px) {
 
     .login{
-        height: 88vh !important;
+        height: 100vh !important;
     }
 
     .login-form {
         width: 80vw !important;
-        height: auto !important;
+        height: 40vh !important;
         padding: 20px;
     }
+
+    .login-imgs{
+        /* margin-bottom: -50px !important; */
+    }
+
+    .login-inputs{
+        width: 77vw !important;
+        height: 40px !important;
+    }
     
+    .login-inputs-img{
+        height: 30px !important;
+        width: 25px !important;
+    }
+
     .login-form-input{
         width: 70vw !important;
-        height: 40px !important;
+        height: 38px !important;
     }
 
     .login-imgs{
@@ -28,10 +42,12 @@
 
 
 .login {
-    border: 2px solid black;
-    height: 83vh;
+    /* border: 2px solid black; */
+    height: 99.9vh;
     width: 100vw;
     align-content: center;
+    background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
+    background-size: cover;
 }
 
 
@@ -41,45 +57,75 @@
     width: 30vw;
     margin: auto;
     align-content: center;
+    border-radius: 10px;
     /* padding: 20px ; */
+    /* backdrop-filter: blur(4px); */
 }
 
 .login-imgs{
-    /* border: 2px solid purple; */
+    /* border: 2px solid red; */
     position: relative;
     display: flex;
     justify-content: start;
     width: 27vw;
     margin: auto;
+    margin-top: -50px !important;
 
 }
 
 
 .login-img{
-    height: 40px;
-    width: 40px;
-    border: 2px solid red;
+    height: 70px;
+    width: 100px;
+    /* border: 2px solid red; */
     display: block;
+}
+
+.login-form-h{
+    text-align: center;
 }
 
 .login-logo{
     position: absolute;
-    top: -75px ;
+    top: -60px ;
     left: 10.5vw;
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 
-.login-form-input {
-    display: block;
-    margin: 30px auto;
+.login-inputs{
+    border: 2px solid black;
     height: 30px;
     width: 25vw;
-    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin:20px auto;
     border-radius: 5px;
+    background-color: white;
+}
+
+.login-inputs-img{
+    height: 30px;
+    width: 2vw;
+}
+
+.login-form-input {
+    display: block;
+    /* margin: 30px auto; */
+    height: 28px;
+    width: 22vw;
+    border: none; 
+    outline: none;
+   
+}
+
+.login-form-input::placeholder{
+    font-size: 18px;
+    color: black;
 }
 
 .login-form-submit {
@@ -93,4 +139,6 @@
     /* width: 200px; */
     font-weight: 600;
     border-radius: 5px;
+    display: block;
+    margin: auto;
 }
