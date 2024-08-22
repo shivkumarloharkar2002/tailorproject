@@ -6,9 +6,14 @@ import CommonRoutes from './Routers/Common_routes';
 
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CommonRoutes />
+  <React.StrictMode>
+    <App />
+    
+  </React.StrictMode>
 );
 
 
