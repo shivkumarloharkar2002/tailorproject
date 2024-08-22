@@ -1,6 +1,7 @@
 import React from 'react'
 
 import img from './hanger.png'
+import './TodayOrder.css'
 import OrderCard from '../../Component/OrderCard/OrderCard'
 
 
@@ -39,11 +40,12 @@ const CardData = [
 ]
 
 
-export default function Home() {
+export default function TodayOrder() {
 
     return (
         <>
-            <div className='mainOrder'>
+           <div className='MainBody'>
+           <div className='MainOrder'>
                 <div> <img className='Orderimg' src={img}></img></div>
                 <div><h2 className='Otext'>Today Orders</h2></div>
             </div>
@@ -57,6 +59,7 @@ export default function Home() {
 
 
             }
+           </div>
         </>
     )
 }
