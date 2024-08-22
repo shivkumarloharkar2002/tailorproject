@@ -1,0 +1,27 @@
+.nimg {
+    height: 80px;
+    width: 200px;
+}
+.mnav{
+    background-color: rgba(36, 148, 148, 1);
+    
+}
+a {
+    text-decoration: none;
+}
+
+.ncolor {
+    color: rgb(240, 238, 237);
+    /* font-weight: 600; */
+    font-size: 30px;
+    font-family: Kaisei Decol;
+
+
+}
+
+
+
+
+.proImg{
+    height: 40px;
+}

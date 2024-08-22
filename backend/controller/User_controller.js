@@ -1,20 +1,19 @@
-
 import Usermodel from "../models/usermodel.js"
 
-
 export const Userregister = async (req, res) => {
-    const { username, phone, email, password,role } = req.body
-    if (!username || !phone || !email || !role || !password) {
+    const { user_id, username, phone, email, password, role } = req.body
+    if (!user_id || !username || !phone || !email || !role || !password) {
         return res.json({ msg: "Plase fill all fields" })
     }
 
     try {
         const userdata = await Usermodel.create({
+            "user_id": user_id,
             "username": username,
             "email": email,
             "phone": phone,
             "password": password,
-            "role":role
+            "role": role
         })
         res.status(200).json({
             success: true,
@@ -41,7 +40,7 @@ export const UserLogin = async (req, res) => {
             })
         }
         else {
-            res.status(400).json({ message: 'Invalid email or password' });
+            res.json({ message: 'Invalid email or password' });
 
         }
     }
@@ -51,25 +50,28 @@ export const UserLogin = async (req, res) => {
 
 }
 
-export const Updateuser = async (req,res) => {
-    const { username, phone, email, password, id} = req.body
+export const Updateuser = async (req, res) => {
     try {
+        
+    const {id, username, phone, email, password, user_id, role } = req.body
         const updateuser = await Usermodel.updateOne({ _id: id }, {
             $set: {
+                user_id: user_id,
                 username: username,
                 phone: phone,
                 email: email,
-                password:password
+                password: password,
+                role: role
             }
         })
         res.json({
-            success:true,
-            data:updateuser,
-            msg:`${username} is updated`
+            success: true,
+            data: updateuser,
+            msg: `${username} is updated`
         })
     }
-    catch(e){
-
+    catch (e) {
+        console.log(e)
     }
 }
 
@@ -81,4 +83,20 @@ export const Getallusers = async (req, res) => {
         msg: "All user Fetched",
         data: alldata
     })
+}
+
+export const Deleteemployee = async (req,res)=>{
+    const { id } =req.params
+    // const id =req.body
+    try{
+        const Deleteemp= await Usermodel.deleteOne({ _id: id })
+        res.json({
+            data:`${id}`,
+            data2:Deleteemp,
+            msg:"Employee removed succefully"
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
 }

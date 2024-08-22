@@ -1,5 +1,10 @@
 import { Schema, model } from "mongoose";
 const UserSchema = new Schema({
+    user_id:{
+        type:Number,
+        required:true,
+        unique:true
+    },
     username:{
         type:String,
         required:true
@@ -23,7 +28,7 @@ const UserSchema = new Schema({
         enum: ['employee', 'admin'],
         default: 'employee',
         required:true
-    },
+    },    
 
 },
 {

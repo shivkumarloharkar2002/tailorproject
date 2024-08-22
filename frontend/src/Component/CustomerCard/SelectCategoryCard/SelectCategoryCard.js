@@ -6,7 +6,7 @@ export default function SelectCategoryCard({cimg  , chead}) {
    <>
    <div className='category_main'>
     <img src={cimg} alt="category image" className='category_img'/><br/>
-    <h5 className='category_head'>{chead}</h5>
+    <h2 className='category_head'>{chead}</h2>
    </div>
    </>
   )

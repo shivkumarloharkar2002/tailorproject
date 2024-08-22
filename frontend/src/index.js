@@ -11,9 +11,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   <CommonRoutes />
-    {/* <App /> */}
+  <React.StrictMode>
+    <App />
     
-  </>
+  </React.StrictMode>
 );
 
 
