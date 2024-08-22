@@ -1,6 +1,5 @@
-
 import react from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddCustomer from "../View/Customer/AddCustomers/AddCustomer";
 import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
@@ -16,10 +15,6 @@ import Home from "../View/Home/Home";
 
 const routes = createBrowserRouter([
     {
-      path:'/login',
-      element:<Login/>
-    },
-    {
       path:'/customerinfo',
       element:<AddCustomer/>
     },
@@ -34,6 +29,8 @@ const routes = createBrowserRouter([
     {
       path:'/measurement',
       element:<Measurement/>
+<<<<<<< HEAD
+=======
     },
     {
       path: '/seecustomer_details',
@@ -50,6 +47,7 @@ const routes = createBrowserRouter([
     {
       path:'/',
       element:<Home/>
+>>>>>>> b55e65004fe6f770a109057b58f27cd008007d21
     }
   ])
 
@@ -57,4 +55,4 @@ const routes = createBrowserRouter([
     return <RouterProvider router={routes} />
   }
 
-  export default CommonRoutes
+export default CommonRoutes;
