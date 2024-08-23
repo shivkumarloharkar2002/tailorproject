@@ -1,10 +1,9 @@
 import React from 'react';
 
-function Profile() {
-    const localData=JSON.parse(localStorage.getItem('user'))
+function Profile(props) {
     return (
         <div>
-            <h1>{localData.username}</h1>
+            
         </div>
     );
 }
