@@ -3,6 +3,8 @@ import React from 'react'
 import img from './hanger.png'
 import './TodayOrder.css'
 import OrderCard from '../../Component/OrderCard/OrderCard'
+import Header from '../../Component/Header/Header'
+
 
 
 const CardData = [
@@ -44,6 +46,7 @@ export default function TodayOrder() {
 
     return (
         <>
+        <Header/>
            <div className='MainBody'>
            <div className='MainOrder'>
                 <div> <img className='Orderimg' src={img}></img></div>

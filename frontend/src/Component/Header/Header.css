@@ -1,19 +1,20 @@
 .nimg {
     height: 80px;
-    width: 200px;
+    margin-right: 250px;
+    /* width: 200px; */
 }
 .mnav{
     background-color: rgba(36, 148, 148, 1);
     
 }
-a {
-    text-decoration: none;
-}
+
+
 
 .ncolor {
     color: rgb(240, 238, 237);
+    text-decoration: none;
     /* font-weight: 600; */
-    font-size: 30px;
+    font-size: 25px;
     font-family: Kaisei Decol;
 
 
