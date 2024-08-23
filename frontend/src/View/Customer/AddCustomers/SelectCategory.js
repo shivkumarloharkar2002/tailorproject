@@ -7,12 +7,13 @@ import pyjama from '../../../Image/pyjamas.jpg'
 import safari from '../../../Image/safaris.gif'
 import kurtas from '../../../Image/kurta.jpg'
 import { Link } from 'react-router-dom'
+import Header from '../../../Component/Header/Header'
 
 
 function SelectCategory() {
   return (
    <>
-       <header className='top_nav'></header>
+       <header className='top_nav'><Header/></header>
    <div className='select_cat_main'>
     <Link to='/choosefabric'><SelectCategoryCard cimg={shirts} chead={"Shirt"} /> </Link>
     <SelectCategoryCard cimg={pants}  chead={"Pant"}/> 

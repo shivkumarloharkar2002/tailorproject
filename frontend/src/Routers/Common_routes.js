@@ -11,6 +11,8 @@ import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
 import Register from "../View/Register/Register";
+import ReadyMade from "../View/ReadyMade/ReadyMade";
+
 
 
 
@@ -22,6 +24,10 @@ const routes = createBrowserRouter([
     {
       path:'/customerinfo',
       element:<AddCustomer/>
+    },
+    {
+      path:'/seecustomer_details',
+      element:<ViewCustomer/>
     },
     {
       path:'/selectcategory',
@@ -56,10 +62,10 @@ const routes = createBrowserRouter([
       path: "/invoice",
       element: <Invoice/>
     },
-  {
-    path:'/seecustomer_details',
-    element:<ViewCustomer/>
-  }
+ {
+  path:'/readymade',
+  element:<ReadyMade/>
+ }
   ])
 
   function CommonRoutes(){
