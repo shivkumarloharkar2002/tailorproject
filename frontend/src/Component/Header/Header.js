@@ -6,10 +6,10 @@ import profile from './profile-user (1).png'
 export default function Header() {
   return (
     <>
-       <nav class="navbar navbar-expand-lg navbar-light mnav fixed-top">
-        <div class="container-fluid">
+       <nav class="navbar navbar-expand-lg navbar-light  mnav fixed-top">
+        <div class="container-fluid ">
           {/* <a class="navbar-brand" href="#">Navbar</a> */}
-          <img className='nimg ms-5 ' src={Nav}></img>
+          <img className='nimg  ' src={Nav}></img>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -19,10 +19,10 @@ export default function Header() {
                 <a class=" active ncolor" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-                <a class="ncolor active" href="/">Order</a>
+                <a class="ncolor active" href="/about">About</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-                <a class="ncolor  active" href="/customerinfo">Customer</a>
+                <a class="ncolor  active" href="/customerinfo">Contact</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
                 <a class="ncolor  active" href="/tours">Invoice</a>
