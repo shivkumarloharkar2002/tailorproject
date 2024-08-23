@@ -1,29 +1,38 @@
-
 import react from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddCustomer from "../View/Customer/AddCustomers/AddCustomer";
 import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
 import Measurement from "../View/Customer/AddCustomers/Measurement";
 import Login from "../View/Login/Login";
-import OrderCard from "../Component/OrderCard/OrderCard";
+import Invoice from '../View/Invoice/Invoice'
 import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
+<<<<<<< HEAD
 import Gallery from "../View/Gallery/Gallery";
 import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
+=======
+import Register from "../View/Register/Register";
+import ReadyMade from "../View/ReadyMade/ReadyMade";
+
+>>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
 
 
 
 const routes = createBrowserRouter([
-    {
-      path:'/login',
-      element:<Login/>
-    },
+  {
+   path:'/',
+   element:<Home/>
+  },
     {
       path:'/customerinfo',
       element:<AddCustomer/>
+    },
+    {
+      path:'/seecustomer_details',
+      element:<ViewCustomer/>
     },
     {
       path:'/selectcategory',
@@ -35,11 +44,7 @@ const routes = createBrowserRouter([
     },
     {
       path:'/measurement',
-      element:<Measurement/>
-    },
-    {
-      path: '/seecustomer_details',
-      element: <ViewCustomer/>
+      element:<Measurement/> 
     },
     {
       path:'/order',
@@ -50,14 +55,33 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
+<<<<<<< HEAD
       path:'/',
       element:<Home/>
     },
 
+=======
+      path:'/login',
+      element:<Login/>
+    },
+    {
+      path: "/register",
+      element: <Register/>
+    },
+  
+    {
+      path: "/invoice",
+      element: <Invoice/>
+    },
+ {
+  path:'/readymade',
+  element:<ReadyMade/>
+ }
+>>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
   ])
 
   function CommonRoutes(){
     return <RouterProvider router={routes} />
   }
 
-  export default CommonRoutes
+export default CommonRoutes;

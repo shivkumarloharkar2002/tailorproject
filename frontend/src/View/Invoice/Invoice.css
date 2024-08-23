@@ -1,0 +1,74 @@
+ .invoice-inputs {
+     border: none;
+     width: 77vw;
+     height: 50px;
+     /* border: 2px solid red; */
+     outline: none;
+     font-size: 20px;
+ }
+
+
+ .invoice-inputs::placeholder {
+     font-family: serif;
+     font-size: 18px;
+     color: black;
+     font-size: 20px;
+ }
+
+
+
+
+ .invoice-paisa {
+     height: 60px;
+     width: 80vw;
+     background-color: rgba(36, 148, 148, 1);
+     margin: 30px auto;
+     border-radius: 10px;
+     align-items: center;
+ }
+
+ .invoice-total {
+     font-size: 24px;
+     /* line-height: 16px; */
+     font-weight: 600;
+     /* border: 2px solid red; */
+     font-family: serif;
+     text-align: center;
+     line-height: 25px;
+     color: white;
+ }
+
+ .invoice-amount {
+     font-size: 28px;
+     font-weight: 700;
+     /* line-height: 28px; */
+     /* border: 2px solid red; */
+     line-height: 35px;
+ }
+
+ .invoice-input {
+     width: 80vw;
+     height: 53px;
+     border: 2px solid rgba(36, 148, 148, 0.54);
+     border-radius: 10px;
+     margin: auto;
+     align-content: center;
+     display: flex;
+     justify-content: space-around;
+     outline: none;
+ }
+
+ .invoice-icon {
+     align-self: center;
+     color: rgba(36, 148, 148, 0.54);
+     height: 40px;
+     width: 40px;
+ }
+
+
+
+
+
+ .link {
+     text-decoration: none;
+ }

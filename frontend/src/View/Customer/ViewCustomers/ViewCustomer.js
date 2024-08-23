@@ -10,7 +10,7 @@ export default function ViewCustomer() {
      <header className='top_nav'></header>
       <div className='merge_inpimg'>
         <img src={customer} className='viewc_img' />
-        <input type='search' placeholder='Customer Name' className='view_input' />
+        <input type='search' placeholder='Customer Name' className='viewcust_input' />
       </div>
       <Link to='/selectcategory'><SearchCard/></Link>
      

@@ -1,19 +1,43 @@
 import React, { useState } from "react";
 import "./Login.css";
-import logo from "./../../assets/Login/logo.jpg";
+import logo from "./../../assets/Login/logo.png";
 import loginLogo from "./../../assets/Login/login-logo.jpg";
 import emailImg from "./../../assets/Login/login-email.jpg";
 import passImg from "./../../assets/Login/login-pass.jpg";
-import Navbar from "../../Component/Navbar/Navbar";
-import Footer from "../../Component/Footer/Footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  const loginData = async (e) => {
+    e.preventDefault();
+    try {
+      const logData = await axios.post(
+        `http://localhost:5555/api/userroutes/login`,
+        {
+          email,
+          password,
+        }
+      );
+      if (logData.status == 200) {
+        navigate("/measurement");
+        toast("Login Successfully");
+        console.log(logData);
+      } else {
+        alert("Invalid");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
-      <Navbar />
-
       <div className="login">
         <form action="" className="login-form">
           <div className="login-imgs">
@@ -33,6 +57,7 @@ function Login() {
               type="email"
               placeholder="Admin"
               className="login-form-input"
+              required
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -43,19 +68,25 @@ function Login() {
             <img src={passImg} alt="" className="login-inputs-img" />
             <input
               type="password"
-              placeholder="pass"
+              placeholder="Password"
               className="login-form-input"
+              required
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
           </div>
 
-          <input type="submit" value="Log In" className="login-form-submit" />
+          <input
+            type="submit"
+            value="Log In"
+            className="login-form-submit"
+            onClick={loginData}
+          />
         </form>
       </div>
 
-      <Footer />
+      <ToastContainer />
     </div>
   );
 }
