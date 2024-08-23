@@ -38,6 +38,10 @@ const routes = createBrowserRouter([
       element:<SelectFabric/>
     },
     {
+      path:'/fabricform',
+      element:<FabricForm/>
+    },
+    {
       path:'/measurement',
       element:<Measurement/> 
     },
