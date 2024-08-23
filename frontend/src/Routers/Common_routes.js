@@ -10,8 +10,6 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
-import Register from "../View/Register/Register";
-import ReadyMade from "../View/ReadyMade/ReadyMade";
 
 
 
@@ -54,6 +52,7 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
+
       path:'/login',
       element:<Login/>
     },
@@ -70,6 +69,7 @@ const routes = createBrowserRouter([
   path:'/readymade',
   element:<ReadyMade/>
  }
+
   ])
 
   function CommonRoutes(){
