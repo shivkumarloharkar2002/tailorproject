@@ -1,6 +1,5 @@
 import React from 'react'
 import './ReadyMade.css'
-import NavbarReady from '../../Component/Navbar/Navbar'
 import ReadyMadeCard from '../../Component/ReadyMadeCard/ReadyMadeCard'
 import Shirt1 from '../../Image/Shirt1.png'
 

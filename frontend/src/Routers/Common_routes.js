@@ -10,14 +10,14 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
-<<<<<<< HEAD
-import Gallery from "../View/Gallery/Gallery";
-import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
-=======
+
 import Register from "../View/Register/Register";
 import ReadyMade from "../View/ReadyMade/ReadyMade";
 
->>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
+import About from '../View/About/About'
+import Performance from '../View/Performance/Performance'
+import FabricForm from "../View/Admin/FabricForm/FabricForm";
+
 
 
 
@@ -43,6 +43,10 @@ const routes = createBrowserRouter([
       element:<SelectFabric/>
     },
     {
+      path:'/fabricform',
+      element:<FabricForm/>
+    },
+    {
       path:'/measurement',
       element:<Measurement/> 
     },
@@ -55,12 +59,12 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
-<<<<<<< HEAD
+
       path:'/',
       element:<Home/>
     },
 
-=======
+  {
       path:'/login',
       element:<Login/>
     },
@@ -76,8 +80,16 @@ const routes = createBrowserRouter([
  {
   path:'/readymade',
   element:<ReadyMade/>
+ },
+ {
+  path:'/about',
+  element:<About/>
+ },
+ {
+  path:'/performance',
+  elment:<Performance/>
  }
->>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
+
   ])
 
   function CommonRoutes(){
