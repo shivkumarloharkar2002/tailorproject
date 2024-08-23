@@ -3,6 +3,8 @@ import "./Invoice.css";
 import search from "./../../assets/Invoice/search.jpg"
 import ShortCard from "../../Component/Invoice/ShortCard";
 import { Link } from "react-router-dom";
+import Header from "../../Component/Header/Header";
+import img from "./../../assets/Login/logo.png"
 
 const Data = [
   {
@@ -23,12 +25,28 @@ const Data = [
     date: "10/02/12",
     price: 245,
   },
+  {
+    id: 4,
+    name: "pqr",
+    date: "10/02/12",
+    price: 245,
+  },
+  {
+    id: 5,
+    name: "pqr",
+    date: "10/02/12",
+    price: 245,
+  },
 ];
 
 function Invoice() {
   return (
     <div>
-      
+
+      <Header />
+
+      <img src={img} alt=""  className="invoice-logo"/>
+
       <div className="invoice-paisa">
         <p className="invoice-total">
           Total Earned Amount <br />
@@ -45,13 +63,17 @@ function Invoice() {
         />
       </div>
 
-      {Data.map((info) => {
-        return (
-         
+      <hr className="invoice-hr" />
+
+      <div className="invoice-shortCards">
+        {Data.map((info) => {
+          return (
+
             <ShortCard name={info.name} date={info.date} price={info.price} id={info.id} />
-          
-        );
-      })}
+
+          );
+        })}
+      </div>
     </div>
   );
 }
