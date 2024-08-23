@@ -11,6 +11,8 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
+import Gallery from "../View/Gallery/Gallery";
+import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
 
 
 
@@ -50,7 +52,8 @@ const routes = createBrowserRouter([
     {
       path:'/',
       element:<Home/>
-    }
+    },
+
   ])
 
   function CommonRoutes(){
