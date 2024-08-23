@@ -10,8 +10,7 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
-import Gallery from "../View/Gallery/Gallery";
-import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
+
 
 
 
@@ -37,6 +36,10 @@ const routes = createBrowserRouter([
       element:<SelectFabric/>
     },
     {
+      path:'/fabricform',
+      element:<FabricForm/>
+    },
+    {
       path:'/measurement',
       element:<Measurement/> 
     },
@@ -49,9 +52,23 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
-      path:'/',
-      element:<Home/>
+
+      path:'/login',
+      element:<Login/>
     },
+    {
+      path: "/register",
+      element: <Register/>
+    },
+  
+    {
+      path: "/invoice",
+      element: <Invoice/>
+    },
+ {
+  path:'/readymade',
+  element:<ReadyMade/>
+ }
 
   ])
 

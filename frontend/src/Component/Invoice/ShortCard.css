@@ -1,33 +1,51 @@
+@media screen and (max-width:950px) {
+    .invoice-short{
+        width: 80vw !important;
+        margin:15px 0 !important;
+    }
+}
+
+.invoice-shortCard{
+    display: inline-block;
+}
+
 .invoice-short {
     height: 60px;
-    width: 80vw;
-    border: 1px solid black;
+    width: 22vw;
+    border: 1px solid rgba(36, 148, 148, 0.54);
     background-color: rgba(36, 148, 148, 0.54);
     border-radius: 10px;
-    margin: 30px auto;
+    margin: 30px 35px;
     /* border-radius: 10px; */
     align-content: center;
+   
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
-}
+} 
 
 
 .invoice-short-text {
     display: block;
-    margin-left: 30px;
+    margin-left: 20px !important;
+    margin: 0;
     font-weight: 600;
     color: black;
-    line-height: 60px;
+    line-height: 50px;
     font-size: 22px;
+    /* border: 2px solid black; */
+    align-self: center;
 }
 
 .invoice-short-amount {
+    /* border: 2px solid black; */
     display: block;
-    margin-right: 30px;
+    margin-right: 20px !important;
     font-weight: 600;
     color: black;
-    line-height: 30px;
+    line-height: 25px;
     font-size: 18px;
+    align-self: center;
+    margin: 0;
 }
