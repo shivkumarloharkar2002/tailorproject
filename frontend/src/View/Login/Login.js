@@ -25,8 +25,9 @@ function Login() {
         }
       );
       if (logData.status == 200) {
-        navigate("/measurement");
-        toast("Login Successfully");
+        localStorage.setItem("user", JSON.stringify(logData.data.data));
+        navigate("/");
+        alert("Login Successfully");
         console.log(logData);
       } else {
         alert("Invalid");

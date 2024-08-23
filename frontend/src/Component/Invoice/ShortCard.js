@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ShortCard({ name, date, price, id }) {
     return (
-        <div>
+        <div className='invoice-shortCard'>
             <Link to={`invoiceInfo/${id}`} className='link'>
                 <div className="invoice-short" >
                     <p className="invoice-short-text" >{name}</p>
@@ -12,7 +12,7 @@ function ShortCard({ name, date, price, id }) {
                 </div>
             </Link>
         </div>
-    ); 
+    );  
 }
 
 export default ShortCard;

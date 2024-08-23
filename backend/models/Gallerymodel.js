@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 const GallerySchema = new Schema({
 
+    
     imgname: {
         type: String,
         // required: true

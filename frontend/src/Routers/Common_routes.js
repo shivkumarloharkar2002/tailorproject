@@ -10,6 +10,7 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
+<<<<<<< HEAD
 import Register from "../View/Register/Register";
 import ReadyMade from "../View/ReadyMade/ReadyMade";
 import About from '../View/About/About'
@@ -17,6 +18,8 @@ import Performance from '../View/Performance/Performance'
 import FabricForm from "../View/Admin/FabricForm/FabricForm";
 import Gallery from "../View/Gallery/Gallery";
 import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
+=======
+>>>>>>> 2dc594bd6b43bb17590a9a80bfa9815405e1964d
 
 
 
@@ -72,6 +75,12 @@ const routes = createBrowserRouter([
     element:<TotalOrderingPage/>
    },
 
+<<<<<<< HEAD
+=======
+      path:'/login',
+      element:<Login/>
+    },
+>>>>>>> 2dc594bd6b43bb17590a9a80bfa9815405e1964d
     {
       path: "/register",
       element: <Register/>
@@ -84,14 +93,6 @@ const routes = createBrowserRouter([
  {
   path:'/readymade',
   element:<ReadyMade/>
- },
- {
-  path:'/about',
-  element:<About/>
- },
- {
-  path:'/performance',
-  elment:<Performance/>
  }
 
   ])
