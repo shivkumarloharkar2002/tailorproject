@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export default function OrderCard({category,time,name,id}) {
   return (
     <>
-     <Link to={'/NextOrderingPage'} className='link'>
+     <Link to={'/orderslip'} className='link'>
      <div className='OName'>
         <h4 className='Category'>{category}</h4>
         <h4 className='Date'>{time}</h4>
@@ -17,3 +17,4 @@ export default function OrderCard({category,time,name,id}) {
     </>
   )
 }
+

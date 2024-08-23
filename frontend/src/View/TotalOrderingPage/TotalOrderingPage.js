@@ -1,5 +1,8 @@
 import React from 'react'
-import './TodayOrderPage.css'
+import './TotalOrderingPage.css'
+import img from './hanger.png'
+import OrderCard from '../../Component/OrderCard/OrderCard'
+import Header from '../../Component/Header/Header'
 
 
 const CardData = [
@@ -39,6 +42,7 @@ const CardData = [
 export default function TotalOrderingPage() {
   return (
     <>
+    <Header/>
     <div className='MainBody'>
     <div className='MainOrder'>
          <div> <img className='Orderimg' src={img}></img></div>

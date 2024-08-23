@@ -1,0 +1,21 @@
+.ReadyC_main{
+    /* border: 2px solid black; */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 1px grey;
+    width: 280px;
+    /* display: flex; */
+    justify-content: space-evenly;
+    margin: 20px;
+    /* text-align: center; */
+}
+.Ready_img{
+    /* margin: 10px; */
+    height: 280px;
+    /* border: 2px solid red; */
+    width:277px ;
+}
+
+.RMhead{
+    padding:3px 10px;
+}

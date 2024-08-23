@@ -1,18 +1,32 @@
-.fabric_main{
+@media screen and (max-width:950px) {
+    .fabric_main {
+        width: 80vw !important;
+        margin: 20px !important;
+    }
+
+    .fabricimg {
+        width: 80vw !important;
+    }
+}
+
+
+
+.fabric_main {
     text-align: center;
     display: inline-block;
-    border: 1px solid ;
-    margin: 10px;
+    color: black;
+    box-shadow: 1px 1px 16px 1px grey;
+    /* border: 1px solid gray; */
+    border-radius: 15px;
+    margin: 30px;
+    min-height: 253px;
+    width: 25vw;
+    align-self: center;
 }
 
-.fabricimg{
-    height: 200px;
-    width: 27.4vw;
-}
+.fabricimg {
 
-@media screen and (max-width:800px){
-    .fabricimg{
-        height: 20vh;
-        width: 83vw;
-    }
+    border-radius: 15px;
+    height: 250px;
+    width: 25vw;
 }
