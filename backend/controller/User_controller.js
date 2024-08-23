@@ -34,7 +34,7 @@ export const Userregister = async (req, res) => {
     if (!user_id || !username || !phone || !email || !role || !password) {
         return res.json({ msg: "Plase fill all fields" })
     }
-    
+
     try {
         const userdata = await Usermodel.create({
             "user_id": user_id, // aplyaya req.body madhun user_id ghaychi nhi te math random madhun genrate honar age
