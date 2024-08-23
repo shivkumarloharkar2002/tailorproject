@@ -52,14 +52,15 @@
 
 
 .login-form {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 45vh;
     width: 30vw;
     margin: auto;
     align-content: center;
-    border-radius: 10px;
+    border-radius: 10px; 
     /* padding: 20px ; */
-    /* backdrop-filter: blur(4px); */
+    background-color: rgba(36, 148, 148, 1);
+    backdrop-filter: blur(4px);
 }
 
 .login-imgs{
@@ -109,14 +110,14 @@
 }
 
 .login-inputs-img{
-    height: 30px;
+    height: 26px;
     width: 2vw;
 }
 
 .login-form-input {
     display: block;
     /* margin: 30px auto; */
-    height: 28px;
+    height: 26px;
     width: 22vw;
     border: none; 
     outline: none;

@@ -31,11 +31,11 @@ function Register() {
             user_id,
           }
         );
-
+        getUser();
         alert("Update Successfully");
         console.log(registerData);
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
     } else {
       try {
@@ -48,13 +48,14 @@ function Register() {
             phone,
             role,
           }
-        );
+        ); 
+        getUser();
         // if (registerData.status === 200) {
           alert("Register Successfully");
           console.log(registerData);
         // }
       } catch (error) {
-        console.log(error);
+        alert(error);
       }
     }
   };
@@ -112,8 +113,8 @@ function Register() {
                   <div className="userCard-Info">
                     <img src={logo} alt="" className="userCard-img" />
                     <p className="userCard-para">
-                      {item.role} <br />
-                      <span className="userCard-span">{item.email}</span>
+                      {item.username} <br />
+                      <span className="userCard-span">{item.role}</span>
                     </p>
                   </div>
 
@@ -121,7 +122,7 @@ function Register() {
                     <button
                       className="userCard-button edit"
                       onClick={() => {
-                        Edit(item);
+                        Edit(item); 
                       }}
                     >
                       Edit

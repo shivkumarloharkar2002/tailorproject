@@ -25,8 +25,8 @@ function Login() {
         }
       );
       if (logData.status == 200) {
-        navigate("/measurement");
-        toast("Login Successfully");
+        navigate("/");
+        alert("Login Successfully");
         console.log(logData);
       } else {
         alert("Invalid");
