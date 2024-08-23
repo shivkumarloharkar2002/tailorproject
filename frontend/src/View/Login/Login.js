@@ -25,6 +25,7 @@ function Login() {
         }
       );
       if (logData.status == 200) {
+        localStorage.setItem("user", JSON.stringify(logData.data.data));
         navigate("/");
         alert("Login Successfully");
         console.log(logData);

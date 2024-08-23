@@ -10,14 +10,9 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
-<<<<<<< HEAD
-import Gallery from "../View/Gallery/Gallery";
-import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
-=======
 import Register from "../View/Register/Register";
 import ReadyMade from "../View/ReadyMade/ReadyMade";
 
->>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
 
 
 
@@ -55,12 +50,6 @@ const routes = createBrowserRouter([
       element:<NextOrderingPage/>
     },
     {
-<<<<<<< HEAD
-      path:'/',
-      element:<Home/>
-    },
-
-=======
       path:'/login',
       element:<Login/>
     },
@@ -77,7 +66,6 @@ const routes = createBrowserRouter([
   path:'/readymade',
   element:<ReadyMade/>
  }
->>>>>>> 69046920b15ca270e7554d0a447b72db1003f128
   ])
 
   function CommonRoutes(){
