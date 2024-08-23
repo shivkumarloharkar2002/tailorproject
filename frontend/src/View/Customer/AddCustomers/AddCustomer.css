@@ -40,7 +40,13 @@
     background: black;
     color: white;
 }
+.backmain{
+    margin-top: 60px;
+}
 
+.backimg{
+    height: 30px;
+}
 @media screen and (max-width:800px )  {
     .customer_form{
         width: 90vw;
