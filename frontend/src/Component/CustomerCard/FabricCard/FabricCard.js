@@ -6,7 +6,7 @@ export default function FabricCard({fabricimg , price}) {
     <>
     <div className='fabric_main'>
         <img src={fabricimg} className='fabricimg'/>
-        <h3>{price}/- per M</h3>
+        <h3 style={{margin:'20px'}}>{price}/- per M</h3>
     </div>
     </>
   )

@@ -7,6 +7,7 @@ import waist from '../../../Image/waist.webp'
 import cheast from '../../../Image/cheast.webp' 
 import shoulder from '../../../Image/shoulder.webp' 
 import { Link } from 'react-router-dom'
+import Header from '../../../Component/Header/Header'
 
 
 
@@ -14,7 +15,7 @@ import { Link } from 'react-router-dom'
 export default function Measurement() {
   return (
     <>
-     <header className='top_nav'></header>
+     <header className='top_nav'><Header/></header>
     <div>
     <h1 style={{textAlign:'center'}}>Size</h1>
     <div >
