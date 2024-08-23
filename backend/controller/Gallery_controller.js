@@ -1,4 +1,4 @@
-import GalleryModel from "../models/Gallerymodel"
+import GalleryModel from "../models/Gallerymodel.js"
 
 export const AddGalleryData = async (req,res)=>{
     const {imgname,price,color,cloth_type,pattern,size}=req.body
