@@ -5,6 +5,7 @@ import axios from "axios";
 // import UserCard from "../../Component/Register/UserCard";
 import logo from "./../../assets/Login/login-email.png";
 import Navbar from "./../../Component/Navbar/Navbar";
+import Header from "../../Component/Header/Header";
 
 function Register() {
   const [username, setUserName] = useState();
@@ -99,8 +100,8 @@ function Register() {
 
   return (
     <div>
-      {/* Navbar */}
-      <Navbar />
+      <Header/>
+      
 
       <div className="register">
         <div className="available-user register-box">

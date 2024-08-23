@@ -17,14 +17,14 @@
 
 .register {
     width: 100vw;
-    min-height: 85.5vh;
+    min-height: 88.3vh;
     margin: auto;
     /* border: 2px solid black; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-content: center;
-    margin-top: 50px;
+    margin-top: 96px;
     background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
     background-size: cover;
 }
