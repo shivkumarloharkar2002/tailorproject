@@ -12,7 +12,9 @@ import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
 import Register from "../View/Register/Register";
 import ReadyMade from "../View/ReadyMade/ReadyMade";
-
+import About from '../View/About/About'
+import Performance from '../View/Performance/Performance'
+import FabricForm from "../View/Admin/FabricForm/FabricForm";
 
 
 
@@ -36,6 +38,10 @@ const routes = createBrowserRouter([
     {
       path:'/choosefabric',
       element:<SelectFabric/>
+    },
+    {
+      path:'/fabricform',
+      element:<FabricForm/>
     },
     {
       path:'/measurement',
@@ -65,6 +71,14 @@ const routes = createBrowserRouter([
  {
   path:'/readymade',
   element:<ReadyMade/>
+ },
+ {
+  path:'/about',
+  element:<About/>
+ },
+ {
+  path:'/performance',
+  elment:<Performance/>
  }
   ])
 
