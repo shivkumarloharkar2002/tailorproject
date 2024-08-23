@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import UserCard from "../../Component/Register/UserCard";
 import logo from "./../../assets/Login/login-email.png";
 import Navbar from "./../../Component/Navbar/Navbar";
@@ -13,11 +13,11 @@ function Register() {
   const [password, setPassword] = useState();
   const [user_id, setUser_id] = useState();
   const [role, setRole] = useState();
-  const [id, setId] = useState();
+  // const [id, setId] = useState();
   const [edit, setEdit] = useState(false);
-  const navigate = useNavigate();
 
-  const saveNote = async () => {
+  const saveNote = async (e) => {
+    e.preventDefault()
     if (edit === true) {
       try {
         const registerData = await axios.put(
@@ -27,15 +27,13 @@ function Register() {
             email,
             password,
             phone,
-            user_id,
             role,
+            user_id,
           }
         );
-        if (registerData.status === 200) {
-          navigate("/choosefabric");
-          alert("Update Successfully");
-          console.log(registerData);
-        }
+
+        alert("Update Successfully");
+        console.log(registerData);
       } catch (error) {
         console.log(error);
       }
@@ -48,15 +46,13 @@ function Register() {
             email,
             password,
             phone,
-            user_id,
             role,
           }
         );
-        if (registerData.status === 200) {
-          navigate("/choosefabric");
+        // if (registerData.status === 200) {
           alert("Register Successfully");
           console.log(registerData);
-        }
+        // }
       } catch (error) {
         console.log(error);
       }
@@ -70,7 +66,7 @@ function Register() {
     setPassword(item.password);
     setUser_id(item.user_id);
     setRole(item.role);
-    // setId(item.id);
+    // setId(item._id);
 
     setEdit(true);
   };
@@ -87,7 +83,7 @@ function Register() {
 
   const DeleteUser = async (item) => {
     {
-      const { id } = item._id;
+      const  id  = item.user_id;
       await axios.delete(
         `http://localhost:5555/api/userroutes/deleteuser/${id}`
       );
@@ -193,7 +189,7 @@ function Register() {
               }}
             />
 
-            <input
+            {/* <input
               type="number"
               placeholder="User Id"
               className="register-form-input"
@@ -202,7 +198,7 @@ function Register() {
               onChange={(e) => {
                 setUser_id(e.target.value);
               }}
-            />
+            /> */}
 
             <select
               name=""
