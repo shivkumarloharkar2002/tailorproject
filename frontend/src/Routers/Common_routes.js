@@ -11,13 +11,6 @@ import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
 
-import Register from "../View/Register/Register";
-import ReadyMade from "../View/ReadyMade/ReadyMade";
-
-import About from '../View/About/About'
-import Performance from '../View/Performance/Performance'
-import FabricForm from "../View/Admin/FabricForm/FabricForm";
-
 
 
 
@@ -60,11 +53,6 @@ const routes = createBrowserRouter([
     },
     {
 
-      path:'/',
-      element:<Home/>
-    },
-
-  {
       path:'/login',
       element:<Login/>
     },
@@ -80,14 +68,6 @@ const routes = createBrowserRouter([
  {
   path:'/readymade',
   element:<ReadyMade/>
- },
- {
-  path:'/about',
-  element:<About/>
- },
- {
-  path:'/performance',
-  elment:<Performance/>
  }
 
   ])

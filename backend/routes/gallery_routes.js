@@ -1,5 +1,5 @@
 import express from "express"
-import { AddGalleryData, GetGalleryData } from "../controller/Gallery_controller"
+import { AddGalleryData, GetGalleryData } from "../controller/Gallery_controller.js"
 
 const gallery_routes = express.Router()
 
