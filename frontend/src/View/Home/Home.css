@@ -42,3 +42,13 @@
     font-weight: 800;
     font-family: Kaisei Decol;
 }
+
+
+.HCard h5{
+    color: black;
+}
+
+.HCard h5:hover{
+    color: blue;
+    text-decoration: underline;
+}

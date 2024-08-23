@@ -3,14 +3,14 @@
     border: 2px solid rgb(152, 150, 150);
     background-color: rgba(36, 148, 148, 0.54);
     border-radius: 20px;
-    margin: 10px;
+    margin: 30px;
     position: relative;
   }
   
   .Category {
     background-color: orange;
     position: absolute;
-    top: -21px;
+    /* top: -11px; */
     padding: 10px;
     border-radius: 18px 0 10px 0;
     width: 80px;
@@ -24,7 +24,7 @@
     font-family: Kaisei Decol;
     color: black;
 
-    margin-left: 50px;
+    margin:5px 80px;
     /* text-align: center; */
     /* align-items: center; */
   }
