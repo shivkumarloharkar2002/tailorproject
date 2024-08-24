@@ -4,7 +4,7 @@ import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 // import UserCard from "../../Component/Register/UserCard";
 import logo from "./../../assets/Login/login-email.png";
-import Navbar from "./../../Component/Navbar/Navbar";
+// import Navbar from "./../../Component/Navbar/Navbar";
 import Header from "../../Component/Header/Header";
 
 function Register() {
@@ -101,7 +101,7 @@ function Register() {
   return (
     <div>
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="register">
         <div className="available-user register-box">
