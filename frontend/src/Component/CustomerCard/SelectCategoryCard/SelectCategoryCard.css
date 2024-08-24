@@ -3,7 +3,7 @@
     border-radius: 10px;
     height: 350px;
     width: 320px;
-    border: 1px solid rgb(75, 68, 68);
+    /* border: 1px solid rgb(75, 68, 68); */
     box-shadow: 2px 3px 11px 1px #b6b1b1;
     
 }
@@ -32,7 +32,7 @@
         border-radius: 10px;
         height: 35vh;
         width: 70vw;
-        border: 2px solid black;
+        /* border: 2px solid black; */
     }
     .category_main{
         /* border: 3px solid blue ; */
