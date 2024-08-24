@@ -11,13 +11,32 @@ import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
 
+import Register from "../View/Register/Register";
+import ReadyMade from "../View/ReadyMade/ReadyMade";
+import About from '../View/About/About'
+import Performance from '../View/Performance/Performance'
+import FabricForm from "../View/Admin/FabricForm/FabricForm";
+import Gallery from "../View/Gallery/Gallery";
+import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
+import Profile from "../View/Profile/Profile";
+
+
 
 
 
 const routes = createBrowserRouter([
+  
   {
-   path:'/',
+    path:'/',
+    element:<Login/>
+  },
+  {
+   path:'/home',
    element:<Home/>
+  },
+  {
+    path:'/profile',
+    element:<Profile/>
   },
     {
       path:'/customerinfo',
@@ -51,11 +70,21 @@ const routes = createBrowserRouter([
       path:'/orderslip',
       element:<NextOrderingPage/>
     },
-    {
+   {
+    path:'/gallery',
+    element:<Gallery/>
+   },
+   {
+    path:'/totalorders',
+    element:<TotalOrderingPage/>
+   },
 
+
+   {
       path:'/login',
       element:<Login/>
     },
+
     {
       path: "/register",
       element: <Register/>
