@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Invoice.css";
 import search from "./../../assets/Invoice/search.jpg"
 import ShortCard from "../../Component/Invoice/ShortCard";
@@ -40,17 +40,21 @@ const Data = [
 ];
 
 function Invoice() {
+  const [amount, setAmount] = useState(0);
+  // setAmount(amount + info.price)
+
+  
   return (
     <div>
 
       <Header />
 
-      <img src={img} alt=""  className="invoice-logo"/>
+      <img src={img} alt="" className="invoice-logo" />
 
       <div className="invoice-paisa">
         <p className="invoice-total">
           Total Earned Amount <br />
-          <span className="invoice-amount">₹ 3000</span>
+          <span className="invoice-amount">₹ {amount}</span>
         </p>
       </div>
 
@@ -67,10 +71,12 @@ function Invoice() {
 
       <div className="invoice-shortCards">
         {Data.map((info) => {
+
           return (
-
-            <ShortCard name={info.name} date={info.date} price={info.price} id={info.id} />
-
+            <>
+              
+              < ShortCard name={info.name} date={info.date} price={info.price} id={info.id} />
+            </>
           );
         })}
       </div>

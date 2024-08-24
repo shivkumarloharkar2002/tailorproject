@@ -24,13 +24,11 @@ function Login() {
           password,
         }
       );
-      if (logData.status == 200) {
+      if (logData.status === 200) {
         localStorage.setItem("user", JSON.stringify(logData.data.data));
-        navigate("/");
+        navigate("/home");
         alert("Login Successfully");
         console.log(logData);
-      } else {
-        alert("Invalid");
       }
     } catch (error) {
       console.log(error);

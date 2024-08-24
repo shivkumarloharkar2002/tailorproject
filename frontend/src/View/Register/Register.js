@@ -100,9 +100,7 @@ function Register() {
 
   return (
     <div>
-      {/* Navbar */}
-      {/* <Navbar /> */}
-
+      <Header/>
       <div className="register">
         <div className="available-user register-box">
           <h1 className="register-head">Available User</h1>
@@ -191,16 +189,7 @@ function Register() {
               }}
             />
 
-            {/* <input
-              type="number"
-              placeholder="User Id"
-              className="register-form-input"
-              required
-              value={user_id}
-              onChange={(e) => {
-                setUser_id(e.target.value);
-              }}
-            /> */}
+            
 
             <select
               name=""
@@ -217,6 +206,17 @@ function Register() {
               <option value="employee">employee</option>
               <option value="admin">admin</option>
             </select>
+
+            <input
+              type="file"
+              placeholder="User Id"
+              className="register-form-input"
+              required
+              // value={user_id}
+              // onChange={(e) => {
+              //   setUser_id(e.target.value);
+              // }}
+            />
 
             {edit === false ? (
               <button

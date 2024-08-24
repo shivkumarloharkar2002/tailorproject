@@ -1,0 +1,90 @@
+@media screen and (max-width:950px) {
+
+    .profile-back{
+        width: 30vw !important;
+        margin-top: 150px !important;
+    }
+
+    .profile-box {
+        width: 90vw !important;
+        margin: 0 auto !important;
+    }
+
+    .profile-box-img {
+        width: 40vw !important;
+        height: 20vh !important;
+        margin: 20px 0;
+    }
+
+
+    .profile-box-para {
+        width: 90vw !important;
+        margin: 20px 0 !important;
+    }
+}
+
+.profile-back {
+    height: auto;
+    width: 10vw;
+    /* border: 2px solid black; */
+    margin-top: 110px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profile-back-img {
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+
+.profile-back-text {
+    display: block;
+    font-weight: 400;
+}
+
+.link {
+    color: black;
+}
+
+.profile-head {
+    text-align: center;
+    font-weight: 600;
+    font-family: serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+}
+
+.profile-box {
+    /* border: 2px solid black; */
+    width: 85vw;
+    min-height: 65vh;
+    margin: 0 auto;
+    align-content: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profile-box-img {
+    /* border: 2px solid red; */
+    width: 32vw;
+    height: 60vh;
+    border-radius: 50%;
+    display: block;
+    align-self: center;
+}
+
+.profile-box-para {
+    /* border: 2px solid blue; */
+    width: 40vw;
+    height: 50vh;
+    align-self: center;
+    margin: 0 50px;
+    /* align-content: center; */
+}
+
+.profile-box-para-head {
+    margin: 30px 0;
+}
