@@ -1,6 +1,17 @@
+@media screen and (max-width:800px){
+  .Fabform_main{
+    height: auto;
+    box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
+    border-radius: 10px;
+    width: 100vw;
+  }
+}
+
+
 .Fabform_main{
-    /* background-color: rgba(235, 207, 235, 0.367); */
+    background-color:rgba(36, 148, 148, 0.54);
   margin: 50px auto;
+  padding: 20px 0;
   /* border: 2px solid black; */
   height: auto;
   width: 40vw;
@@ -27,13 +38,17 @@
 }
 .fab_label{
   margin: 20px;
-width: 6vw;
+width: 8vw;
+font-size: 20px;
+font-weight: 30;
+
 }
 
 .fab_input{
   margin: 4px;
   width: 25vw;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .fab_btn{
@@ -46,6 +61,7 @@ width: 6vw;
   padding: 7px 30px;
   /* margin: auto; */
   margin: 15px 10px 15px 250px;
+  transition: 1s;
 }
 
 .fab_btn:hover{
@@ -57,4 +73,6 @@ width: 6vw;
   height: 50px;
   margin: 5px;
   padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black ;
 }
