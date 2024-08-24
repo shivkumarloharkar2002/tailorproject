@@ -10,65 +10,98 @@ import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
+import Register from "../View/Register/Register";
+import ReadyMade from "../View/ReadyMade/ReadyMade";
+import About from '../View/About/About'
+import Performance from '../View/Performance/Performance'
+import FabricForm from "../View/Admin/FabricForm/FabricForm";
+import Gallery from "../View/Gallery/Gallery";
+import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
+import Profile from "../View/Profile/Profile";
+
+
+
+
 
 const routes = createBrowserRouter([
+
   {
-    path: "/",
-    element: <Home />,
+    path: '/',
+    element: <Login />
   },
   {
-    path: "/customerinfo",
-    element: <AddCustomer />,
+    path: '/home',
+    element: <Home />
   },
   {
-    path: "/seecustomer_details",
-    element: <ViewCustomer />,
+    path: '/profile',
+    element: <Profile />
   },
   {
-    path: "/selectcategory",
-    element: <SelectCategory />,
+    path:'/about',
+    element:<About/>
   },
   {
-    path: "/choosefabric",
-    element: <SelectFabric />,
+    path: '/customerinfo',
+    element: <AddCustomer />
   },
   {
-    path: "/fabricform",
-    element: <FabricForm />,
+    path: '/seecustomer_details',
+    element: <ViewCustomer />
   },
   {
-    path: "/measurement",
-    element: <Measurement />,
+    path: '/selectcategory',
+    element: <SelectCategory />
   },
   {
-    path: "/order",
-    element: <TodayOrder />,
+    path: '/choosefabric',
+    element: <SelectFabric />
   },
   {
-    path: "/orderslip",
-    element: <NextOrderingPage />,
+    path: '/fabricform',
+    element: <FabricForm />
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: '/measurement',
+    element: <Measurement />
+  },
+  {
+    path: '/order',
+    element: <TodayOrder />
+  },
+  {
+    path: '/orderslip',
+    element: <NextOrderingPage />
+  },
+  {
+    path: '/gallery',
+    element: <Gallery />
+  },
+  {
+    path: '/totalorders',
+    element: <TotalOrderingPage />
   },
   {
     path: "/register",
-    element: <Register />,
+    element: <Register />
   },
-
   {
     path: "/invoice",
-    element: <Invoice />,
+    element: <Invoice />
   },
   {
-    path: "/readymade",
-    element: <ReadyMade />,
+    path: '/readymade',
+    element: <ReadyMade />
   },
-]);
+  {
+    path:'/performance',
+    element: <Performance />
+  }
+
+])
 
 function CommonRoutes() {
-  return <RouterProvider router={routes} />;
+  return <RouterProvider router={routes} />
 }
 
 export default CommonRoutes;

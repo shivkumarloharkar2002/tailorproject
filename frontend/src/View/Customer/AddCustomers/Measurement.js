@@ -8,7 +8,7 @@ import cheast from '../../../Image/cheast.webp'
 import shoulder from '../../../Image/shoulder.webp' 
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
-
+import back from '../../../Image/back.jpg'
 
 
 
@@ -16,6 +16,7 @@ export default function Measurement() {
   return (
     <>
      <header className='top_nav'><Header/></header>
+     <div className='backmain'><Link to='/choosefabric'><img src={back} className='backimg'/>Back</Link></div>
     <div>
     <h1 style={{textAlign:'center'}}>Size</h1>
     <div >
