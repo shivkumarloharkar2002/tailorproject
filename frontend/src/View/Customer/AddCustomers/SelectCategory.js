@@ -15,6 +15,7 @@ function SelectCategory() {
    <>
        <header className='top_nav'><Header/></header>
        <div className='backmain'><Link to='/customerinfo'><img src={back} className='backimg'/>Back</Link></div>
+       <h1 className='center'>Cloths Category</h1>
    <div className='select_cat_main'>
     <Link to='/choosefabric'><SelectCategoryCard cimg={shirts} chead={"Shirt"} /> </Link>
     <SelectCategoryCard cimg={pants}  chead={"Pant"}/> 
