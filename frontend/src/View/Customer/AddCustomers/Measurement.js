@@ -33,9 +33,9 @@ export default function Measurement() {
             <img src={sleeve}  className='size_img'/><br/>
             <input  type='number' placeholder='Sleeve Size / inch' className='size_input'/>
             </div>
-           
+{/*            
         </div>
-        <div className='size_main'>
+        <div className='size_main'> */}
             <div className='size_subdiv'>
             <img src={cheast}  className='size_img'/><br/>
             <input  type='number' placeholder='Cheast Size/ inch' className='size_input'/>

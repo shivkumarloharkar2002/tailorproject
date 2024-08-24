@@ -16,16 +16,32 @@ export default function FabricForm() {
 
   const saveFabric = async (e)=>{
     e.preventDefault()
+
+    // const formData = new FormData();
+    // formData.append('title', title); // 'title' is a field name
+    // formData.append('color', color); // 'color' is a field name
+    // formData.append('price', price); // 'price' is a field name
+    // formData.append('cloth_type', cloth_type); // 'cloth_type' is a field name
+    // formData.append('fabric_type', fabric_type); // 'fabric_type' is a field name
+    // formData.append('pattern', pattern); // 'pattern' is a field name
+    // formData.append('img1', img1); // 'img1' is a field name, and img1 is the file object
+
     try{
-    const Fabricdata = await axios.post("http://localhost:5555/api/fabricroutes/addfabric" , {
+    const Fabricdata = await axios.post("http://localhost:5555/api/fabricroutes/addfabric" , 
+      {
       title:title ,
       color:color,
       price:price,
       cloth_type:cloth_type,
       fabric_type:fabric_type,
       pattern:pattern,
-      img1:img1
-    })
+      // img1:img1
+    }
+    ,{
+      headers: {
+          'Content-Type': 'multipart/form-data'
+      }}
+  )
     console.log(Fabricdata)
     toast.success(Fabricdata.data.msg)
   }
@@ -35,7 +51,7 @@ export default function FabricForm() {
   }
   return (
    <>
-    <form className='Fabform_main'>
+    <form className='Fabform_main' encType="multipart/form-data" method="post">
               <h1 className="center">Fabric</h1>
               
                <label className='fab_label'>Name </label>:
@@ -87,13 +103,13 @@ export default function FabricForm() {
                     <option value="Prints">Prints</option>
                    
                   </select><br/>
-                  <label className='fab_label '> Image </label>:
+                  {/* <label className='fab_label '> Image </label>:
                 <input type='file' placeholder='Fabric Image ' className='fab_input ' name='file'
                  onChange={(e)=>{
-                  setImg(e.target.value)
-                  console.log(e.target.value)
+                  setImg(e.target.files[0])
+                  console.log(e.target.files[0])
                 }}
-                /><br/>
+                /><br/> */}
                 <button className='fab_btn'
                  onClick={saveFabric}>ADD</button> 
         </form>
