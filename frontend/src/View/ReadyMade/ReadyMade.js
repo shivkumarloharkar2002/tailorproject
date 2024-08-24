@@ -2,21 +2,24 @@ import React from 'react'
 import './ReadyMade.css'
 import ReadyMadeCard from '../../Component/ReadyMadeCard/ReadyMadeCard'
 import Shirt1 from '../../Image/Shirt1.png'
-
+import { Link } from 'react-router-dom'
+import back from '../../Image/back.jpg'
 import Header from '../../Component/Header/Header'
 
 export default function ReadyMade() {
   return (
     <>
     <Header/>
+    
     {/* <header><NavbarReady/> </header> */}
     {/* <div className="gallery">
         <h1 className='Gfont'>Gallery</h1>
         <h1 className='Gfont'>Our Designs</h1>
-      </div> */}
+      </div> */}<div className='backmain1'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div>
 
-      <div className='gallery'>
-        <ul className='Glist'>
+      <div className='readymade'>
+        
+        <ul className='Rlist'>
           <li ><a className='Glist_li' href='Shirt'>Shirt</a></li>
           <li ><a className='Glist_li' href='Pant'>Pant</a></li>
           <li ><a className='Glist_li' href='Kurta'>Kurta</a></li>

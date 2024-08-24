@@ -7,12 +7,14 @@ import fab3 from '../../../Image/fab3.jpeg'
 import fab4 from '../../../Image/fab4.jpeg'
 import upload from '../../../Image/upload.png'
 import { Link } from 'react-router-dom'
+import back from '../../../Image/back.jpg'
 import Header from '../../../Component/Header/Header'
 
 export default function SelectFabric() {
   return (
     <>
       <header className='top_nav'><Header /></header>
+      <div className='backmain'><Link to='/selectcategory'><img src={back} className='backimg'/>Back</Link></div>
       <h1 style={{ textAlign: 'center', marginTop: '80px' }}>Fabric</h1>
       <div className='Selfab_main'>
         <Link to='/measurement'> <FabricCard fabricimg={fab1} price={"200"} /></Link>
