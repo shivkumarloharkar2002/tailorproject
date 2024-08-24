@@ -100,8 +100,8 @@ function Register() {
 
   return (
     <div>
-      <Header/>
-      
+      {/* Navbar */}
+      <Navbar />
 
       <div className="register">
         <div className="available-user register-box">

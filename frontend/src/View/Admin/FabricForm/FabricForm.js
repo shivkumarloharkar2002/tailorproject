@@ -6,8 +6,8 @@ export default function FabricForm() {
    <>
     <form className='Fabform_main'>
               <h1 className="center">Fabric</h1>
-                <label className='fab_label'> Image </label>:
-                <input type='text' placeholder='Fabric Image ' className='fab_input'
+                <label className='fab_label '> Image </label>:
+                <input type='file' placeholder='Fabric Image ' className='fab_input '
                 //  onChange={(e)=>{
                 //   setImg(e.target.value)
                 // }}
@@ -56,11 +56,11 @@ export default function FabricForm() {
                 //   }
                   >
                     <option value="Select Pattern" aria-disabled> Select Pattern</option>
-                    <option value="Solid">Shirt</option>
-                    <option value="Checks">Pant</option>
-                    <option value="Strips">Kurta</option>
-                    <option value="Prints">Pyjama</option>
-                    <option value="Safari">Safari</option>
+                    <option value="Solid">Solid</option>
+                    <option value="Checks">Checks</option>
+                    <option value="Strips">Strips</option>
+                    <option value="Prints">Prints</option>
+                   
                   </select><br/>
                 <button className='fab_btn'
                 //  onClick={savefab}
