@@ -1,28 +1,40 @@
 
-import {v2 as cloudinary} from "cloudinary"
+import { v2 as cloudinary } from "cloudinary"
+import Uploadoncloudinary from "../File_upload/Coudinaryfile.js"
+import Fabricmodel from "../models/fabric_model.js"
 
-cloudinary.config({
-    cloud_name:"dcjsbbvdz",
-    api_key:"133689443769167",
-    api_secret:"iPEI_f2aND0WeDHGHjpY6w2YhxQ"
-})
 
-export const AddFabric = async (req,res)=>{
-    const fabric_id = "fabricId" + Math.floor((Math.random()*10000000))
+export const AddFabric =  async (req, res) => {
+console.log("this is file", req.file)
+res.send("hello")
 
-    const file = req.file.path;
-    // cloudinary.uploader.upload(file,(error,result)=>{
-    //     console.log(result);
-    // })
-    try{
-   const uploadimg= await cloudinary.uploader.upload(file)
-   console.log(uploadimg)
-    }
-    catch(e){
-        console.log(e)
-    }
+    // const fabric_id = "fabricId" + Math.floor((Math.random() * 10000000))
 
-    const {title,color,price,cloth_type,fabric_type,pattern,img1} = req.body
-    
+    // const { title, color, price, cloth_type, fabric_type, pattern, img1 } = req.body
+   
+    // try{
+    //     const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
+    //     const fabricdata= await Fabricmodel.create({
+    //        title,color,price,cloth_type,fabric_type,pattern,
+    //        img1:imgurl,
+    //        fabric_id
+    //     })
+    //     res.json({
+    //         success: true,
+    //         data: fabricdata,
+    //         msg: `fabric added`
+    //     })
+    // }
+    // catch(e){
+    //     res.send(e)
+    // }
+}
 
+export const getallfabric = async(req,res)=>{
+    const alldata= await Fabricmodel.find()
+    res.json({
+        success:true,
+        msg:"all fabric",
+        data:alldata
+    })
 }

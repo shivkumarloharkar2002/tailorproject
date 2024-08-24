@@ -52,8 +52,6 @@ const storage = multer.diskStorage({
         return cb(null, `${Date.now()}-${file.originalname}`)
     }
 })
-
-
 // Define the model
 const ItemSchema = new mongoose.Schema({
     name: String,
@@ -66,7 +64,7 @@ const upload = multer({ storage: storage })
 
 app.post("/upload", upload.single("impfile"), async  (req, res) => {
     try {
-        const {name} = req.body
+        const name = req.body
         const image = req.file.path;
 
         const profile = await Item.create({name,image})
@@ -77,6 +75,6 @@ app.post("/upload", upload.single("impfile"), async  (req, res) => {
 
     }
     catch (e) {
-        console.log(e)
+        console.log(e.Error)
     }
 })
