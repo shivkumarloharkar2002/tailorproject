@@ -11,64 +11,70 @@ import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
 import Home from "../View/Home/Home";
 
+
+
+
 const routes = createBrowserRouter([
+  
   {
-    path: "/",
-    element: <Home />,
+   path:'/',
+   element:<Home/>
   },
-  {
-    path: "/customerinfo",
-    element: <AddCustomer />,
-  },
-  {
-    path: "/seecustomer_details",
-    element: <ViewCustomer />,
-  },
-  {
-    path: "/selectcategory",
-    element: <SelectCategory />,
-  },
-  {
-    path: "/choosefabric",
-    element: <SelectFabric />,
-  },
-  {
-    path: "/fabricform",
-    element: <FabricForm />,
-  },
-  {
-    path: "/measurement",
-    element: <Measurement />,
-  },
-  {
-    path: "/order",
-    element: <TodayOrder />,
-  },
-  {
-    path: "/orderslip",
-    element: <NextOrderingPage />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
+    {
+      path:'/customerinfo',
+      element:<AddCustomer/>
+    },
+    {
+      path:'/seecustomer_details',
+      element:<ViewCustomer/>
+    },
+    {
+      path:'/selectcategory',
+      element:<SelectCategory/>
+    },
+    {
+      path:'/choosefabric',
+      element:<SelectFabric/>
+    },
+    {
+      path:'/fabricform',
+      element:<FabricForm/>
+    },
+    {
+      path:'/measurement',
+      element:<Measurement/> 
+    },
+    {
+      path:'/order',
+      element:<TodayOrder/>
+    },
+    {
+      path:'/orderslip',
+      element:<NextOrderingPage/>
+    },
+    {
 
-  {
-    path: "/invoice",
-    element: <Invoice />,
-  },
-  {
-    path: "/readymade",
-    element: <ReadyMade />,
-  },
-]);
+      path:'/login',
+      element:<Login/>
+    },
+    {
+      path: "/register",
+      element: <Register/>
+    },
+  
+    {
+      path: "/invoice",
+      element: <Invoice/>
+    },
+ {
+  path:'/readymade',
+  element:<ReadyMade/>
+ }
 
-function CommonRoutes() {
-  return <RouterProvider router={routes} />;
-}
+  ])
+
+  function CommonRoutes(){
+    return <RouterProvider router={routes} />
+  }
 
 export default CommonRoutes;
