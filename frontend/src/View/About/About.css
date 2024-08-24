@@ -1,0 +1,42 @@
+.abos{
+    display: flex;
+    text-align: center;
+    padding: 50px;
+    margin-top: 60px;
+}
+.abo{
+    display: flex;
+    text-align: center;
+    padding: 50px;
+}
+.abo-img-1{
+    width: 400px;
+   margin-right: 25px;
+   box-shadow: 2px 2px 6px 2px gray;
+}
+.abo-text{
+   text-align: left;
+   margin-left: 25px;
+}
+.abo{
+    display: flex;
+    text-align: center;
+    padding: 50px;
+}
+.abo-img-2{
+    width: 500px;
+    margin-left: 25px;
+    box-shadow: 2px 2px 6px 2px gray;
+}
+.abo-text-2{
+   text-align: right;
+   margin-right: 25px;
+   width: 450px;
+}
+.heding{
+    text-align: center;
+}
+.store-img{
+    width: 90%;
+    margin: 5%;
+}
