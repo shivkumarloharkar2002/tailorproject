@@ -18,8 +18,8 @@ try{
   const uploadData = await cloudinary.uploader.upload(localfilepath,{
         resource_type:"auto"  // file cha type konta ahe (img,video,pdf) check karte, ithe auto kele ahe
     })
-    console.log(uploadData," file has been upload succefuly")
-    return uploadData
+    console.log(uploadData.secure_url," file has been upload succefully")
+    return uploadData.secure_url
 }
 catch(e){
     fs.unlinkSync(localfilepath) // he local la saved keleli file delete kart
