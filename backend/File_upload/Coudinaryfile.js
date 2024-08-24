@@ -1,6 +1,8 @@
 import { v2 as cloudinary } from "cloudinary"
 import fs, { chownSync } from "fs"  // file system (read write remote karyala madat karte)
 
+import dotenv from "dotenv"
+dotenv.config()
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

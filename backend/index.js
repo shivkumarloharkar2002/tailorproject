@@ -6,7 +6,6 @@ import Database from './Database/database.js';
 import Allrouters from './Router/router.js';
 import multer from 'multer';
 
-import fileUpload from 'express-fileupload';
 
 const app = express()
 app.use(express.json())
@@ -15,10 +14,6 @@ const port = 5555
 
 Database()
 
-//file upload karnyasathi
-app.use(fileUpload({
-    userTempfiles:true
-}) )
  
 app.listen(port, () => {
     console.log(`${port} is connected`)
@@ -33,20 +28,10 @@ app.get("/", (req, res) => {
 app.use("/api", Allrouters)
 
 
-
-
-
-
-
-
-
-
-
-
 //middleware
 const storage = multer.diskStorage({
     destination: function (req,file,cb) {
-        return cb(null, "uploads/")
+        return cb(null, "./uploads/")
     },
     filename: function(req,file,cb){
         return cb(null, `${Date.now()}-${file.originalname}`)
@@ -65,7 +50,7 @@ const upload = multer({ storage: storage })
 app.post("/upload", upload.single("impfile"), async  (req, res) => {
     try {
         const name = req.body
-        const image = req.file.path;
+        const image = req.file;
 
         const profile = await Item.create({name,image})
         res.json({
