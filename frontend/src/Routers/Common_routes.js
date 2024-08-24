@@ -5,7 +5,7 @@ import SelectCategory from "../View/Customer/AddCustomers/SelectCategory";
 import SelectFabric from "../View/Customer/AddCustomers/SelectFabric";
 import Measurement from "../View/Customer/AddCustomers/Measurement";
 import Login from "../View/Login/Login";
-import Invoice from '../View/Invoice/Invoice'
+import Invoice from "../View/Invoice/Invoice";
 import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
 import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
