@@ -1,5 +1,5 @@
-.gallery {
-    margin-top: 120px;
+.readymade {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -16,8 +16,10 @@
     border-bottom: 3px solid rgba(36, 148, 148, 0.54);
     cursor: pointer;
 }
-
-.Glist {
+.backmain1{
+    margin-top:120px ;
+}
+.Rlist {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +27,7 @@
     /* border: 1px solid grey; */
     width:80vw;
     height: auto;
-    margin: 20px auto;
+    margin:  auto;
 
 
 }
