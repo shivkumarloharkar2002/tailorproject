@@ -35,7 +35,7 @@ const FabricSchema = new Schema({
     },
     img1:{
         type:String,
-        required:true
+        // required:true
     } 
 },{
     timestamps:true
