@@ -5,7 +5,7 @@ import Fabricmodel from "../models/fabric_model.js"
 
 
 export const AddFabric =  async (req, res) => {
-console.log("this is file", req.file)
+console.log("this is file", req.file.path)
 res.send("hello")
 
     // const fabric_id = "fabricId" + Math.floor((Math.random() * 10000000))
@@ -13,7 +13,7 @@ res.send("hello")
     // const { title, color, price, cloth_type, fabric_type, pattern, img1 } = req.body
    
     // try{
-    //     const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
+        const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
     //     const fabricdata= await Fabricmodel.create({
     //        title,color,price,cloth_type,fabric_type,pattern,
     //        img1:imgurl,

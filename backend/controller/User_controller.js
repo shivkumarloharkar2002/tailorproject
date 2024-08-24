@@ -58,7 +58,9 @@ export const Userregister = async (req, res) => {
 
 export const UserLogin = async (req, res) => {
     const { email, password } = req.body
-
+    if(!email || !password){
+        return res.json({msg:"please fill credential"})
+    }
     try {
         const userlogin = await Usermodel.findOne({ email: email, password: password })
         if (userlogin) {
