@@ -34,7 +34,7 @@ export const Userregister = async (req, res) => {
     if (!user_id || !username || !phone || !email || !role || !password) {
         return res.json({ msg: "Plase fill all fields" })
     }
-    
+
     try {
         const userdata = await Usermodel.create({
             "user_id": user_id, // aplyaya req.body madhun user_id ghaychi nhi te math random madhun genrate honar age
@@ -58,7 +58,9 @@ export const Userregister = async (req, res) => {
 
 export const UserLogin = async (req, res) => {
     const { email, password } = req.body
-
+    if(!email || !password){
+        return res.json({msg:"please fill credential"})
+    }
     try {
         const userlogin = await Usermodel.findOne({ email: email, password: password })
         if (userlogin) {

@@ -18,8 +18,8 @@ import FabricForm from "../View/Admin/FabricForm/FabricForm";
 import Gallery from "../View/Gallery/Gallery";
 import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
 import Profile from "../View/Profile/Profile";
-
-
+import GalleryForm from '../View/GalleryForm/GalleryForm'
+import NextGalleryCard from '../View/Gallery/NextGalleryCard'
 
 
 
@@ -76,6 +76,14 @@ const routes = createBrowserRouter([
   {
     path: '/gallery',
     element: <Gallery />
+  },
+  {
+    path:'/galleryform',
+    element:<GalleryForm/>
+  },
+  {
+    path:'/NextGalleryCard/:id',
+    element:<NextGalleryCard/>
   },
   {
     path: '/totalorders',
