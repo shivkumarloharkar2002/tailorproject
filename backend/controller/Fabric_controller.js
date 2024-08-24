@@ -5,8 +5,13 @@ import Fabricmodel from "../models/fabric_model.js"
 
 
 export const AddFabric =  async (req, res) => {
-console.log("this is file", req.file.path)
-const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
+// console.log("this is file", req.file.path)
+console.log("this is file", req.file)
+
+// const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
+const imgurl= await Uploadoncloudinary(req.file, "imgurl")
+
+
 // const imgurl= await Uploadoncloudinary(req.file.path)
 console.log("this is cloudinary img url", imgurl)
 
