@@ -28,7 +28,7 @@ export default function Header() {
                 <a class="ncolor  active" href="/invoice">Invoice</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-             <a href="/"> <img className='proImg' src={profile}></img></a>
+             <a href="/profile"> <img className='proImg' src={profile}></img></a>
               </li>
 
 

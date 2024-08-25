@@ -9,6 +9,10 @@ const GallerySchema = new Schema({
         type: String,
         // required: true
     },
+    description: {
+        type: String,
+    },
+
     price: {
         type: Number,
         required: true
@@ -16,7 +20,7 @@ const GallerySchema = new Schema({
     },
     color: {
         type: String,
-        required: true,
+        // required: true,
 
     },
     cloth_type: {
