@@ -26,19 +26,19 @@ function Login() {
       );
       if (logData.status === 200) {
         localStorage.setItem("user", JSON.stringify(logData.data.data));
+        toast("Login Successfully");
         navigate("/home");
-        alert("Login Successfully");
         console.log(logData);
       }
-    } catch (error) {
-      console.log(error);
+    } catch {
+      toast.error("Invalid Email or Password");
     }
   };
 
   return (
     <div>
       <div className="login">
-        <form action="" className="login-form">
+        <form action="" className="login-form" onSubmit={loginData}>
           <div className="login-imgs">
             <img src={logo} alt="logo" className="login-img" />
             <img
@@ -80,12 +80,11 @@ function Login() {
             type="submit"
             value="Log In"
             className="login-form-submit"
-            onClick={loginData}
+            // onClick={loginData}
           />
         </form>
+        <ToastContainer />
       </div>
-
-      <ToastContainer />
     </div>
   );
 }
