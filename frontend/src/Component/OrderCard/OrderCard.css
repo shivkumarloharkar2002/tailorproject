@@ -1,40 +1,45 @@
-
 .OName {
-    border: 2px solid rgb(152, 150, 150);
-    background-color: rgba(36, 148, 148, 0.54);
-    border-radius: 20px;
-    margin: 30px;
-    position: relative;
-  }
-  
-  .Category {
-    background-color: orange;
-    position: absolute;
-    /* top: -11px; */
-    padding: 10px;
-    border-radius: 18px 0 10px 0;
-    width: 80px;
-    color: black;
+  border: 2px solid rgb(152, 150, 150);
+  background-color: rgba(36, 148, 148, 0.54);
+  border-radius: 20px;
+  margin: 30px;
+  position: relative;
+}
 
-    text-align: center;
-  
-  }
-  
-  .OrderN {
-    font-family: Kaisei Decol;
-    color: black;
+.Order_short {
+  display: inline-block;
 
-    margin:5px 80px;
-    /* text-align: center; */
-    /* align-items: center; */
-  }
-  
-  .Date {
-    text-align: end;
-    color: black;
-    margin-right: 10px;
-  }
-  .link{
-    text-decoration: none;
-   
-  }
+}
+
+.Category {
+  background-color: orange;
+  position: absolute;
+  /* top: -11px; */
+  padding: 6px;
+  border-radius: 18px 0 10px 0;
+  width: 80px;
+  color: black;
+  text-align: center;
+
+}
+
+.OrderN {
+  font-family: Kaisei Decol;
+  color: black;
+  font-size: 22px;
+
+  margin: 5px 80px;
+  /* text-align: center; */
+  /* align-items: center; */
+}
+
+.Date {
+  text-align: end;
+  color: black;
+  margin-right: 10px;
+}
+
+.link {
+  text-decoration: none;
+
+}

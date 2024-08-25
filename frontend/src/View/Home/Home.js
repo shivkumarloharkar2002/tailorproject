@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom'
 export default function Home() {
     return (
         <>
+
             <Header />
             <div className='MainHome'>
                 <div className='HCard'>
@@ -37,35 +38,35 @@ export default function Home() {
                 <div className='HCard'>
                     <img className='Homeimg' src={img3} />
                     <h3 className='HText'>Total Order</h3>
-                    <h5>See Details </h5>
+                    <Link to='/totalorders' className="link"> <h5 >See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className='Homeimg' src={img4} />
                     <h3 className='HText'>Gallery</h3>
-                    <h5>See Details </h5>
+                    <Link to='/gallery' className="link"> <h5 >See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className='Homeimg' src={img5} />
                     <h3 className='HText'>Assign Order</h3>
-                    <h5>See Details </h5>
+                    <Link to='/order' className="link"> <h5 >See Details </h5></Link>
                 </div>
 
                 <div className='HCard'>
                     <img className='Homeimg' src={img7} />
                     <h3 className='HText'>Ready Made</h3>
-                    <h5>See Details </h5>
+                    <Link to='/readymade' className="link"> <h5 >See Details </h5></Link>
                 </div>
 
 
                 <div className='HCard'>
                     <img className='Homeimg' src={img6} />
                     <h3 className='HText'>Manage Employee</h3>
-                    <h5>See Details </h5>
+                    <Link to='/register' className="link"> <h5 >See Details </h5></Link>
                 </div>
                 <div className='HCard'>
                     <img className='Homeimg' src={img8} />
                     <h3 className='HText'>Performance</h3>
-                    <h5>See Details </h5>
+                    <Link to='/performance' className="link"> <h5 >See Details </h5></Link>
                 </div>
             </div>
 

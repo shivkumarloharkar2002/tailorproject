@@ -1,7 +1,9 @@
 import { Schema, model } from "mongoose";
 const GallerySchema = new Schema({
 
-    
+    imgurl:{
+        type: String,
+    },
     imgname: {
         type: String,
         // required: true
@@ -14,7 +16,7 @@ const GallerySchema = new Schema({
     color: {
         type: String,
         required: true,
-        unique: true
+
     },
     cloth_type: {
         type: String,

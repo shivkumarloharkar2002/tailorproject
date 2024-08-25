@@ -1,43 +1,46 @@
 import React from 'react'
 import './NextOrderingpage.css'
 import Header from '../Header/Header'
+import img from "./../../assets/Login/logo.png"
 
 export default function NextOrderingPage() {
     return (
         <>
             <Header />
+
+            <img src={img} alt="" className="invoice-logo" />
             <div className='Npage'>
-                <h1 className='Next'>Shivkumar Loharkar</h1>
-                <h3>Number:8767234565</h3>
-                <h3>Address:Shrigonda</h3>
-                <h3>Email ID:shivkumar@gmail.com</h3>
-                <h1 className='Next'>Orders</h1>
+                <h2 className='Next'>Shivkumar Loharkar</h2>
+                <h5>Number:8767234565</h5>
+                <h5>Address:Shrigonda</h5>
+                <h5>Email ID:shivkumar@gmail.com</h5>
+                <h2 className='Next'>Orders</h2>
                 <div className='NextOrder'>
-                    <h2>Shirt :-</h2>
-                    <div ><h3 className='Nprice'>180/-Per M</h3></div>
+                    <h4>Shirt :-</h4>
+                    <div ><h5 className='Nprice'>180/-Per M</h5></div>
                     <div className='fabric'></div>
                 </div>
 
-                <h1 className='Next'>Size</h1>
+                <h2 className='Next'>Size</h2>
                 <div className='Nsize'>
                     <div>
-                        <h4>Collar:-<span className='Nspan'>16 in</span></h4>
-                        <h4>Shirt Length:-<span className='Nspan'>30 in</span></h4>
-                        <h4>Sleeve Size:-<span className='Nspan'>26.5 in</span></h4>
+                        <h5>Collar:-<span className='Nspan'>16 in</span></h5>
+                        <h5>Shirt Length:-<span className='Nspan'>30 in</span></h5>
+                        <h5>Sleeve Size:-<span className='Nspan'>26.5 in</span></h5>
                     </div>
                     <div>
-                        <h4>Chest:-<span className='Nspan'>20.5 in</span></h4>
-                        <h4>Waist:-<span className='Nspan'>18.5 in</span></h4>
-                        <h4>Shoulder:-<span className='Nspan'>19 in</span></h4>
+                        <h5>Chest:-<span className='Nspan'>20.5 in</span></h5>
+                        <h5>Waist:-<span className='Nspan'>18.5 in</span></h5>
+                        <h5>Shoulder:-<span className='Nspan'>19 in</span></h5>
                     </div>
 
                 </div>
-                <h1 className='Next'>Rs.650</h1>
+                <h2 className='Next'>Rs.650</h2>
 
                 <div className='NLastpage'>
                     <div className='LastN'>
-                        <h3 className='LastText'>Send</h3>
-                        <h3 className='LastText'>8767899362</h3>
+                        <h4 className='LastText'>Send</h4>
+                        <h4 className='LastText'>8767899362</h4>
                     </div>
                     <div className='LastN'>
                         <h3 className='LastText'>Print Measurement</h3>

@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom'
 export default function OrderCard({category,time,name,id}) {
   return (
     <>
-     <Link to={'/orderslip'} className='link'>
+    <div className='Order_short'>
+    <Link to={'/orderslip'} className='link'>
      <div className='OName'>
-        <h4 className='Category'>{category}</h4>
-        <h4 className='Date'>{time}</h4>
-        <h1 className='OrderN'>{name}</h1>
+        <h6 className='Category'>{category}</h6>
+        <h6 className='Date'>{time}</h6>
+        <h6 className='OrderN'>{name}</h6>
       </div>
      </Link>
+    </div>
     </>
   )
 }
