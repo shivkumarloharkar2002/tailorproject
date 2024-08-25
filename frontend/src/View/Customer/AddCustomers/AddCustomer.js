@@ -8,7 +8,7 @@ export default function AddCustomer() {
   return (
     <>
     <header className='top_nav'><Header/></header>
-    <div className='backmain'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div>
+    <div className='backmain'><Link to='/home'><img src={back} className='backimg'/></Link></div>
     <form className='customer_form'>
       <h1 className='form_head'>Customer Information</h1>
       <input type='text' placeholder='Customer Name' className='customer_input'/><br/>

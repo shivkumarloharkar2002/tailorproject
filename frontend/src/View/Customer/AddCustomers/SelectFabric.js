@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './SelectFabric.css'
 import FabricCard from '../../../Component/CustomerCard/FabricCard/FabricCard'
 import fab1 from '../../../Image/fab1.jpeg'
@@ -10,9 +10,12 @@ import { Link } from 'react-router-dom'
 import back from '../../../Image/back.jpg'
 import Header from '../../../Component/Header/Header'
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function SelectFabric() {
 
+
+  const [ fabric , setFabric] = useState([]);
   const [file, setFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -21,16 +24,37 @@ export default function SelectFabric() {
     }
   };
 
+  const GetFabricdata= async()=>{
+    const fabricd =await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    setFabric(fabricd.data.data)
+    console.log(fabricd.data.data)
+  }
+
+
+  useEffect(
+    ()=>{
+      GetFabricdata();
+    },[]
+  )
   return (
     <>
       <header className='top_nav'><Header /></header>
       <div className='backmain'><Link to='/selectcategory'><img src={back} className='backimg'/>Back</Link></div>
       <h1 style={{ textAlign: 'center', marginTop: '10px' }}>Fabric</h1>
       <div className='Selfab_main'>
-        <Link to='/measurement'> <FabricCard fabricimg={fab1} price={"200"} /></Link>
-        <FabricCard fabricimg={fab2} price={"200"} />
-        <FabricCard fabricimg={fab3} price={"200"} />
-        <FabricCard fabricimg={fab4} price={"200"} />
+         {
+         fabric.map(
+          (data)=>{
+            return(
+              <>
+               <Link to='/measurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
+              </>
+            )
+          }
+         )  
+        } 
+        
+       
 
         {/* <div className='fabric_main1'>
           <img src={upload} /><br />
