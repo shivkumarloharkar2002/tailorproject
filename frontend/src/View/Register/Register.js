@@ -207,16 +207,7 @@ function Register() {
               <option value="admin">admin</option>
             </select>
 
-            <input
-              type="file"
-              placeholder="User Id"
-              className="register-form-input"
-              required
-              // value={user_id}
-              // onChange={(e) => {
-              //   setUser_id(e.target.value);
-              // }}
-            />
+            
 
             {edit === false ? (
               <button
