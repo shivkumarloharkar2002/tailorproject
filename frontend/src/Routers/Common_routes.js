@@ -98,7 +98,7 @@ const routes = createBrowserRouter([
     element: <Invoice />
   },
   {
-    path:'/invoiceInfo/${id}',
+    path:'/invoiceInfo/:id',
     element:<InvoiceInfo/>
   },
   {
