@@ -5,8 +5,11 @@ import Fabricmodel from "../models/fabric_model.js"
 
 
 export const AddFabric =  async (req, res) => {
+
 console.log("this is file", req.file.path)
+
 // const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
+
 const imgurl= await Uploadoncloudinary(req.file.path)
 
     const fabric_id = "fabricId" + Math.floor((Math.random() * 10000000))
