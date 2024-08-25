@@ -73,20 +73,28 @@ export default function Gallery() {
   const [galleryData, setGalleryData] = useState([]);
 
   let GetAllData = async () => {
-      // pute the get api path
-      let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
-      setGalleryData(gallery.data.data)
-      console.log(gallery.data)
+    // pute the get api path
+    let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
+    setGalleryData(gallery.data.data)
+    console.log(gallery.data)
   }
   useEffect(
-      () => {
-          GetAllData();
-      }, []
+    () => {
+      GetAllData();
+    }, []
   )
 
 
 
-  const [type, setType] = useState("shirt")
+  const [toggle, setToggle] = useState(false);
+  let All = () => {
+    setToggle((preState) => !preState);
+  };
+
+  console.log(galleryData)
+
+
+  // const [type, setType] = useState("shirt")
 
 
 
@@ -98,7 +106,7 @@ export default function Gallery() {
       <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div>
 
 
-
+      {/* 
       <div className="gallery" >
         <ul className='Glist'>
           <p onClick={() => {
@@ -123,8 +131,6 @@ export default function Gallery() {
             setType("safari")
           }} >Suit Safari</p>
 
-
-
         </ul>
       </div>
       <hr className='hr' />
@@ -134,14 +140,73 @@ export default function Gallery() {
           console.log(data)
           if (type === data.type)
             return (
-              // <div className='GalleryBody'>
+             
               <GalleryCard className='Margin' img={data.img} id={data.id} imgname={data.price}/>
-              // </div>
+             
             )
         })
+      } */}
 
 
+      {/* 
+      <div className='heading'>
+        <h3 className="heading-h">All </h3>
+        <p className="heading-a" onClick={All}>
+          <span className='see'>  {" "}
+            see all</span>
+        </p>
+      </div> */}
+
+
+      {
+        galleryData.map((data) => {
+          return (
+            <>
+              <div className='dis'>
+                <GalleryCard img={data.img} title={data.title} id={data._id} />
+              </div>
+
+            </>
+          )
+        }
+        )
       }
+
+
+      {/* {toggle ? (
+                <div className="all">
+                    {
+                        galleryData.map((data) => {
+                            return (
+                                <>
+                                    <div className='dis'>
+                                        <GalleryCard img={data.img} title={data.title} id={data._id} />
+                                    </div>
+                                    
+                                </>
+                            )
+                        }
+                        )
+                    }
+                </div>
+            ) : (
+                <div className="box1">
+                    {
+                        galleryData.map((data) => {
+                            return (
+                                <>
+                                    <div className='dis'>
+                                        <GalleryCard img={data.img} id={data._id} />
+                                    </div>
+                                </>
+                            )
+                        }
+                        )
+                    }
+                </div>
+            )} */}
+
+
 
 
 
@@ -164,29 +229,6 @@ export default function Gallery() {
 
 
 
-      {/* <div className='GalleryBody'>
-        <div className='GalleryM'>
-          <img className='galleryimg' src={shirt1}></img>
-          <img className='galleryimg' src={shirt2}></img>
-          <img className='galleryimg' src={shirt3}></img>
-          <img className='galleryimg' src={shirt4}></img>
-        </div>
-
-        <div className='GalleryM'>
-          <img className='galleryimg' src={shirt5}></img>
-          <img className='galleryimg' src={shirt6}></img>
-          <img className='galleryimg' src={shirt7}></img>
-          <img className='galleryimg' src={shirt8}></img>
-        </div>
-      </div> */}
-
-
-      {/* total pages */}
-      {/* <a class="bus" target="boss" href="./bus.html">Bus</a>
-      <a class="bus" target="boss" href="./truck.html">Truck</a>
-      <a class="bus" target="boss" href="./lightvehicle.html">Light Vehicles</a>
-      <a class="bus" target="boss" href="./defence.html"> Defence</a>
-      <iframe class="aa" src="./bus.html" name="boss" frameborder="0"></iframe> */}
     </>
   )
 }
