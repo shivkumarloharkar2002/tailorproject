@@ -20,7 +20,7 @@ import TotalOrderingPage from "../View/TotalOrderingPage/TotalOrderingPage";
 import Profile from "../View/Profile/Profile";
 import GalleryForm from '../View/GalleryForm/GalleryForm'
 import NextGalleryCard from '../View/Gallery/NextGalleryCard'
-
+import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
 
 
 const routes = createBrowserRouter([
@@ -96,6 +96,10 @@ const routes = createBrowserRouter([
   {
     path: "/invoice",
     element: <Invoice />
+  },
+  {
+    path:'/invoiceInfo/${id}',
+    element:<InvoiceInfo/>
   },
   {
     path: '/readymade',
