@@ -9,8 +9,13 @@ import goods from './goods.png';
 export default function Performance() {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
+      <h2 className='cent'>Name :-</h2>
+      <h2 className='cent'>Email ID :-</h2>
+      <h2 className='cent'>Phone :-</h2>
+      <h2 className='cent'>Role :-</h2>
       <div className='parfom'>
+
         <div className='hedi'>
             <p className='numh' >Today's Performance</p>
         </div>
