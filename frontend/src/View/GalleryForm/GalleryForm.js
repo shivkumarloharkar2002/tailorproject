@@ -7,7 +7,8 @@ import Header from '../../Component/Header/Header'
 export default function GalleryForm() {
 
 
-    const [imgname, setImgname] = useState('')
+    const [title, setTitle] = useState('')
+    const [img, setImg] = useState('')
     const [price, setPrice] = useState('')
     const [color, setColor] = useState('')
     const [cloth_type, setCloth_type] = useState('')
@@ -17,7 +18,8 @@ export default function GalleryForm() {
     const saveGallery = async () => {
 
         const CreateGalleryData = await axios.post('http://localhost:5555/api/gallaryroutes/addgallery', {
-            "imgname": imgname,
+            "title": title,
+            "img": img,
             "price": price,
             "color": color,
             "cloth_type": cloth_type,
@@ -40,8 +42,13 @@ export default function GalleryForm() {
 
                 {/* <label className='fab_label'>Img Name </label>:
                 <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
-                    setImgname(e.target.value)
+                    setTitle(e.target.value)
                 }} /><br /> */}
+
+                <label className='fab_label'>Img_url </label>:
+                <input type='text' placeholder='Image url ' className='fab_input' onChange={(e) => {
+                    setImg(e.target.value)
+                }} /><br />
 
                 <label className='fab_label'>Price </label>:
                 <input type='text' placeholder='Img Price ' className='fab_input' onChange={(e) => {
@@ -75,7 +82,7 @@ export default function GalleryForm() {
                     }
                     }>
                     <option value="Select Pattern" aria-disabled>  Select Pattern</option>
-                    <option value="solide">Solide</option>
+                    <option value="solid">Solid</option>
                     <option value="checks">Checks</option>
                     <option value="strips">Strips</option>
                     <option value="prints">Prints</option>
@@ -95,7 +102,7 @@ export default function GalleryForm() {
                     <option value="XXL">XXL</option>
 
                 </select><br />
-                
+
                 {/* <input type='file'/> */}
 
                 <button className='fab_btn' onClick={saveGallery}>ADD</button>

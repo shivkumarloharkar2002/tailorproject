@@ -21,6 +21,7 @@ export default function NextGalleryCard() {
         }, []
     )
 
+
     return(
         <>
         {
@@ -31,6 +32,7 @@ export default function NextGalleryCard() {
             <Header/>
 
             <div>
+                <img src={data.img}></img>
                 <h1>{data.imgname}</h1>
                 <h3>{data.price}</h3>
                 <h3>{data.color}</h3>

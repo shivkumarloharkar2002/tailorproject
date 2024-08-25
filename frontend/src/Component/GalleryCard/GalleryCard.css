@@ -1,9 +1,9 @@
-.Galleryimg {
+/* .Galleryimg {
     height: 260px;
     width: 275px;
     border: 1px solid gainsboro;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    /* margin: 10px; */
+    margin: 10px;
     border-radius: 20px;
     transition: 2s;
     margin: 10px 0;
@@ -20,4 +20,13 @@
     justify-content: space-evenly;
     margin: 10px 20px;
 
+} */
+
+
+.card{
+    height: 300px;
+    
+    /* margin-top: 10px; */
+    box-shadow: 10px 10px 5px lightblue;
+ 
 }
