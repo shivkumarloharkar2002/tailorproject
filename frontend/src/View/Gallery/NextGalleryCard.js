@@ -12,7 +12,7 @@ export default function NextGalleryCard() {
 
     let GetAllData = async () => {
         // pute the get api path
-        let gallery = await axios.get('');
+        let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
         setGalleryData(gallery.data)
     }
     useEffect(

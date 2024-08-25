@@ -16,19 +16,19 @@ export default function Header() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nmain  mx-5">
               <li class="nav-item  mx-5 fs-5 ">
-                <a class=" active ncolor" aria-current="page" href="/">Home</a>
+                <a class=" active ncolor" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
                 <a class="ncolor active" href="/about">About</a>
               </li>
-              <li class="nav-item  mx-5 fs-5">
+              {/* <li class="nav-item  mx-5 fs-5">
                 <a class="ncolor  active" href="/customerinfo">Contact</a>
+              </li> */}
+              <li class="nav-item  mx-5 fs-5">
+                <a class="ncolor  active" href="/invoice">Invoice</a>
               </li>
               <li class="nav-item  mx-5 fs-5">
-                <a class="ncolor  active" href="/tours">Invoice</a>
-              </li>
-              <li class="nav-item  mx-5 fs-5">
-             <a href="/login"> <img className='proImg' src={profile}></img></a>
+             <a href="/"> <img className='proImg' src={profile}></img></a>
               </li>
 
 

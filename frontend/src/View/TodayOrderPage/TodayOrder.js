@@ -3,6 +3,9 @@ import React from 'react'
 import img from './hanger.png'
 import './TodayOrder.css'
 import OrderCard from '../../Component/OrderCard/OrderCard'
+import back from './back.jpg'
+import { Link } from 'react-router-dom'
+
 import Header from '../../Component/Header/Header'
 
 
@@ -46,23 +49,35 @@ export default function TodayOrder() {
 
     return (
         <>
-        <Header/>
-           <div className='MainBody'>
-           <div className='MainOrder'>
+            <Header />
+            <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div>
+            <div className='MainBody'>
+                {/* <div className='backmain'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div> */}
+
+                {/* <div className='MainOrder'>
                 <div> <img className='Orderimg' src={img}></img></div>
                 <div><h2 className='Otext'>Today Orders</h2></div>
+            </div> */}
+
+                <div className="invoice-input">
+                    <img src={img} alt="" className="invoice-icon" />
+                    <input
+                        type="text"
+                        className="invoice-inputs"
+                        placeholder="Today Orders"
+                    />
+                </div>
+                <hr className='HR' />
+                {
+                    CardData.map((data) => {
+                        return (
+                            <OrderCard category={data.category} time={data.time} name={data.name} id={data._id} />
+                        )
+                    })
+
+
+                }
             </div>
-
-            {
-                CardData.map((data) => {
-                    return (
-                        <OrderCard category={data.category} time={data.time} name={data.name} id={data._id} />
-                    )
-                })
-
-
-            }
-           </div>
         </>
     )
 }

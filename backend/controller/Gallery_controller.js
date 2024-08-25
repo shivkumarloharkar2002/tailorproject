@@ -1,10 +1,17 @@
+import Uploadoncloudinary from "../File_upload/Coudinaryfile.js"
 import GalleryModel from "../models/Gallerymodel.js"
 
 export const AddGalleryData = async (req,res)=>{
     const {imgname,price,color,cloth_type,pattern,size}=req.body
 
+// console.log("this is file",req.file.path)
+
+// const imgurl=await Uploadoncloudinary(req.file.path)
+// console.log ("this is cloudinery imgurl",imgurl)
+
     try{
         const GalleryData=await GalleryModel.create({
+            "imgurl":imgurl,
             "imgname":imgname,
             "price":price,
             "color":color,
@@ -27,21 +34,12 @@ export const AddGalleryData = async (req,res)=>{
 
 // get api
 export const GetGalleryData = async (req,res)=>{
-    const Alldata=await GalleryModel.find()
+    const GetAllData = await GalleryModel.find()
     res.json({
         success:true,
         msg:" All Gallery Data Fetched Successfully",
-        data:Alldata
+        data:GetAllData
     })
 }
-
-
-
-
-
-
-
-
-
 
 

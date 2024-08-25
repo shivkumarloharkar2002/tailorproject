@@ -33,25 +33,27 @@ export default function GalleryForm() {
 
     return (
         <>
-            <Header />
-            <form>
-                <h1>Add Gallery</h1>
-                <label className='booklabel'>Img Name </label>:
-                <input type='text' placeholder='Img Name ' className='bookinp' onChange={(e) => {
-                    setImgname(e.target.value)
-                }} /><br />
+            {/* <Header /> */}
+            <form className='Fabform_main'>
+                <h1 className="center">Add Gallery</h1>
 
-                <label className='booklabel'>Price </label>:
-                <input type='text' placeholder='Img Price ' className='bookinp' onChange={(e) => {
+
+                {/* <label className='fab_label'>Img Name </label>:
+                <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
+                    setImgname(e.target.value)
+                }} /><br /> */}
+
+                <label className='fab_label'>Price </label>:
+                <input type='text' placeholder='Img Price ' className='fab_input' onChange={(e) => {
                     setPrice(e.target.value)
                 }} /><br />
 
-                <label className='booklabel'>Color </label>:
-                <input type='text' placeholder='Img Color ' className='bookinp' onChange={(e) => {
+                <label className='fab_label'>Color </label>:
+                <input type='text' placeholder='Img Color ' className='fab_input' onChange={(e) => {
                     setColor(e.target.value)
                 }} /><br />
 
-                <label className='booklabel'>cloth_type</label>:
+                <label className='fab_label'>Cloth_type</label>:
                 <select className='select'
                     onChange={(e) => {
                         setCloth_type(e.target.value)
@@ -66,7 +68,7 @@ export default function GalleryForm() {
 
                 </select><br />
 
-                <label className='booklabel'>Pattern</label>:
+                <label className='fab_label'>Pattern</label>:
                 <select className='select'
                     onChange={(e) => {
                         setPattern(e.target.value)
@@ -79,7 +81,7 @@ export default function GalleryForm() {
                     <option value="prints">Prints</option>
                 </select><br />
 
-                <label className='booklabel'>Size</label>:
+                <label className='fab_label'>Size</label>:
                 <select className='select'
                     onChange={(e) => {
                         setSize(e.target.value)
@@ -93,7 +95,10 @@ export default function GalleryForm() {
                     <option value="XXL">XXL</option>
 
                 </select><br />
-                <button className='bookSbtn' onClick={saveGallery}>ADD</button>
+                
+                {/* <input type='file'/> */}
+
+                <button className='fab_btn' onClick={saveGallery}>ADD</button>
 
 
             </form>
