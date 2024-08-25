@@ -1,0 +1,21 @@
+@media screen and (max-width:800px){
+    .select_cat_main{
+        /* border: 5px dotted plum; */
+        width: 10vw;
+        margin: auto;
+        overflow-x: hidden;
+    }
+}
+*{
+    text-decoration: none;
+}
+
+.select_cat_main{
+    /* text-decoration: none; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* border: 5px dotted plum; */
+    width: 75.5vw;
+    margin:40px auto;
+}

@@ -44,8 +44,9 @@
     margin-top: 60px;
 }
 
+
 .backimg{
-    height: 30px;
+    height: 40px;
 }
 @media screen and (max-width:800px )  {
     .customer_form{

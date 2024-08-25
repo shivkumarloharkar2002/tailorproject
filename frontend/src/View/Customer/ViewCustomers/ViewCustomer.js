@@ -63,9 +63,10 @@ export default function ViewCustomer() {
 
           return (
             <>
-           
+           <Link to='/viewcategory'>
               < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
            
+           </Link>
             </>
           );
         })}
