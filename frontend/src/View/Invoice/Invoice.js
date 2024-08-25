@@ -4,7 +4,7 @@ import search from "./../../assets/Invoice/search.jpg";
 import ShortCard from "../../Component/Invoice/ShortCard";
 import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
-import img from "./../../assets/Login/logo.png";
+import img from "./../../assets/Login/logo.png"; 
 import back from "./../../assets/Back/back.jpg";
 
 const Data = [
