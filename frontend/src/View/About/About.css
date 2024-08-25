@@ -2,7 +2,14 @@
     display: flex;
     text-align: center;
     padding: 5%;
-    margin-top: 15vh;
+    margin-top: 10%;
+}
+@media only screen and (max-width:600px){
+    .abos{
+        flex-wrap: wrap;
+        margin-top: 30%;
+        display: block;
+    }
 }
 .abo{
     display: inline-block;
@@ -10,17 +17,53 @@
     padding: 0 5%;
     margin: -5% 0;
 }
+@media only screen and (max-width:600px){
+    .abo{
+        flex-wrap: wrap;
+        margin-top: 30%;
+        display: block;
+    }
+}
+.aboss{
+    display: inline-block;
+    text-align: center;
+    padding: 0 5%;
+    margin: -5% 0;
+}
+@media only screen and (max-width:600px){
+    .aboss{
+        flex-wrap: wrap;
+        margin-top: 30%;
+        display: block;
+    }
+}
 .abo-img-1{
     width: 40%;
     height: 30%;
-   margin-right: 2vw;
+   margin-right: 2%;
+   margin-bottom: 2%;
    box-shadow: 2px 2px 6px 2px gray;
+}
+@media only screen and (max-width:600px){
+    .abo-img-1{
+        width: 90%;
+        height: 100%;
+        margin-bottom: 5%;
+    }
 }
 .abo-text{
    text-align: left;
-   margin-left: 2vw;
-   font-size: 1.5vw;
+   margin-left: 2%;
+   font-size: 12pt;
    width: 55%;
+}
+@media only screen and (max-width:600px){
+    .abo-text{
+        text-align: center;
+        width: 90%;
+        align-self: center;
+        font-size: 14pt;
+    }
 }
 .abo{
     display: flex;
@@ -30,18 +73,35 @@
 .abo-img-2{
     width: 40%;
     height: 30%;
-    margin-left: 2vw;
+    margin:-25% 0 10% 60%;
     box-shadow: 2px 2px 6px 2px gray;
+}
+@media only screen and (max-width:600px){
+    .abo-img-2{
+        width: 90%;
+        height: 100%;
+        margin: 10% 0% -15% 0;
+    }
 }
 .abo-text-2{
    text-align: right;
-   margin-right: 2vw;
-   font-size: 1.5vw;
+   margin-right: 2%;
+   font-size: 12pt;
    width: 55%;
+}
+@media only screen and (max-width:600px){
+    .abo-text-2{
+        text-align: center;
+        width: 90%;
+        align-self: center;
+        font-size: 14pt;
+        margin-top: -20%;
+        margin-left: 5%;
+    }
 }
 .heding{
     text-align: center;
-    font-size: 2vw;
+    font-size: 16pt;
 }
 .store-img{
     width: 90vw;
