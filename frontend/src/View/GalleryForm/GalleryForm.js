@@ -64,16 +64,17 @@ export default function GalleryForm() {
             <form className='Fabform_main'>
                 <h1 className="center">Add Gallery</h1>
 
+                <label className='fab_label'>Img_url </label>:
+                <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
+                    setImg(e.target.files[0])
+                }} /><br />
 
                 <label className='fab_label'> Name </label>:
                 <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
                 }} /><br />
 
-                <label className='fab_label'>Img_url </label>:
-                <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
-                    setImg(e.target.files[0])
-                }} /><br />
+                
 
                 <label className='fab_label'>Description </label>:
                 <input type='text' placeholder='Description ' className='fab_input' onChange={(e) => {

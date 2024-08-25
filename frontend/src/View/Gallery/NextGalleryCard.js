@@ -55,7 +55,7 @@ export default function NextGalleryCard() {
                                             <h4>Size:-<span className='Span s'>{data.size} </span></h4>
                                             <h4>Price:- <span className='Span pr'>₹ {data.price} /-</span></h4>
 
-                                            <a href='/measurement'><button className='OrderB'>Order</button></a>
+                                            <a href='/addmeasurement'><button className='OrderB'>Order</button></a>
                                         </div>
 
                                     </div>
