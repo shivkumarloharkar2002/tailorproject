@@ -22,6 +22,8 @@ import GalleryForm from '../View/GalleryForm/GalleryForm'
 import NextGalleryCard from '../View/Gallery/NextGalleryCard'
 import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
 import Viewcategory from "../View/Customer/ViewCustomers/Viewcategory";
+import ViewFabric from "../View/Customer/ViewCustomers/ViewFabric";
+import Viewmeasurement from "../View/Customer/ViewCustomers/Viewmeasurement";
 
 
 const routes = createBrowserRouter([
@@ -59,7 +61,7 @@ const routes = createBrowserRouter([
     element: <FabricForm />
   },
   {
-    path: '/measurement',
+    path: '/addmeasurement',
     element: <Measurement />
   },
 
@@ -70,6 +72,14 @@ const routes = createBrowserRouter([
   {
     path:'/viewcategory',
     element:<Viewcategory/>
+  },
+  {
+    path:'/viewfabric',
+    element:<ViewFabric/>
+  },
+  {
+    path:'/viewmeasure',
+    element:<Viewmeasurement/>
   },
   {
     path: '/order',

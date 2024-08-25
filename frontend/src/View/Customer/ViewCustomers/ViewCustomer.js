@@ -46,8 +46,13 @@ export default function ViewCustomer() {
   return (
     <>
      <header className='top_nav'><Header/></header>
-     <div className='backmain'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div>
-     <div className="invoice-input">
+     <Link to={"/home"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
+       <div className="invoice-input">
         <img src={customer} alt="" className="invoice-icon" />
         <input
           type="text"
@@ -63,7 +68,7 @@ export default function ViewCustomer() {
 
           return (
             <>
-           <Link to='/viewcategory'>
+           <Link to='/seecustomer_details'>
               < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
            
            </Link>

@@ -7,8 +7,13 @@ import back from '../../../Image/back.jpg'
 export default function AddCustomer() {
   return (
     <>
-    <header className='top_nav'><Header/></header>
-    <div className='backmain'><Link to='/home'><img src={back} className='backimg'/></Link></div>
+    <Header/>
+    <Link to={"/home"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
     <form className='customer_form'>
       <h1 className='form_head'>Customer Information</h1>
       <input type='text' placeholder='Customer Name' className='customer_input'/><br/>

@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
 import './SelectFabric.css'
-import FabricCard from '../../../Component/CustomerCard/FabricCard/FabricCard'
-import upload from '../../../Image/upload.png'
+import FabricCard from '../../Component/CustomerCard/FabricCard/FabricCard'
+import upload from '../../Image/upload.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-
-import back from '../../../Image/back.jpg'
-import Header from '../../../Component/Header/Header'
 
 export default function SelectFabricCom() {
 
@@ -36,13 +33,6 @@ export default function SelectFabricCom() {
   return (
     <>
 
-<header className='top_nav'><Header /></header>
-<Link to={"/selectcategory"} className="link">
-  <div className="profile-back">
-    <img src={back} alt="" className="profile-back-img" />
-    <h1 className="profile-back-text">Back</h1>
-  </div>
-</Link>
       <h1 style={{ textAlign: 'center', marginTop: '10px' }}>Fabric</h1>
       <div className='Selfab_main'>
          {
@@ -50,7 +40,7 @@ export default function SelectFabricCom() {
           (data)=>{
             return(
               <>
-               <Link to='/addmeasurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
+               <Link to='/measurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
               </>
             )
           }
@@ -87,19 +77,3 @@ export default function SelectFabricCom() {
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

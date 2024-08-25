@@ -18,9 +18,14 @@ export default function Measurement() {
 
   return (
     <>
-      <header className='top_nav'><Header /></header>
-      <div className='backmain'><Link to='/choosefabric'><img src={back} className='backimg' />Back</Link></div>
-      <MeasurementForm/>
+      <Header />
+      <Link to={"/choosefabric"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link> 
+      <MeasurementForm />
     </>
   )
 }
