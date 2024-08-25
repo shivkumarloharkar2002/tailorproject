@@ -7,27 +7,52 @@ import Header from '../../Component/Header/Header'
 export default function GalleryForm() {
 
 
-    const [title, setTitle] = useState('')
-    const [img, setImg] = useState('')
-    const [price, setPrice] = useState('')
-    const [color, setColor] = useState('')
-    const [cloth_type, setCloth_type] = useState('')
-    const [pattern, setPattern] = useState('')
-    const [size, setSize] = useState('')
+    const [title, setTitle] = useState('');
+    const [price, setPrice] = useState('');
+    const [color, setColor] = useState('');
+    const [cloth_type, setCloth_type] = useState('');
+    const [pattern, setPattern] = useState('');
+    const [size, setSize] = useState('');
+    const [description, setDescription] = useState('');
+    const [gallery_img, setImg] = useState('')
 
-    const saveGallery = async () => {
+    const saveGallery = async (e) => {
+        e.preventDefault()
 
-        const CreateGalleryData = await axios.post('http://localhost:5555/api/gallaryroutes/addgallery', {
-            "title": title,
-            "img": img,
-            "price": price,
-            "color": color,
-            "cloth_type": cloth_type,
-            "pattern": pattern,
-            "size": size
-        })
-        console.log(CreateGalleryData)
-        toast.success(CreateGalleryData.data.msg)
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('price', price);
+        formData.append('color', color);
+        formData.append('cloth_type', cloth_type);
+        formData.append('pattern', pattern);
+        formData.append('size', size);
+        formData.append('description', description);
+        formData.append('gallery_img', gallery_img);
+        try {
+            const CreateGalleryData = await axios.post('http://localhost:5555/api/gallaryroutes/addgallery',
+                // {
+                //     "title": title,
+                //     "img": img,
+                //     "price": price,
+                //     "color": color,
+                //     "cloth_type": cloth_type,
+                //     "pattern": pattern,
+                //     "size": size,
+                //     "description": description
+                // }+++
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }
+            )
+            console.log(CreateGalleryData)
+            toast.success(CreateGalleryData.data.msg)
+        }
+        catch (e) {
+            console.log(e)
+        }
     }
 
 
@@ -40,14 +65,19 @@ export default function GalleryForm() {
                 <h1 className="center">Add Gallery</h1>
 
 
-                {/* <label className='fab_label'>Img Name </label>:
+                <label className='fab_label'> Name </label>:
                 <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
-                }} /><br /> */}
+                }} /><br />
 
                 <label className='fab_label'>Img_url </label>:
-                <input type='text' placeholder='Image url ' className='fab_input' onChange={(e) => {
-                    setImg(e.target.value)
+                <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
+                    setImg(e.target.files[0])
+                }} /><br />
+
+                <label className='fab_label'>Description </label>:
+                <input type='text' placeholder='Description ' className='fab_input' onChange={(e) => {
+                    setDescription(e.target.value)
                 }} /><br />
 
                 <label className='fab_label'>Price </label>:
@@ -105,7 +135,7 @@ export default function GalleryForm() {
 
                 {/* <input type='file'/> */}
 
-                <button className='fab_btn' onClick={saveGallery}>ADD</button>
+                <button className='Fab_btn' onClick={saveGallery}>ADD</button>
 
 
             </form>
