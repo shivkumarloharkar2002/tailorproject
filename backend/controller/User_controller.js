@@ -24,7 +24,7 @@ import Usermodel from "../models/usermodel.js"
 //     }
 //     catch (e) {
 //         res.send(e)
-//     }
+//     } 
 // }
 // }
 
