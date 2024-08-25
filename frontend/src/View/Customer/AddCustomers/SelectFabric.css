@@ -13,7 +13,11 @@
     }
 }
 
-
+.uploadimgheight{
+    margin: 0;
+    height: 250px;
+    width: 300px;
+}
 
 .Selfab_main {
     /* border: 1px solid red; */
