@@ -8,63 +8,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 
 
-const AllImg = [
-  {
-    img: 'https://m.media-amazon.com/images/I/71Jwe2kb5pL._SY879_.jpg',
-    type: "shirt"
 
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/71LsOioK8lL._SX679_.jpg',
-    type: "shirt"
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/61iGlNNjHHL._SY879_.jpg',
-    type: "shirt"
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/61iGlNNjHHL._SY879_.jpg',
-    type: "shirt"
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/61iGlNNjHHL._SY879_.jpg',
-    type: "shirt"
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/61iGlNNjHHL._SY879_.jpg',
-    type: "shirt"
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/619ZI1UaabL._SY879_.jpg',
-    type: "pant"
-  },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/51cUFJLcnGL._SY879_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/61EXKTY5YOL._SX679_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/61dsGzMbpwL._SY879_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/61ET8FgyuAL._SY879_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/41p39sVS5KL._AC_UF480,600_SR480,600_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/71vwXrkMkzL._SY879_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/71vYaEq78cL._SY879_.jpg'
-  // },
-  // {
-  //   img: 'https://m.media-amazon.com/images/I/61qL3eFFWtL._SY879_.jpg'
-  // },
-
-
-]
 
 export default function Gallery() {
 
@@ -173,55 +117,10 @@ export default function Gallery() {
       }
 
 
-      {/* {toggle ? (
-                <div className="all">
-                    {
-                        galleryData.map((data) => {
-                            return (
-                                <>
-                                    <div className='dis'>
-                                        <GalleryCard img={data.img} title={data.title} id={data._id} />
-                                    </div>
-                                    
-                                </>
-                            )
-                        }
-                        )
-                    }
-                </div>
-            ) : (
-                <div className="box1">
-                    {
-                        galleryData.map((data) => {
-                            return (
-                                <>
-                                    <div className='dis'>
-                                        <GalleryCard img={data.img} id={data._id} />
-                                    </div>
-                                </>
-                            )
-                        }
-                        )
-                    }
-                </div>
-            )} */}
 
 
 
 
-
-
-
-      {/* {
-        AllImg.map((data) => {
-          return (
-            <>
-              <GalleryCard img={data.img} />
-            </>
-          )
-        })
-
-      } */}
 
 
 
