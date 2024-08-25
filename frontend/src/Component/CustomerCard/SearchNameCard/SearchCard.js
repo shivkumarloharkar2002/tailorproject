@@ -6,7 +6,7 @@ export default function SearchCard({name ,date , price  }) {
   return (
     <>
      <div className='invoice-shortCard'>
-            <Link to={`/selectcategory`} className='link'>
+            <Link to={`/viewcategory`} className='link'>
                 <div className="invoice-short" >
                     <p className="invoice-short-text" >{name}</p>
                     <p className="invoice-short-amount">{date} <br />Paid- ₹ {price}/-</p>

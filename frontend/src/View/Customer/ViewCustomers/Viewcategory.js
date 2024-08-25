@@ -11,7 +11,6 @@ import kurtas from '../../../Image/kurta.jpg'
 import back from '../../../Image/back.jpg'
 
 
-
 export default function Viewcategory() {
 
     const Data = [
@@ -31,23 +30,28 @@ export default function Viewcategory() {
       ];
   return (
    <><header className='top_nav'><Header/></header>
-    <div className='backmain'><Link to='/seecustomer_details'><img src={back} className='backimg'/></Link></div>
+      <Link to={"/seecustomer_details"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
    
     <div className="invoice-shortCards">
         {Data.map((info) => {
 
           return (
             <>
-           <Link to='/viewcategory'>
+           
               < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
            
-           </Link>
+          
             </>
           );
         })}
       </div>
     <div className='select_cat_main'>
-    <Link to='/choosefabric'><SelectCategoryCard cimg={shirts} chead={"Shirt"} /> </Link>
+    <Link to='/viewfabric'><SelectCategoryCard cimg={shirts} chead={"Shirt"} /> </Link>
     <SelectCategoryCard cimg={pants}  chead={"Pant"}/> 
     <SelectCategoryCard cimg={kurtas} chead={"Kurta"}/> 
     <SelectCategoryCard cimg={safari} chead={"Safari"}/> 
