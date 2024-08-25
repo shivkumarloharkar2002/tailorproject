@@ -11,7 +11,6 @@ import kurtas from '../../../Image/kurta.jpg'
 import back from '../../../Image/back.jpg'
 
 
-
 export default function Viewcategory() {
 
     const Data = [
