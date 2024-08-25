@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-around;
 }
-.Nprice{
+/* .Nprice{
     border: 1px solid grey;
     background-color: rgba(89, 151, 181, 0.735);
     padding: 9px;
@@ -27,7 +27,7 @@
     border-radius: 20px;
     
 
-}
+} */
 .Nspan{
     margin-left: 30px;
     /* font-family: Kaisei Decol; */

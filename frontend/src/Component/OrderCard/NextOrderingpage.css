@@ -27,57 +27,126 @@
     background-color: rgba(36, 148, 148, 0.54);
 
 }
-.NextOrder{
+
+.NextOrder {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
-.Nprice{
+
+.Nprice {
     /* border: 1px solid grey; */
     /* background-color: rgba(89, 151, 181, 0.735); */
     padding: 9px;
     font-family: Kaisei Decol;
     border-radius: 20px;
-    
+
 
 }
-.fabric {
-    border: 1px solid grey;
-    width: 150px;
-    height: 60px;
-    border-radius: 20px;
-    margin: 3px;
-    /* background-color: rgba(97, 154, 182, 0.735); */
-    background: url(https://tse4.mm.bing.net/th?id=OIP.sW1-ufY8f-bojA24rOdybAHaHd&pid=Api&P=0&h=180);
-}
-.Nspan{
+
+/* / */
+
+.Nspan {
     margin-left: 30px;
     /* font-family: Kaisei Decol; */
 
 }
-.Nsize{
+
+.Nsize {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 5px 20px;
-    
+
 
 }
 
-.NLastpage{
+.NLastpage {
     display: flex;
     flex-wrap: wrap;
     /* margin: 10px; */
     justify-content: space-evenly;
 }
-.LastN{
+
+.LastN {
     background-color: rgb(47, 46, 46);
-    height: 80px;
+    height: 70px;
     width: 180px;
     text-align: center;
     align-items: center;
     margin: 10px;
+    border-radius: 10px;
 }
-.LastText{
+
+.LastText {
     color: white;
     /* padding: 20px; */
     font-family: Kaisei Decol;
+}
+
+.Oincrement {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 0px 5px; */
+    padding: 10px;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    text-align: center;
+}
+
+.count {
+    margin: 0px 15px;
+    /* color:rgba(36, 148, 148, 0.54); */
+
+}
+
+.Qty {
+    margin-right: 15px;
+}
+
+.ODiscount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid; */
+}
+
+.BOrder {
+    border: 2px solid;
+    background-color: rgb(47, 46, 46);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+.ONLastpage {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px; */
+    justify-content: space-between;
+}
+.ORDER{
+    font-size: 32px;
+    /* line-height: 16px; */
+    /* font-weight: 600; */
+    /* border: 2px solid red; */
+    font-family: serif;
+    text-align: center;
+    /* line-height: 25px; */
+    color: white;
+    display: block;
+}
+.ORDERBG{
+    height: auto;
+    width: 20vw;
+    background-color: rgba(36, 148, 148, 1);
+    margin: 5px auto;
+    border-radius: 10px;
+    align-items: center;
 }
