@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Invoice.css";
-import search from "./../../assets/Invoice/search.jpg"
+import search from "./../../assets/Invoice/search.jpg";
 import ShortCard from "../../Component/Invoice/ShortCard";
 import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
-import img from "./../../assets/Login/logo.png"
+import img from "./../../assets/Login/logo.png";
+import back from "./../../assets/Back/back.jpg";
 
 const Data = [
   {
@@ -43,11 +44,16 @@ function Invoice() {
   const [amount, setAmount] = useState(0);
   // setAmount(amount + info.price)
 
-  
   return (
     <div>
-
       <Header />
+
+      <Link to={"/home"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
 
       <img src={img} alt="" className="invoice-logo" />
 
@@ -71,11 +77,14 @@ function Invoice() {
 
       <div className="invoice-shortCards">
         {Data.map((info) => {
-
           return (
             <>
-              
-              < ShortCard name={info.name} date={info.date} price={info.price} id={info.id} />
+              <ShortCard
+                name={info.name}
+                date={info.date}
+                price={info.price}
+                id={info.id}
+              />
             </>
           );
         })}

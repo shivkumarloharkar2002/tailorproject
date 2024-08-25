@@ -1,0 +1,126 @@
+.invoiceInfo-box {
+    height: 90vh;
+    width: 50vw;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+.invoiceInfo-box-logo-img {
+    height: 80px;
+    width: 130px;
+    margin:  auto;
+    margin-top: 20px !important;
+    border: 2px solid black;
+}
+
+.invoiceInfo-box-p{
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    font-family: serif;
+    
+}
+
+.invoiceInfo-box-info{
+    /* border: 2px solid red; */
+    margin: auto;
+    width: 45vw;
+    height: 55vh;
+}
+
+.invoiceInfo-box-name-para{
+    /* border: 2px solid black; */
+    margin: auto;
+    width: 45vw;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-bottom: 10px;
+    
+}
+
+.invoiceInfo-box-name{
+    display: block;
+    color: black;
+    /* text-align: center; */
+    font-size: 22px;
+    font-family: serif;
+    /* line-height: 24px; */
+    font-weight: 400;
+    font-family: serif;
+
+}
+
+.invoiceInfo-box-name-2{
+    /* border: 2px solid black; */
+    text-align: start;
+    font-size: 22px;
+    font-family: serif;
+    line-height: 24px;
+    margin: 0;
+    font-family: serif;
+
+}
+
+.invoiceInfo-box-color-para{
+    background-color: rgba(36, 148, 148, 1);
+
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid orange; */
+    margin:15px auto;
+    width: 42vw;
+    height: 35px;
+    align-items: center;
+    box-shadow: 0 2px 5px gray;
+}
+
+.invoiceInfo-box-color-para-p{
+    display: block;
+    color: black;
+    line-height: 20px;
+    font-family: serif;
+    font-size: 18px;
+
+
+    
+}
+
+.invoiceInfo-box-color-para-info{
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid orange; */
+    margin:15px auto;
+    width: 42vw;
+    height: auto;
+    align-items: center;
+}
+
+.invoiceInfo-box-color-para-h{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.invoiceInfo-box-color-para2{
+    
+    background-color: aquamarine;
+    display: flex;
+    justify-content: end;
+    /* border: 2px solid orange; */
+    margin:15px auto;
+    width: 42vw;
+    height: 35px;
+    align-items: center;
+    box-shadow: 0 2px 5px gray;
+}
+
+.invoiceInfo-box-color-para-p2{
+    display: block;
+    color: black;
+    line-height: 20px;
+    font-family: serif;
+    font-size: 18px;
+    margin-right: 20px;
+}
