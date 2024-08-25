@@ -20,7 +20,7 @@ const imgurl= await Uploadoncloudinary(req.file.path)
       
         const fabricdata= await Fabricmodel.create({
            title,color,price,cloth_type,fabric_type,pattern,
-           img1:imgurl,
+           "img1":imgurl,
            fabric_id
         })
         res.json({
@@ -28,6 +28,7 @@ const imgurl= await Uploadoncloudinary(req.file.path)
             data: fabricdata,
             msg: `fabric added`
         })
+
     }
     catch(e){
         res.send(e)
