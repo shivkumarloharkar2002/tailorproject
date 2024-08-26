@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import './FabricForm.css'
 import axios from 'axios';
+import FabricAdminCard from '../../../Component/AdminCards/AddFabriccard/FabricAdminCard';
 
 
 export default function FabricForm() {
 
+  const [ fabric , setFabric] = useState([]);
   const [ title , setTitle]= useState('');
   const [ color , setColor]= useState('');
   const [ price , setPrice]= useState('');
@@ -50,8 +52,23 @@ export default function FabricForm() {
     console.log(e)
   }
   }
+
+  const GetFabricdata= async()=>{
+    const fabricd =await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    setFabric(fabricd.data.data)
+    console.log(fabricd.data.data)
+  }
+
+
+  useEffect(
+    ()=>{
+      GetFabricdata();
+    },[]
+  )
   return (
-   <>
+   <div className='main_fab_form'>
+   <div className='addFabMain'>
+    <div>
     <form className='Fabform_main' encType="multipart/form-data" method="post">
               <h1 className="center">Fabric</h1>
               
@@ -114,7 +131,26 @@ export default function FabricForm() {
                 <button className='fab_btn'
                  onClick={saveFabric}>ADD</button> 
         </form>
+    </div>
+    <div>
+      <div className='Fabform_list  List_fab'>
+        <h1 className="center">Fabric List</h1>
+    {
+      fabric.map(
+        (data)=>{
+          return(
+            <>
+             <FabricAdminCard title={data.title} color={data.color} price={data.price}  img1={data.img1} pattern={data.pattern} cloth_type={data.cloth_type} fabric_type={data.fabric_type}/>
+            </>
+          )
+        }
+      )
+    }
+      </div>
+    </div>
+   
+   </div>
         <ToastContainer />
-   </>
+   </div>
   )
 }

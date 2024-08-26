@@ -11,8 +11,11 @@ import Header from '../../../Component/Header/Header'
 
 export default function SelectFabricCom() {
 
+  const clothData = localStorage.getItem('cloth');
+  console.log(clothData)
 
-  const [ fabric , setFabric] = useState([]);
+
+  const [fabric, setFabric] = useState([]);
   const [file, setFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -21,43 +24,45 @@ export default function SelectFabricCom() {
     }
   };
 
-  const GetFabricdata= async()=>{
-    const fabricd =await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+  const GetFabricdata = async () => {
+    const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }
 
 
   useEffect(
-    ()=>{
+    () => {
       GetFabricdata();
-    },[]
+    }, []
   )
   return (
     <>
 
-<header className='top_nav'><Header /></header>
-<Link to={"/selectcategory"} className="link">
-  <div className="profile-back">
-    <img src={back} alt="" className="profile-back-img" />
-    <h1 className="profile-back-text">Back</h1>
-  </div>
-</Link>
+      <header className='top_nav'><Header /></header>
+      <Link to={"/selectcategory"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
       <h1 style={{ textAlign: 'center', marginTop: '10px' }}>Fabric</h1>
       <div className='Selfab_main'>
-         {
-         fabric.map(
-          (data)=>{
-            return(
-              <>
-               <Link to='/addmeasurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
-              </>
-            )
-          }
-         )  
-        } 
-        
-       
+
+        {
+          fabric.map(
+            (data) => {
+              if (clothData === data.cloth_type)
+              return (
+                <>
+                 <FabricCard img1={data.img1} price={data.price} id={data._id}/>
+                </>
+              )
+            }
+          )
+        }
+
+
 
         {/* <div className='fabric_main1'>
           <img src={upload} /><br />
@@ -65,24 +70,24 @@ export default function SelectFabricCom() {
           <h3 className='fabric_main1-txt'>Add New Fabric</h3>
         </div> */}
         <div className="file-upload-container fabric_main1">
-      <input
-        type="file"
-        id="file-input"
-        onChange={handleFileChange}
-        style={{ display: 'none' }}
-      />
-      <div
-        className={`file-wrapper ${file ? 'active' : ''}`}
-        onClick={() => document.getElementById('file-input').click()}
-      >
-        {file ? (
-          <img src={file} alt="Selected" className="preview-image uploadimgheight" />
-        ) : (
-          <span><img src={upload} /><br/>Upload Fabric Image <br/> <h3 className='fabric_main1-txt'>Add New Fabric</h3></span>
-        )}
-       
-      </div>
-    </div>
+          <input
+            type="file"
+            id="file-input"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+          />
+          <div
+            className={`file-wrapper ${file ? 'active' : ''}`}
+            onClick={() => document.getElementById('file-input').click()}
+          >
+            {file ? (
+              <img src={file} alt="Selected" className="preview-image uploadimgheight" />
+            ) : (
+              <span><img src={upload} /><br />Upload Fabric Image <br /> <h3 className='fabric_main1-txt'>Add New Fabric</h3></span>
+            )}
+
+          </div>
+        </div>
       </div>
     </>
   )

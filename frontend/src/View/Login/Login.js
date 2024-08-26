@@ -22,7 +22,7 @@ function Login() {
         {
           email,
           password,
-        }
+        } 
       );
       if (logData.status === 200) {
         localStorage.setItem("user", JSON.stringify(logData.data.data));
