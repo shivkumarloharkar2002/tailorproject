@@ -28,7 +28,7 @@ export default function About() {
         <img className='abo-img-2' src={worker}/>
       </div>
       <div className='abo'>
-        <img className='abo-img-1' src={talior}/>
+        <img className='abo-img-3' src={talior}/>
         <div className='abo-text'>
           <h1 className='heding'>Mission</h1>
           <p>At The Tailor Shop our mission is to deliver exceptional craftsmanship and personalized service, tailoring garments that embody individual style. We aim to be the premier destination for those seeking sartorial excellence, where tradition meets contemporary elegance in every stitch."
