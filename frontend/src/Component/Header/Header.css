@@ -1,31 +1,42 @@
+
+
+/* new */
 .nimg {
     height: 80px;
-    margin-right: 450px;
-    /* width: 200px; */
+ 
 }
-.mnav{
-    background-color: rgba(36, 148, 148, 1);
-    
-}
-
-
 
 .ncolor {
     color: rgb(240, 238, 237);
     text-decoration: none;
-    /* margin: 0 10px; */
-    /* font-weight: 600; */
     font-size: 25px;
     font-family: Kaisei Decol;
-
-
+   
+}
+.Header{
+    background-color: rgba(36, 148, 148, 1);
+    height: auto;
 }
 
-.marg{
-    margin-left:60px;
+.Heder_Disply{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+.Heder_next{
+    display: flex;
+    /* border: 1px solid; */
+    /* margin: 0 45px; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
-
+    /* margin: auto; */
+}
 .proImg{
     height: 40px;
+}
+
+.Header_Margin{
+    text-align: center;
+    margin: 20px 55px;
 }
