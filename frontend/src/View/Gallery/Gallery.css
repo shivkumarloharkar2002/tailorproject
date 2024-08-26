@@ -31,6 +31,11 @@
     font-weight: 500;
 }
 
+.Glist-p:hover {
+    cursor: pointer;
+    border-bottom: 3px solid rgba(36, 148, 148, 1);;
+}
+
 .Glist {
     border-bottom: 2px solid rgba(36, 148, 148, 1);
     /* border-top: 2px solid rgba(36, 148, 148, 1); */
