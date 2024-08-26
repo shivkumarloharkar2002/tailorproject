@@ -10,9 +10,9 @@ export default function Performance() {
   return (
     <div>
       <Header/>
-      
+      <p className='heding-about'>Performance</p>
       <div className='parfom'>
-
+            
         <div className='hedi'>
             <p className='numh' >Today's Performance</p>
         </div>
