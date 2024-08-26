@@ -61,7 +61,7 @@ export default function ViewCustomer() {
         />
       </div>
      
-     
+     <hr className='hr'/>
     
       <div className="invoice-shortCards">
         {Data.map((info) => {
