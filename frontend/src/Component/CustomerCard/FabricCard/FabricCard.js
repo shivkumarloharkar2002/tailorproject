@@ -13,7 +13,7 @@ export default function FabricCard({ img1, price, id }) {
     if (fabricId) {
       localStorage.setItem("fabric", fabricId);
       console.log('Category stored in localStorage:', fabricId);
-      navigate("/choosefabric");
+      navigate("/addmeasurement");
     }
   }, [fabricId]);
 

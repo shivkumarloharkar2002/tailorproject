@@ -31,81 +31,31 @@ const MeasurementSchema = new Schema(
     // },
 
     // {
-    height: {
+    pantheight: {
       type: Number,
     },
-    waist: {
+    pantwaist: {
       type: Number,
     },
-    hibs: {
+    panthibs: {
       type: Number,
     },
-    abdomen: {
+    pantabdomen: {
       type: Number,
     },
-    thigh: {
+    pantthigh: {
       type: Number,
     },
-    knee: {
+    pantknee: {
       type: Number,
     },
-    calf: {
+    pantcalf: {
       type: Number,
     },
-    instep: {
+    pantinstep: {
       type: Number,
     },
-    // },
 
-    // // {
-    //   kurtacollar: {
-    //     type: Number,
-    //   },
-    //   kurtaheight: {
-    //     type: Number,
-    //   },
-    //   kurtasleeve: {
-    //     type: Number,
-    //   },
-    //   kurtachest: {
-    //     type: Number,
-    //   },
-    //   kurtawaist: {
-    //     type: Number,
-    //   },
-    //   kurtasholder: {
-    //     type: Number,
-    //   },
-    // // },
-
-    // // {
-    //   payjamaheight: {
-    //     type: Number,
-    //   },
-    //   payjamawaist: {
-    //     type: Number,
-    //   },
-    //   payjamahibs: {
-    //     type: Number,
-    //   },
-    //   payjamaabdomen: {
-    //     type: Number,
-    //   },
-    //   payjamathigh: {
-    //     type: Number,
-    //   },
-    //   payjamaknee: {
-    //     type: Number,
-    //   },
-    //   payjamacalf: {
-    //     type: Number,
-    //   },
-    //   payjamainstep: {
-    //     type: Number,
-    //   },
-    // // },
-
-    // {
     safaricollar: {
       type: Number,
     },
@@ -130,24 +80,22 @@ const MeasurementSchema = new Schema(
     safaritrouserthigh: {
       type: Number,
     },
-    //     },
-    //   ],
 
-    //   fabric_id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Fabric",
-    //     required: true,
-    //   },
-    //   customer_id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Customer",
-    //     required: true,
-    //   },
-    //   user_id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    //     required: true,
-    //   },
+    fabric_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Fabric",
+      required: true,
+    },
+    customer_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Customer",
+      required: true,
+    },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
