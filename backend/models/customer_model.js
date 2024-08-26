@@ -26,11 +26,14 @@ const CustomerSchema = new Schema({
       measurement_id:[{ type: Schema.Types.ObjectId, ref: 'Measurement' }],
     // measurement_id: [String],
 
-    //   order_id:[{ type: Schema.Types.ObjectId, ref: 'Order' }],
-    order_id: [String],
+      order_id:[{ type: Schema.Types.ObjectId, ref: 'Order' }],
+    // order_id: [String],
 
     fabric_id: { type: mongoose.Schema.Types.ObjectId, ref: "Fabric" }, //check karnyasathi ghetl ahe
 
+},
+{
+    timestamps:true
 });
 
 const Customer = model("Customer", CustomerSchema);
