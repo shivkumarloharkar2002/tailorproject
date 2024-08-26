@@ -17,13 +17,24 @@
     justify-content: space-around;
     margin-top: 7%;
 }
+@media only screen and (max-width:600px){
+    .assign-patti{
+        flex-wrap: wrap;
+    }
+}
 .assign-main{
     display: flex;
     justify-content: space-around;
 }
+@media only screen and (max-width:600px){
+    .assign-main{
+        flex-wrap: wrap;
+    }
+}
 .assign-informetion{
     display: flex;
     justify-content: space-around;
+    text-align: left;
 }
 .assign-left{
     margin-top: 10%;
@@ -33,4 +44,9 @@
     width: 2px;
     background-color:  rgba(36, 148, 148, 0.54);
     margin-top: 10%;
+}
+@media only screen and (max-width:600px){
+    .assign-informetion{
+        flex-wrap: wrap;
+    }
 }
