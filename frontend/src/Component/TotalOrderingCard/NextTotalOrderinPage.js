@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './NextOrderingpage.css'
 import Header from '../Header/Header'
 import img from "./../../assets/Login/logo.png"
+import back from './back.jpg'
+import { Link } from 'react-router-dom'
 
 export default function NextOrderingPage() {
 
@@ -17,6 +19,13 @@ export default function NextOrderingPage() {
     return (
         <>
             <Header />
+
+            <Link to={"/home"} className="link">
+                <div className="profile-back">
+                    <img src={back} alt="" className="profile-back-img" />
+                    <h1 className="profile-back-text">Back</h1>
+                </div>
+            </Link>
 
             <img src={img} alt="" className="invoice-logo" />
 

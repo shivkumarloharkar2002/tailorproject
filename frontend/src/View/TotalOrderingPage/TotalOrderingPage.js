@@ -42,19 +42,26 @@ const CardData = [
 ]
 
 export default function TotalOrderingPage() {
-  return (
-    <>
-    <Header/>
-    <div className='Backmain'><Link to='/home'><img src={back} className='Backimg'/>Back</Link></div>
-    <div className='MainBody'>
-        
-    {/* <div className='MainOrder'>
+    return (
+        <>
+            <Header />
+            {/* <div className='Backmain'><Link to='/home'><img src={back} className='Backimg'/>Back</Link></div> */}
+
+            <Link to={"/home"} className="link">
+                <div className="profile-back">
+                    <img src={back} alt="" className="profile-back-img" />
+                    <h1 className="profile-back-text">Back</h1>
+                </div>
+            </Link>
+            <div className='MainBody'>
+
+                {/* <div className='MainOrder'>
          <div> <img className='Orderimg' src={img}></img></div>
          <div><h2 className='Otext'>Total Orders</h2></div>
      </div> */}
 
 
-<div className="invoice-input">
+                <div className="invoice-input">
                     <img src={img} alt="" className="invoice-icon" />
                     <input
                         type="text"
@@ -62,17 +69,17 @@ export default function TotalOrderingPage() {
                         placeholder="Total Orders"
                     />
                 </div>
-     <hr className='HR' />
-     {
-         CardData.map((data) => {
-             return (
-                 <OrderCard category={data.category} time={data.date} name={data.name} id={data._id} />
-             )
-         })
+                <hr className='HR' />
+                {
+                    CardData.map((data) => {
+                        return (
+                            <OrderCard category={data.category} time={data.date} name={data.name} id={data._id} />
+                        )
+                    })
 
 
-     }
-    </div>
- </>
-  )
+                }
+            </div>
+        </>
+    )
 }

@@ -36,7 +36,15 @@ export default function NextGalleryCard() {
                             <>
                                 <Header />
 
-                                <div className='backmain1'><Link to='/home'><img src={back} className='backimg' />Back</Link></div>
+
+                                <Link to={"/gallery"} className="link">
+                                    <div className="profile-back">
+                                        <img src={back} alt="" className="profile-back-img" />
+                                        <h1 className="profile-back-text">Back</h1>
+                                    </div>
+                                </Link>
+
+                                {/* <div className='backmain1'><Link to='/home'><img src={back} className='backimg' />Back</Link></div> */}
 
                                 <div className='NCardM'>
                                     <div className='NSecond'>
@@ -48,14 +56,14 @@ export default function NextGalleryCard() {
                                             <h1 className='GTITLE'>{data.title}</h1>
                                             <h3 className='Description'>{data.description}</h3>
 
-                                            <h4>Color:-<span className='Span '> {data.color}</span></h4>
+                                            <h4>Color:-<span className='Span '> {data.Color}</span></h4>
                                             <h4>Type:-<span className='Span t'>{data.cloth_type} </span></h4>
 
                                             <h4>Pattern:-<span className='Span p'>{data.pattern} </span></h4>
                                             <h4>Size:-<span className='Span s'>{data.size} </span></h4>
                                             <h4>Price:- <span className='Span pr'>₹ {data.price} /-</span></h4>
 
-                                            <a href='/addmeasurement'><button className='OrderB'>Order</button></a>
+                                            {/* <a href='/addmeasurement'><button className='OrderB'>Order</button></a> */}
                                         </div>
 
                                     </div>

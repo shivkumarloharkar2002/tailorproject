@@ -50,9 +50,13 @@ export default function TodayOrder() {
     return (
         <>
             <Header />
-            <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div>
+            <Link to={"/home"} className="link">
+                <div className="profile-back">
+                    <img src={back} alt="" className="profile-back-img" />
+                    <h1 className="profile-back-text">Back</h1>
+                </div>
+            </Link>
             <div className='MainBody'>
-                {/* <div className='backmain'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div> */}
 
                 {/* <div className='MainOrder'>
                 <div> <img className='Orderimg' src={img}></img></div>
