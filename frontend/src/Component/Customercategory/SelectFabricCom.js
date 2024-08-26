@@ -40,7 +40,7 @@ export default function SelectFabricCom() {
           (data)=>{
             return(
               <>
-               <Link to='/measurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
+               <Link to='/addmeasurement'> <FabricCard img1={data.img1} price={data.price} /></Link>
               </>
             )
           }

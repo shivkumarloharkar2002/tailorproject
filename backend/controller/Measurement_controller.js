@@ -1,14 +1,32 @@
 import Measurement from "../models/Measurementmodel.js";
 
-export const addmeasurement = async (req, res) => {
+export const addShirtMeasurement = async (req, res) => {
+  const { category, collar, height, sleeve, chest, waist, sholder } = req.body;
+
+  try {
+    const measureData = await Measurement.create({
+      category: category,
+      collar: collar,
+      height: height,
+      sleeve: sleeve,
+      chest: chest,
+      waist: waist,
+      sholder: sholder,
+    });
+    res.status(200).json({
+      success: true,
+      msg: "measurement add",
+      data: measureData,
+    });
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+export const addPantMeasurement = async (req, res) => {
   const {
     category,
-    shirtcollar,
-    shirtheight,
-    shirtsleeve,
-    shirtchest,
-    shirtwaist,
-    shirtsholder,
+
     pantheight,
     pantwaist,
     panthibs,
@@ -17,20 +35,37 @@ export const addmeasurement = async (req, res) => {
     pantknee,
     pantcalf,
     pantinstep,
-    kurtacollar,
-    kurtaheight,
-    kurtasleeve,
-    kurtachest,
-    kurtawaist,
-    kurtasholder,
-    payjamaheight,
-    payjamawaist,
-    payjamahibs,
-    payjamaabdomen,
-    payjamathigh,
-    payjamaknee,
-    payjamacalf,
-    payjamainstep,
+  } = req.body;
+
+  try {
+    const measureData = await Measurement.create({
+      category: category,
+
+      pantheight: pantheight,
+      pantwaist: pantwaist,
+      panthibs: panthibs,
+      pantabdomen: pantabdomen,
+      pantthigh: pantthigh,
+      pantknee: pantknee,
+      pantcalf: pantcalf,
+      pantinstep: pantinstep,
+    });
+    res.status(200).json({
+      success: true,
+      msg: "measurement add",
+      data: measureData,
+    });
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+
+
+export const addSafariMeasurement = async (req, res) => {
+  const {
+    category,
+
     safaricollar,
     safarichest,
     safarishirtwaist,
@@ -44,36 +79,7 @@ export const addmeasurement = async (req, res) => {
   try {
     const measureData = await Measurement.create({
       category: category,
-      shirtcollar: shirtcollar,
-      shirtheight: shirtheight,
-      shirtsleeve: shirtsleeve,
-      shirtchest: shirtchest,
-      shirtwaist: shirtwaist,
-      shirtsholder: shirtsholder,
-      pantheight: pantheight,
-      pantwaist: pantwaist,
-      panthibs: panthibs,
-      pantabdomen: pantabdomen,
-      pantthigh: pantthigh,
-      pantknee: pantknee,
-      pantcalf: pantcalf,
-      pantinstep: pantinstep,
-      kurtacollar: kurtacollar,
-      kurtaheight: kurtaheight,
-      kurtsleeve: kurtsleeve,
-      kurtaheight: kurtaheight,
-      kurtasleeve: kurtasleeve,
-      kurtachest: kurtachest,
-      kurtawaist: kurtawaist,
-      kurtasholder: kurtasholder,
-      payjamaheight: payjamaheight,
-      payjamawaist: payjamawaist,
-      payjamahibs: payjamahibs,
-      payjamaabdomen: payjamaabdomen,
-      payjamathigh: payjamathigh,
-      payjamaknee: payjamaknee,
-      payjamacalf: payjamacalf,
-      payjamainstep: payjamainstep,
+
       safaricollar: safaricollar,
       safarichest: safarichest,
       safarishirtwaist: safarishirtwaist,

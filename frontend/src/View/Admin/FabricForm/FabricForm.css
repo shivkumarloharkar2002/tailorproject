@@ -1,16 +1,9 @@
 @media screen and (max-width:800px) {
   .Fabform_main {
-   width: 100vw;
+   width: 80vw !important;
 
   }
-  .addFabMain {
-    border: 1px solid black;
-    margin: auto;
-    display:inline-block;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100vw;
-  }
+  
   .main_fab_form {
     width: 100vw;
     margin: auto ;
@@ -18,12 +11,30 @@
     background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
     background-size: cover;
   }
+
+  .fab_label {
+  margin: 20px;
+  width: 10vw !important;
+  font-size: 20px;
+  font-weight: 30;
+
+}
+.fab_input {
+  margin: 4px;
+  width: 55vw !important;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.main_fab_form {
-  /* display:inline-block; */
-  background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
-  background-size: cover;
+.fab_btn {
+  color: white;
+  border-radius: 15px 10px;
+  width: 10px ;
+  padding: 7px 30px;
+  /* margin: auto; */
+  /* margin: 15px 10px 15px 250px; */
+  transition: 1s;
+}
 }
 
 .addFabMain {
@@ -34,6 +45,14 @@
   justify-content: space-evenly;
   width: 85vw;
 }
+
+.main_fab_form {
+  /* display:inline-block; */
+  background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
+  background-size: cover;
+}
+
+
 
 .Fabform_main {
   overflow-y: hidden;
