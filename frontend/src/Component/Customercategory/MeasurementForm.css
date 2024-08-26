@@ -1,0 +1,91 @@
+@media screen and (max-width:950px) {
+    .register {
+        width: 100vw !important;
+    }
+
+    .measurementForm-img {
+        width: 90vw !important;
+        margin: 20px 0;
+        height: 50vh !important;
+    }
+
+
+    .measurementForm-form {
+        width: 90vw !important;
+        margin: 20px 0;
+    }
+
+    .measurementForm-form-input {
+        width: 70vw !important;
+    }
+}
+
+
+.measurementForm {
+    /* border: 2px solid black; */
+    min-height: 80vh;
+    width: 90vw;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.measurementForm-img {
+    border: 2px solid red;
+    width: 30vw;
+    height: 60vh;
+    display: block;
+}
+
+.measurementForm-form {
+    min-height: 80vh;
+    width: 37vw;
+    /* border: 2px solid red; */
+    background-color: rgba(36, 148, 148, 0.796);
+    align-content: center;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+.measurementForm-form-h {
+    color: white;
+    text-align: center;
+    font-size: 42px;
+    line-height: 48px;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.measurementForm-form-input {
+    display: block;
+    height: 35px;
+    width: 25vw;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    font-family: serif;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+
+.measurementForm-form-submit {
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 150px;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    margin-bottom: 30px !important;
+}

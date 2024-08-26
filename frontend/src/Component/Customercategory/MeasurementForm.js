@@ -1,134 +1,394 @@
-import React from 'react'
-import './Measurement.css'
-import collar from '../../Image/collar.webp'
-import length from '../../Image/fullLenght.webp'
-import sleeve from '../../Image/sleeve.webp'
-import waist from '../../Image/waist.webp'
-import cheast from '../../Image/cheast.webp'
-import shoulder from '../../Image/shoulder.webp'
-import { Link } from 'react-router-dom'
-
-import { useState } from 'react'
-
+import React, { useState } from 'react'
+import "./MeasurementForm.css"
+import axios from 'axios';
 
 
 export default function MeasurementForm() {
-//  const [collar , setCollar] = useState('')
-  const [unit, setUnit] = useState('cm');
-  const [value, setValue] = useState('');
 
-  // Convert cm to inches
-  const convertToInches = (cm) => (cm / 2.54).toFixed(2);
+  const clothData = localStorage.getItem('cloth');
+  console.log(clothData)
 
-  // Convert inches to cm
-  const convertToCm = (inches) => (inches * 2.54).toFixed(2);
 
-  // Handle input change and convert based on current unit
-  const handleInputChange = (e) => {
-    const inputValue = e.target.value;
-    setValue(inputValue);
-    console.log("input collar" ,inputValue)
-  };
+  const [category, setCategory] = useState()
+  const [collar, setCollar] = useState()
+  const [height, setHeight] = useState()
+  const [sleeve, setSleeve] = useState()
+  const [chest, setChest] = useState()
+  const [waist, setWaist] = useState()
+  const [sholder, setSholder] = useState()
 
-  // Handle unit toggle
-  const handleUnitToggle = () => {
-    if (unit === 'cm') {
-      setValue(convertToInches(value));
-      setUnit('inch');
-    } else {
-      setValue(convertToCm(value));
-      setUnit('cm');
+
+  const [pantheight, setpantheight] = useState()
+  const [pantwaist, setpantwaist] = useState()
+  const [panthibs, setpanthibs] = useState()
+  const [pantabdomen, setpantabdomen] = useState()
+  const [pantthigh, setpantthigh] = useState()
+  const [pantknee, setpantknee] = useState()
+  const [pantcalf, setpantcalf] = useState()
+  const [pantinstep, setpantinstep] = useState()
+  
+  
+  
+  const [safaricollar, setsafaricollar] = useState()
+  const [safarichest, setsafarichest] = useState()
+  const [safarishirtwaist, setsafarishirtwaist] = useState()
+  const [safarisleeve, setsafarisleeve] = useState()
+  const [safarisholder, setsafarisholder] = useState()
+  const [safaritrouserwaist, setsafaritrouserwaist] = useState()
+  const [safaritrouserhip, setsafaritrouserhip] = useState()
+  const [safaritrouserthigh, setsafaritrouserthigh] = useState()
+
+
+
+
+
+  const PostShirtMeasure = async (e) => {
+    e.preventDefault()
+
+    try {
+      const registerData = await axios.post(
+        `http://localhost:5555/api/measurementroutes/shirt`,
+        {
+          category,
+          collar,
+          height,
+          sleeve,
+          chest,
+          waist,
+          sholder
+        }
+      );
+
+      // if (registerData.status === 200) {
+      alert("Measurement Added Successfully");
+      console.log(registerData);
+      // }
+    } catch (error) {
+      alert(error);
     }
-  };
+  }
 
-  return (
-    <>
-      <div>
-        <h1 style={{ textAlign: 'center' }}>Size</h1>
-        <div className='sizetoggle'>
-          <select value={unit}
-          onChange={handleUnitToggle}
-          className='selectunit'>
-            <option value="inch">inch</option>
-            <option value="cm">cm</option>
-            {/* <option value="in">inch</option> */}
-          </select>
-        {/* <button onClick={handleUnitToggle}>
-          Switch to {unit === 'cm' ? 'inch' : 'cm'}
-        </button> */}
-        {/* <h4>Measure Size in "{unit}"</h4> */}
-        </div>
-        <div >
-          <div className='size_main' >
-            <div className='size_subdiv'>
-              <img src={collar} className='size_img' /><br />
-             <div className='disinch'>
-               <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Collar Size `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div></div>
-            <div className='size_subdiv'>
-              <img src={length} className='size_img' /><br />
-              <div className='disinch'> <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Upper Length `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div>
-            </div>
-            <div className='size_subdiv'>
-              <img src={sleeve} className='size_img' /><br />
-              <div className='disinch'> <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Sleeve Size `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div>
-            </div>
-            {/*            
-        </div>
-        <div className='size_main'> */}
-            <div className='size_subdiv'>
-              <img src={cheast} className='size_img' /><br />
-              <div className='disinch'> <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Cheast Size `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div>
-            </div>
-            <div className='size_subdiv'>
-              <img src={waist} className='size_img' /><br />
-              <div className='disinch'> <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Waist Size `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div>
-            </div>
-            <div className='size_subdiv'>
-              <img src={shoulder} className='size_img' /><br />
-              <div className='disinch'> <input
-                type='number'
-                // value={value}
-                onChange={handleInputChange}
-                placeholder={`Shoulder Size `}
-                className='size_input' /><h5 className='unit'>{unit}</h5>
-            </div>
-            </div>
+  const PostPantMeasure = async (e) => {
+    e.preventDefault()
 
-          </div>
-          <Link to='/orderslip'><button className='size_btn'>Submit</button></Link>
+    try {
+      const registerData = await axios.post(
+        `http://localhost:5555/api/measurementroutes/pant`,
+        {
+          category,
 
-        </div>
+          pantheight,
+          pantwaist,
+          panthibs,
+          pantabdomen,
+          pantthigh,
+          pantknee,
+          pantcalf,
+          pantinstep,
+        }
+      );
+
+      // if (registerData.status === 200) {
+      alert("Measurement Added Successfully");
+      console.log(registerData);
+      // }
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+
+  const PostSafariMeasure = async (e) => {
+    e.preventDefault()
+
+    try {
+      const registerData = await axios.post(
+        `http://localhost:5555/api/measurementroutes/safari`,
+        {
+          category,
+
+          safaricollar,
+          safarichest,
+          safarishirtwaist,
+          safarisleeve,
+          safarisholder,
+          safaritrouserwaist,
+          safaritrouserhip,
+          safaritrouserthigh,
+        }
+      );
+
+      // if (registerData.status === 200) {
+      alert("Measurement Added Successfully");
+      console.log(registerData);
+      // }
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  // setCategory(clothData)
+
+
+  if (clothData === "shirt") {
+    // setCategory("shirt")
+    return <>
+      <div className="measurementForm">
+
+        <img src="" alt="" className="measurementForm-img" />
+
+
+        <form action="" className="measurementForm-form"
+          onSubmit={PostShirtMeasure}
+        >
+          <h1 className="measurementForm-form-h">Measurement Form</h1>
+
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Collar'
+            onChange={(e) => {
+              setCollar(e.target.value)
+            }} />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='height' onChange={(e) => {
+            setHeight(e.target.value)
+          }}
+          />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Sleeve'
+            onChange={(e) => {
+              setSleeve(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Chest'
+            onChange={(e) => {
+              setChest(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Waist'
+            onChange={(e) => {
+              setWaist(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Sholder'
+            onChange={(e) => {
+              setSholder(e.target.value)
+            }} />
+
+          <input type="submit" value="Submit" id="" className="measurementForm-form-submit" onClick={()=>{
+            setCategory("shirt")
+          }}/>
+
+        </form>
       </div>
-    </>
-  )
+    </>;
+  } else if (clothData === "kurta") {
+    return <>
+      <div className="measurementForm">
+
+        <img src="" alt="" className="measurementForm-img" />
+
+
+        <form action="" className="measurementForm-form"
+          onSubmit={PostShirtMeasure}
+        >
+          <h1 className="measurementForm-form-h">Measurement Form</h1>
+
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Collar'
+            onChange={(e) => {
+              setCollar(e.target.value)
+            }} />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='height' onChange={(e) => {
+            setHeight(e.target.value)
+          }}
+          />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Sleeve'
+            onChange={(e) => {
+              setSleeve(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Chest'
+            onChange={(e) => {
+              setChest(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Waist'
+            onChange={(e) => {
+              setWaist(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='Sholder'
+            onChange={(e) => {
+              setSholder(e.target.value)
+            }} />
+
+          <input type="submit" value="Submit" id="" className="measurementForm-form-submit" onClick={()=>{
+            setCategory("kurta")
+          }}/>
+
+        </form>
+      </div>
+    </>;
+  } else if (clothData === "pant") {
+    return <>
+      <div className="measurementForm">
+
+        <img src="" alt="" className="measurementForm-img" />
+
+
+        <form action="" className="measurementForm-form"
+          onSubmit={PostPantMeasure}
+        >
+          <h1 className="measurementForm-form-h">Measurement Form</h1>
+
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantheight'
+            onChange={(e) => {
+              setpantheight(e.target.value)
+            }} />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantwaist' onChange={(e) => {
+            setpantwaist(e.target.value)
+          }}
+          />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='panthibs'
+            onChange={(e) => {
+              setpanthibs(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantabdomen'
+            onChange={(e) => {
+              setpantabdomen(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantthigh'
+            onChange={(e) => {
+              setpantthigh(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantknee'
+            onChange={(e) => {
+              setpantknee(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantcalf'
+            onChange={(e) => {
+              setpantcalf(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantinstep'
+            onChange={(e) => {
+              setpantinstep(e.target.value)
+            }} />
+
+          <input type="submit" value="Submit" id="" className="measurementForm-form-submit" onClick={()=>{
+            setCategory("pant")
+          }} />
+
+        </form>
+      </div>
+    </>;
+  } else if (clothData === "payjama") {
+    return <>
+      <div className="measurementForm">
+
+        <img src="" alt="" className="measurementForm-img" />
+
+
+        <form action="" className="measurementForm-form"
+          onSubmit={PostPantMeasure}
+        >
+          <h1 className="measurementForm-form-h">Measurement Form</h1>
+
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantheight'
+            onChange={(e) => {
+              setpantheight(e.target.value)
+            }} />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantwaist' onChange={(e) => {
+            setpantwaist(e.target.value)
+          }}
+          />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='panthibs'
+            onChange={(e) => {
+              setpanthibs(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantabdomen'
+            onChange={(e) => {
+              setpantabdomen(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantthigh'
+            onChange={(e) => {
+              setpantthigh(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantknee'
+            onChange={(e) => {
+              setpantknee(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantcalf'
+            onChange={(e) => {
+              setpantcalf(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='pantinstep'
+            onChange={(e) => {
+              setpantinstep(e.target.value)
+            }} />
+
+          <input type="submit" value="Submit" id="" className="measurementForm-form-submit" onClick={()=>{
+            setCategory("payjama")
+          }}/>
+
+        </form>
+      </div>
+    </>;
+  } else {
+    return <>
+      <div className="measurementForm">
+
+        <img src="" alt="" className="measurementForm-img" />
+
+
+        <form action="" className="measurementForm-form"
+          onSubmit={PostSafariMeasure}
+        >
+          <h1 className="measurementForm-form-h">Measurement Form</h1>
+
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari collar'
+            onChange={(e) => {
+              setsafaricollar(e.target.value)
+            }} />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari chest' onChange={(e) => {
+            setsafarichest(e.target.value)
+          }}
+          />
+
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari shirt waist'
+            onChange={(e) => {
+              setsafarishirtwaist(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari sleeve'
+            onChange={(e) => {
+              setsafarisleeve(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari sholder'
+            onChange={(e) => {
+              setsafarisholder(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari trouser waist'
+            onChange={(e) => {
+              setsafaritrouserwaist(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari trouser hip'
+            onChange={(e) => {
+              setsafaritrouserhip(e.target.value)
+            }} />
+          <input type="number" name="" id="" className="measurementForm-form-input" placeholder='safari trouser thigh'
+            onChange={(e) => {
+              setsafaritrouserthigh(e.target.value)
+            }} />
+
+          <input type="submit" value="Submit" id="" className="measurementForm-form-submit" onClick={()=>{
+            setCategory("safari")
+          }}/>
+
+        </form>
+      </div>
+    </>;
+  }
 }

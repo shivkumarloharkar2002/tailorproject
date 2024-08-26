@@ -60,77 +60,7 @@ export const addPantMeasurement = async (req, res) => {
   }
 };
 
-// export const addKurtaMeasurement = async (req, res) => {
-//   const {
-//     category,
 
-//     kurtacollar,
-//     kurtaheight,
-//     kurtasleeve,
-//     kurtachest,
-//     kurtawaist,
-//     kurtasholder,
-//   } = req.body;
-
-//   try {
-//     const measureData = await Measurement.create({
-//       category: category,
-
-//       kurtacollar: kurtacollar,
-//       kurtaheight: kurtaheight,
-//       kurtsleeve: kurtsleeve,
-//       kurtaheight: kurtaheight,
-//       kurtasleeve: kurtasleeve,
-//       kurtachest: kurtachest,
-//       kurtawaist: kurtawaist,
-//       kurtasholder: kurtasholder,
-//     });
-//     res.status(200).json({
-//       success: true,
-//       msg: "measurement add",
-//       data: measureData,
-//     });
-//   } catch (error) {
-//     res.send(error);
-//   }
-// };
-
-// export const addPayjamaMeasurement = async (req, res) => {
-//   const {
-//     category,
-
-//     payjamaheight,
-//     payjamawaist,
-//     payjamahibs,
-//     payjamaabdomen,
-//     payjamathigh,
-//     payjamaknee,
-//     payjamacalf,
-//     payjamainstep,
-//   } = req.body;
-
-//   try {
-//     const measureData = await Measurement.create({
-//       category: category,
-
-//       payjamaheight: payjamaheight,
-//       payjamawaist: payjamawaist,
-//       payjamahibs: payjamahibs,
-//       payjamaabdomen: payjamaabdomen,
-//       payjamathigh: payjamathigh,
-//       payjamaknee: payjamaknee,
-//       payjamacalf: payjamacalf,
-//       payjamainstep: payjamainstep,
-//     });
-//     res.status(200).json({
-//       success: true,
-//       msg: "measurement add",
-//       data: measureData,
-//     });
-//   } catch (error) {
-//     res.send(error);
-//   }
-// };
 
 export const addSafariMeasurement = async (req, res) => {
   const {
