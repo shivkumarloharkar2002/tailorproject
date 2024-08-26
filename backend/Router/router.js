@@ -1,3 +1,4 @@
+import { CustomerRoutes } from "../routes/Customer_routes.js";
 import { FabricRoutes } from "../routes/fabric_routes.js";
 import gallery_routes from "../routes/gallery_routes.js";
 import UserRoutes from "../routes/user_routes.js";
@@ -11,6 +12,8 @@ Allrouters.use("/userroutes",UserRoutes)
 Allrouters.use("/fabricroutes",FabricRoutes)
 
 Allrouters.use("/gallaryroutes", gallery_routes)
+
+Allrouters.use("/customerroutes",CustomerRoutes)
 
 Allrouters.use("/measurementroutes", MeasurementRoutes)
 export default Allrouters

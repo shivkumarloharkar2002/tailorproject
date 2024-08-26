@@ -10,7 +10,9 @@ export default function About() {
   return (
     <div>
       <Header/>
+      
       <div>
+      <p className='heding-about'>About Us</p>
       <div className='abos'>
         <img className='abo-img-1' src={shop}/>
         <div className='abo-text'>

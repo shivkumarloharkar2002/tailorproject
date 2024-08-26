@@ -9,7 +9,7 @@ export default function GalleryForm() {
 
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
-    const [color, setColor] = useState('');
+    const [Color, setColor] = useState('');
     const [cloth_type, setCloth_type] = useState('');
     const [pattern, setPattern] = useState('');
     const [size, setSize] = useState('');
@@ -22,7 +22,7 @@ export default function GalleryForm() {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('price', price);
-        formData.append('color', color);
+        formData.append('Color', Color);
         formData.append('cloth_type', cloth_type);
         formData.append('pattern', pattern);
         formData.append('size', size);
@@ -64,16 +64,17 @@ export default function GalleryForm() {
             <form className='Fabform_main'>
                 <h1 className="center">Add Gallery</h1>
 
+                <label className='fab_label'>Img_url </label>:
+                <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
+                    setImg(e.target.files[0])
+                }} /><br />
 
                 <label className='fab_label'> Name </label>:
                 <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
                 }} /><br />
 
-                <label className='fab_label'>Img_url </label>:
-                <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
-                    setImg(e.target.files[0])
-                }} /><br />
+                
 
                 <label className='fab_label'>Description </label>:
                 <input type='text' placeholder='Description ' className='fab_input' onChange={(e) => {

@@ -1,12 +1,16 @@
 .NCardM {
     /* border: 2px solid black; */
-    margin: 50px;
+    margin: auto;
+    width: 70vw;
+    padding: 10px;
+    box-shadow: 5px 5px 8px 5px lightblue;
 }
 
 .NSecond {
     display: flex;
     /* justify-content: space-around; */
     justify-content: space-evenly;
+    flex-wrap: wrap;
     /* justify-content: space-between; */
 }
 
@@ -59,6 +63,7 @@
 .MDiv2 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .t{
     margin-left: 39px;

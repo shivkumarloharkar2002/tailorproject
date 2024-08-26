@@ -1,8 +1,8 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 const GallerySchema = new Schema({
 
 
-    img:{
+    img: {
         type: String,
     },
     title: {
@@ -18,7 +18,7 @@ const GallerySchema = new Schema({
         required: true
 
     },
-    color: {
+    Color: {
         type: String,
         // required: true,
 

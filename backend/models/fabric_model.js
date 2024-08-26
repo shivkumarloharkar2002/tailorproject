@@ -21,7 +21,7 @@ const FabricSchema = new Schema({
     },
     cloth_type:{
         type:String,
-        enum: ['shirt', 'pant','kurta',"Pyjama","Safari"],
+        enum: ['shirt', 'pant','kurta',"payjama","safari"],
         required:true
     },
     fabric_type:{

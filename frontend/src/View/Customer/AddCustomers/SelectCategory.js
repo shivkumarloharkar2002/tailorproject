@@ -16,8 +16,10 @@ function SelectCategory() {
         </div>
       </Link>
     <SelectCategoryCom/>
+
+    
    </>
   )
 }
-
+ 
 export default SelectCategory

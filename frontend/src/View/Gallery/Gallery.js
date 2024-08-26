@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 
 export default function Gallery() {
 
-  // const [type, setType] = useState("shirt")
+  const [type, setType] = useState("shirt")
 
   const [galleryData, setGalleryData] = useState([]);
 
@@ -47,53 +47,60 @@ export default function Gallery() {
   return (
     <>
       <Header />
-      <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div>
+      {/* <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div> */}
+
+      <Link to={"/home"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
 
 
-      {/* 
-      <div className="gallery" >
+
+      <div className="gallery-box" >
         <ul className='Glist'>
           <p onClick={() => {
             setType("shirt")
-          }}>Shirt</p>
+          }}  className='Glist-p'>Shirt</p>
 
 
           <p onClick={() => {
             setType("pant")
-          }} >Pant</p>
+          }} className='Glist-p'>Pant</p>
 
           <p onClick={() => {
             setType("kurta")
-          }} >Kurta</p>
+          }} className='Glist-p'>Kurta</p>
 
           <p onClick={() => {
             setType("pyjama")
-          }} >Pyjama</p>
+          }} className='Glist-p'>Pyjama</p>
 
 
           <p onClick={() => {
             setType("safari")
-          }} >Suit Safari</p>
+          }} className='Glist-p'>Suit Safari</p>
 
         </ul>
       </div>
-      <hr className='hr' />
-      {
+      {/* <hr className='hr' /> */}
+      {/* {
         galleryData.map((data) => {
-          // console.log(data.type)
+          console.log(data.type)
           console.log(data)
           if (type === data.type)
             return (
-             
-              <GalleryCard className='Margin' img={data.img} id={data.id} imgname={data.price}/>
-             
+
+              <GalleryCard className='Margin' img={data.img} id={data.id} imgname={data.price} />
+
             )
         })
       } */}
 
 
-      {/* 
-      <div className='heading'>
+
+      {/* <div className='heading'>
         <h3 className="heading-h">All </h3>
         <p className="heading-a" onClick={All}>
           <span className='see'>  {" "}
@@ -104,6 +111,9 @@ export default function Gallery() {
 
       {
         galleryData.map((data) => {
+          if (type === data.
+            cloth_type
+            )
           return (
             <>
               <div className='dis'>
@@ -116,6 +126,39 @@ export default function Gallery() {
         )
       }
 
+
+      {/* {toggle ? (
+                <div className="all">
+                    {
+                        galleryData.map((data) => {
+                            return (
+                                <>
+                                    <div className='dis'>
+                                        <GalleryCard img={data.img} title={data.title} id={data._id} />
+                                    </div>
+                                    
+                                </>
+                            )
+                        }
+                        )
+                    }
+                </div>
+            ) : (
+                <div className="box1">
+                    {
+                        galleryData.map((data) => {
+                            return (
+                                <>
+                                    <div className='dis'>
+                                        <GalleryCard img={data.img} id={data._id} />
+                                    </div>
+                                </>
+                            )
+                        }
+                        )
+                    }
+                </div>
+            )} */}
 
 
 
