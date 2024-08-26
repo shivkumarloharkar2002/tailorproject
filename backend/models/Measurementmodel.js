@@ -31,28 +31,28 @@ const MeasurementSchema = new Schema(
     // },
 
     // {
-    height: {
+    pantheight: {
       type: Number,
     },
-    waist: {
+    pantwaist: {
       type: Number,
     },
-    hibs: {
+    panthibs: {
       type: Number,
     },
-    abdomen: {
+    pantabdomen: {
       type: Number,
     },
-    thigh: {
+    pantthigh: {
       type: Number,
     },
-    knee: {
+    pantknee: {
       type: Number,
     },
-    calf: {
+    pantcalf: {
       type: Number,
     },
-    instep: {
+    pantinstep: {
       type: Number,
     },
     // },

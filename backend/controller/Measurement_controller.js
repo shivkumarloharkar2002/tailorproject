@@ -27,28 +27,28 @@ export const addPantMeasurement = async (req, res) => {
   const {
     category,
 
-    height,
-    waist,
-    hibs,
-    abdomen,
-    thigh,
-    knee,
-    calf,
-    instep,
+    pantheight,
+    pantwaist,
+    panthibs,
+    pantabdomen,
+    pantthigh,
+    pantknee,
+    pantcalf,
+    pantinstep,
   } = req.body;
 
   try {
     const measureData = await Measurement.create({
       category: category,
 
-      height: height,
-      waist: waist,
-      hibs: hibs,
-      abdomen: abdomen,
-      thigh: thigh,
-      knee: knee,
-      calf: calf,
-      instep: instep,
+      pantheight: pantheight,
+      pantwaist: pantwaist,
+      panthibs: panthibs,
+      pantabdomen: pantabdomen,
+      pantthigh: pantthigh,
+      pantknee: pantknee,
+      pantcalf: pantcalf,
+      pantinstep: pantinstep,
     });
     res.status(200).json({
       success: true,
