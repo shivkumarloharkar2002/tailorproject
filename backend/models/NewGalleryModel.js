@@ -1,13 +1,11 @@
 import mongoose, { Schema, model } from "mongoose";
-const GallerySchema = new Schema({
-
-
+const NewGallerySchema = new Schema({
     img: {
         type: String,
     },
     title: {
         type: String,
-        // required: true
+        required: true
     },
     description: {
         type: String,
@@ -20,7 +18,7 @@ const GallerySchema = new Schema({
     },
     Color: {
         type: String,
-        // required: true,
+        required: true,
 
     },
     cloth_type: {
@@ -39,8 +37,8 @@ const GallerySchema = new Schema({
         required: true
     },
 
-}
-)
 
-const GalleryModel = model("Gallery", GallerySchema)
-export default GalleryModel
+})
+
+const NewGalleryModel =model ("NewGallery",NewGallerySchema)
+export default NewGalleryModel

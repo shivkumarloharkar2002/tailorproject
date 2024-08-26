@@ -48,7 +48,7 @@ export default function Home() {
                 <div className='HCard'>
                     <img className='Homeimg' src={img5} />
                     <h3 className='HText'>Assign Order</h3>
-                    <Link to='/order' className="link"> <h5 >See Details </h5></Link>
+                    <Link to='/orderdetail' className="link"> <h5 >See Details </h5></Link>
                 </div>
 
                 <div className='HCard'>
