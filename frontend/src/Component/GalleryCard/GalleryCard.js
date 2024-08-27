@@ -3,23 +3,17 @@ import { Link } from 'react-router-dom';
 import './GalleryCard.css';
 // import NextGalleryCard from '../../View/Gallery/NextGalleryCard.js'
 
-export default function GalleryCard({ img, id ,title}) {
+export default function GalleryCard({ img, id }) {
   return (
     <>
       <Link to={`/NextGalleryCard/${id}`} className='link'>
 
-      <div className='mcard'>
-                <div className="card mx-2 my-5" style={{ "width": "15rem;" }}>
-                    <img src={img} className="card-img-top height " alt="img" />
-                    {/* <h1>{title}</h1> */}
-                </div>
-            </div>
+
+        <div className="G_MAIN" >
+          <img src={img} className="Img_height " alt="img" />
+        </div>
 
 
-     
-         
-
-        
       </Link>
     </>
   )

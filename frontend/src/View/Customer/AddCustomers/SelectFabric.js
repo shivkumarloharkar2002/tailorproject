@@ -53,11 +53,11 @@ export default function SelectFabricCom() {
           fabric.map(
             (data) => {
               if (clothData === data.cloth_type)
-              return (
-                <>
-                 <FabricCard img1={data.img1} price={data.price} id={data._id}/>
-                </>
-              )
+                return (
+                  <>
+                    <FabricCard img1={data.img1} price={data.price} id={data._id} />
+                  </>
+                )
             }
           )
         }

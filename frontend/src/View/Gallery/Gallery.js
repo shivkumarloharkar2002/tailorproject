@@ -6,7 +6,7 @@ import back from './back.jpg'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
-
+import gallery from './add-folder.png'
 
 
 
@@ -28,41 +28,33 @@ export default function Gallery() {
     }, []
   )
 
-
-
-  const [toggle, setToggle] = useState(false);
-  let All = () => {
-    setToggle((preState) => !preState);
-  };
-
   console.log(galleryData)
-
-
-  // const [type, setType] = useState("shirt")
-
-
-
-
 
   return (
     <>
       <Header />
       {/* <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div> */}
 
+
+
       <Link to={"/home"} className="link">
         <div className="profile-back">
-          <img src={back} alt="" className="profile-back-img" />
-          <h1 className="profile-back-text">Back</h1>
+          <img src={back} alt="" className="Profile-back-img" /><br></br>
+          <h5 className="profile-back-text">Back</h5>
         </div>
       </Link>
 
 
 
+      <div >
+        <h2 className='GallaryHedding'>Gallery</h2>
+      </div>
+
       <div className="gallery-box" >
         <ul className='Glist'>
           <p onClick={() => {
             setType("shirt")
-          }}  className='Glist-p'>Shirt</p>
+          }} className='Glist-p'>Shirt</p>
 
 
           <p onClick={() => {
@@ -82,6 +74,8 @@ export default function Gallery() {
             setType("safari")
           }} className='Glist-p'>Suit Safari</p>
 
+          <img src={gallery} alt="" className="Profile-back-img" />
+
         </ul>
       </div>
       {/* <hr className='hr' /> */}
@@ -100,65 +94,27 @@ export default function Gallery() {
 
 
 
-      {/* <div className='heading'>
-        <h3 className="heading-h">All </h3>
-        <p className="heading-a" onClick={All}>
-          <span className='see'>  {" "}
-            see all</span>
-        </p>
-      </div> */}
 
 
       {
         galleryData.map((data) => {
           if (type === data.
             cloth_type
-            )
-          return (
-            <>
-              <div className='dis'>
-                <GalleryCard img={data.img} title={data.title} id={data._id} />
-              </div>
-
-            </>
           )
+            return (
+              <>
+                <div className='Main_Card'>
+                  <GalleryCard img={data.img} title={data.title} id={data._id} />
+                </div>
+
+              </>
+            )
         }
         )
       }
 
 
-      {/* {toggle ? (
-                <div className="all">
-                    {
-                        galleryData.map((data) => {
-                            return (
-                                <>
-                                    <div className='dis'>
-                                        <GalleryCard img={data.img} title={data.title} id={data._id} />
-                                    </div>
-                                    
-                                </>
-                            )
-                        }
-                        )
-                    }
-                </div>
-            ) : (
-                <div className="box1">
-                    {
-                        galleryData.map((data) => {
-                            return (
-                                <>
-                                    <div className='dis'>
-                                        <GalleryCard img={data.img} id={data._id} />
-                                    </div>
-                                </>
-                            )
-                        }
-                        )
-                    }
-                </div>
-            )} */}
+
 
 
 
