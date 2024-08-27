@@ -2,7 +2,7 @@ import mongoose, { Schema, model } from "mongoose";
 
 const OrderSchema = new Schema({
 
-  order_id:{type:String,
+  order_id:{type:Schema.Types.ObjectId,
   },
 
   user_id: {type:mongoose.Schema.Types.ObjectId, ref:"User" },
