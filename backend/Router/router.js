@@ -5,6 +5,7 @@ import UserRoutes from "../routes/user_routes.js";
 import MeasurementRoutes from "../routes/measurement_routes.js";
 import express from "express"
 import { OrderRoutes } from "../routes/Order_routes.js";
+import readymade_routes from "../routes/readymade_routes.js";
 
 const Allrouters = express.Router() 
 
@@ -19,4 +20,7 @@ Allrouters.use("/customerroutes",CustomerRoutes)
 Allrouters.use("/measurementroutes", MeasurementRoutes)
 
 Allrouters.use("/orderroutes", OrderRoutes)
+
+Allrouters.use("/readymaderoutes",readymade_routes)
+
 export default Allrouters
