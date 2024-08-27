@@ -68,18 +68,7 @@ const routes = createBrowserRouter([
     path: '/seecustomer_details',
     element: <ViewCustomer />
   },
-  // {
-  //   path:'/viewcategory',
-  //   element:<Viewcategory/>
-  // },
-  // {
-  //   path:'/viewfabric',
-  //   element:<ViewFabric/>
-  // },
-  // {
-  //   path:'/viewmeasure',
-  //   element:<Viewmeasurement/>
-  // },
+ 
   {
     path: '/order',
     element: <TodayOrder />
@@ -89,9 +78,7 @@ const routes = createBrowserRouter([
     element: <NextOrderingPage />
   },
 
-  // {
-  //   path:'/'
-  // },
+  
   {
     path: '/gallery',
     element: <Gallery />
