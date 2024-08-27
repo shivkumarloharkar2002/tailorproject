@@ -22,7 +22,7 @@ export default function ViewCustomer() {
     setGetCustomerData(getNote.data.data);
     console.log(getNote);
   };
-
+ 
   useEffect(() => {
     getUser();
   }, []);
@@ -61,5 +61,5 @@ export default function ViewCustomer() {
         })}
       </div>
     </>
-  )
+  ) 
 }
