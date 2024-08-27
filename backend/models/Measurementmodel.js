@@ -84,17 +84,17 @@ const MeasurementSchema = new Schema(
     fabric_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Fabric",
-      required: true,
+     
     },
     customer_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Customer",
-      required: true,
+      
     },
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      
     },
   },
   {
