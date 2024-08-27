@@ -4,45 +4,37 @@ import search from "./../../assets/Invoice/search.jpg";
 import ShortCard from "../../Component/Invoice/ShortCard";
 import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
-import img from "./../../assets/Login/logo.png"; 
+import img from "./../../assets/Login/logo.png";
 import back from "./../../assets/Back/back.jpg";
+import axios from "axios";
+import { useEffect } from "react";
 
-const Data = [
-  {
-    id: 1,
-    name: "abc",
-    date: "10/02/12",
-    price: 235,
-  },
-  {
-    id: 2,
-    name: "xyz",
-    date: "10/02/12",
-    price: 2351,
-  },
-  {
-    id: 3,
-    name: "pqr",
-    date: "10/02/12",
-    price: 245,
-  },
-  {
-    id: 4,
-    name: "pqr",
-    date: "10/02/12",
-    price: 245,
-  },
-  {
-    id: 5,
-    name: "pqr",
-    date: "10/02/12",
-    price: 245,
-  },
-];
+
 
 function Invoice() {
   const [amount, setAmount] = useState(0);
   // setAmount(amount + info.price)
+
+  const [getAllData, setGetAllData] = useState([]);
+  const getData = async () => {
+    const getNote = await axios.get(
+      `http://localhost:5555/api/orderroutes/getallorder`
+    );
+    setGetAllData(getNote.data.data);
+  };
+  console.log(getAllData);
+
+  const searchData = getAllData.filter((data) => {
+    return (
+      data.name.toLowerCase().includes(search.toLowerCase()) ||
+      data.date ||
+      data.price
+    );
+  });
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div>
@@ -76,7 +68,8 @@ function Invoice() {
       <hr className="invoice-hr" />
 
       <div className="invoice-shortCards">
-        {Data.map((info) => {
+        {searchData.map((info) => {
+          setAmount(amount + info.price);
           return (
             <>
               <ShortCard

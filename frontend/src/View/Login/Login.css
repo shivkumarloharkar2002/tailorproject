@@ -1,6 +1,6 @@
 @media screen and (max-width:950px) {
 
-    .login{
+    .login {
         height: 100vh !important;
     }
 
@@ -10,31 +10,31 @@
         padding: 20px;
     }
 
-    .login-imgs{
+    .login-imgs {
         /* margin-bottom: -50px !important; */
     }
 
-    .login-inputs{
-        width: 77vw !important;
+    .login-inputs {
+        width: 72vw !important;
         height: 40px !important;
     }
-    
-    .login-inputs-img{
+
+    .login-inputs-img {
         height: 30px !important;
         width: 25px !important;
     }
 
-    .login-form-input{
-        width: 70vw !important;
+    .login-form-input {
+        width: 65vw !important;
         height: 38px !important;
     }
 
-    .login-imgs{
+    .login-imgs {
         width: 74vw !important;
     }
 
 
-    .login-logo{
+    .login-logo {
         left: 27vw !important;
         top: -60px !important;
     }
@@ -57,13 +57,13 @@
     width: 30vw;
     margin: auto;
     align-content: center;
-    border-radius: 10px; 
+    border-radius: 10px;
     /* padding: 20px ; */
     background-color: rgba(36, 148, 148, 1);
     backdrop-filter: blur(4px);
 }
 
-.login-imgs{
+.login-imgs {
     /* border: 2px solid red; */
     position: relative;
     display: flex;
@@ -75,20 +75,20 @@
 }
 
 
-.login-img{
+.login-img {
     height: 70px;
     width: 100px;
     /* border: 2px solid red; */
     display: block;
 }
 
-.login-form-h{
+.login-form-h {
     text-align: center;
 }
 
-.login-logo{
+.login-logo {
     position: absolute;
-    top: -60px ;
+    top: -60px;
     left: 10.5vw;
     height: 80px;
     width: 80px;
@@ -97,19 +97,19 @@
 }
 
 
-.login-inputs{
+.login-inputs {
     border: 2px solid black;
     height: 30px;
     width: 25vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin:20px auto;
+    margin: 20px auto;
     border-radius: 5px;
     background-color: white;
 }
 
-.login-inputs-img{
+.login-inputs-img {
     height: 26px;
     width: 2vw;
 }
@@ -119,12 +119,12 @@
     /* margin: 30px auto; */
     height: 26px;
     width: 22vw;
-    border: none; 
+    border: none;
     outline: none;
-   
+
 }
 
-.login-form-input::placeholder{
+.login-form-input::placeholder {
     font-size: 18px;
     color: black;
 }
