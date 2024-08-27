@@ -121,7 +121,7 @@
 
 .invoiceInfo-box-color-para2{
     
-    background-color: aquamarine;
+    background-color: rgba(36, 148, 148, 1);
     display: flex;
     justify-content: end;
     /* border: 2px solid orange; */

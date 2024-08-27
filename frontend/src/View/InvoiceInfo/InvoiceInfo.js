@@ -13,7 +13,7 @@ function InvoiceInfo() {
 
     const [getAllData, setGetAllData] = useState([]);
     const getData = async () => {
-        const getNote = await axios.get(`http://localhost:2000/movieInfo/${id}`);
+        const getNote = await axios.get(`http://localhost:5555/api/orderroutes/getallorder`);
         setGetAllData(getNote.data.data);
     };
     console.log(getAllData);

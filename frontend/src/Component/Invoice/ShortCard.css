@@ -13,7 +13,7 @@
     height: 60px;
     width: 22vw;
     border: 1px solid rgba(36, 148, 148, 0.54);
-    background-color: rgba(36, 148, 148, 0.54);
+    background-color: rgba(36, 148, 148,1);
     border-radius: 10px;
     margin: 30px 35px;
     /* border-radius: 10px; */
@@ -31,7 +31,7 @@
     margin-left: 20px !important;
     margin: 0;
     font-weight: 600;
-    color: black;
+    color: white;
     line-height: 50px;
     font-size: 22px;
     /* border: 2px solid black; */
@@ -43,7 +43,7 @@
     display: block;
     margin-right: 20px !important;
     font-weight: 600;
-    color: black;
+    color: white;
     line-height: 25px;
     font-size: 18px;
     align-self: center;
