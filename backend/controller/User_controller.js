@@ -1,5 +1,6 @@
 import Uploadoncloudinary from "../File_upload/Coudinaryfile.js"
 import Usermodel from "../models/usermodel.js"
+import { v2 as cloudinary } from "cloudinary"
 
 // export const Userregister = async (req, res) => {
 //     const { user_id, username, phone, email, password, role } = req.body
@@ -168,12 +169,37 @@ export const Deleteemployee = async (req,res)=>{
     const  {id} =req.params; //params main name datala hai wo yaha varible main dalneka
     // const id =req.body
     try{
-        const Deleteemp= await Usermodel.deleteOne({ user_id: id })
+        const user = await Usermodel.findById(id);
+        if (!user) {
+            return res.status(404).json({
+                msg: "Fabric not found"
+            });
+        }
+        console.log(user)
+
+        const imageUrl = user.img;
+
+        const publicId = imageUrl.split('/').pop().split('.')[0]; // Extract ID from URL
+        console.log(publicId)
+
+        const deleteImage = await cloudinary.uploader.destroy(publicId);  //aplyala image delte karnyasathi public id pahije aste (imageurl secureurl dili hoti tymule trim karavi lagli)
+        console.log(deleteImage)
+
+        // Check if the image was successfully deleted
+        if (deleteImage.result !== 'ok') {
+            return res.status(500).json({
+                msg: "Error deleting image from Cloudinary",
+                error: deleteImage
+            });
+        }
+
+        // Delete the document from MongoDB
+        const deleteuser = await Usermodel.deleteOne({ _id: id });
         res.json({
-            data:`${id}`,
-            data2:Deleteemp,
-            msg:"Employee removed succefully"
-        })
+            success:true,
+            data: deleteuser,
+            msg: "user deleted successfully"
+        });
     }
     catch(e){
         console.log(e)

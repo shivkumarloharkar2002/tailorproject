@@ -43,16 +43,56 @@ export const getallfabric = async (req, res) => {
 }
 
 
+// export const deletefabric = async (req, res) => {
+//     const  {id} = req.params
+//     try {
+//         const fabric = await Fabricmodel.deleteOne({ _id: id })
+//         res.json({
+//             data: fabric,
+//             msg: "deleted success"
+//         })
+//         const deleted = await cloudinary.uploader.destroy(fabric.img1)
+//         console.log(deleted)
+//     }
+//     catch (e) {
+//         console.log(e)
+//     }
+// }
+
+
 export const deletefabric = async (req, res) => {
-    const  {id} = req.params
+    const { id } = req.params
     try {
-        let fabric = await Fabricmodel.deleteOne({ _id: id })
+        const fabric = await Fabricmodel.findById(id);
+        if (!fabric) {
+            return res.status(404).json({
+                msg: "Fabric not found"
+            });
+        }
+        console.log(fabric)
+
+        const imageUrl = fabric.img1;
+
+        const publicId = imageUrl.split('/').pop().split('.')[0]; // Extract ID from URL
+        console.log(publicId)
+
+        const deleteImage = await cloudinary.uploader.destroy(publicId);  //aplyala image delte karnyasathi public id pahije aste (imageurl secureurl dili hoti tymule trim karavi lagli)
+        console.log(deleteImage)
+        
+        // Check if the image was successfully deleted
+        if (deleteImage.result !== 'ok') {
+            return res.status(500).json({
+                msg: "Error deleting image from Cloudinary",
+                error: deleteImage
+            });
+        }
+
+        // Delete the document from MongoDB
+        const deleteDocument = await Fabricmodel.deleteOne({ _id: id });
         res.json({
-            data: fabric,
-            msg: "deleted success"
-        })
-        const deleted = await cloudinary.uploader.destroy(fabric.img1)
-        console.log(deleted)
+            data: deleteDocument,
+            msg: "Fabric deleted successfully"
+        });
     }
     catch (e) {
         console.log(e)
@@ -65,7 +105,7 @@ export const Updatefabric = async (req, res) => {
 
     // const imgurl = await Uploadoncloudinary(req.file.path)
 
-    const {id, title, color, price, cloth_type, fabric_type, pattern } = req.body
+    const { id, title, color, price, cloth_type, fabric_type, pattern } = req.body
 
     try {
         const updated = await Fabricmodel.updateOne({ _id: id }, {
@@ -75,7 +115,7 @@ export const Updatefabric = async (req, res) => {
                 "color": color,
                 "cloth_type": cloth_type,
                 "fabric_type": fabric_type,
-                "pattern":pattern,
+                "pattern": pattern,
                 // "img1":"link"
             }
         })
