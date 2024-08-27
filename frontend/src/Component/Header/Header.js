@@ -2,8 +2,18 @@ import React from 'react'
 import './Header.css'
 import Nav from './logo.png'
 import profile from './profile-user (1).png'
+import log from './logout.png'
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  // const logout = () => {
+
+  //   localStorage.clear("")
+  //   navigate("/")
+  // }
+
   return (
     <>
       <div className='Header fixed-top'>
@@ -13,18 +23,22 @@ export default function Header() {
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div className='Heder_next'>
-            
-            <a class=" active Header_Margin ncolor" aria-current="page" href="/home">Home</a>
-            <a class="ncolor Header_Margin active" href="/about">About</a>
-            <a class="ncolor Header_Margin active" href="/invoice">Invoice</a>
-          
+          <div className='Heder_Next'>
+
+            <a class=" active Header_Margin H_Page" aria-current="page" href="/home">Home</a>
+            <a class="H_Page Header_Margin active" href="/about">About</a>
+
+            <a class="H_Page Header_Margin active" href="/invoice">Invoice</a>
+
             <a href="/profile"> <img className='Header_Margin proImg' src={profile}></img></a>
+            {/* <a href="/profile"> <img className='Header_Margin proImg' src={log} onClick={logout}></img></a> */}
+
           </div>
         </div>
 
 
       </div>
+
 
       {/* 
 
