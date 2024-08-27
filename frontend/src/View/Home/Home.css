@@ -11,6 +11,15 @@
     flex-wrap: wrap;
 } */
 
+/* @media screen and (max-width:800px) {
+
+   
+    .Homeimg {
+        width: 25vh !important;
+        height: auto;
+    }
+} */
+
 .MainHome {
     /* border: 2px solid black; */
     /* width: 100vh; */
@@ -29,7 +38,7 @@
     text-align: center;
     height: auto;
     width: 60vh;
-    margin: 20px;
+    margin: 20px 15px;
     padding: 10px 0px;
     border-radius: 10px;
     box-shadow: 2px 5px 10px 2px rgba(51, 50, 50, 0.3);
@@ -38,6 +47,7 @@
 
 .Homeimg {
     width: 25vh;
+    height: auto;
 }
 
 .HText {
@@ -49,9 +59,9 @@
 
 .HCard h5 {
     color: black;
-}
+} 
 
-.HCard h5:hover {
+.HCard h5:hover { 
     color: blue;
     text-decoration: underline;
 }
