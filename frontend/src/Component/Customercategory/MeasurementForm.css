@@ -34,8 +34,8 @@
 }
 
 .measurementForm-img {
-    border: 2px solid red;
-    width: 30vw;
+    /* border: 2px solid red; */
+    max-width: 40vw;
     height: 60vh;
     display: block;
 }

@@ -21,9 +21,7 @@ import Profile from "../View/Profile/Profile";
 import GalleryForm from '../View/GalleryForm/GalleryForm'
 import NextGalleryCard from '../View/Gallery/NextGalleryCard'
 import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
-import Viewcategory from "../View/Customer/ViewCustomers/Viewcategory";
-import ViewFabric from "../View/Customer/ViewCustomers/ViewFabric";
-import Viewmeasurement from "../View/Customer/ViewCustomers/Viewmeasurement";
+
 import AssignOrder from "../View/AssignOrder/AssignOrder";
 
 
@@ -70,18 +68,7 @@ const routes = createBrowserRouter([
     path: '/seecustomer_details',
     element: <ViewCustomer />
   },
-  {
-    path:'/viewcategory',
-    element:<Viewcategory/>
-  },
-  {
-    path:'/viewfabric',
-    element:<ViewFabric/>
-  },
-  {
-    path:'/viewmeasure',
-    element:<Viewmeasurement/>
-  },
+ 
   {
     path: '/order',
     element: <TodayOrder />
@@ -91,9 +78,7 @@ const routes = createBrowserRouter([
     element: <NextOrderingPage />
   },
 
-  // {
-  //   path:'/'
-  // },
+  
   {
     path: '/gallery',
     element: <Gallery />

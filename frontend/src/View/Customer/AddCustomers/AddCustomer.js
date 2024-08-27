@@ -13,7 +13,7 @@ export default function AddCustomer() {
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState()
   const [address, setAddress] = useState()
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const saveCustomer = async (e) => {
     e.preventDefault()
@@ -28,7 +28,8 @@ export default function AddCustomer() {
         }
       );
 
-      // if (registerData.status === 200) {
+      // if (registerData.status === 200) { 
+        localStorage.setItem("customer", JSON.stringify(customerData.data.data));
       alert("Customer Added Successfully");
       navigate("/selectcategory");
       console.log(customerData);

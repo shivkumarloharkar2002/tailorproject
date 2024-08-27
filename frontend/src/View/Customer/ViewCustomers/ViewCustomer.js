@@ -5,54 +5,38 @@ import SearchCard from '../../../Component/CustomerCard/SearchNameCard/SearchCar
 import { Link } from 'react-router-dom'
 import back from '../../../Image/back.jpg'
 import Header from '../../../Component/Header/Header'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 
 
-
-const Data = [
-  {
-    id: 1,
-    name: "Somnath Bhoyate",
-    date: "10/02/12",
-    price: 235,
-  },
-  {
-    id: 2,
-    name: "Shambhu Bhoyate",
-    date: "10/02/12",
-    price: 2351,
-  },
-  {
-    id: 3,
-    name: "Mahadev Bhoyate",
-    date: "10/02/12",
-    price: 245,
-  },
-  {
-    id: 4,
-    name: "Dhanraj Bhoyate",
-    date: "10/02/12",
-    price: 245,
-  },
-  {
-    id: 5,
-    name: "Rajendra Bhoyate",
-    date: "10/02/12",
-    price: 245,
-  },
-];
 
 export default function ViewCustomer() {
+
+  const [getCustomerData, setGetCustomerData] = useState([]);
+
+  const getUser = async () => {
+    const getNote = await axios.get(
+      "http://localhost:5555/api/customerroutes/getcustomer"
+    );
+    setGetCustomerData(getNote.data.data);
+    console.log(getNote);
+  };
+ 
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <>
-     <header className='top_nav'><Header/></header>
-     <Link to={"/home"} className="link">
+      <header className='top_nav'><Header /></header>
+      <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="profile-back-img" />
           <h1 className="profile-back-text">Back</h1>
         </div>
       </Link>
-       <div className="invoice-input">
+      <div className="invoice-input">
         <img src={customer} alt="" className="invoice-icon" />
         <input
           type="text"
@@ -60,22 +44,22 @@ export default function ViewCustomer() {
           placeholder="Search Customer Name"
         />
       </div>
-     
-     <hr className='hr'/>
-    
+
+      <hr className='hr' />
+
       <div className="invoice-shortCards">
-        {Data.map((info) => {
+        {getCustomerData.map((info) => {
 
           return (
             <>
-           <Link to='/seecustomer_details'>
-              < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
-           
-           </Link>
+              <Link to='/seecustomer_details'>
+                < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
+
+              </Link>
             </>
           );
         })}
       </div>
     </>
-  )
+  ) 
 }
