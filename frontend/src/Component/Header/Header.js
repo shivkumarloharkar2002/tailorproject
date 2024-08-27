@@ -83,7 +83,7 @@ export default function Header() {
 
              
                     <li class="nav-item">
-                      <a class="nav-link active co" href="/profile"><img src={log} className="proImg" /></a>
+                      <a class="nav-link active co" href="/profile"><img src={log} onClick={logout} className="proImg" /></a>
                     </li>
                  
                   </ul>
