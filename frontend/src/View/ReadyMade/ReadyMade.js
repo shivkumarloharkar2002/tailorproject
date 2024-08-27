@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ReadyMade.css'
 import ReadyMadeCard from '../../Component/ReadyMadeCard/ReadyMadeCard'
 import Shirt1 from '../../Image/Shirt1.png'
@@ -7,27 +7,52 @@ import back from '../../Image/back.jpg'
 import Header from '../../Component/Header/Header'
 
 export default function ReadyMade() {
+
+  const [type, setType] = useState("shirt")
+
+
   return (
     <>
     <Header/>
     
-    {/* <header><NavbarReady/> </header> */}
-    {/* <div className="gallery">
-        <h1 className='Gfont'>Gallery</h1>
-        <h1 className='Gfont'>Our Designs</h1>
-      </div> */}<div className='backmain1'><Link to='/home'><img src={back} className='backimg'/>Back</Link></div>
+    <Link to={"/home"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text">Back</h1>
+        </div>
+      </Link>
 
       <div className='readymade'>
         
         <ul className='Rlist'>
-          <li ><a className='Glist_li' href='Shirt'>Shirt</a></li>
-          <li ><a className='Glist_li' href='Pant'>Pant</a></li>
-          <li ><a className='Glist_li' href='Kurta'>Kurta</a></li>
-          <li ><a className='Glist_li' href='Pyjama'>Pyjama</a></li>
-          <li ><a className='Glist_li' href='Sut_Safari'>Suit Safari</a></li>
-        </ul>
+            <p onClick={() => {
+            setType("shirt")
+          }} className='Glist-p'>Shirt</p>
+
+
+          <p onClick={() => {
+            setType("pant")
+          }} className='Glist-p'>Pant</p>
+
+          <p onClick={() => {
+            setType("kurta")
+          }} className='Glist-p'>Kurta</p>
+
+          <p onClick={() => {
+            setType("pyjama")
+          }} className='Glist-p'>Pyjama</p>
+
+
+          <p onClick={() => {
+            setType("safari")
+          }} className='Glist-p'>Suit Safari</p>
+       </ul>
       </div>
       <hr className='hr'/>
+
+
+     
+
     <div className='Ready_main'>
        <ReadyMadeCard RMimg={Shirt1} RMhead={"Brushed Twill Shirt - Blue"} RMprice={"799"}/>
        <ReadyMadeCard RMimg={Shirt1} RMhead={"Brushed Twill Shirt - Blue"} RMprice={"799"}/>
