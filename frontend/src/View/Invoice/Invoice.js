@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Invoice.css";
-import search from "./../../assets/Invoice/search.jpg";
+import searchImg from "./../../assets/Invoice/search.jpg";
 import ShortCard from "../../Component/Invoice/ShortCard";
 import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
@@ -9,10 +9,9 @@ import back from "./../../assets/Back/back.jpg";
 import axios from "axios";
 import { useEffect } from "react";
 
-
-
 function Invoice() {
   const [amount, setAmount] = useState(0);
+  const [search, setSearch] = useState("");
   // setAmount(amount + info.price)
 
   const [getAllData, setGetAllData] = useState([]);
@@ -26,15 +25,19 @@ function Invoice() {
 
   const searchData = getAllData.filter((data) => {
     return (
-      data.name.toLowerCase().includes(search.toLowerCase()) ||
-      data.date ||
-      data.price
+      data.customer_id.name.toLowerCase().includes(search.toLowerCase()) ||
+      data.createdAt.toLowerCase().includes(search.toLowerCase())
     );
   });
 
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    const total = getAllData.reduce((sum, data) => sum + (data.total || 0), 0);
+    setAmount(total);
+  }, [getAllData]);
 
   return (
     <div>
@@ -57,26 +60,31 @@ function Invoice() {
       </div>
 
       <div className="invoice-input">
-        <img src={search} alt="" className="invoice-icon" />
+        <img src={searchImg} alt="" className="invoice-icon" />
         <input
           type="text"
           className="invoice-inputs"
           placeholder="search customer name or book no."
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
       </div>
 
       <hr className="invoice-hr" />
 
       <div className="invoice-shortCards">
-        {searchData.map((info) => {
-          setAmount(amount + info.price);
+        {searchData.reverse().map((info) => {
+          {
+            /* setAmount(amount + info.price); */
+          }
           return (
             <>
               <ShortCard
-                name={info.name}
-                date={info.date}
-                price={info.price}
-                id={info.id}
+                name={info.customer_id.name}
+                date={info.createdAt}
+                price={info.total}
+                id={info._id}
               />
             </>
           );
