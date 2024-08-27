@@ -14,14 +14,25 @@ import { useState, useEffect } from 'react'
 export default function ViewCustomer() {
 
   const [getCustomerData, setGetCustomerData] = useState([]);
+  const [search ,setSearch] = useState("") 
+
 
   const getUser = async () => {
     const getNote = await axios.get(
       "http://localhost:5555/api/customerroutes/getcustomer"
     );
     setGetCustomerData(getNote.data.data);
-    console.log(getNote);
+    console.log(getNote.data.data);
   };
+
+  const searchData = getCustomerData.filter(
+    (getcustomer)=>{
+        return(
+          getcustomer.name.toLowerCase().includes(search.toLowerCase())
+        )
+       
+    }
+)
  
   useEffect(() => {
     getUser();
@@ -42,18 +53,23 @@ export default function ViewCustomer() {
           type="text"
           className="invoice-inputs"
           placeholder="Search Customer Name"
+          onChange={
+            (e)=>{
+              setSearch(e.target.value)
+            }
+          }
         />
       </div>
 
       <hr className='hr' />
 
       <div className="invoice-shortCards">
-        {getCustomerData.map((info) => {
+        {searchData.map((info) => {
 
           return (
             <>
               <Link to='/seecustomer_details'>
-                < SearchCard name={info.name} date={info.date} price={info.price} id={info.id} />
+                < SearchCard name={info.name} date={info.date} price={info.price} id={info._id} />
 
               </Link>
             </>

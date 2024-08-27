@@ -8,7 +8,7 @@ import Login from "../View/Login/Login";
 import Invoice from "../View/Invoice/Invoice";
 import ViewCustomer from "../View/Customer/ViewCustomers/ViewCustomer";
 import TodayOrder from "../View/TodayOrderPage/TodayOrder";
-import NextOrderingPage from "../Component/OrderCard/NextOrderingPage";
+import Orders from '../Component/Orders/Orders'
 import Home from "../View/Home/Home";
 import Register from "../View/Register/Register";
 import ReadyMade from "../View/ReadyMade/ReadyMade";
@@ -24,6 +24,7 @@ import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
 
 import AssignOrder from "../View/AssignOrder/AssignOrder";
 import Ready from "../View/Readymade Details/Readymade Details"
+import { ProtectedRoute } from "../protected_routes/protected_routes";
 
 
 const routes = createBrowserRouter([
@@ -34,11 +35,11 @@ const routes = createBrowserRouter([
   },
   {
     path: '/home',
-    element: <Home />
+    element:(<ProtectedRoute> <Home /> </ProtectedRoute>)
   },
   {
     path: '/profile',
-    element: <Profile />
+    element:(<ProtectedRoute> <Profile/> </ProtectedRoute> )
   },
   {
     path:'/about',
@@ -75,11 +76,9 @@ const routes = createBrowserRouter([
     element: <TodayOrder />
   },
   {
-    path: '/orderslip',
-    element: <NextOrderingPage />
+     path:'/orderslip',
+     element:<Orders/>
   },
-
-  
   {
     path: '/gallery',
     element: <Gallery />

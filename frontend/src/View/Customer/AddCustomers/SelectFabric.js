@@ -83,7 +83,7 @@ export default function SelectFabricCom() {
             {file ? (
               <img src={file} alt="Selected" className="preview-image uploadimgheight" />
             ) : (
-              <span><img src={upload} /><br />Upload Fabric Image <br /> <h3 className='fabric_main1-txt'>Add New Fabric</h3></span>
+              <span><img src={upload} /><br />Upload Fabric Image <br /> <h3 className='fabric_main1-txt'><a href='./fabricform'>Add New Fabric</a></h3></span>
             )}
 
           </div>
