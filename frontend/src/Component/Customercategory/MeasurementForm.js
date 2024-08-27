@@ -162,7 +162,7 @@ export default function MeasurementForm() {
               setCollar(e.target.value)
             }} />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='height' onChange={(e) => {
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Length' onChange={(e) => {
             setHeight(e.target.value)
           }}
           />
@@ -251,37 +251,37 @@ export default function MeasurementForm() {
           <h1 className="measurementForm-form-h">Measurement Form</h1>
 
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantheight'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant height'
             onChange={(e) => {
               setpantheight(e.target.value)
             }} />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantwaist' onChange={(e) => {
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant waist' onChange={(e) => {
             setpantwaist(e.target.value)
           }}
           />
 
-          <input type="number" name="" id=""  required className="measurementForm-form-input" placeholder='panthibs'
+          <input type="number" name="" id=""  required className="measurementForm-form-input" placeholder='pant hibs'
             onChange={(e) => {
               setpanthibs(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantabdomen'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant abdomen'
             onChange={(e) => {
               setpantabdomen(e.target.value)
             }} />
-          <input type="number" name="" id=""   required className="measurementForm-form-input" placeholder='pantthigh'
+          <input type="number" name="" id=""   required className="measurementForm-form-input" placeholder='pant thigh'
             onChange={(e) => {
               setpantthigh(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantknee'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant knee'
             onChange={(e) => {
               setpantknee(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantcalf'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant calf'
             onChange={(e) => {
               setpantcalf(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantinstep'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant instep'
             onChange={(e) => {
               setpantinstep(e.target.value)
             }} />
@@ -306,37 +306,37 @@ export default function MeasurementForm() {
           <h1 className="measurementForm-form-h">Measurement Form</h1>
 
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantheight'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant height'
             onChange={(e) => {
               setpantheight(e.target.value)
             }} />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantwaist' onChange={(e) => {
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant waist' onChange={(e) => {
             setpantwaist(e.target.value)
           }}
           />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='panthibs'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant hibs'
             onChange={(e) => {
               setpanthibs(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantabdomen'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant abdomen'
             onChange={(e) => {
               setpantabdomen(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantthigh'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant thigh'
             onChange={(e) => {
               setpantthigh(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantknee'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant knee'
             onChange={(e) => {
               setpantknee(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantcalf'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant calf'
             onChange={(e) => {
               setpantcalf(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pantinstep'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='pant instep'
             onChange={(e) => {
               setpantinstep(e.target.value)
             }} />

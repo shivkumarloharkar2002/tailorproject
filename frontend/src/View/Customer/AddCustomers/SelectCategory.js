@@ -36,7 +36,7 @@ function SelectCategory() {
         </div>
       </Link>
 
-      <h1 className='center'>Cloths Category</h1>
+      <h1 style={{textAlign:'center'}}>Cloths Type</h1>
       <div className='select_cat_main'>
 
 

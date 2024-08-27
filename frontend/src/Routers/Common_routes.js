@@ -34,6 +34,10 @@ const routes = createBrowserRouter([
     element: <Login />
   },
   {
+    path: "/register",
+    element: <Register />
+  },
+  {
     path: '/home',
     element:(<ProtectedRoute> <Home /> </ProtectedRoute>)
   },
@@ -95,10 +99,7 @@ const routes = createBrowserRouter([
     path: '/totalorders',
     element: <TotalOrderingPage />
   },
-  {
-    path: "/register",
-    element: <Register />
-  },
+ 
   {
     path: "/invoice",
     element: <Invoice />
@@ -112,17 +113,19 @@ const routes = createBrowserRouter([
     element: <ReadyMade />
   },
   {
-    path:'/performance',
-    element: <Performance />
+    path: '/ready',
+    element: <Ready/>
   },
   {
     path:'/orderdetail',
     element:<AssignOrder/>
   },
   {
-    path: '/ready',
-    element: <Ready/>
+    path:'/performance',
+    element: <Performance />
   }
+
+  
 
 ])
 
