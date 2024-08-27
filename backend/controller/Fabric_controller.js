@@ -46,9 +46,9 @@ export const getallfabric = async (req, res) => {
 
 
 export const deletefabric = async (req, res) => {
-    const { id } = req.params
+    const  {id} = req.params
     try {
-        let fabric = await Fabricmodel.deleteOne({ fabric_id: id })
+        let fabric = await Fabricmodel.deleteOne({ _id: id })
         res.json({
             data: fabric,
             msg: "deleted success"

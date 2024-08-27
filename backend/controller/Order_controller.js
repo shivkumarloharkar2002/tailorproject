@@ -1,17 +1,35 @@
+import mongoose from "mongoose"
 import Order from "../models/Orde_model.js"
+import Customer from "../models/customer_model.js"
+import Usermodel from "../models/usermodel.js"
 
 export const CreateOrder = async (req, res) => {
-    const Customer_id = "orderid" + Math.floor((Math.random() * 1000000))
+    // const order_id = "orderid" + Math.floor((Math.random() * 1000000))
+    const Morder_id = new mongoose.Types.ObjectId()
 
     //    const transaction_id ="UTR24kwlewj"
 
     const { user_id, customer_id, measurement_id, cloth_type, status, quantity, actualprice, discount, cgst, cgstprice, sgst, sgstprice, transaction_id, total } = req.body
     try {
-        const orderdata = await Order.create({ Customer_id, user_id, customer_id,discount, measurement_id, cloth_type, status, quantity, actualprice, discount, cgst, cgstprice, sgst, sgstprice, transaction_id, total })
+        const orderdata = await Order.create({"order_id":Morder_id, customer_id, user_id, customer_id,discount, measurement_id, cloth_type, status, quantity, actualprice, discount, cgst, cgstprice, sgst, sgstprice, transaction_id, total })
+
+       const mongodbid= orderdata._id
+
+        const customerhistory = await Customer.findByIdAndUpdate(req.body.customer_id,{ 
+            $push:{
+                measurement_id:req.body.measurement_id,
+                order_id:req.body.order_id
+
+            }},{
+                new:true
+            }
+        )
+
         res.json({
             success: true,
             msg: "ordered",
-            data: orderdata
+            data: orderdata,
+            data2: customerhistory
         })
 
     }
@@ -29,7 +47,7 @@ export const Getorderdata = async (req, res) => {
         res.json({
             success: true,
             msg: "order fetched",
-            data: allorderdata
+            data: allorderdata._id
         })
 
     }
@@ -37,3 +55,5 @@ export const Getorderdata = async (req, res) => {
         console.log(e)
     }
 }
+
+
