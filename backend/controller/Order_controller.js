@@ -48,7 +48,7 @@ export const Getorderdata = async (req, res) => {
         res.json({
             success: true,
             msg: "order fetched",
-            data: allorderdata._id
+            data: allorderdata
         })
 
     }
