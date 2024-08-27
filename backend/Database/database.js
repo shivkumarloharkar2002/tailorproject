@@ -1,10 +1,11 @@
 import mongoose from "mongoose"
-
+import dotenv  from 'dotenv'
+dotenv.config()
 
 const Database =async ()=>{
     try{
 
-   const DB= await mongoose.connect("mongodb+srv://shivkumarloharkar:Tny9dZwuwEYHTE9t@cluster0.efn3se0.mongodb.net/Tailor_project")
+   const DB= await mongoose.connect(process.env.MONGODB_URL)
    console.log(`MongoDB Connected successfully`);
     }
     catch(e){

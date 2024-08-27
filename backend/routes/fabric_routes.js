@@ -1,5 +1,5 @@
 import express from "express";
-import { AddFabric, deletefabric, getallfabric } from "../controller/Fabric_controller.js";
+import { AddFabric, Updatefabric, deletefabric, getallfabric } from "../controller/Fabric_controller.js";
 
 import { upload } from "../File_upload/multerfile.js";
 
@@ -14,3 +14,5 @@ FabricRoutes.get("/getallfabric",getallfabric)
 
 
 FabricRoutes.delete("/deletefabric/:id",deletefabric)
+
+FabricRoutes.put("/updatefabric",Updatefabric)
