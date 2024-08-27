@@ -1,5 +1,5 @@
 .Ordering_form {
-    background-color: gray;
+    background-color: rgb(163, 161, 161);
     width: auto;
     height: auto;
     align-content: center;
@@ -11,7 +11,7 @@
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 20px auto;
-
+    padding: 20px;
     background-color: white;
 }
 
@@ -63,23 +63,29 @@
     height: 30px;
     width: 30px;
     border-radius: 7px;
+
 }
 
 .Qty_button_1 {
     text-align: center;
-    background-color: red;
+
+    background: rgb(247, 143, 4);
+    background: linear-gradient(180deg, rgba(247, 143, 4, 1) 0%, rgba(236, 201, 143, 1) 10%, rgba(249, 161, 7, 1)100%);
+
+
     color: aliceblue;
     font-size: 20px;
     font-weight: 800;
     height: 30px;
     display: block;
-   
+
     /* border: 5px solid black; */
-    
+
 }
 
 .Qty_button_2 {
-    background-color: green;
+    background: rgb(247, 143, 4);
+    background: linear-gradient(180deg, rgba(78, 240, 19, 0.821) 0%, rgb(216, 236, 143) 10%, rgb(13, 222, 10)100%);
     color: aliceblue;
     font-size: 20px;
     font-weight: 800;
@@ -131,7 +137,7 @@
 }
 
 .Discount {
-    /* margin-left: 5px; */
+    margin-left: 5px;
     width: 100px;
 }
 
@@ -164,4 +170,40 @@
     background-color: rgb(48, 48, 48);
     color: aliceblue;
     padding: 0px 15px;
+    margin: 10px;
+}
+
+
+/* pant */
+
+.pant_height {
+    margin-left: 35px;
+}
+
+.pant_waist {
+    margin-left: 42px;
+}
+
+.pant_hibs {
+    margin-left: 55px;
+}
+
+.pant_abdomen {
+    margin-left: 8px;
+}
+
+.pant_thigh {
+    margin-left: 15px;
+}
+
+.pant_knee {
+    margin-left: 19px;
+}
+
+.pant-calf {
+    margin-left: 25px;
+}
+
+.pant_instep {
+    margin-left: 9px;
 }

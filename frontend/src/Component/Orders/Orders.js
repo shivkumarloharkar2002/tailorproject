@@ -190,16 +190,18 @@ export default function Orders() {
 
                             <div className='Profile_Size'>
                                 <div>
-                                    <h5>pant height:-<span className='Collar_value'>{measureData.pantheight}</span></h5>
-                                    <h5>pant waist:-<span className='Shirt_value'>{measureData.pantwaist}</span></h5>
-                                    <h5>pant abdomen:-<span className='Sleeve_value'>{measureData.pantabdomen}</span></h5>
-                                    <h5>pant hibs:-<span className='Sleeve_value'>{measureData.panthibs}</span></h5>
+                                    <h5>pant height:-<span className='pant_height'>{measureData.pantheight}</span></h5>
+                                    <h5>pant waist:-<span className='pant_waist'>{measureData.pantwaist}</span></h5>
+                                   
+                                    <h5>pant hibs:-<span className='pant_hibs'>{measureData.panthibs}</span></h5>
+
+                                     <h5>pant abdomen:-<span className='pant_abdomen'>{measureData.pantabdomen}</span></h5>
                                 </div>
                                 <div>
-                                    <h5>pant thigh:-<span className='Chest_value'>{measureData.pantthigh}</span></h5>
-                                    <h5>pant knee:-<span className='Waist_value'>{measureData.pantknee}</span></h5>
-                                    <h5>pant calf:-<span className='Shoulder_Value'>{measureData.pantcalf}</span></h5>
-                                    <h5>pant instep:-<span className='Shoulder_Value'>{measureData.pantinstep}</span></h5>
+                                    <h5>pant thigh:-<span className='pant_thigh'>{measureData.pantthigh}</span></h5>
+                                    <h5>pant knee:-<span className='pant_knee'>{measureData.pantknee}</span></h5>
+                                    <h5>pant calf:-<span className='pant-calf'>{measureData.pantcalf}</span></h5>
+                                    <h5>pant instep:-<span className='pant_instep'>{measureData.pantinstep}</span></h5>
                                 </div>
                             </div>
 
@@ -279,16 +281,16 @@ export default function Orders() {
 
                             <div className='Profile_Size'>
                                 <div>
-                                    <h5>safari collar:-<span className='Collar_value'>{measureData.safaricollar}</span></h5>
-                                    <h5>safari chest:-<span className='Shirt_value'>{measureData.safarichest}</span></h5>
-                                    <h5>safari waist:-<span className='Sleeve_value'>{measureData.safarishirtwaist}</span></h5>
-                                    <h5>safari traouser hib:-<span className='Sleeve_value'>{measureData.safaritrouserhip}</span></h5>
+                                    <h5>safari collar:-<span className='safari_Collar_value'>{measureData.safaricollar}</span></h5>
+                                    <h5>safari chest:-<span className='safarichest_value'>{measureData.safarichest}</span></h5>
+                                    <h5>safari waist:-<span className='safari waist'>{measureData.safarishirtwaist}</span></h5>
+                                    <h5>safari traouser hib:-<span className='safari traouser'>{measureData.safaritrouserhip}</span></h5>
                                 </div>
                                 <div>
-                                    <h5>safari sleeve:-<span className='Chest_value'>{measureData.safarisleeve}</span></h5>
-                                    <h5>safari sholder:-<span className='Waist_value'>{measureData.safarisholder}</span></h5>
-                                    <h5>safari trouser waist:-<span className='Shoulder_Value'>{measureData.safaritrouserwaist}</span></h5>
-                                    <h5>safari trouser thigh:-<span className='Shoulder_Value'>{measureData.safaritrouserthigh}</span></h5>
+                                    <h5>safari sleeve:-<span className='safari sleeve'>{measureData.safarisleeve}</span></h5>
+                                    <h5>safari sholder:-<span className='safari sholder'>{measureData.safarisholder}</span></h5>
+                                    <h5>safari trouser waist:-<span className='safari trouser waist'>{measureData.safaritrouserwaist}</span></h5>
+                                    <h5>safari trouser thigh:-<span className='safari trouser thigh'>{measureData.safaritrouserthigh}</span></h5>
                                 </div>
                             </div>
 

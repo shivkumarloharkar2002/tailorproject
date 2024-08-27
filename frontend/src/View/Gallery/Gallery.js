@@ -74,8 +74,8 @@ export default function Gallery() {
             setType("safari")
           }} className='Glist-p'>Suit Safari</p>
 
-          <img src={gallery} alt="" className="Profile-back-img" />
-
+          <a href='/galleryform'><img src={gallery} alt="" className="Profile-back-img" />
+          </a>
         </ul>
       </div>
       {/* <hr className='hr' /> */}
