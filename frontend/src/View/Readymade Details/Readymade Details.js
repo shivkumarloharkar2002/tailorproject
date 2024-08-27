@@ -1,13 +1,17 @@
 import React from 'react';
 import suts from './suts.webp';
 import './Ready.css';
+import Header from '../../Component/Header/Header';
 
 export default function Ready() {
   return (
+    <div>
+        <Header/>
+        <p className='heding-ready'>Details</p>
     <div className='ready-flex'>
       <img className='ready-img' src={suts}/>
       <div>
-        <h2>Wholesale Safari Suit for Men To Add Class To Every Man's Wardrobe</h2>
+        <h2 className='ready-head'>Wholesale Safari Suit for Men To Add Class To Every Man's Wardrobe</h2>
         <p className='left-size'>Our safari suit is made from high-quality cotton fabric, ensuring comfort and durability.</p>
         
         <p className='left-size'>Available Sizes :- XS , S , M , L , XL , 2XL , 3XL .</p>
@@ -26,6 +30,7 @@ export default function Ready() {
           <p className='bts'>Buy Now</p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

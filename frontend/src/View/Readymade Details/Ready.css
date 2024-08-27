@@ -21,6 +21,7 @@
 }
 .left-size{
     text-align: left;
+    font-size: 20pt;
 }
 .rcolor{
     background-color: rgb(117, 11, 11);
@@ -31,7 +32,12 @@
 }
 .colo{
     display: flex;
-    margin: -45px 0 0 130px;
+    margin: -6.3% 0 0 22%;
+}
+@media only screen and (max-width:600px){
+    .colo{
+        margin: -14.5% 0 0 50%;
+    }
 }
 .ncolor{
     background-color: rgb(11, 27, 117);
@@ -62,10 +68,31 @@
     border-radius: 10px;
     color: white;
     box-shadow: 2px 2px 6px 1px gray;
-    padding: 0.1px 0 0 0;
+    padding: 1% 0 0 0;
     margin: 50px;
+}
+@media only screen and (max-width:600px){
+    .butns{
+        margin: 0 0 0 35%;
+        padding: 2% 0 0 0;
+    }
 }
 .bts{
     font-family: Kaisei Decol;
    
+}
+.heding-ready{
+    text-align: center;
+    font-family: Kaisei Decol;
+    font-size: 30pt;
+    margin-top: 10%;
+}
+@media only screen and (max-width:600px){
+    .heding-ready{
+        margin-top: 30%;
+    }
+}
+.ready-head{
+    margin-top: 5%;
+    font-size: 30pt;
 }
