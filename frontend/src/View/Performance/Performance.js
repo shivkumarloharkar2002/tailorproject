@@ -47,22 +47,22 @@ export default function Performance() {
         <div className='flexp'>
             <div className='rpart'>
                 <img className='icon' src={sales}/>
-                <p className='num'>₹3,000</p>
+                <p className='num'>₹13,000</p>
                 <p className='numi'>Total Sales</p>
             </div>
             <div className='jpart'>
                 <img className='icon' src={wallet}/>
-                <p className='num'>₹1,400</p>
+                <p className='num'>₹11,400</p>
                 <p className='numi'>Payments Received</p>
             </div>
             <div className='ppart'>
                 <img className='icon' src={recev}/>
-                <p className='num'>3</p>
+                <p className='num'>13</p>
                 <p className='numi'>Orders Received</p>
             </div>
             <div className='npart'>
                 <img className='icon' src={goods}/>
-                <p className='num'>1</p>
+                <p className='num'>11</p>
                 <p className='numi'>Orders Delivered</p>
             </div>
         </div>
