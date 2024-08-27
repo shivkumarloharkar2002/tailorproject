@@ -8,8 +8,6 @@ export const AddFabric = async (req, res) => {
 
     console.log("this is file", req.file.path)
 
-    // const imgurl= await Uploadoncloudinary(req.file.path, "imgurl")
-
     const imgurl = await Uploadoncloudinary(req.file.path)
 
     const fabric_id = "fabricId" + Math.floor((Math.random() * 10000000))
@@ -55,6 +53,37 @@ export const deletefabric = async (req, res) => {
         })
         const deleted = await cloudinary.uploader.destroy(fabric.img1)
         console.log(deleted)
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
+
+export const Updatefabric = async (req, res) => {
+    // console.log("this is file", req.file.path)
+
+    // const imgurl = await Uploadoncloudinary(req.file.path)
+
+    const {id, title, color, price, cloth_type, fabric_type, pattern } = req.body
+
+    try {
+        const updated = await Fabricmodel.updateOne({ _id: id }, {
+            $set: {
+                "title": title,
+                "price": price,
+                "color": color,
+                "cloth_type": cloth_type,
+                "fabric_type": fabric_type,
+                "pattern":pattern,
+                // "img1":"link"
+            }
+        })
+        res.json({
+            success: true,
+            data: updated,
+            msg: `${title} is updated`
+        })
     }
     catch (e) {
         console.log(e)

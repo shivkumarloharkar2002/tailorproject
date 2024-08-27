@@ -1,3 +1,4 @@
+import Uploadoncloudinary from "../File_upload/Coudinaryfile.js"
 import Usermodel from "../models/usermodel.js"
 
 // export const Userregister = async (req, res) => {
@@ -29,6 +30,10 @@ import Usermodel from "../models/usermodel.js"
 // }
 
 export const Userregister = async (req, res) => {
+console.log("this is file", req.file.path)
+
+const imgurl = await Uploadoncloudinary(req.file.path)
+
     const user_id = "id" + Math.floor((Math.random()*1000000))
      const { username, phone, email, password, role } = req.body
     if (!user_id || !username || !phone || !email || !role || !password) {
@@ -42,7 +47,8 @@ export const Userregister = async (req, res) => {
             "email": email,
             "phone": phone,
             "password": password,
-            "role": role
+            "role": role,
+            "img":imgurl
         })
         res.status(200).json({
             success: true,

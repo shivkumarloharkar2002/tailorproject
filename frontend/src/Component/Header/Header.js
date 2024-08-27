@@ -12,7 +12,7 @@ export default function Header() {
 
   const logout = () => {
 
-    localStorage.clear("")
+    // localStorage.clear("")
     navigate("/")
   }
 
