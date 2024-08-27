@@ -119,7 +119,7 @@ export default function FabricForm() {
               <option value="shirt">Shirt</option>
               <option value="pant">Pant</option>
               <option value="kurta">Kurta</option>
-              <option value="pyjama">Pyjama</option>
+              <option value="payjama">payjama</option>
               <option value="safari">Safari</option>
             </select><br />
             <label className='fab_label'>Pattern</label>:

@@ -71,7 +71,7 @@ function SelectCategory() {
 
 
         <div className='category_main' onClick={() => {
-          setCategory("Safari");
+          setCategory("safari");
         }}>
           <img src={safari} alt="category image" className='category_img' /><br />
           <h2 className='category_head'>Suit Safari</h2>
