@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export default function Orders() {
 
-    const [fabricdata, setfabricdata] = useState()
+    const [fabricdata, setfabricdata] = useState({})
     const [count, setCount] = useState(1)
     const Incre = () => {
         setCount(count + 1)
@@ -41,8 +41,8 @@ export default function Orders() {
 
         const selectedFabric = fabricList.filter((data) => data._id === fabricData);
 
-        setfabricdata(selectedFabric);
-        console.log("price," ,selectedFabric);
+        setfabricdata(selectedFabric[0]);
+        console.log("fabric", selectedFabric[0]);
     }
 
     useEffect(
@@ -50,6 +50,61 @@ export default function Orders() {
             GetFabricdata()
         }, []
     )
+
+    // fabricdata.price
+
+    // const [price, setPrice] = useState();
+
+    const [cgstRate, setCgstRate] = useState(9); // Default rate of 9%
+    const [sgstRate, setSgstRate] = useState(9); // Default rate of 9%
+    const [shirtstich, setshirtstich] = useState(500)
+    const [discount, setDiscount] = useState(0);
+    const [cgstprice, setCgst] = useState(0);
+    const [sgstprice, setSgst] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
+
+    const shirtfabric = (fabricdata.price + shirtstich) * count
+
+    useEffect(() => {
+        calculateTotals(shirtfabric, discount); // Initial calculation
+    }, [shirtfabric, discount]); // Dependency array includes price and discount
+
+    const handleDiscountChange = (e) => {
+        const newDiscount = parseFloat(e.target.value) || 0;
+        setDiscount(newDiscount);
+        calculateTotals(shirtfabric, newDiscount); // Pass current price
+    };
+
+    const [discountprice, setdiscountprice] = useState(0)
+
+    const calculateTotals = (shirtfabric, discount) => {
+        const discountedPrice = shirtfabric - (shirtfabric * discount) / 100;
+        const calculatedCgst = (discountedPrice * cgstRate) / 100;
+        const calculatedSgst = (discountedPrice * sgstRate) / 100;
+        const total = discountedPrice + calculatedCgst + calculatedSgst;
+
+        setCgst(calculatedCgst);
+        setSgst(calculatedSgst);
+        setTotalAmount(total);
+        setdiscountprice(discountedPrice)
+
+    };
+
+    const createOrder = async () => {
+
+        try {
+            const createorderdata = await axios.post("http://localhost:5555/api/orderroutes/addorder", {
+
+                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: shirtstich, quantity: count, actualprice: shirtfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount
+            })
+            console.log(createorderdata)
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
+
 
 
 
@@ -82,11 +137,11 @@ export default function Orders() {
                             </div>
 
                             <div className='Profile_Orders'>
-                                <h4>{clothData} :-</h4>
+                                <h4>cloth_type :-{clothData}</h4>
                                 <h5 className=''></h5>
                                 {/* <div className='fabric'></div> */}
                                 <h4>Color :-</h4>
-                                <h5 className=''>Blue</h5>
+                                <h5 className=''>{fabricdata.color}</h5>
                                 <div className='Order_Qty'>
                                     <h4 className='Order_Qty_D'>Qty:-</h4>
                                     <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
@@ -116,9 +171,20 @@ export default function Orders() {
                                 <h3 className='profile-back_Next'>Discount</h3>
                             </div>
                             <div className='profile_Discount'>
-                                <h5>Price:-₹<input type='number' className='Discount' placeholder='Price' /></h5>
-                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' /></h5>
-                                <h5>Total:-<span className='Discount'>540</span>/-</h5>
+                                <h5>fabric price:-{fabricdata.price}</h5>
+                                <h5>shirt stich:-{shirtstich}</h5>
+                                <h4>total price:{shirtfabric.toFixed(2)}</h4>
+
+                            </div>
+                            <div className='profile_Discount'>
+
+                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
+                                <p>Discounted Price: ${discountprice}</p>
+                                <p className="invoiceInfo-box-color-para-p">
+                                    CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
+                                    SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
+                                </p>
+                                <h5>Total:-<span className='Discount'>{totalAmount.toFixed(2)}</span>/-</h5>
                             </div>
 
                             {/* <div className='profile_button'>
@@ -126,8 +192,8 @@ export default function Orders() {
                 <button className=' profile_button_1' >Edit Dis</button>
             </div> */}
                             <div className='profile_button_last'>
-                                <button className='button_last'>
-                                    <h4 className=''>Send</h4>
+                                <button className='button_last' onClick={createOrder}>
+                                    <h4 className=''>Order</h4>
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
@@ -192,10 +258,10 @@ export default function Orders() {
                                 <div>
                                     <h5>pant height:-<span className='pant_height'>{measureData.pantheight}</span></h5>
                                     <h5>pant waist:-<span className='pant_waist'>{measureData.pantwaist}</span></h5>
-                                   
+
                                     <h5>pant hibs:-<span className='pant_hibs'>{measureData.panthibs}</span></h5>
 
-                                     <h5>pant abdomen:-<span className='pant_abdomen'>{measureData.pantabdomen}</span></h5>
+                                    <h5>pant abdomen:-<span className='pant_abdomen'>{measureData.pantabdomen}</span></h5>
                                 </div>
                                 <div>
                                     <h5>pant thigh:-<span className='pant_thigh'>{measureData.pantthigh}</span></h5>
@@ -326,12 +392,6 @@ export default function Orders() {
     }
 
 }
-
-
-
-
-
-
 
 
 
