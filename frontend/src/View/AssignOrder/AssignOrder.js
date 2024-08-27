@@ -9,12 +9,21 @@ export default function AssignOrder() {
       <p className='heding-assign'>Assign Orders</p>
       <div className='assign-main'>
         <div className='assign-left'>
+
+          <p>All</p>
+          <p>Shirt</p>
+          <p>Pant</p>
+          <p>Kurta</p>
+          <p>Pyjama</p>
+          <p>Sut Safari</p>
+
           <p className='aa'>All</p>
           <p className='aa'>Shirt</p>
           <p className='aa'>Pant</p>
           <p className='aa'>Kurta</p>
           <p className='aa'>Pyjama</p>
           <p className='aa'>Sut Safari</p>
+
         </div>
         <div className='assign-line'></div>
         <div>
