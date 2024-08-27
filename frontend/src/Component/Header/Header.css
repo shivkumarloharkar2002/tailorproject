@@ -1,55 +1,78 @@
-
-
-/* new */
-.nimg {
-    height: 80px;
- 
+@media screen and (max-width:800px){
+    .Heder_Next {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 30vw !important;
+    }
 }
 
-.ncolor {
-    color: rgb(240, 238, 237);
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 600;
-    font-family: Kaisei Decol;
-    text-decoration: none;
-   
-}
 
-.H_Page{
-    text-decoration: none;
-    color: rgb(240, 238, 237);
-    font-size: 25px;
-    font-weight: 600;
-    font-family: Kaisei Decol;
-
-
-}
-.Header{
+.Header {
     background-color: rgba(36, 148, 148, 1);
-    height: auto;
+    min-height: 80px;
+    width: 100vw;
+    /* border: 2px solid red;  */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.Heder_Disply{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.Heder_Next{
+
+
+.Heder_Next {
+    border: 2px solid red;
     display: flex;
     /* border: 1px solid; */
     /* margin: 0 45px; */
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     text-decoration: none;
-
+    width: 50vw !important;
+    min-height: 80px;
+    /* margin: 0; */
     /* margin: auto; */
-}
-.proImg{
-    height: 40px;
+    align-items: center;
 }
 
-.Header_Margin{
+
+
+
+
+.nav-item {
+    display: block;
+
+}
+
+.Header_Margin {
     text-align: center;
-    margin: 20px 55px;
+    /* margin: 0px 20px; */
+    display: block;
+    text-decoration: none;
+    color: rgb(240, 238, 237);
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Kaisei Decol;
+}
+
+/* new */
+
+.HEADER{
+    background-color: rgba(36, 148, 148, 1);
+
+}
+.co{
+    color: rgb(240, 238, 237) !important;
+    
+}
+.proImg {
+    height: 30px;
+    width: 30px;
+}
+.nimg {
+    height: 80px;
+    width: 120px;
+    display: block;
+
 }
