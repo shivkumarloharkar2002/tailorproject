@@ -5,9 +5,12 @@ import "./Profile.css"
 import { Link } from 'react-router-dom';
 import img from "./../../assets/Login/login-email.png"
 
-function Profile(props) {
+function Profile() {
     const profileData = JSON.parse(localStorage.getItem('user'));
     console.log(profileData)
+
+    
+
     return (
         <div>
             <Header />
