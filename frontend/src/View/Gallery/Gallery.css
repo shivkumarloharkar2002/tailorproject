@@ -1,26 +1,53 @@
+@media screen and (max-width :678px) {
+    .Main_Card {
+        /* display: inline-block; */
+        flex-wrap: wrap;
+        position: relative;
+        left: 80px;
 
+
+    }
+
+    .Glist {
+        display: flex;
+        flex-wrap: wrap;
+       /* justify-content: space-evenly; */
+       position: relative;
+       left: 20px;
+       /* background-color: blue; */
+        align-content: center !important;
+    }
+}
 
 /* new */
 
-.Profile-back-img{
+.Profile-back-img {
     height: 50px;
 }
-.Main_Card{
+
+.Main_Card {
     display: inline-block;
     flex-wrap: wrap;
+    /* width: 80vw; */
+    /* border: 2px solid black; */
+    text-align: center;
     /* justify-content: space-evenly; */
-    margin: 2px;
+    margin: auto;
+
 }
+
 .GallaryHedding {
     background-color: rgba(36, 148, 148, 1);
     /* margin-top: 130px; */
     border-radius: 10px;
     color: white;
-    height: 40px;
+    padding: 5px 0px;
+    height: auto;
     width: 130px;
     text-align: center;
     margin: auto;
 }
+
 .Glist-p {
     /* border: 2px solid red; */
     display: block;
@@ -33,7 +60,8 @@
 
 .Glist-p:hover {
     cursor: pointer;
-    border-bottom: 3px solid rgba(36, 148, 148, 1);;
+    border-bottom: 3px solid rgba(36, 148, 148, 1);
+    ;
 }
 
 .Glist {
@@ -47,6 +75,7 @@
     height: auto;
     align-items: center;
 }
+
 .gallery-box {
     display: flex;
     justify-content: space-around;
@@ -56,6 +85,4 @@
     /* border: 2px solid red; */
     margin: auto;
     align-content: center;
-   
-
 }
