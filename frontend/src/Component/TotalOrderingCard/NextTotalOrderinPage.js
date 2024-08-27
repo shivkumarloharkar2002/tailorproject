@@ -29,6 +29,7 @@ export default function NextOrderingPage() {
 
             <img src={img} alt="" className="invoice-logo" />
 
+
             <div className='ORDERBG'>
                 <p className='ORDER'>Total Order</p>
             </div>
@@ -53,14 +54,7 @@ export default function NextOrderingPage() {
                         <h3 onClick={Incre} >+</h3>
                     </div>
 
-                    {/* <div className="incre">
-                        <h2 onClick={Decre} >-</h2>
-                    </div>
-                    <div className="incre name">
-                        <h2 >{count}</h2>
-                    </div>
-                    <h2 onClick={Incre} >+</h2>
-                     */}
+                   
                 </div>
 
                 <h2 className='Next'>Size</h2>

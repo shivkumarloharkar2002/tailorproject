@@ -1,12 +1,52 @@
-.dis {
+
+
+/* new */
+
+.Profile-back-img{
+    height: 50px;
+}
+.Main_Card{
     display: inline-block;
-    justify-content: space-evenly;
-    /* height: 200px; */
-    width: 300px;
-    height: 500px;
-    /* margin: 0px; */
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    margin: 2px;
+}
+.GallaryHedding {
+    background-color: rgba(36, 148, 148, 1);
+    /* margin-top: 130px; */
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    width: 130px;
+    text-align: center;
+    margin: auto;
+}
+.Glist-p {
+    /* border: 2px solid red; */
+    display: block;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 28px;
+    font-family: Kaisei Decol;
+    font-weight: 500;
 }
 
+.Glist-p:hover {
+    cursor: pointer;
+    border-bottom: 3px solid rgba(36, 148, 148, 1);;
+}
+
+.Glist {
+    border-bottom: 2px solid rgba(36, 148, 148, 1);
+    /* border-top: 2px solid rgba(36, 148, 148, 1); */
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: auto;
+    align-items: center;
+}
 .gallery-box {
     display: flex;
     justify-content: space-around;
@@ -16,25 +56,6 @@
     /* border: 2px solid red; */
     margin: auto;
     align-content: center;
-
-}
-
-.Glist {
-    border-bottom: 2px solid rgba(36, 148, 148, 1);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 80vw;
-    height: auto;
-    align-items: center;
-}
-
-.Glist-p {
-    /* border: 2px solid red; */
-    display: block;
-    cursor: pointer;
-    font-size: 28px;
-    font-weight: 700;
-
+   
 
 }
