@@ -15,7 +15,7 @@ export default function MeasurementForm() {
   console.log(clothData)
 
   const navigate = useNavigate(); 
-
+ 
   const [category, setCategory] = useState()
   const [collar, setCollar] = useState()
   const [height, setHeight] = useState()
@@ -67,7 +67,7 @@ export default function MeasurementForm() {
       );
 
       // if (registerData.status === 200) {
-      localStorage.setItem("customer", JSON.stringify(measureData.data.data));
+      localStorage.setItem("measureshirt", JSON.stringify(measureData.data.data));
       alert("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);
@@ -98,7 +98,7 @@ export default function MeasurementForm() {
       );
 
       // if (registerData.status === 200) {
-      localStorage.setItem("customer", JSON.stringify(measureData.data.data));
+      localStorage.setItem("measure", JSON.stringify(measureData.data.data));
       alert("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);
@@ -130,7 +130,7 @@ export default function MeasurementForm() {
       );
 
       // if (registerData.status === 200) {
-      localStorage.setItem("customer", JSON.stringify(measureData.data.data));
+      localStorage.setItem("measure", JSON.stringify(measureData.data.data));
       alert("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);

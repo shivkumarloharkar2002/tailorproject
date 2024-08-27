@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import './FabricForm.css'
 import axios from 'axios';
-import FabricAdminCard from '../../../Component/AdminCards/AddFabriccard/FabricAdminCard';
 
 
 export default function FabricForm() {
@@ -53,14 +52,27 @@ export default function FabricForm() {
   }
   }
 
+//fabric from the form
+
   const GetFabricdata= async()=>{
     const fabricd =await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }
 
+  //delete fabric 
+
+  const deleteFabric = async(data)=>{
+    const id = data._id;
+    const deletedata = await axios.delete(`http://localhost:5555/api/fabricroutes/deletefabric/${id}`) 
+    toast.error(deletedata.data.msg)
+
+    GetFabricdata();
+  }
 
   useEffect(
+
+
     ()=>{
       GetFabricdata();
     },[]
@@ -136,12 +148,44 @@ export default function FabricForm() {
       <div className='Fabform_list  List_fab'>
         <h1 className="center">Fabric List</h1>
     {
-      fabric.map(
+      fabric.reverse().map(
         (data)=>{
           return(
             <>
-             <FabricAdminCard title={data.title} color={data.color} price={data.price}  img1={data.img1} pattern={data.pattern} cloth_type={data.cloth_type} fabric_type={data.fabric_type}/>
-            </>
+            <div className='AFmain'>
+<h2 style={{padding:'0 20px'}}>{data.title}</h2>
+<div className='AFDIV' >
+        <div>
+            <img src={data.img1} className='AFimg'/>
+        </div>
+        <div className='AFinfo'>
+         
+           <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.color}</h4></div>
+           <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
+           <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4>{data.fabric_type}</h4></div>
+           <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
+           <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>
+    </div>
+    </div>
+   <div className="fabCard-btns">
+                    {/* <button
+                      className="userCard-button edit"
+                    >
+                      Edit
+                    </button> */}
+                    <button
+                      className="userCard-button delete"
+                      onClick={
+                        ()=>{
+                          deleteFabric(data) 
+                        }
+                      }
+                      >
+                      Delete
+                    </button>
+                  </div> 
+</div>
+             </>
           )
         }
       )
