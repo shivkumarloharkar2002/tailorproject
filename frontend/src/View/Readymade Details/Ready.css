@@ -1,0 +1,71 @@
+.ready-img{
+    height: 400px;
+    margin-right: 5%;
+    box-shadow: 2px 2px 3px 1px gray;
+    border-radius: 10px;
+}
+.ready-flex{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5%;
+}
+@media only screen and (max-width:600px){
+    .ready-flex{
+        flex-wrap: wrap;
+    }
+}
+.pice{
+    display: block;
+    justify-content: space-around;
+}
+.left-size{
+    text-align: left;
+}
+.rcolor{
+    background-color: rgb(117, 11, 11);
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin: 10px;
+}
+.colo{
+    display: flex;
+    margin: -45px 0 0 130px;
+}
+.ncolor{
+    background-color: rgb(11, 27, 117);
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin: 10px;
+}
+.gcolor{
+    background-color: rgb(62, 62, 62);
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin: 10px;
+}
+.bcolor{
+    background-color: rgb(4, 4, 4);
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin: 10px;
+}
+.butns{
+    height: 40px;
+    width: 110px;
+    background: rgb(252,145,3);
+    background: linear-gradient(180deg, rgba(252,145,3,1) 0%, rgba(249,206,160,1) 10%, rgba(254,134,4,1) 100%);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 2px 2px 6px 1px gray;
+    padding: 0.1px 0 0 0;
+    margin: 50px;
+}
+.bts{
+    font-family: Kaisei Decol;
+   
+}

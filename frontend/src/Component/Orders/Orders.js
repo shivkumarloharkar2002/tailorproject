@@ -50,9 +50,9 @@ export default function Orders() {
                             <h5 className=''>Blue</h5>
                             <div className='Order_Qty'>
                                 <h4 className='Order_Qty_D'>Qty:-</h4>
-                                <h4 onClick={Decre} >-</h4>
+                                <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
                                 <h3 className='Order_count'>{count}</h3>
-                                <h3 onClick={Incre} >+</h3>
+                                <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
                             </div>
                         </div>
 
@@ -77,22 +77,22 @@ export default function Orders() {
                             <h3 className='profile-back_Next'>Discount</h3>
                         </div>
                         <div className='profile_Discount'>
-                            <h5>Price:-<span className='Discount'>₹ 600 </span></h5>
-                            <h5>Descount:-<span className='Discount'>10%</span></h5>
-                            <h5>Total:-<span className='Discount'>540</span></h5>
+                            <h5>Price:-₹<input type='number' className='Discount' placeholder='Price'/></h5>
+                            <h5>Discount:-<input type='number' className='Discount' placeholder='Discount'/></h5>
+                            <h5>Total:-<span className='Discount'>540</span>/-</h5>
                         </div>
 
-                        <div className='profile_button'>
+                        {/* <div className='profile_button'>
                             <button className='profile_button_1' >Edit Price</button>
                             <button className=' profile_button_1' >Edit Dis</button>
-                        </div>
+                        </div> */}
                         <div className='profile_button_last'>
                             <button className='button_last'>
                                 <h4 className=''>Send</h4>
-                                <h4 className=''>8767899362</h4>
+                                {/* <h4 className=''>8767899362</h4> */}
                             </button>
                             <button className='button_last'>
-                                <h3 className=''>Print Measurement</h3>
+                                <h3 className=''>Print </h3>
                             </button>
                         </div>
                     </div>

@@ -12,7 +12,18 @@
     font-size: 25px;
     font-weight: 600;
     font-family: Kaisei Decol;
+    text-decoration: none;
    
+}
+
+.H_Page{
+    text-decoration: none;
+    color: rgb(240, 238, 237);
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Kaisei Decol;
+
+
 }
 .Header{
     background-color: rgba(36, 148, 148, 1);
@@ -24,12 +35,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.Heder_next{
+.Heder_Next{
     display: flex;
     /* border: 1px solid; */
     /* margin: 0 45px; */
     justify-content: space-evenly;
     flex-wrap: wrap;
+    text-decoration: none;
 
     /* margin: auto; */
 }

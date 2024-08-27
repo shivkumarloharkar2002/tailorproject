@@ -21,8 +21,11 @@
 }
 
 .HCard {
-    border: 1px solid rgb(142, 138, 138);
-    background-color: rgba(36, 148, 148, 0.54);
+    /* border: 1px solid rgb(142, 138, 138);
+    background-color: rgba(36, 148, 148, 0.54); */
+
+    background: rgb(24, 138, 133);
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);
     text-align: center;
     height: auto;
     width: 60vh;
@@ -37,18 +40,18 @@
     width: 25vh;
 }
 
-.HText{
+.HText {
     /* font-size: 20px; */
     font-weight: 800;
     font-family: Kaisei Decol;
 }
 
 
-.HCard h5{
+.HCard h5 {
     color: black;
 }
 
-.HCard h5:hover{
+.HCard h5:hover {
     color: blue;
     text-decoration: underline;
 }
