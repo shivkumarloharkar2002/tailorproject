@@ -20,6 +20,10 @@
 @media only screen and (max-width:600px){
     .assign-patti{
         flex-wrap: wrap;
+        height: 25%;
+        width: 90vw;
+        font-size: 14pt;
+        margin: -5% 0 0 0;
     }
 }
 .assign-main{
@@ -39,6 +43,12 @@
 .assign-left{
     margin-top: 10%;
 }
+@media only screen and (max-width:600px){
+    .assign-left{
+        display: flex;
+        font-size: 14pt;
+    }
+}
 .assign-line{
     height: 250px;
     width: 2px;
@@ -46,7 +56,23 @@
     margin-top: 10%;
 }
 @media only screen and (max-width:600px){
+    .assign-line{
+        height: 2px;
+        width: 80%;
+        background-color:  rgba(36, 148, 148, 0.54);
+    }
+}
+@media only screen and (max-width:600px){
     .assign-informetion{
         flex-wrap: wrap;
+    }
+}
+.aa{
+    font-size: 18pt;
+}
+@media only screen and (max-width:600px){
+    .aa{
+        margin: 0 10px;
+        font-size: 12pt;
     }
 }
