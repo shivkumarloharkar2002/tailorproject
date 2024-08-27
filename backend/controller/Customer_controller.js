@@ -22,23 +22,9 @@ export const Customerregister = async (req, res) => {
     }
 }
 
-export const AllCustomerdata = async (req, res) => {
-    try {
-        const alldata =await Customer.find()
-        res.json({
-            success: true,
-            msg: "All customer Fetched",
-            data: alldata
-        })
-    }
-    catch (e) {
-        console.log(e)
-    }
-}
-
 // export const AllCustomerdata = async (req, res) => {
 //     try {
-//         const alldata =await Customer.find().populate("fabric_id")
+//         const alldata =await Customer.find()
 //         res.json({
 //             success: true,
 //             msg: "All customer Fetched",
@@ -49,3 +35,17 @@ export const AllCustomerdata = async (req, res) => {
 //         console.log(e)
 //     }
 // }
+
+export const AllCustomerdata = async (req, res) => {
+    try {
+        const alldata =await Customer.find().populate("measurement_id").populate("order_id")
+        res.json({
+            success: true,
+            msg: "All customer Fetched",
+            data: alldata
+        })
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
