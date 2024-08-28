@@ -25,6 +25,7 @@ import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
 import AssignOrder from "../View/AssignOrder/AssignOrder";
 import Ready from "../View/Readymade Details/Readymade Details"
 import { ProtectedRoute } from "../protected_routes/protected_routes";
+import ReadymadeForm from "../View/Admin/ReadymadeForm/ReadymadeForm";
 
 
 const routes = createBrowserRouter([
@@ -115,6 +116,10 @@ const routes = createBrowserRouter([
   {
     path: '/ready/:id',
     element: <Ready/>
+  },
+  {
+     path:'/readymadeform',
+     element:<ReadymadeForm/>
   },
   {
     path:'/orderdetail',

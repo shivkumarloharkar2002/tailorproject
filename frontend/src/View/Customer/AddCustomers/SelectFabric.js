@@ -57,7 +57,7 @@ export default function SelectFabricCom() {
       <Link to={"/selectcategory"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="profile-back-img" />
-          <h1 className="profile-back-text">Back</h1>
+          <h1 className="profile-back-text"></h1>
         </div>
       </Link>
 
@@ -67,20 +67,21 @@ export default function SelectFabricCom() {
       <div className='Selfab_main'>
         <div className="file-upload-container fabric_main1">
 
-          <span><img src={upload} />
+          <span>
+            <img src={upload} onClick={() => {
+              setShowModal(true)
+            }}/>
             <br />Upload Fabric Image <br />
           </span>
           <h3 className='fabric_main1-txt'>
-            <button onClick={() => {
-              setShowModal(true)
-            }}>Add New Fabric</button>
+          <h4>Add New Fabric</h4>
           </h3>
         </div>
 
         {showModal && <MyModel />}
 
         {
-          fabric.map(
+          fabric.reverse().map(
             (data) => {
               if (clothData === data.cloth_type)
                 return (
