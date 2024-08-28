@@ -79,6 +79,7 @@ function InvoiceInfo() {
                       </p>
                     </div>
 
+
                     <div className="invoiceInfo-box-color-para">
                       <h4 className="invoiceInfo-box-color-para-h">Discount</h4>
                     </div>

@@ -88,6 +88,7 @@ function Invoice() {
                 id={info._id}
               />
             </>
+            
           );
         })}
       </div>
