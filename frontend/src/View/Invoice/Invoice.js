@@ -8,7 +8,7 @@ import img from "./../../assets/Login/logo.png";
 import back from "./../../assets/Back/back.jpg";
 import axios from "axios";
 import { useEffect } from "react";
-import moment from "moment"
+import moment from "moment";
 
 function Invoice() {
   const [amount, setAmount] = useState(0);
@@ -84,7 +84,7 @@ function Invoice() {
                 price={info.total.toFixed(2)}
                 id={info._id}
               />
-
+            </>
           );
         })}
       </div>
