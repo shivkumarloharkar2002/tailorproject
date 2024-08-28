@@ -25,9 +25,11 @@ function Invoice() {
   console.log(getAllData);
 
   const searchData = getAllData.filter((data) => {
+    const customerName = data.customer_id?.name || "Unknown Customer";
+    const createdAt = data.createdAt || "";
     return (
-      data.customer_id.name.toLowerCase().includes(search.toLowerCase()) ||
-      data.createdAt.toLowerCase().includes(search.toLowerCase())
+      customerName.toLowerCase().includes(search.toLowerCase()) ||
+      moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
     );
   });
 
@@ -76,10 +78,13 @@ function Invoice() {
       <div className="invoice-shortCards">
         {searchData.reverse().map((info) => {
           const date = moment(info.createdAt).format("DD MMM YYYY");
+          const customerName = info.customer_id?.name || "Unknown Customer";
+
+          
           return (
             <>
               <ShortCard
-                name={info.customer_id.name}
+                 name={customerName}
                 date={date}
                 price={info.total.toFixed(2)}
                 id={info._id}
