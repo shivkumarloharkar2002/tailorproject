@@ -38,8 +38,6 @@ export default function Ready() {
       <div>
         <h2 className='ready-head'>{data.title}</h2>
         <p className='left-size'>{data.des}</p>
-        <p className='left-size'>Available Sizes :-{data.size}</p>
-       
         <p className='left-size'>Sizes :-{data.size}</p>
         <div>
         <p className='left-size'>Color :- {data.color}</p>
