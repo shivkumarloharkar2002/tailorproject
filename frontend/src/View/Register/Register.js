@@ -48,7 +48,7 @@ function Register() {
       createData.append("email", email);
       createData.append("password", password);
       createData.append("phone", phone);
-      createData.append("username", username);
+      createData.append("role", role);
       createData.append("img", img);
       try {
         const registerData = await axios.post(
@@ -130,7 +130,7 @@ function Register() {
                 <>
                   <div className="userCard">
                     <div className="userCard-Info">
-                      <img src={logo} alt="" className="userCard-img" />
+                      <img src={item.img} alt="" className="userCard-img" />
                       <p className="userCard-para">
                         {item.username} <br />
                         <span className="userCard-span">{item.role}</span>
@@ -163,7 +163,7 @@ function Register() {
                 <>
                   <div className="userCard">
                     <div className="userCard-Info">
-                      <img src={logo} alt="" className="userCard-img" />
+                      <img src={item.img} alt="" className="userCard-img" />
                       <p className="userCard-para">
                         {item.username} <br />
                         <span className="userCard-span">{item.role}</span>
@@ -250,8 +250,8 @@ function Register() {
               <option value="admin">admin</option>
             </select>
 
-            <label className='fab_label '> Image </label>:
-            <input type='file' placeholder='Fabric Image ' className='fab_input ' name='imgfile'
+            {/* <label className='fab_label '> Image </label>: */}
+            <input type='file' placeholder='Fabric Image ' className='register-form-input ' name='img'
               onChange={(e) => {
                 setImg(e.target.files[0])
                 console.log(e.target.files[0])
