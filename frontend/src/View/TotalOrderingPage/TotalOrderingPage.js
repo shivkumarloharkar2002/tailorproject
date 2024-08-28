@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 import Header from '../../Component/Header/Header'
 import axios from "axios";
-
+import moment from "moment";
 // import moment from "moment"
 
 
@@ -69,9 +69,11 @@ export default function TotalOrderingPage() {
     console.log(getAllData);
 
     const searchData = getAllData.filter((data) => {
+        const customerName = data.customer_id?.name || "Unknown Customer";
+        const createdAt = data.createdAt || "";
         return (
-            data.customer_id.name.toLowerCase().includes(search.toLowerCase()) ||
-            data.createdAt.toLowerCase().includes(search.toLowerCase())
+            customerName.toLowerCase().includes(search.toLowerCase()) ||
+            moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
         );
     });
 
@@ -123,9 +125,11 @@ export default function TotalOrderingPage() {
                             // const today = (moment(todaydate).format("DD MMM YYYY"))
                             // console.log(date, today)
                             // if (date == today)
+                            const customerName = data.customer_id?.name || "Unknown Customer";
+                            const formattedDate = moment(data.createdAt).format("DD MMM YYYY");
                                 return (
 
-                                    <OrderCard cloth_type={data.cloth_type} date={data.createdAt} name={data.customer_id.name} id={data._id} />
+                                    <OrderCard key={data._id} cloth_type={data.cloth_type} date={formattedDate} name={customerName} id={data._id} />
 
                                 )
                         })
