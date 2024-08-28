@@ -106,6 +106,7 @@ export default function Orders() {
         setdiscountprice(discountedPrice)
 
     };
+    const [targetdate, Settargetdate] = useState()
 
     const createOrder = async () => {
         // (console.log("ids", customerData._id, userData._id, measureData._id))
@@ -113,7 +114,7 @@ export default function Orders() {
 
             const createorderdata = await axios.post("http://localhost:5555/api/orderroutes/addorder", {
 
-                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount
+                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount,targetDate:targetdate
             })
             console.log(createorderdata)
         }
@@ -136,7 +137,7 @@ export default function Orders() {
                     <Link to={"/home"} className="link">
                         <div className="profile-back">
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
-                            <h5 className="profile-back-text">Back</h5>
+                            {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
                     </Link>
 
@@ -189,22 +190,30 @@ export default function Orders() {
                                 <h3 className='profile-back_Next'>Discount</h3>
                             </div>
                             <div className='profile_Discount'>
-                                <h5>fabric price:-{fabricdata.price}</h5>
-                                <h5>shirt stich:-{stitchRate}</h5>
-                               
+                                <h5>Fabric price:-{fabricdata.price}</h5>
+                                <h5>Shirt stich:-{stitchRate}</h5>
+
 
                             </div>
-                            <h4 className='Total_Price'>total price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for shirt</span></h4>
+                            <h3 className='Total_Price'>Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for shirt</span></h3>
 
                             <div className='profile_Discount'>
 
-                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
                                 <h5>Discounted Price: ${discountprice}</h5>
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
                                     SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
                                 </p>
-                                <h5>Total:-<span className='Discount'>{totalAmount.toFixed(2)}</span>/-</h5>
+                            </div>
+                            {/* targetDate */}
+                            <h4>  targetDate:-
+                                <input type="date" id="date" name="date" onChange={(e) => {
+                                    Settargetdate(e.target.value)
+                                }} /></h4>
+
+                            <div className='LASTONE'>
+                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
+                                <h3>Total:-<span className='Discount Last'>{totalAmount.toFixed(2)}</span>/-</h3>
                             </div>
 
                             {/* <div className='profile_button'>

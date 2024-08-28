@@ -9,7 +9,7 @@ export default function OrderCard({cloth_type,time,name,id}) {
     <>
     <div className='Order_short'>
     <Link to={`/invoiceInfo/${id}`} className='link'>
-     <div className='OName'>
+     <div className='ONamE'>
         <h6 className='Category'>{cloth_type}</h6>
         <h6 className='Date'>{time}</h6>
         <h6 className='OrderN'>{name}</h6>
