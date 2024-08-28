@@ -1,5 +1,5 @@
 import express from "express"
-import { AllCustomerdata, Customerregister } from "../controller/Customer_controller.js"
+import { AllCustomerdata, Customerregister, Onecustomer } from "../controller/Customer_controller.js"
 
 export const CustomerRoutes = express.Router()
 
@@ -8,3 +8,5 @@ CustomerRoutes.post("/create",Customerregister)
 
 // http://localhost:5555/api/customerroutes/getcustomer
 CustomerRoutes.get("/getcustomer",AllCustomerdata)
+
+CustomerRoutes.get("/oneD/:id",Onecustomer)
