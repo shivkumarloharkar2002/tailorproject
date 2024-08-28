@@ -58,6 +58,7 @@ function Invoice() {
           <span className="invoice-amount">₹ {amount}</span>
         </p>
       </div>
+      
 
       <div className="invoice-input">
         <img src={searchImg} alt="" className="invoice-icon" />

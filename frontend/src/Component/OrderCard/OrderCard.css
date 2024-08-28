@@ -1,9 +1,13 @@
 .OName {
-  border: 2px solid rgb(152, 150, 150);
+  /* border: 2px solid rgb(152, 150, 150); */
   background-color: rgba(36, 148, 148, 0.54);
   border-radius: 20px;
-  margin: 30px;
+  margin: 25px;
+  height: 60px;
+  width: 22vw;
+  padding: 1px;
   position: relative;
+
 }
 
 .Order_short {
@@ -28,7 +32,7 @@
   color: black;
   font-size: 22px;
 
-  margin: 5px 80px;
+  margin: 5px 85px;
   /* text-align: center; */
   /* align-items: center; */
 }

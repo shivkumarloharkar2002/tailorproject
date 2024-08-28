@@ -5,97 +5,107 @@ import img from "./../../assets/Login/logo.png"
 
 export default function NextOrderingPage() {
 
-    const [count, setCount] = useState(1)
-    const Incre = () => {
-        setCount(count + 1)
-    }
 
-    const Decre = () => {
-        setCount(count - 1)
-    }
+    const { id } = useParams();
+    console.log(id);
+
+    const [getAllData, setGetAllData] = useState([]);
+    const getData = async () => {
+        const getNote = await axios.get(
+            `http://localhost:5555/api/orderroutes/getallorder`
+        );
+        setGetAllData(getNote.data.data);
+    };
+    console.log(getAllData);
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <>
             <Header />
 
-            <img src={img} alt="" className="invoice-logo" />
-
-            <div className='ORDERBG'>
-                <p className='ORDER'>Today Order</p>
-            </div>
-            <div className='Npage'>
-                <h2 className='Next'>Shivkumar Loharkar</h2>
-                <h5>Number:8767234565</h5>
-                <h5>Address:Shrigonda</h5>
-                <h5>Email ID:shivkumar@gmail.com</h5>
-                <h2 className='Next'>Orders</h2>
-
-                <div className='NextOrder'>
-                    <h4>Shirt :-</h4>
-                    <div ><h5 className='Nprice'>180/-Per M</h5></div>
-                    {/* <div className='fabric'></div> */}
-                    <h4>Color :-</h4>
-                    <div ><h5 className='Nprice'>Blue</h5></div>
-
-                    <div className='Oincrement'>
-                        <h4 className='Qty'>Qty:-</h4>
-                        <h3 onClick={Decre} >-</h3>
-                        <h2 className='count'>{count}</h2>
-                        <h3 onClick={Incre} >+</h3>
+            <div className="invoiceInfo">
+                <Link to={"/invoice"} className="link">
+                    <div className="profile-back">
+                        <img src={back} alt="" className="profile-back-img" />
+                        <h1 className="profile-back-text">Back</h1>
                     </div>
+                </Link>
 
-                    {/* <div className="incre">
-                        <h2 onClick={Decre} >-</h2>
-                    </div>
-                    <div className="incre name">
-                        <h2 >{count}</h2>
-                    </div>
-                    <h2 onClick={Incre} >+</h2>
-                     */}
-                </div>
+                {getAllData.map((data) => {
+                    if (data._id == id)
+                        return (
+                            <>
+                                <div className="invoiceInfo-box">
+                                    <img src={logo} alt="" className="invoiceInfo-box-logo-img" />
 
-                <h2 className='Next'>Size</h2>
-                <div className='Nsize'>
-                    <div>
-                        <h5>Collar:-<span className='Nspan'>16 in</span></h5>
-                        <h5>Shirt Length:-<span className='Nspan'>30 in</span></h5>
-                        <h5>Sleeve Size:-<span className='Nspan'>26.5 in</span></h5>
-                    </div>
-                    <div>
-                        <h5>Chest:-<span className='Nspan'>20.5 in</span></h5>
-                        <h5>Waist:-<span className='Nspan'>18.5 in</span></h5>
-                        <h5>Shoulder:-<span className='Nspan'>19 in</span></h5>
-                    </div>
+                                    <p className="invoiceInfo-box-p">
+                                        Shrigonda, Shrigonda <br /> Ahmednagar, Maharastra,414402{" "}
+                                        <br /> Ph:5133145125
+                                    </p>
+                                    <div className="invoiceInfo-box-info">
+                                        <div className="invoiceInfo-box-name-para">
+                                            <p className="invoiceInfo-box-name">Bill No: 2</p>
+                                            <p className="invoiceInfo-box-name">{data.createdAt}</p>
+                                        </div>
+                                        <p className="invoiceInfo-box-name-2">
+                                            Bill To: {data.customer_id.name}
+                                        </p>
 
-                </div>
-                <h2 className='Next'>Descount</h2>
-                <div className='ODiscount'>
-                    <h5>Price:-<span className='Nspan'>₹ 600 </span></h5>
-                    <h5>Descount:-<span className='Nspan'>10%</span></h5>
-                    <h5>Total:-<span className='Nspan'>540</span></h5>
-                </div>
+                                        <div className="invoiceInfo-box-color-para">
+                                            <p className="invoiceInfo-box-color-para-p">#Item</p>
+                                            <p className="invoiceInfo-box-color-para-p">Qty</p>
+                                            <p className="invoiceInfo-box-color-para-p">Date</p>
+                                            <p className="invoiceInfo-box-color-para-p">Amount</p>
+                                        </div>
 
+                                        <div className="invoiceInfo-box-color-para-info">
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                {data.cloth_type}
+                                            </p>
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                {data.quantity}
+                                            </p>
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                {data.createdAt}
+                                            </p>
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                {data.actualprice}/-
+                                            </p>
+                                        </div>
 
-                <div className='NLastpage'>
-                    <button className='BOrder' >Edit Price</button>
-                    <button className='BOrder' >Edite Dis</button>
-                </div>
+                                        <div className="invoiceInfo-box-color-para">
+                                            <h4 className="invoiceInfo-box-color-para-h">Discount</h4>
+                                        </div>
 
+                                        <div className="invoiceInfo-box-color-para-info">
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                Price:{data.actualprice}/- <br />
+                                                <br /> Discount:{data.discount}%
+                                            </p>
+                                            <p className="invoiceInfo-box-color-para-p">
+                                                CGST@ {data.cgst}%: {data.cgstprice} <br />
+                                                SGST@ {data.sgst}%: {data.sgstprice}
+                                            </p>
+                                        </div>
 
-                <div className='ONLastpage'>
-                    <button className='LastN'>
-                        <h4 className='LastText'>Send</h4>
-                        <h4 className='LastText'>8767899362</h4>
-                    </button>
-                    <button className='LastN'>
-                        <h3 className='LastText'>Print Measurement</h3>
-                    </button>
-
-                </div>
-
-
+                                        <div className="invoiceInfo-box-color-para2">
+                                            <p className="invoiceInfo-box-color-para-p2">
+                                                Total Amount:
+                                                {data.total}
+                                                /-
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        );
+                })}
             </div>
         </>
-    )
+    );
+
 }
 
