@@ -5,6 +5,7 @@ import shop from './shop.jpg';
 import worker from './worker.jpeg';
 import talior from './talior.jpg';
 import store from './store.jpg';
+import back from './back.png';
 
 export default function About() {
   return (
@@ -12,7 +13,11 @@ export default function About() {
       <Header/>
       
       <div>
+        <a href='/home'>
+        <img className='back-btn' src={back}/>
+        </a>
       <p className='heding-about'>About Us</p>
+      
       <div className='abos'>
         <img className='abo-img-1' src={shop}/>
         <div className='abo-text'>
