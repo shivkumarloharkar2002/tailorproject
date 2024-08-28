@@ -7,6 +7,7 @@ import back from "./../../assets/Back/back.jpg";
 import { useParams } from "react-router-dom";
 import logo from "./../../assets/Login/logo.png";
 
+
 function InvoiceInfo() {
   const { id } = useParams();
   console.log(id);

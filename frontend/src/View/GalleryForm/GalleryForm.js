@@ -61,6 +61,9 @@ export default function GalleryForm() {
     return (
         <>
             {/* <Header /> */}
+
+
+            
             <form className='Fabform_main'>
                 <h1 className="center">Add Gallery</h1>
 

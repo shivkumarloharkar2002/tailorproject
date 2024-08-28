@@ -191,13 +191,15 @@ export default function Orders() {
                             <div className='profile_Discount'>
                                 <h5>fabric price:-{fabricdata.price}</h5>
                                 <h5>shirt stich:-{stitchRate}</h5>
-                                <h4>total price:{clothfabric.toFixed(2)}</h4>  //for shirt
+                               
 
                             </div>
+                            <h4 className='Total_Price'>total price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for shirt</span></h4>
+
                             <div className='profile_Discount'>
 
                                 <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
-                                <p>Discounted Price: ${discountprice}</p>
+                                <h5>Discounted Price: ${discountprice}</h5>
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
                                     SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
