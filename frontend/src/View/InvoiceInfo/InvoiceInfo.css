@@ -1,5 +1,24 @@
 @media screen and (max-width:950px) {
     .invoiceInfo-box{
+        width: 90vw !important;
+    }
+    .invoiceInfo-box-info{
+        width: 80vw !important;
+    }
+    .invoiceInfo-box-name-para{
+        width: 80vw !important;
+    }
+    .invoiceInfo-box-color-para{
+        width: 80vw !important;
+    }
+    .invoiceInfo-box-color-para-info{
+        width: 80vw !important;
+    }
+
+    .invoiceInfo-box-color-para2{
+        width: 80vw !important;
+    }
+    .invoiceInfo-box-color-para-info2{
         width: 80vw !important;
     }
 }
@@ -10,10 +29,10 @@
     width: 100vw;
     height: auto;
     align-content: center;
-}
+} 
 
 .invoiceInfo-box {
-    height: 93vh;
+    min-height: 93vh;
     width: 50vw;
     /* border: 2px solid black; */
     border-radius: 10px;
