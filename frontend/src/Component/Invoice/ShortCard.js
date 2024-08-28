@@ -10,9 +10,9 @@ function ShortCard({ name, date, price, id }) {
                     <p className="invoice-short-text" >{name}</p>
                     <p className="invoice-short-amount">
                     {date} 
-                    <br />Paid- ₹ {price}/-</p>
+                    <br />Paid- ₹ {price}/-</p> 
                 </div>
-            </Link>
+            </Link> 
         // </div>
     );   
 } 
