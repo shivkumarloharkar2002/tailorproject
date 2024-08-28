@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
-import "./GalleryForm.css"
+// import "./GalleryForm.css"
 import React, { useState } from 'react'
 import Header from '../../Component/Header/Header'
 
