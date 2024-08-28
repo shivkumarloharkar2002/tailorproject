@@ -37,7 +37,7 @@
     background-color: rgba(36, 148, 148, 0.796);
     /* align-content: center; */
     backdrop-filter: blur(4px);
-    border-radius: 10px; 
+    border-radius: 10px;
 
 }
 
@@ -45,11 +45,11 @@
     overflow-y: scroll;
 }
 
-.available-user::-webkit-scrollbar{
+.available-user::-webkit-scrollbar {
     background-color: rgba(36, 148, 148, 8);
 }
 
-.available-user::-webkit-scrollbar-thumb{
+.available-user::-webkit-scrollbar-thumb {
     background-color: rgb(0, 106, 106);
 }
 
@@ -64,7 +64,7 @@
 
 .register-form-input {
     display: block;
-    height: 35px;
+    height: 40px;
     width: 25vw;
     margin: 30px auto;
     border-radius: 10px;
@@ -85,13 +85,13 @@
 }
 
 .register-form-select {
-    height: 30px;
+    height: 40px;
 
 }
 
 .register-form-submit {
     display: block;
-    margin: auto;
+    margin:  auto;
     height: 50px;
     width: 150px;
     padding: 0 20px;
@@ -99,7 +99,8 @@
     font-weight: 700;
     border-radius: 10px;
     border: none;
-    background-color: black;
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgba(140, 142, 142, 1) 10%, rgba(5, 5, 5, 1) 100%);
     color: white;
 }
 
@@ -132,7 +133,7 @@
 .userCard {
     min-height: 67px;
     width: 32vw;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: auto;
     border-radius: 10px;
     display: flex;
@@ -141,6 +142,7 @@
     /* align-content: center; */
     padding: 3px;
     margin-top: 20px;
+    background: white;
 }
 
 .userCard-img {
@@ -154,13 +156,14 @@
 .userCard-Info {
     /* border: 2px solid yellow; */
     display: flex;
-    height: auto;
-    width: 14vw;
+    height: 60px;
+    overflow: hidden;
+    width: 16vw;
 
 }
 
 .userCard-para {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     margin-left: 20px !important;
     display: block;
@@ -174,7 +177,7 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-} 
+}
 
 .userCard-btns {
     /* border: 2px solid red; */
@@ -193,7 +196,8 @@
 }
 
 .edit {
-    background-color: orange;
+    background: rgb(247, 143, 4);
+    background: linear-gradient(180deg, rgba(247, 143, 4, 1) 0%, rgba(236, 201, 143, 1) 10%, rgba(249, 161, 7, 1) 100%);
     color: white;
     font-size: 20px;
     line-height: 40px;
@@ -204,7 +208,8 @@
 
 .remove {
 
-    background-color: red;
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgba(140, 142, 142, 1) 10%, rgba(5, 5, 5, 1) 100%);
     color: white;
     font-size: 20px;
     line-height: 40px;

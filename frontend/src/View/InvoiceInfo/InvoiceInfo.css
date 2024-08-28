@@ -13,7 +13,7 @@
 }
 
 .invoiceInfo-box {
-    height: 90vh;
+    height: 93vh;
     width: 50vw;
     /* border: 2px solid black; */
     border-radius: 10px;
@@ -25,7 +25,7 @@
     height: 80px;
     width: 130px;
     margin:  auto;
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     /* border: 2px solid black; */
     display: block;
 }
@@ -82,12 +82,12 @@
 }
 
 .invoiceInfo-box-color-para{
-    background-color: rgba(36, 148, 148, 1);
+    background-color: rgba(36, 148, 148, 0.54);
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     /* border: 2px solid orange; */
-    margin:15px auto;
+    margin:25px auto;
     width: 42vw;
     height: 35px;
     align-items: center;
@@ -100,7 +100,7 @@
     line-height: 20px;
     font-family: serif;
     font-size: 18px;
-
+    margin: 0;
 
     
 }
@@ -122,7 +122,7 @@
 
 .invoiceInfo-box-color-para2{
     
-    background-color: rgba(36, 148, 148, 1);
+    background-color: rgba(36, 148, 148, 0.54);
     display: flex;
     justify-content: end;
     /* border: 2px solid orange; */
@@ -136,8 +136,35 @@
 .invoiceInfo-box-color-para-p2{
     display: block;
     color: black;
-    line-height: 20px;
+    line-height: 30px;
     font-family: serif;
     font-size: 18px;
-    margin-right: 20px;
+    margin-right: 20px !important;
+    /* border: 2px solid black; */
+    margin: 0;
+}
+
+
+.invoiceInfo-box-color-para-info2{
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid orange; */
+    margin:0 auto;
+    margin-top: -30px;
+    width: 26vw;
+    height: auto;
+    align-items: center;
+}
+
+.invoiceInfo-btn{
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgb(112, 113, 113) 10%, rgba(5, 5, 5, 1) 100%);
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    border: none;
+    font-weight: 700;
+    width: auto;
+    padding: 0 20px;
+    border-radius: 10px;
 }

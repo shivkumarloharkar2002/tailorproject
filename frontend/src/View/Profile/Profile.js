@@ -17,14 +17,14 @@ function Profile() {
             <Link to={"/home"} className='link'>
                 <div className="profile-back">
                     <img src={back} alt="" className="profile-back-img" />
-                    <h1 className="profile-back-text">Back</h1>
+                    
                 </div>
             </Link>
 
             <h1 className="profile-head">Profile</h1>
 
             <div className="profile-box">
-                <img src={img} alt="" className="profile-box-img" />
+                <img src={profileData.img} alt="" className="profile-box-img" />
                 <div className="profile-box-para">
 
                     <h2 className="profile-box-para-head">Name:  {profileData.username}</h2>

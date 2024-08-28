@@ -35,6 +35,9 @@ const ReadymadeSchema = new Schema(
             type: String,
             enum: ['S', 'M', 'L', 'XL', 'XXL'],
             required: true
+        },
+        offer:{
+            type:String,
         }
     }
 )
