@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 import Header from '../../Component/Header/Header'
 import axios from "axios";
 
-import moment from "moment"
+// import moment from "moment"
 
 
 // const CardData = [
@@ -80,11 +80,6 @@ export default function TotalOrderingPage() {
     }, []);
 
 
-
-
-
-
-
     return (
         <>
             <Header />
@@ -122,15 +117,15 @@ export default function TotalOrderingPage() {
                 <div className="CardBody">
                     {
                         searchData.reverse().map((data) => {
-                            const time = moment(data.createdAt).format('LT');
-                            const date = (moment(data.createdAt).format("DD MMM YYYY"))
-                            const todaydate = Date.now()
-                            const today = (moment(todaydate).format("DD MMM YYYY"))
-                            console.log(date, today)
-                            if (date == today)
+                            // const time = moment(data.createdAt).format('LT');
+                            // const date = (moment(data.createdAt).format("DD MMM YYYY"))
+                            // const todaydate = Date.now()
+                            // const today = (moment(todaydate).format("DD MMM YYYY"))
+                            // console.log(date, today)
+                            // if (date == today)
                                 return (
 
-                                    <OrderCard cloth_type={data.cloth_type} date={date} name={data.customer_id.name} id={data._id} />
+                                    <OrderCard cloth_type={data.cloth_type} date={data.createdAt} name={data.customer_id.name} id={data._id} />
 
                                 )
                         })
