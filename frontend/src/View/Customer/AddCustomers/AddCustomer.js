@@ -47,7 +47,7 @@ export default function AddCustomer() {
       <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="profile-back-img" />
-          <h1 className="profile-back-text">Back</h1>
+          <h1 className="profile-back-text"></h1>
         </div>
       </Link>
 

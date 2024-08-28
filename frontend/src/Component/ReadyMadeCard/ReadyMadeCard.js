@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function ReadyMadeCard({img , title , price , id}) {
   return (
     <>
-    <Link to={`/ready/${id}`}>
+    <Link className='readymade' to={`/ready/${id}`}>
     <div className='ReadyC_main'>
         <img src={img} className='Ready_img'/>
         <h4 className='RMhead'>{title}</h4>
