@@ -40,7 +40,7 @@ export default function Gallery() {
       <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="Profile-back-img" /><br></br>
-          <h5 className="profile-back-text">Back</h5>
+          {/* <h5 className="profile-back-text">Back</h5> */}
         </div>
       </Link>
 
