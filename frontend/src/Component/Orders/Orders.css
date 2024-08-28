@@ -132,7 +132,7 @@
 .profile_Discount {
     display: flex;
     flex-wrap: wrap;
-
+    margin: 25px;
     justify-content: space-evenly;
 }
 
@@ -153,7 +153,8 @@
 .profile_button_1 {
     border-radius: 10px;
     margin: 10px 25px;
-    background-color: rgb(48, 48, 48);
+    background: rgb(5,5,5);
+    background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(140,142,142,1) 10%, rgba(5,5,5,1) 100%);
     color: aliceblue;
 }
 
@@ -167,10 +168,19 @@
 .button_last {
     border-radius: 10px;
     text-align: center;
-    background-color: rgb(48, 48, 48);
+    background: rgb(5,5,5);
+    background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(140,142,142,1) 10%, rgba(5,5,5,1) 100%);
     color: aliceblue;
     padding: 0px 15px;
     margin: 10px;
+}
+
+.Total_Price {
+    text-align: center;
+}
+
+.Total_Price_span {
+    font-size: 15px;
 }
 
 

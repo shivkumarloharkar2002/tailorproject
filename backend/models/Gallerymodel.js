@@ -5,6 +5,7 @@ const GallerySchema = new Schema({
     img: {
         type: String,
     },
+    
     title: {
         type: String,
         // required: true

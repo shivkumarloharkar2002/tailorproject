@@ -6,6 +6,7 @@
 .MainOrder {
     /* height: 40px; */
     border: 2px solid rgb(152, 150, 150);
+
     border-radius: 50px;
     margin: 10px 10px;
     margin-bottom: 50px;
@@ -37,4 +38,9 @@
     border: 2px solid;
     color: rgba(21, 91, 91, 0.97);
 
+}
+.CardBody{
+    /* border: 2px solid black; */
+    width: 80vw;
+    height: auto;
 }
