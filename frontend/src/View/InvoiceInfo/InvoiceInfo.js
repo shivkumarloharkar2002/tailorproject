@@ -33,7 +33,7 @@ function InvoiceInfo() {
         <Link to={"/invoice"} className="link">
           <div className="profile-back">
             <img src={back} alt="" className="profile-back-img" />
-            <h1 className="profile-back-text">Back</h1>
+            
           </div>
         </Link>
 
