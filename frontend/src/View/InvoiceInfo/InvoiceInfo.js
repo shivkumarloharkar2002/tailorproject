@@ -14,7 +14,7 @@ function InvoiceInfo() {
   console.log(id);
 
   const [getAllData, setGetAllData] = useState([]);
-  const getData = async () => {
+  const getData = async () => { 
     const getNote = await axios.get(
       `http://localhost:5555/api/orderroutes/getallorder`
     );
