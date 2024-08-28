@@ -42,11 +42,12 @@ export default function ViewCustomer() {
     <>
       <header className='top_nav'><Header /></header>
       <Link to={"/home"} className="link">
-        <div className="profile-back">
+        <div style={{margin:'60px 0 0 10px'}}>
           <img src={back} alt="" className="profile-back-img" />
           <h1 className="profile-back-text"></h1>
         </div>
       </Link>
+      <h1 style={{textAlign:'center' , marginBottom:'40px'}}>Old Customer</h1>
       <div className="invoice-input">
         <img src={customer} alt="" className="invoice-icon" />
         <input

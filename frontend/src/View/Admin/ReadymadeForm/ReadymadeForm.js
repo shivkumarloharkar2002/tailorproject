@@ -2,6 +2,12 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import "./ReadymadeForm.css"
 import React, { useState } from 'react'
+import back from '../../../Image/back.jpg'
+import { Link } from 'react-router-dom'
+
+
+
+
 
 export default function ReadymadeForm() {
 
@@ -22,7 +28,7 @@ export default function ReadymadeForm() {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('price', price);
-        formData.append('Color', color);
+        formData.append('color', color);
         formData.append('cloth_type', cloth_type);
         formData.append('pattern', pattern);
         formData.append('size', size);
@@ -57,42 +63,45 @@ export default function ReadymadeForm() {
     }
 
 
-
-
     return (
         <>
             {/* <Header /> */}
 
+            <Link to={"/readymade"} className="link">
+                <div style={{ margin: '20px' }}>
+                    <img src={back} alt="" className="Profile-back-img" /><br></br>
+                    {/* <h5 className="profile-back-text">Back</h5> */}
+                </div>
+            </Link>
 
-            
             <form className='Fabform_main'>
                 <h1 className="center">Add Readymade Cloths</h1>
 
-                
 
-                <label className='fab_label'>  Name </label>:
-                <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
+
+                <label className='fab_label'>Name</label>:
+                <input type='text' placeholder='Cloth  Name ' className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
                 }} /><br />
 
-                
 
-                <label className='fab_label'>Description </label>:
+
+                <label className='fab_label'>Description</label>:
                 <input type='text' placeholder='Description ' className='fab_input' onChange={(e) => {
                     setDes(e.target.value)
                 }} /><br />
 
-                <label className='fab_label'>Price </label>:
+                <label className='fab_label'>Price</label>:
                 <input type='text' placeholder='Img Price ' className='fab_input' onChange={(e) => {
                     setPrice(e.target.value)
                 }} /><br />
 
-                <label className='fab_label'>Color </label>:
+                <label className='fab_label'>Color</label>:
                 <input type='text' placeholder='Img Color ' className='fab_input' onChange={(e) => {
                     setColor(e.target.value)
                 }} /><br />
 
-<label className='fab_label'>Offer </label>:
+                <label className='fab_label'>Offer</label>:
                 <input type='text' placeholder='Offers  ' className='fab_input' onChange={(e) => {
                     setOffer(e.target.value)
                 }} /><br />
@@ -140,7 +149,7 @@ export default function ReadymadeForm() {
 
                 </select><br />
 
-                <label className='fab_label'>Cloth Image </label>:
+                <label className='fab_label'>Image</label>:
                 <input type='file' placeholder='Image url ' className='fab_input' onChange={(e) => {
                     setImg(e.target.files[0])
                 }} /><br />

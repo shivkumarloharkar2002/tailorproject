@@ -144,8 +144,8 @@ export default function FabricForm() {
             setImg(e.target.files[0])
             console.log(e.target.files[0])
           }}
-        /><br />
-        <button className='fab_btn'
+        />
+        <button className='Fab_btn'
           onClick={saveFabric}>ADD</button>
       </form>
 

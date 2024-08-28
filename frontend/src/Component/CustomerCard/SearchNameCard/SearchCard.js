@@ -32,8 +32,12 @@ export default function SearchCard({ name, date, price, id }) {
       <div className='invoice-shortCard'>
         {/* <Link to={`/selectcategory`} className='link'> */}
         <div className="invoice-short" onClick={store}>
-          <p className="invoice-short-text" >{name}</p>
-          <p className="invoice-short-amount">{date} <br />Paid- ₹ {price}/-</p>
+          <p className="cust_info" >{name}</p>
+          <p className="invoice-short-amount">{date} <br />
+          {/* Paid- ₹  */}
+          {price}
+          {/* /- */}
+          </p>
         </div>
         {/* </Link> */}
       </div>
