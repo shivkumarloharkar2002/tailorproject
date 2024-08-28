@@ -3,7 +3,7 @@ import Readymade from "../models/Readymademodel.js";
 
 
 export const AddReadymadeData = async(req , res)=>{
-    const {title , price , color , cloth_type , pattern , size  ,des} = req.body;
+    const {title , price , color , cloth_type , pattern , size  ,des ,offer} = req.body;
 
     console.log("this is file",req.file.path)
 
@@ -18,7 +18,8 @@ export const AddReadymadeData = async(req , res)=>{
             "cloth_type":cloth_type,
             "pattern":pattern,
             "size":size,
-            "des":des
+            "des":des,
+            "offer":offer
         })
         res.json({
             success:true,
