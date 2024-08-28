@@ -51,6 +51,7 @@ export default function FabricForm() {
     catch (e) {
       console.log(e)
     }
+    GetFabricdata();
   }
 
   //fabric from the form
