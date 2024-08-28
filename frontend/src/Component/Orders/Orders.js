@@ -106,6 +106,7 @@ export default function Orders() {
         setdiscountprice(discountedPrice)
 
     };
+    // targetdate
     const [targetdate, Settargetdate] = useState()
 
     const createOrder = async () => {
@@ -114,7 +115,7 @@ export default function Orders() {
 
             const createorderdata = await axios.post("http://localhost:5555/api/orderroutes/addorder", {
 
-                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount,targetDate:targetdate
+                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount, targetDate: targetdate
             })
             console.log(createorderdata)
         }
@@ -157,18 +158,19 @@ export default function Orders() {
 
                             <div className='Profile_Orders'>
                                 <h4>cloth_type :-{clothData}</h4>
-                                <h5 className=''></h5>
+                                {/* <h5 className=''></h5> */}
                                 {/* <div className='fabric'></div> */}
-                                <h4>Color :-</h4>
-                                <h5 className=''>{fabricdata.color}</h5>
-                                <div className='Order_Qty'>
-                                    <h4 className='Order_Qty_D'>Qty:-</h4>
-                                    <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
-                                    <h3 className='Order_count'>{count}</h3>
-                                    <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
-                                </div>
-                            </div>
+                                <h4>Color :-{fabricdata.color}</h4>
+                                {/* <h5 className='fabricdata_color'></h5> */}
 
+                            </div>
+                            <div className='Order_Qty'>
+                                <h4 className='Order_Qty_D'>Qty:-</h4>
+                                <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
+                                <h3 className='Order_count'>{count}</h3>
+                                <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
+                            </div>
+                            {/*  */}
                             <div>
                                 <h3 className='profile-back_Next'>Size</h3>
                             </div>
@@ -185,6 +187,7 @@ export default function Orders() {
                                     <h5>Shoulder:-<span className='Shoulder_Value'>{measureData.sholder}</span></h5>
                                 </div>
                             </div>
+                            {/*  */}
 
                             <div>
                                 <h3 className='profile-back_Next'>Discount</h3>
@@ -195,26 +198,33 @@ export default function Orders() {
 
 
                             </div>
-                            <h3 className='Total_Price'>Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for shirt</span></h3>
 
+                            {/* <h5>Dis_Price: ${discountprice}</h5> */}
                             <div className='profile_Discount'>
+                                <h5>Dis_Price: ${discountprice}</h5>
 
-                                <h5>Discounted Price: ${discountprice}</h5>
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
                                     SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
                                 </p>
                             </div>
-                            {/* targetDate */}
-                            <h4>  targetDate:-
-                                <input type="date" id="date" name="date" onChange={(e) => {
-                                    Settargetdate(e.target.value)
-                                }} /></h4>
 
-                            <div className='LASTONE'>
-                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
-                                <h3>Total:-<span className='Discount Last'>{totalAmount.toFixed(2)}</span>/-</h3>
+
+                            <div className='profile_Discount'>
+                                <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
+                                {/* targetDate */}
+                                <h6>targetDate:-
+                                    <input type="date" id="date" name="date" onChange={(e) => {
+                                        Settargetdate(e.target.value)
+                                    }} /></h6>
                             </div>
+
+                            <div className='profile_Discount'>
+                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for payjama</span></h5>
+
+                                <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
+                            </div>
+
 
                             {/* <div className='profile_button'>
                 <button className='profile_button_1' >Edit Price</button>
@@ -247,7 +257,7 @@ export default function Orders() {
                     <Link to={"/home"} className="link">
                         <div className="profile-back">
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
-                            <h5 className="profile-back-text">Back</h5>
+                            {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
                     </Link>
 
@@ -266,17 +276,18 @@ export default function Orders() {
                             </div>
 
                             <div className='Profile_Orders'>
-                                <h4>cloth_type :-{clothData}</h4>
+                                <h4>Cloth_type :-{clothData}</h4>
                                 {/* <div className='fabric'></div> */}
-                                <h4>Color :-</h4>
-                                <h5 className=''>Blue</h5>
-                                <div className='Order_Qty'>
-                                    <h4 className='Order_Qty_D'>Qty:-</h4>
-                                    <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
-                                    <h3 className='Order_count'>{count}</h3>
-                                    <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
-                                </div>
+                                <h4>Color :-{fabricdata.color}</h4>
+
                             </div>
+                            <div className='Order_Qty'>
+                                <h4 className='Order_Qty_D'>Qty:-</h4>
+                                <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
+                                <h3 className='Order_count'>{count}</h3>
+                                <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
+                            </div>
+                            {/*  */}
 
                             <div>
                                 <h3 className='profile-back_Next'>Size</h3>
@@ -298,26 +309,43 @@ export default function Orders() {
                                     <h5>pant instep:-<span className='pant_instep'>{measureData.pantinstep}</span></h5>
                                 </div>
                             </div>
-
+                            {/*  */}
                             <div>
                                 <h3 className='profile-back_Next'>Discount</h3>
                             </div>
                             <div className='profile_Discount'>
-                                <h5>fabric price:-{fabricdata.price}</h5>
-                                <h5>shirt stich:-{stitchRate}</h5>
-                                <h4>total price:{clothfabric.toFixed(2)}</h4>  //for shirt
+                                <h5>Fabric price:-{fabricdata.price}</h5>
+                                <h5>Shirt stich:-{stitchRate}</h5>
+
 
                             </div>
-                            <div className='profile_Discount'>
 
-                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
-                                <p>Discounted Price: ${discountprice}</p>
+                            {/* <h5>Dis_Price: ${discountprice}</h5> */}
+                            <div className='profile_Discount'>
+                                <h5>Dis_Price: ${discountprice}</h5>
+
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
                                     SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
                                 </p>
-                                <h5>Total:-<span className='Discount'>{totalAmount.toFixed(2)}</span>/-</h5>
                             </div>
+
+
+                            <div className='profile_Discount'>
+                                <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
+                                {/* targetDate */}
+                                <h6>targetDate:-
+                                    <input type="date" id="date" name="date" onChange={(e) => {
+                                        Settargetdate(e.target.value)
+                                    }} /></h6>
+                            </div>
+
+                            <div className='profile_Discount'>
+                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for payjama</span></h5>
+
+                                <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
+                            </div>
+
 
                             {/* <div className='profile_button'>
                             <button className='profile_button_1' >Edit Price</button>
@@ -335,7 +363,7 @@ export default function Orders() {
                         </div>
                     </div>
 
-                </div>
+                </div >
             </>
         )
     } else {
@@ -348,7 +376,7 @@ export default function Orders() {
                     <Link to={"/home"} className="link">
                         <div className="profile-back">
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
-                            <h5 className="profile-back-text">Back</h5>
+                            {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
                     </Link>
 
@@ -368,17 +396,18 @@ export default function Orders() {
 
                             <div className='Profile_Orders'>
                                 <h4>cloth_type :-{clothData}</h4>
-                                <h5 className=''>180/-Per M</h5>
+                                {/* <h5 className=''>180/-Per M</h5> */}
                                 {/* <div className='fabric'></div> */}
-                                <h4>Color :-</h4>
-                                <h5 className=''>{fabricdata.color}</h5>
-                                <div className='Order_Qty'>
-                                    <h4 className='Order_Qty_D'>Qty:-</h4>
-                                    <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
-                                    <h3 className='Order_count'>{count}</h3>
-                                    <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
-                                </div>
+                                <h4>Color :-{fabricdata.color}</h4>
+
                             </div>
+                            <div className='Order_Qty'>
+                                <h4 className='Order_Qty_D'>Qty:-</h4>
+                                <button className='Qty_button Qty_button_1' onClick={Decre} >-</button>
+                                <h3 className='Order_count'>{count}</h3>
+                                <button className='Qty_button Qty_button_2' onClick={Incre} ><span>+</span></button>
+                            </div>
+                            {/*  */}
 
                             <div>
                                 <h3 className='profile-back_Next'>Size</h3>
@@ -398,25 +427,42 @@ export default function Orders() {
                                     <h5>safari trouser thigh:-<span className='safari trouser thigh'>{measureData.safaritrouserthigh}</span></h5>
                                 </div>
                             </div>
+                            {/*  */}
 
                             <div>
                                 <h3 className='profile-back_Next'>Discount</h3>
                             </div>
                             <div className='profile_Discount'>
-                                <h5>fabric price:-{fabricdata.price}</h5>
-                                <h5>shirt stich:-{stitchRate}</h5>
-                                <h4>total price:{clothfabric.toFixed(2)}</h4>  //for shirt
+                                <h5>Fabric price:-{fabricdata.price}</h5>
+                                <h5>Shirt stich:-{stitchRate}</h5>
+
 
                             </div>
-                            <div className='profile_Discount'>
 
-                                <h5>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h5>
-                                <p>Discounted Price: ${discountprice}</p>
+                            {/* <h5>Dis_Price: ${discountprice}</h5> */}
+                            <div className='profile_Discount'>
+                                <h5>Dis_Price: ${discountprice}</h5>
+
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
                                     SGST@ {sgstRate}%: {sgstprice.toFixed(2)}
                                 </p>
-                                <h5>Total:-<span className='Discount'>{totalAmount.toFixed(2)}</span>/-</h5>
+                            </div>
+
+
+                            <div className='profile_Discount'>
+                                <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
+                                {/* targetDate */}
+                                <h6>targetDate:-
+                                    <input type="date" id="date" name="date" onChange={(e) => {
+                                        Settargetdate(e.target.value)
+                                    }} /></h6>
+                            </div>
+
+                            <div className='profile_Discount'>
+                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for payjama</span></h5>
+
+                                <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
                             </div>
 
                             {/* <div className='profile_button'>
