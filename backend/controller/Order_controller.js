@@ -58,3 +58,25 @@ export const Getorderdata = async (req, res) => {
 }
 
 
+export const Updateorder = async (req,res)=>{
+    const {id, status, title, color, price, cloth_type, fabric_type, pattern } = req.body
+
+    try{
+        const updateorder = await Order.updateOne({_id:id},{
+            $set:{
+                "status":status
+            }
+        })
+        res.json({
+            success:true,
+            data:updateorder,
+            msg:`order status "${status}" is updated`
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+
+}
+
+
