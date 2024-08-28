@@ -11,17 +11,19 @@
 
 .invoice-short {
     height: 60px;
-    width: 22vw;
+    width: 24vw;
     border: 1px solid rgba(36, 148, 148, 0.54);
-    background-color: rgba(36, 148, 148,1);
+    background: rgb(24,138,133);
+background: linear-gradient(180deg, rgba(24,138,133,1) 0%, rgb(129, 202, 202) 10%, rgba(24,135,136,1) 100%);
     border-radius: 10px;
-    margin: 30px 35px;
+    margin: 30px 19px;
     /* border-radius: 10px; */
     align-content: center;
    
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    box-shadow: 2px 2px 6px gray;
 
 } 
 
@@ -36,6 +38,10 @@
     font-size: 22px;
     /* border: 2px solid black; */
     align-self: center;
+    width: 7vw;
+    overflow: hidden;
+    height: 56px;
+    text-align: center;
 }
 
 .invoice-short-amount {
@@ -48,4 +54,5 @@
     font-size: 18px;
     align-self: center;
     margin: 0;
+    width: auto;
 }

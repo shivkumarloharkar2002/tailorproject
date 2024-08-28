@@ -8,6 +8,7 @@ import img from "./../../assets/Login/logo.png";
 import back from "./../../assets/Back/back.jpg";
 import axios from "axios";
 import { useEffect } from "react";
+import moment from "moment"
 
 function Invoice() {
   const [amount, setAmount] = useState(0);
@@ -39,6 +40,7 @@ function Invoice() {
     setAmount(total);
   }, [getAllData]);
 
+  
   return (
     <div>
       <Header />
@@ -46,7 +48,7 @@ function Invoice() {
       <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="profile-back-img" />
-          <h1 className="profile-back-text">Back</h1>
+          
         </div>
       </Link>
 
@@ -55,7 +57,7 @@ function Invoice() {
       <div className="invoice-paisa">
         <p className="invoice-total">
           Total Earned Amount <br />
-          <span className="invoice-amount">₹ {amount}</span>
+          <span className="invoice-amount">₹ {amount.toFixed(2)}</span>
         </p>
       </div>
       
@@ -76,18 +78,17 @@ function Invoice() {
 
       <div className="invoice-shortCards">
         {searchData.reverse().map((info) => {
-          {
-            /* setAmount(amount + info.price); */
-          }
-          return (
+          
+          const date = (moment(info.createdAt).format("DD MMM YYYY"))
+          return ( 
             <>
               <ShortCard
                 name={info.customer_id.name}
-                date={info.createdAt}
-                price={info.total}
+                date={date}
+                price={info.total.toFixed(2)}
                 id={info._id}
               />
-            </>
+            </> 
           );
         })}
       </div>

@@ -17,8 +17,11 @@ function Register() {
   // const [id, setId] = useState();
   const [edit, setEdit] = useState(false);
 
+  const[img,setImg]=useState('')
+
   const saveNote = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     if (edit === true) {
       try {
         const registerData = await axios.put(
@@ -39,21 +42,37 @@ function Register() {
         alert(error);
       }
     } else {
+
+      const createData = new FormData()
+      createData.append("username", username);
+      createData.append("email", email);
+      createData.append("password", password);
+      createData.append("phone", phone);
+      createData.append("username", username);
+      createData.append("img", img);
       try {
         const registerData = await axios.post(
           `http://localhost:5555/api/userroutes/create`,
+          // {
+          //   username,
+          //   email,
+          //   password,
+          //   phone,
+          //   role,
+          // }
+
+          createData,
           {
-            username,
-            email,
-            password,
-            phone,
-            role,
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
           }
-        ); 
+        );
         getUser();
+        console.log(registerData)
         // if (registerData.status === 200) {
-          alert("Register Successfully");
-          console.log(registerData);
+        alert("Register Successfully");
+        console.log(registerData);
         // }
       } catch (error) {
         alert(error);
@@ -85,7 +104,7 @@ function Register() {
 
   const DeleteUser = async (item) => {
     {
-      const  id  = item.user_id;
+      const id = item.user_id;
       await axios.delete(
         `http://localhost:5555/api/userroutes/deleteuser/${id}`
       );
@@ -100,44 +119,70 @@ function Register() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="register">
         <div className="available-user register-box">
           <h1 className="register-head">Available User</h1>
 
           {getUserData.map((item) => {
-            return (
-              <>
-                <div className="userCard">
-                  <div className="userCard-Info">
-                    <img src={logo} alt="" className="userCard-img" />
-                    <p className="userCard-para">
-                      {item.username} <br />
-                      <span className="userCard-span">{item.role}</span>
-                    </p>
-                  </div>
+            if (item.role == "employee") {
+              return (
+                <>
+                  <div className="userCard">
+                    <div className="userCard-Info">
+                      <img src={logo} alt="" className="userCard-img" />
+                      <p className="userCard-para">
+                        {item.username} <br />
+                        <span className="userCard-span">{item.role}</span>
+                      </p>
+                    </div>
 
-                  <div className="userCard-btns">
-                    <button
-                      className="userCard-button edit"
-                      onClick={() => {
-                        Edit(item); 
-                      }}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="userCard-button remove"
-                      onClick={() => {
-                        DeleteUser(item);
-                      }}
-                    >
-                      Remove
-                    </button>
+                    <div className="userCard-btns">
+                      <button
+                        className="userCard-button edit"
+                        onClick={() => {
+                          Edit(item);
+                        }}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="userCard-button remove"
+                        onClick={() => {
+                          DeleteUser(item);
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </>
-            );
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <div className="userCard">
+                    <div className="userCard-Info">
+                      <img src={logo} alt="" className="userCard-img" />
+                      <p className="userCard-para">
+                        {item.username} <br />
+                        <span className="userCard-span">{item.role}</span>
+                      </p>
+                    </div>
+                    <div className="userCard-btns">
+                      <button
+                        className="userCard-button edit"
+                        onClick={() => {
+                          Edit(item);
+                        }}
+                      >
+                        Edit
+                      </button>
+                    </div>
+                  </div>
+                </>
+              );
+            }
           })}
         </div>
 
@@ -189,8 +234,6 @@ function Register() {
               }}
             />
 
-            
-
             <select
               name=""
               id=""
@@ -207,7 +250,13 @@ function Register() {
               <option value="admin">admin</option>
             </select>
 
-            
+            <label className='fab_label '> Image </label>:
+            <input type='file' placeholder='Fabric Image ' className='fab_input ' name='imgfile'
+              onChange={(e) => {
+                setImg(e.target.files[0])
+                console.log(e.target.files[0])
+              }}
+            /><br />
 
             {edit === false ? (
               <button
