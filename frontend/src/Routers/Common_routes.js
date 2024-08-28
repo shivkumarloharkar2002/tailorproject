@@ -113,7 +113,7 @@ const routes = createBrowserRouter([
     element: <ReadyMade />
   },
   {
-    path: '/ready',
+    path: '/ready/:id',
     element: <Ready/>
   },
   {

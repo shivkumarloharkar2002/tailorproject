@@ -1,77 +1,70 @@
 @media screen and (max-width:900px) {
   .Fabform_main {
-   width: 90vw !important;
+    width: 100vw !important;
 
   }
-  
+
   .main_fab_form {
     width: 100vw;
-    margin: auto ;
-    /* display:inline-block; */
-    background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
-    background-size: cover;
+    margin: auto;
+    align-items: center;
+
   }
 
   .fab_label {
-  margin: 20px;
-  width: 10vw !important;
-  font-size: 20px;
-  font-weight: 30;
+    margin: 20px;
+    width: 10vw !important;
+    font-size: 20px;
+    font-weight: 30;
+    color: white;
+  }
 
-}
-.fab_input {
-  margin: 4px;
-  width: 65vw !important;
-  padding: 10px;
-  border-radius: 5px;
-}
+  .fab_input {
+    margin: 4px;
+    width: 65vw !important;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-.fab_btn {
-  color: white;
-  border-radius: 15px 10px;
-  width: 10px ;
-  margin: auto !important;
-  transition: 1s;
-}
-.select {
-  margin: 4px;
-  width: 65vw !important;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-.Fabform_list {
-  width: 90vw !important; 
- text-align: center;
- }
- .AFDIV{
-  display:inline-block !important;
-}
-}
+  .fab_btn {
+    color: white;
+    border-radius: 15px 10px;
+    width: 10px;
+    margin: auto !important;
+    transition: 1s;
+  }
 
-.addFabMain {
-  /* border: 1px solid black; */
-  margin: auto;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 85vw;
+  .select {
+    margin: 4px;
+    width: 65vw !important;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  .Fabform_list {
+    width: 90vw !important;
+    text-align: center;
+  }
+
+  .AFDIV {
+    display: inline-block !important;
+  }
 }
 
-.main_fab_form {
-  /* display:inline-block; */
-  background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
-  background-size: cover;
-}
 
-.AFDIV{
-  display:flex;
+
+
+
+
+.AFDIV {
+  display: flex;
 }
 
 .Fabform_main {
   overflow-y: hidden;
   background-color: rgba(36, 148, 148);
-  margin: 50px auto;
+  /* margin: auto; */
   padding: 20px 0;
   height: auto;
   width: 40vw;
@@ -92,7 +85,8 @@
   box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
   border-radius: 10px;
 }
-.List_fab{
+
+.List_fab {
   overflow-y: scroll;
 }
 
@@ -123,6 +117,7 @@
 }
 
 .fab_label {
+  color: white;
   margin: 20px;
   width: 8vw;
   font-size: 20px;
@@ -141,7 +136,8 @@
   color: white;
   /* background-color:rgba(36, 148, 148); */
   border-radius: 15px 10px;
-  background-color: black;
+  background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgba(140, 142, 142, 1) 10%, rgba(5, 5, 5, 1) 100%);
   border: 2px solid rgb(7, 10, 10);
   width: 100px;
   padding: 7px 30px;
@@ -165,12 +161,13 @@
 
 @media screen and (max-width:900px) {
 
-  .AFh5{
+  .AFh5 {
     width: 30vw !important;
     /* border: 1px solid black; */
 
   }
-  .AFinfo{
+
+  .AFinfo {
     width: 40vw;
     /* border: 1px solid black; */
   }
@@ -186,11 +183,11 @@
     border: 11px solid blue;
     width: auto;
     margin: auto;
-  
+
   }
 }
 
-.AFmain{
+.AFmain {
   /* border: 1px solid white; */
   border-radius: 10px;
   margin: 10px;
@@ -199,28 +196,31 @@
 
 }
 
-.AFimg{
-  margin:0 20px;
+.AFimg {
+  margin: 0 20px;
   border-radius: 10px;
   /* border: 1px solid grey; */
   height: 200px;
   width: 200px;
 }
-.AFh5{
+
+.AFh5 {
   width: 7.5vw;
   /* border: 1px solid; */
- padding: 4px;
+  padding: 4px;
 }
-.AFcomponents{
+
+.AFcomponents {
   justify-content: space-between;
   display: flex;
 }
 
-.fabCard-btns{
+.fabCard-btns {
   /* border: 1px solid ; */
   width: 14vw !important;
-  margin:10px auto;
+  margin: 10px auto;
 }
+
 .delete {
 
   background-color: red;

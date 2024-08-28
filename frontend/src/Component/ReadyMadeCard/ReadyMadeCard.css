@@ -1,6 +1,7 @@
 .ReadyC_main{
     /* border: 2px solid black; */
     height: auto;
+    text-decoration: none !important;
     border-radius: 10px;
     box-shadow: 1px 1px 7px 1px grey;
     width: 280px;
@@ -17,5 +18,7 @@
 }
 
 .RMhead{
+    text-decoration: none !important;
+    color: black;
     padding:3px 10px;
 }
