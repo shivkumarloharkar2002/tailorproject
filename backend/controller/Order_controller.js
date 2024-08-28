@@ -9,9 +9,9 @@ export const CreateOrder = async (req, res) => {
 
        const transaction_id ="UTR24kwlewj"
 
-    const { customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice,  total } = req.body
+    const { customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice,  total,targetDate } = req.body
     try {
-        const orderdata = await Order.create({ "order_id": Morder_id, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, transaction_id, total })
+        const orderdata = await Order.create({ "order_id": Morder_id, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, transaction_id, total,targetDate })
 
         // const mongodbid = orderdata._id
 console.log(orderdata)

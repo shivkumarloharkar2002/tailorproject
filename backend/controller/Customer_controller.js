@@ -49,3 +49,19 @@ export const AllCustomerdata = async (req, res) => {
         console.log(e)
     }
 }
+
+export const Onecustomer = async (req,res)=>{
+    const { id } = req.params;
+    try{
+        
+        const OneD = await Customer.findOne({ _id: id })
+        res.json({
+            success: true,
+            data: OneD,
+            msg: `${id} id details`
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+}

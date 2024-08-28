@@ -22,6 +22,9 @@ const OrderSchema = new Schema({
     enum: ["pending","working", "complete"],
     default: "pending", // default value
   },
+  targetDate: {
+    type:String
+  },
   fabric_price:{
     type: Number,
     required: true,
