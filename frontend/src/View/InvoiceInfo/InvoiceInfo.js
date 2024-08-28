@@ -3,9 +3,10 @@ import axios from "axios";
 import "./InvoiceInfo.css";
 import Header from "./../../Component/Header/Header";
 import { Link } from "react-router-dom";
-import back from "./../../assets/Back/back.jpg";
+import back from "./../../assets/Back/back.png";
 import { useParams } from "react-router-dom";
 import logo from "./../../assets/Login/logo.png";
+import moment from "moment"
 
 function InvoiceInfo() {
   const { id } = useParams();
@@ -37,7 +38,9 @@ function InvoiceInfo() {
         </Link>
 
         {getAllData.map((data) => {
+          const date = (moment(data.createdAt).format("DD MMM YYYY"))
           if (data._id == id)
+
             return (
               <>
                 <div className="invoiceInfo-box">
@@ -49,8 +52,10 @@ function InvoiceInfo() {
                   </p>
                   <div className="invoiceInfo-box-info">
                     <div className="invoiceInfo-box-name-para">
-                      <p className="invoiceInfo-box-name">Bill No: 2</p>
-                      <p className="invoiceInfo-box-name">{data.createdAt}</p>
+                      <p className="invoiceInfo-box-name">Bill No: 2
+                        {/* {data.order} */}
+                      </p>
+                      <p className="invoiceInfo-box-name">{date}</p>
                     </div>
                     <p className="invoiceInfo-box-name-2">
                       Bill To: {data.customer_id.name}
@@ -59,20 +64,20 @@ function InvoiceInfo() {
                     <div className="invoiceInfo-box-color-para">
                       <p className="invoiceInfo-box-color-para-p">#Item</p>
                       <p className="invoiceInfo-box-color-para-p">Qty</p>
-                      <p className="invoiceInfo-box-color-para-p">Date</p>
+                      {/* <p className="invoiceInfo-box-color-para-p">Date</p> */}
                       <p className="invoiceInfo-box-color-para-p">Amount</p>
                     </div>
 
                     <div className="invoiceInfo-box-color-para-info">
                       <p className="invoiceInfo-box-color-para-p">
-                        {data.cloth_type}
+                        1.{data.cloth_type}
                       </p>
                       <p className="invoiceInfo-box-color-para-p">
                         {data.quantity}
                       </p>
-                      <p className="invoiceInfo-box-color-para-p">
-                        {data.createdAt}
-                      </p>
+                      {/* <p className="invoiceInfo-box-color-para-p">
+                        {date}
+                      </p> */}
                       <p className="invoiceInfo-box-color-para-p">
                         {data.actualprice}/-
                       </p>
@@ -100,6 +105,12 @@ function InvoiceInfo() {
                         /-
                       </p>
                     </div>
+                  </div>
+
+
+                  <div className="invoiceInfo-box-color-para-info2">
+                    <button className="invoiceInfo-btn">Print Bill</button>
+                    <button className="invoiceInfo-btn">Share Bill</button>
                   </div>
                 </div>
               </>

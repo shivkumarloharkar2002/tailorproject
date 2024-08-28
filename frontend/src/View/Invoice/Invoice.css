@@ -65,7 +65,7 @@
     width: 30vw;
     height: 53px;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 50px;
     margin: 20px auto;
     align-content: center;
     display: flex;
@@ -76,8 +76,10 @@
 .invoice-icon {
     align-self: center;
     color: rgba(36, 148, 148, 0.54);
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+
 }
 
 .invoice-inputs {
@@ -87,6 +89,7 @@
     /* border: 2px solid red; */
     outline: none;
     font-size: 20px;
+    border-radius: 50px;
 }
 
 
@@ -107,7 +110,7 @@
     margin: 20px auto;
     display: block;
 }
-
+ 
 .invoice-shortCards {
     /* border: 2px solid red; */
     width: 80vw;
@@ -115,6 +118,7 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 
