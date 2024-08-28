@@ -1,7 +1,25 @@
+@media screen and (max-width :678px) {
+  .OName {
+    /* border: 2px solid rgb(152, 150, 150); */
+    background: rgb(24, 138, 133);
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);    border-radius: 20px;
+    width: 52vw !important;
+    height: auto !important;
+    padding: 1px;
+    position: relative;
+    left: 25px;
+
+  }
+
+
+}
+
+
+
 .OName {
   /* border: 2px solid rgb(152, 150, 150); */
-  background-color: rgba(36, 148, 148, 0.54);
-  border-radius: 20px;
+  background: rgb(24, 138, 133);
+  background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);  border-radius: 20px;
   margin: 25px;
   height: 60px;
   width: 22vw;
