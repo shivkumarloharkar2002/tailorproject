@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import img from './hanger.png'
 import './TodayOrder.css'
 import OrderCard from '../../Component/OrderCard/OrderCard'
 import back from './back.jpg'
 import { Link } from 'react-router-dom'
-
 import Header from '../../Component/Header/Header'
 import axios from "axios";
-
 import moment from "moment"
 
 
@@ -51,13 +48,7 @@ import moment from "moment"
 export default function TodayOrder() {
 
     const [search, setSearch] = useState("");
-
-
     // get allorderin api call
-
-
-
-
     const [getAllData, setGetAllData] = useState([]);
     const getData = async () => {
         const getNote = await axios.get(
@@ -68,22 +59,17 @@ export default function TodayOrder() {
     console.log(getAllData);
 
     const searchData = getAllData.filter((data) => {
+        const customerName = data.customer_id?.name || "Unknown Customer";
+        const createdAt = data.createdAt || "";
         return (
-            data.customer_id.name.toLowerCase().includes(search.toLowerCase()) ||
-            data.createdAt.toLowerCase().includes(search.toLowerCase())
+            customerName.toLowerCase().includes(search.toLowerCase()) ||
+            moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
         );
     });
 
     useEffect(() => {
         getData();
     }, []);
-
-
-
-
-
-
-
     return (
         <>
             <Header />
@@ -125,17 +111,21 @@ export default function TodayOrder() {
                             const date = (moment(data.createdAt).format("DD MMM YYYY"))
                             const todaydate = Date.now()
                             const today = (moment(todaydate).format("DD MMM YYYY"))
+                            const customerName = data.customer_id?.name || "Unknown Customer";
+
                             console.log(date, today)
-                            if (date == today)
+                            if (date == today){
                                 return (
-
-                                    <OrderCard cloth_type={data.cloth_type} time={time} name={data.customer_id.name} id={data._id} />
-
+                                    <OrderCard key={data._id} cloth_type={data.cloth_type} time={time} name={customerName} id={data._id} />
                                 )
+                            }
+                            else {
+                                return null;
+                            }
                         })
 
-
                     }
+                    
                 </div>
             </div>
         </>
