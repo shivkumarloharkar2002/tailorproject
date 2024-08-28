@@ -88,7 +88,7 @@ function Invoice() {
                 price={info.total.toFixed(2)}
                 id={info._id}
               />
-            </> 
+
           );
         })}
       </div>

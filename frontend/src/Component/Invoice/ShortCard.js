@@ -17,4 +17,4 @@ function ShortCard({ name, date, price, id }) {
     );   
 } 
 
-export default ShortCard; 
+
