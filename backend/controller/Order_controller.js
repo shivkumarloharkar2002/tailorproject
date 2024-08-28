@@ -7,22 +7,23 @@ export const CreateOrder = async (req, res) => {
     // const order_id = "orderid" + Math.floor((Math.random() * 1000000))
     const Morder_id = new mongoose.Types.ObjectId()
 
-    //    const transaction_id ="UTR24kwlewj"
+       const transaction_id ="UTR24kwlewj"
 
-    const { user_id, customer_id, measurement_id, cloth_type, status, quantity, actualprice, discount, cgst, cgstprice, sgst, sgstprice, transaction_id, total } = req.body
+    const { customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice,  total } = req.body
     try {
-        const orderdata = await Order.create({"order_id":Morder_id, customer_id, user_id, customer_id,discount, measurement_id, cloth_type, status, quantity, actualprice, discount, cgst, cgstprice, sgst, sgstprice, transaction_id, total })
+        const orderdata = await Order.create({ "order_id": Morder_id, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, transaction_id, total })
 
-       const mongodbid= orderdata._id
+        // const mongodbid = orderdata._id
+console.log(orderdata)
+        const customerhistory = await Customer.findByIdAndUpdate(req.body.customer_id, {
+            $push: {
+                measurement_id: req.body.measurement_id,
+                order_id: orderdata._id
 
-        const customerhistory = await Customer.findByIdAndUpdate(req.body.customer_id,{ 
-            $push:{
-                measurement_id:req.body.measurement_id,
-                order_id:req.body.order_id
-
-            }},{
-                new:true
             }
+        }, {
+            new: true
+        }
         )
 
         res.json({
@@ -33,7 +34,7 @@ export const CreateOrder = async (req, res) => {
         })
 
     }
-    catch(e){
+    catch (e) {
         res.send(e)
     }
 }
@@ -47,7 +48,7 @@ export const Getorderdata = async (req, res) => {
         res.json({
             success: true,
             msg: "order fetched",
-            data: allorderdata._id
+            data: allorderdata
         })
 
     }

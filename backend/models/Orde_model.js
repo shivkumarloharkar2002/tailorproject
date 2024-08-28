@@ -19,8 +19,16 @@ const OrderSchema = new Schema({
 
   status: {
     type: String,
-    enum: ["pending", "complete"],
+    enum: ["pending","working", "complete"],
     default: "pending", // default value
+  },
+  fabric_price:{
+    type: Number,
+    required: true,
+  },
+  cloth_stich:{
+    type: Number,
+    required: true,
   },
 
   quantity: {
@@ -36,7 +44,11 @@ const OrderSchema = new Schema({
     type: Number,
     required: true,
   },
-  cgst: {
+  discounted_price:{
+    type: Number,
+    required: true,
+  },
+  cgstRate: {
     type: Number,
     // required: true,
   },
@@ -44,7 +56,7 @@ const OrderSchema = new Schema({
     type: Number,
     required: true,
   },
-  sgst: {
+  sgstRate: {
     type: Number,
     required: true,
   },
