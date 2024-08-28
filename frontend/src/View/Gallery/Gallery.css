@@ -37,8 +37,8 @@
 }
 
 .GallaryHedding {
-    background-color: rgba(36, 148, 148, 1);
-    /* margin-top: 130px; */
+    background: rgb(24, 138, 133);
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);    /* margin-top: 130px; */
     border-radius: 10px;
     color: white;
     padding: 5px 0px;

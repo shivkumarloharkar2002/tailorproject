@@ -15,8 +15,8 @@
     height: auto;
     width: 40vw;
     /* color: white; */
-    background-color: rgba(36, 148, 148, 0.54);
-    backdrop-filter: blur(20px);
+    background: rgb(24, 138, 133);
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);    backdrop-filter: blur(20px);
     box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
     border-radius: 10px;
   }
@@ -40,6 +40,7 @@
   
   .fab_label {
     margin: 20px;
+    color: black;
     width: 6vw;
   }
   
@@ -55,8 +56,8 @@
     flex-wrap: wrap;
     /* background-color:rgba(36, 148, 148); */
     border-radius: 15px 10px;
-    background-color: black;
-    border: 2px solid rgb(7, 10, 10);
+    background: rgb(5,5,5);
+    background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgb(86, 89, 89) 10%, rgba(5,5,5,1) 100%);
     width: 100px;
     padding: 7px 30px;
     margin: auto;
