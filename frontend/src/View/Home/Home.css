@@ -1,24 +1,18 @@
-/* .cards{
-    height: 144px;
-    width: 172px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: rgba(36, 148, 148, 0.54);
-    margin: 20px 10px;
-    box-shadow: 2px 2px 6px 1px gray;
-    font-family: serif;
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-/* @media screen and (max-width:800px) {
-
-   
-    .Homeimg {
-        width: 25vh !important;
-        height: auto;
+@media screen and (max-width :678px) {
+    .MainHome {
+      /* border: 2px solid rgb(152, 150, 150); */
+      /* background-color: rgba(36, 148, 148, 0.54); */
+      border-radius: 20px;
+      width: 52vw !important;
+      padding: 1px;
+      position: relative;
+      left: 10px;
+  
     }
-} */
+  
+  
+  }
+  
 
 .MainHome {
     /* border: 2px solid black; */

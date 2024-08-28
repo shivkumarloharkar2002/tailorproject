@@ -84,11 +84,7 @@ function Invoice() {
                 price={info.total.toFixed(2)}
                 id={info._id}
               />
-<<<<<<< HEAD
             </>
-=======
-
->>>>>>> 78dfe475e5a08bc0660daa9e890739dd0b95b11c
           );
         })}
       </div>
