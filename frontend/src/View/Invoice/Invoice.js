@@ -40,7 +40,6 @@ function Invoice() {
     setAmount(total);
   }, [getAllData]);
 
-  
   return (
     <div>
       <Header />
@@ -48,7 +47,6 @@ function Invoice() {
       <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="profile-back-img" />
-          
         </div>
       </Link>
 
@@ -60,7 +58,6 @@ function Invoice() {
           <span className="invoice-amount">₹ {amount.toFixed(2)}</span>
         </p>
       </div>
-      
 
       <div className="invoice-input">
         <img src={searchImg} alt="" className="invoice-icon" />
@@ -78,9 +75,8 @@ function Invoice() {
 
       <div className="invoice-shortCards">
         {searchData.reverse().map((info) => {
-          
-          const date = (moment(info.createdAt).format("DD MMM YYYY"))
-          return ( 
+          const date = moment(info.createdAt).format("DD MMM YYYY");
+          return (
             <>
               <ShortCard
                 name={info.customer_id.name}
@@ -88,12 +84,10 @@ function Invoice() {
                 price={info.total.toFixed(2)}
                 id={info._id}
               />
-
+            </>
           );
-        }
-        )
-        }
-      </div >
+        })}
+      </div>
     </div>
   );
 }
