@@ -5,11 +5,15 @@ import sales from './sales.png';
 import wallet from './wallet.png';
 import recev from './recev.png';
 import goods from './goods.png';
+import back from './back.png';
 
 export default function Performance() {
   return (
     <div>
       <Header/>
+      <a href='/home'>
+        <img className='back-btn' src={back}/>
+        </a>
       <p className='heding-about'>Performance</p>
       <div className='parfom'>
             
