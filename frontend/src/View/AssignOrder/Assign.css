@@ -2,11 +2,12 @@
     text-align: center;
     font-family: Kaisei Decol;
     font-size: 35pt;
-    margin-top: 10%;
+    margin-top: -5%;
 }
 @media only screen and (max-width:600px){
     .heding-assign{
-        margin-top: 30%;
+        margin-top: -10%;
+        margin-bottom: -5%;
     }
 }
 .assign-patti{
@@ -23,7 +24,7 @@
         height: 25%;
         width: 90vw;
         font-size: 14pt;
-        margin: -5% 0 0 0;
+        margin: 0% 0 0 0;
     }
 }
 .assign-main{
@@ -47,6 +48,8 @@
     .assign-left{
         display: flex;
         font-size: 14pt;
+        width: 90%;
+        margin: 10% 5% 0 5%;
     }
 }
 .assign-line{
@@ -57,14 +60,15 @@
 }
 @media only screen and (max-width:600px){
     .assign-line{
-        height: 2px;
-        width: 80%;
+        height: 0px;
+        width: 0cqi;
         background-color:  rgba(36, 148, 148, 0.54);
     }
 }
 @media only screen and (max-width:600px){
     .assign-informetion{
         flex-wrap: wrap;
+        width: 100%;
     }
 }
 .aa{
@@ -74,5 +78,17 @@
     .aa{
         margin: 0 10px;
         font-size: 12pt;
+    }
+}
+.back-btn{
+    height: 3%;
+    width: 3%;
+    margin-top: 10%;
+}
+@media only screen and (max-width:600px){
+    .back-btn{
+        margin-top: 30%;
+        height: 5%;
+        width: 5%;
     }
 }
