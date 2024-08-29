@@ -4,6 +4,7 @@ import "./Assign.css";
 import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 export default function AssignOrder() {
   const [getAllData, setGetAllData] = useState([]);
@@ -28,6 +29,13 @@ export default function AssignOrder() {
   useEffect(() => {
     getData();
   }, []);
+
+  const navigate=useNavigate()
+
+  
+  const goToUpdatePage = (id) => {
+    navigate(`/updatestatus/${id}`); // Navigate to the update status page with the ID
+  };
 
   return (
     <div>
@@ -125,7 +133,10 @@ export default function AssignOrder() {
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  {/* <button className="aa update">Update status</button> */}
+                  <button
+                    className="update-status-button"
+                    onClick={() => goToUpdatePage(data.id)}
+                  />
                 </div>
               );
             } else if (type == "all" && type != data.cloth_type) {
@@ -136,7 +147,10 @@ export default function AssignOrder() {
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  {/* <button className="aa update">Update status</button> */}
+                  <button
+                    className="update-status-button"
+                    onClick={() => goToUpdatePage(data._id)}
+                  />
                 </div>
               );
             }
