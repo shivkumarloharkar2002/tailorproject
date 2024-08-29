@@ -89,7 +89,14 @@
     margin: 5px;
     margin-top: 10px;
     font-size: 18pt;
-
+    text-align: center;
+    transition: 1s;
+}
+.pp:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 2px gray;
+    border-radius: 10px;
+    transform: scale(1.1);
 }
 @media only screen and (max-width:600px){
     .ppp{
