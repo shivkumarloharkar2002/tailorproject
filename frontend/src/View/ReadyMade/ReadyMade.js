@@ -61,6 +61,7 @@ export default function ReadyMade() {
           <p onClick={() => {
             setType("safari")
           }} className='Glist-p'>Suit Safari</p>
+          
 
 <a href='/readymadeform'><img src={gallery} alt="" className="Profile-back-img" />
 </a>
