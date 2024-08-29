@@ -52,9 +52,9 @@ export default function NextGalleryCard() {
                                 <div className='Gallery-flex'>
                                     <img className='Gallery-img' src={data.img} />
                                     <div>
-                                        <h2 className='Gallery-head'>{data.title}</h2>
-                                        <h3 className='Description'>{data.description}</h3>
-                                        <p className='Gleft-size'>{data.des}</p>
+                                        <h2 className='Gleft-size'>Title :-{data.title}</h2>
+                                        <p className=' Gleft-size'> Des :-{data.description}</p>
+                                        {/* <p className='Gleft-size'>Des :-{data.des}</p> */}
                                         <p className='Gleft-size'>Sizes :-{data.size}</p>
                                         <div>
                                             <p className='Gleft-size'>Color :- {data.Color}</p>

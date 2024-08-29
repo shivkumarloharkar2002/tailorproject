@@ -127,7 +127,6 @@ export default function TotalOrderingPage() {
                             return (
 
                                 <OrderCard key={data._id} cloth_type={data.cloth_type} time={date} name={customerName} id={data._id} />
-
                             )
                         })
 
