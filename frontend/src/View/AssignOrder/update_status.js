@@ -34,6 +34,7 @@ export default function Update_status() {
     </select>
     <button onClick={handleStatusUpdate} className="update-button">Update Status</button>
     <button onClick={() => navigate(-1)} className="cancel-button">Cancel</button>
+    
   </div>
   )
 }
