@@ -7,7 +7,7 @@ import back from "./../../assets/Back/back.png";
 import { useParams } from "react-router-dom";
 import logo from "./../../assets/Login/logo.png";
 import moment from "moment";
-import { ReactToPrint } from "react-to-print";
+// import { ReactToPrint } from "react-to-print";
 
 function InvoiceInfo() {
   const { id } = useParams();
