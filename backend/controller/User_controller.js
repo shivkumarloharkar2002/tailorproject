@@ -10,7 +10,7 @@ import { v2 as cloudinary } from "cloudinary"
 
 //     try {
 //         const userdata = await Usermodel.create({
-//             "user_id": user_id,
+//             "user_id": user_id,c
 //             "username": username,
 //             "email": email,
 //             "phone": phone,
