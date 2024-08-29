@@ -22,6 +22,10 @@ export default function Gallery() {
     setGalleryData(gallery.data.data)
     console.log(gallery.data)
   }
+
+
+
+  
   useEffect(
     () => {
       GetAllData();
@@ -100,15 +104,16 @@ export default function Gallery() {
         galleryData.map((data) => {
           if (type === data.
             cloth_type
-          )
+          ) <div className='Main_Card'>
             return (
               <>
-                <div className='Main_Card'>
+               
                   <GalleryCard img={data.img} title={data.title} id={data._id} />
-                </div>
+               
 
               </>
             )
+            </div>
         }
         )
       }

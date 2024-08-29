@@ -1,3 +1,20 @@
+@media screen and (max-width :678px) {
+    .Order_Qty {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .order-back_box {
+        height: auto;
+        width: 90vw !important;
+        /* border: 2px solid black; */
+        border-radius: 10px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: white;
+    }
+}
+
 .Ordering_form {
     background-color: rgb(163, 161, 161);
     width: auto;
@@ -5,13 +22,13 @@
     align-content: center;
 }
 
-.profile-back_box {
+.order-back_box {
     height: auto;
     width: 50vw;
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
 }
 
@@ -42,9 +59,14 @@
 
 .Order_Qty {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    text-align: center;
     flex-wrap: wrap;
-    margin: 0 10px;
+    width: 150px;
+    height: auto;
+    /* width: 50vw; */
+    margin:auto ;
+    /* border: 2px solid; */
 }
 
 .Order_Color {
@@ -70,7 +92,7 @@
     text-align: center;
 
     background: rgb(247, 143, 4);
-    background: linear-gradient(180deg, rgba(247, 143, 4, 1) 0%, rgba(236, 201, 143, 1) 10%, rgba(249, 161, 7, 1)100%);
+    background: linear-gradient(180deg, rgb(238, 60, 15) 0%, rgb(222, 73, 19) 10%, rgb(231, 88, 16)100%);
 
 
     color: aliceblue;
@@ -85,11 +107,12 @@
 
 .Qty_button_2 {
     background: rgb(247, 143, 4);
-    background: linear-gradient(180deg, rgba(78, 240, 19, 0.821) 0%, rgb(216, 236, 143) 10%, rgb(13, 222, 10)100%);
+    background: linear-gradient(180deg, rgba(78, 240, 19, 0.821) 0%, rgb(27, 126, 8) 10%, rgb(13, 222, 10)100%);
     color: aliceblue;
     font-size: 20px;
     font-weight: 800;
 }
+
 
 .Order_count {
     margin: 0 5px;
@@ -132,8 +155,12 @@
 .profile_Discount {
     display: flex;
     flex-wrap: wrap;
-    margin: 25px;
-    justify-content: space-evenly;
+    width: 45vw;
+    text-align: center;
+    /* margin: 45px; */
+    margin-top: 30px;
+    margin-left: 15px;
+    justify-content: space-between;
 }
 
 .Discount {
@@ -153,8 +180,8 @@
 .profile_button_1 {
     border-radius: 10px;
     margin: 10px 25px;
-    background: rgb(5,5,5);
-    background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(140,142,142,1) 10%, rgba(5,5,5,1) 100%);
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgba(140, 142, 142, 1) 10%, rgba(5, 5, 5, 1) 100%);
     color: aliceblue;
 }
 
@@ -168,20 +195,29 @@
 .button_last {
     border-radius: 10px;
     text-align: center;
-    background: rgb(5,5,5);
-    background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(140,142,142,1) 10%, rgba(5,5,5,1) 100%);
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgb(106, 107, 107) 10%, rgba(5, 5, 5, 1) 100%);
     color: aliceblue;
     padding: 0px 15px;
     margin: 10px;
 }
 
+.LASTONE {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .Total_Price {
     text-align: center;
+    margin-top: 10px;
 }
 
 .Total_Price_span {
     font-size: 15px;
 }
+
 
 
 /* pant */
