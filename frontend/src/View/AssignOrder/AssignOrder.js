@@ -30,9 +30,9 @@ export default function AssignOrder() {
     getData();
   }, []);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
-  
+
   const goToUpdatePage = (id) => {
     navigate(`/updatestatus/${id}`); // Navigate to the update status page with the ID
   };
@@ -121,7 +121,8 @@ export default function AssignOrder() {
             <p className="aa">Date</p>
             <p className="aa">Stutas</p>
             <p className="aa">Order</p>
-            {/* <p className="aa">Actions</p> */}
+            <p className="aa">id </p>
+            <p className="aa">Actions</p>
           </div>
 
           {getAllData.reverse().map((data) => {
@@ -135,8 +136,8 @@ export default function AssignOrder() {
                   <p className="aa">{data.cloth_type}</p>
                   <button
                     className="update-status-button"
-                    onClick={() => goToUpdatePage(data.id)}
-                  />
+                    onClick={() => goToUpdatePage(data._id)}
+                  >update staus</button>
                 </div>
               );
             } else if (type == "all" && type != data.cloth_type) {
@@ -146,12 +147,21 @@ export default function AssignOrder() {
                   <p className="aa">No.</p>
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
+                  <p className="aa">{data._id}</p>
                   <p className="aa">{data.cloth_type}</p>
                   <button
-                    className="update-status-button"
+                    className="updatebutton"
                     onClick={() => goToUpdatePage(data._id)}
-                  />
+                  >update status</button>
+
+                  {data.status === 'pending' || data.status === 'working' ? (
+                    <button>Update Status</button>
+                  ) : data.status === 'complete' ? (
+                    <button>View Bill</button>
+                  ) : null}
                 </div>
+
+
               );
             }
           })}
@@ -160,3 +170,5 @@ export default function AssignOrder() {
     </div>
   );
 }
+
+
