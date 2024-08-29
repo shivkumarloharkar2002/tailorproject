@@ -157,25 +157,25 @@ export default function MeasurementForm() {
           <h1 className="measurementForm-form-h">Measurement Form</h1>
 
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Collar'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Collar in cm '
             onChange={(e) => {
               setCollar(e.target.value)
             }} />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Length' onChange={(e) => {
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Length in cm' onChange={(e) => {
             setHeight(e.target.value)
           }}
           />
 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Sleeve'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Sleeve in cm'
             onChange={(e) => {
               setSleeve(e.target.value)
             }} />
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Chest'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Chest in cm'
             onChange={(e) => {
               setChest(e.target.value)
             }} /> 
-          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Waist'
+          <input type="number" name="" id="" required className="measurementForm-form-input" placeholder='Waist in cm'
             onChange={(e) => {
               setWaist(e.target.value)
             }} />

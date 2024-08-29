@@ -16,9 +16,9 @@ export default function SearchCard({ name, date, price, id }) {
           <div className="invoice-short" >
             <p className="cust_info" >{name}</p>
             <p className="invoice-short-amount">{date} <br />
-              {/* Paid- ₹  */}
+              Paid- ₹ 
               {price}
-              {/* /- */}
+              /-
             </p>
           </div>
         </Link>
