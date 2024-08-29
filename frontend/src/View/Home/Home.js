@@ -25,68 +25,68 @@ export default function Home() {
 
                 <Header />
                 <div className='MainHome'>
-                    <Link to='/customerinfo' className="link">
+                    <Link to='/customerinfo' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img1} />
                             <h3 className='HText'>Add Customer</h3>
-                            <h5 className='MDetails'>See Details </h5>
+                            <h5 className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/seecustomer_details' className="link">
+                    <Link to='/seecustomer_details' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img2} />
                             <h3 className='HText'>View Customer</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/order' className="link">
+                    <Link to='/order' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img3} />
                             <h3 className='HText'>Today Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/totalorders' className="link">
+                    <Link to='/totalorders' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img3} />
                             <h3 className='HText'>Total Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/gallery' className="link">
+                    <Link to='/gallery' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img4} />
                             <h3 className='HText'>Gallery</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/orderdetail' className="link">
+                    <Link to='/orderdetail' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img5} />
                             <h3 className='HText'>Manage Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/readymade' className="link">
+                    <Link to='/readymade' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img7} />
                             <h3 className='HText'>Ready Made</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
 
-                    <Link to='/register' className="link">
+                    <Link to='/register' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img6} />
                             <h3 className='HText'>Manage Employee</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/performance' className="link">
+                    <Link to='/performance' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img8} />
                             <h3 className='HText'>Performance</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
                 </div>
@@ -99,53 +99,53 @@ export default function Home() {
 
                 <Header />
                 <div className='MainHome'>
-                    <Link to='/customerinfo' className="link">
+                    <Link to='/customerinfo' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img1} />
                             <h3 className='HText'>Add Customer</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/seecustomer_details' className="link">
+                    <Link to='/seecustomer_details' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img2} />
                             <h3 className='HText'>View Customer</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/order' className="link">
+                    <Link to='/order' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img3} />
                             <h3 className='HText'>Today Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/totalorders' className="link">
+                    <Link to='/totalorders' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img3} />
                             <h3 className='HText'>Total Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/gallery' className="link">
+                    <Link to='/gallery' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img4} />
                             <h3 className='HText'>Gallery</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/orderdetail' className="link">
+                    <Link to='/orderdetail' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img5} />
                             <h3 className='HText'>Assign Order</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/readymade' className="link">
+                    <Link to='/readymade' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img7} />
                             <h3 className='HText'>Ready Made</h3>
-                            <h5  className='MDetails'>See Details </h5>
+                            <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
 

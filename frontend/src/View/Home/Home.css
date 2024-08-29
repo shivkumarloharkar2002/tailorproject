@@ -62,3 +62,9 @@
     color: blue;
     text-decoration: underline;
 } */
+ .linkH{
+    text-decoration: none;
+ }
+ .HCard h5{
+    color: white;
+ }
