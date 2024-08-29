@@ -23,15 +23,16 @@ export default function AddCustomer() {
         {
           name,
           email,
-          phone,
+          phone, 
           address
         }
       );
+      const id =customerData.data.data._id
 
       // if (registerData.status === 200) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
       alert("Customer Added Successfully");
-      navigate("/selectcategory");
+      navigate(`/viewcategory/${id}`);
       console.log(customerData);
       // }
     } catch (error) {
