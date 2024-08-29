@@ -15,34 +15,13 @@ export default function Header() {
 
   const logout = () => {
 
-    localStorage.clear("")
+  localStorage.clear();
     navigate("/")
   }
 
   return (
     <>
-      {/* <div className='Header fixed-top'>
-      
-        <a href='/home'>
-          <img className='nimg' src={Nav}></img>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div className='Heder_Next'>
-
-          <a class="  Header_Margin " aria-current="page" href="/home">Home</a>
-          <a class=" Header_Margin " href="/about">About</a>
-
-          <a class=" Header_Margin " href="/invoice">Invoice</a>
-
-          <a href="/profile"> <img className='Header_Margin proImg' src={profile}></img></a>
-          <a href="/profile"> <img className='Header_Margin proImg' src={log} onClick={logout}></img></a>
-
-        </div>
-
-      </div> */}
+     
 
       {/* new */}
 
