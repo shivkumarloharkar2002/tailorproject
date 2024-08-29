@@ -6,7 +6,7 @@ export const ProtectedRoute = ({ children }) => {
     const location = useLocation();
 
     if (!user) {
-        return <Navigate to="/login" state={{ from: location }} />;
+        return <Navigate to="/" state={{ from: location }} />;
     }
 
     return children;

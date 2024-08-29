@@ -21,7 +21,6 @@ import Profile from "../View/Profile/Profile";
 import GalleryForm from '../View/GalleryForm/GalleryForm'
 import NextGalleryCard from '../View/Gallery/NextGalleryCard'
 import InvoiceInfo from '../View/InvoiceInfo/InvoiceInfo'
-
 import AssignOrder from "../View/AssignOrder/AssignOrder";
 import Ready from "../View/Readymade Details/Readymade Details"
 import { ProtectedRoute } from "../protected_routes/protected_routes";
@@ -139,9 +138,6 @@ const routes = createBrowserRouter([
     path:'/updatestatus/:id',
     element:<Update_status/>
   }
-
-  
-
 ])
 
 function CommonRoutes() {
