@@ -142,7 +142,7 @@ export default function Orders() {
                         </div>
                     </Link>
 
-                    <div className="profile-back_box">
+                    <div className="order-back_box">
                         <div className='profile_Text'>
 
                             <h3 className='profile-back_Next'>{customerData.name}</h3>
