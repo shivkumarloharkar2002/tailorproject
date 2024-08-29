@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 import Header from "../../Component/Header/Header";
 import "./Assign.css";
@@ -6,7 +8,7 @@ import axios from "axios";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 
-export default function AssignOrder() {
+export default function Manage_order() {
   const [getAllData, setGetAllData] = useState([]);
   // category
   const [type, setType] = useState("shirt");

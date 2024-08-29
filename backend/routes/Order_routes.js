@@ -11,4 +11,4 @@ OrderRoutes.get("/getallorder",Getorderdata)
 
 
 // http://localhost:5555/api/orderroutes/updateorderstatus
-OrderRoutes.post("/updateorderstatus",Updateorder)
+OrderRoutes.put("/updateorderstatus",Updateorder)
