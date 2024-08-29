@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import './Orders.css'
 import Header from '../Header/Header'
-import back from './back.jpg'
+import back from './back-removebg-preview.png'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -157,7 +157,7 @@ export default function Orders() {
                             </div>
 
                             <div className='Profile_Orders'>
-                                <h4>cloth_type :-{clothData}</h4>
+                                <h4>Cloth type :-{clothData}</h4>
                                 {/* <h5 className=''></h5> */}
                                 {/* <div className='fabric'></div> */}
                                 <h4>Color :-{fabricdata.color}</h4>
@@ -213,7 +213,7 @@ export default function Orders() {
                             <div className='profile_Discount'>
                                 <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
                                 {/* targetDate */}
-                                <h6>targetDate:-
+                                <h6>TargetDate:-
                                     <input type="date" id="date" name="date" onChange={(e) => {
                                         Settargetdate(e.target.value)
                                     }} /></h6>
@@ -254,12 +254,12 @@ export default function Orders() {
 
                 <div className='Ordering_form'>
 
-                    <Link to={"/home"} className="link">
+                    {/* <Link to={"/home"} className="link">
                         <div className="profile-back">
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
-                            {/* <h5 className="profile-back-text">Back</h5> */}
+                            <h5 className="profile-back-text">Back</h5>
                         </div>
-                    </Link>
+                    </Link> */}
 
                     <div className="profile-back_box">
                         <div className='profile_Text'>
@@ -276,7 +276,7 @@ export default function Orders() {
                             </div>
 
                             <div className='Profile_Orders'>
-                                <h4>Cloth_type :-{clothData}</h4>
+                                <h4>Cloth type :-{clothData}</h4>
                                 {/* <div className='fabric'></div> */}
                                 <h4>Color :-{fabricdata.color}</h4>
 
@@ -334,7 +334,7 @@ export default function Orders() {
                             <div className='profile_Discount'>
                                 <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
                                 {/* targetDate */}
-                                <h6>targetDate:-
+                                <h6>TargetDate:-
                                     <input type="date" id="date" name="date" onChange={(e) => {
                                         Settargetdate(e.target.value)
                                     }} /></h6>
@@ -395,7 +395,7 @@ export default function Orders() {
                             </div>
 
                             <div className='Profile_Orders'>
-                                <h4>cloth_type :-{clothData}</h4>
+                                <h4>Cloth type :-{clothData}</h4>
                                 {/* <h5 className=''>180/-Per M</h5> */}
                                 {/* <div className='fabric'></div> */}
                                 <h4>Color :-{fabricdata.color}</h4>
@@ -453,7 +453,7 @@ export default function Orders() {
                             <div className='profile_Discount'>
                                 <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
                                 {/* targetDate */}
-                                <h6>targetDate:-
+                                <h6>TargetDate:-
                                     <input type="date" id="date" name="date" onChange={(e) => {
                                         Settargetdate(e.target.value)
                                     }} /></h6>
