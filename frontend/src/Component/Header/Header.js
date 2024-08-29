@@ -15,7 +15,7 @@ export default function Header() {
 
   const logout = () => {
 
-    // localStorage.clear("")
+    localStorage.clear("")
     navigate("/")
   }
 
@@ -86,13 +86,14 @@ export default function Header() {
 
              
                     <li class="nav-item">
-                      <a class="nav-link active co fs-4" href="/profile"><img src={log} onClick={logout} className="proImg mx-3" />Logout</a>
+                      <a class="nav-link active co fs-4" href="/"><img src={log} onClick={logout} className="proImg mx-3" />Logout</a>
                     </li>
                  
                   </ul>
            
                 </div>
               </div>
+
             </div>
           </nav>
         </>
