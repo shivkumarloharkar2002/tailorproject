@@ -31,6 +31,7 @@ export default function Ready() {
           return(
         
         <>
+        
          <Header/>
         <p className='heding-ready'>Details</p>
     <div className='ready-flex'>
@@ -47,6 +48,7 @@ export default function Ready() {
         <div className='gcolor'></div>
         <div className='bcolor'></div>
         </div> */}
+        
         </div>
         <p className='left-size'>{data.offer}</p>
         <p className='left-size'> Price:-{data.price}</p>

@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 import back from "./../../assets/Back/back.png";
 import { useParams } from "react-router-dom";
 import logo from "./../../assets/Login/logo.png";
-import moment from "moment"
-
+import moment from "moment";
+// import { ReactToPrint } from "react-to-print";
 
 function InvoiceInfo() {
   const { id } = useParams();
   console.log(id);
 
   const [getAllData, setGetAllData] = useState([]);
-  const getData = async () => { 
+  const getData = async () => {
     const getNote = await axios.get(
       `http://localhost:5555/api/orderroutes/getallorder`
     );
@@ -34,17 +34,20 @@ function InvoiceInfo() {
         <Link to={"/invoice"} className="link">
           <div className="profile-back">
             <img src={back} alt="" className="profile-back-img" />
-            
           </div>
         </Link>
 
         {getAllData.map((data) => {
-          const date = (moment(data.createdAt).format("DD MMM YYYY"))
+          const date = moment(data.createdAt).format("DD MMM YYYY");
           if (data._id == id)
-
             return (
               <>
-                <div className="invoiceInfo-box">
+                <div
+                  className="invoiceInfo-box"
+                  // ref={(el) => {
+                  //   this.componentRef = el;
+                  // }}
+                >
                   <img src={logo} alt="" className="invoiceInfo-box-logo-img" />
 
                   <p className="invoiceInfo-box-p">
@@ -53,13 +56,14 @@ function InvoiceInfo() {
                   </p>
                   <div className="invoiceInfo-box-info">
                     <div className="invoiceInfo-box-name-para">
-                      <p className="invoiceInfo-box-name">Bill No: 2
-                        {/* {data.order} */}
+                      <p className="invoiceInfo-box-name">
+                        Bill No: 2{/* {data.order} */}
                       </p>
                       <p className="invoiceInfo-box-name">{date}</p>
                     </div>
                     <p className="invoiceInfo-box-name-2">
-                      Bill To: {data.customer_id.name}
+                      Bill To:
+                      {data.customer_id.name}
                     </p>
 
                     <div className="invoiceInfo-box-color-para">
@@ -84,7 +88,6 @@ function InvoiceInfo() {
                       </p>
                     </div>
 
-
                     <div className="invoiceInfo-box-color-para">
                       <h4 className="invoiceInfo-box-color-para-h">Discount</h4>
                     </div>
@@ -95,23 +98,34 @@ function InvoiceInfo() {
                         <br /> Discount:{data.discount}%
                       </p>
                       <p className="invoiceInfo-box-color-para-p">
-                        CGST@ {data.cgst}%: {data.cgstprice} <br />
-                        SGST@ {data.sgst}%: {data.sgstprice}
+                        CGST@ {data.cgst}%: {data.cgstprice.toFixed(2)} <br /><br/>
+                        SGST@ {data.sgst}%: {data.sgstprice.toFixed(2)}
                       </p>
                     </div>
 
                     <div className="invoiceInfo-box-color-para2">
                       <p className="invoiceInfo-box-color-para-p2">
                         Total Amount:
-                        {data.total}
+                        {data.total.toFixed(2)}
                         /-
                       </p>
                     </div>
                   </div>
 
-
                   <div className="invoiceInfo-box-color-para-info2">
-                    <button className="invoiceInfo-btn">Print Bill</button>
+                    {/* <ReactToPrint
+                      trigger={() => {
+                        return ( */}
+                          <button className="invoiceInfo-btn">
+                            Print Bill
+                          </button>
+                        {/* );
+                      }}
+                      content={() => this.componentRef}
+                      documentTitle="new document"
+                      pageStyle="print"
+                    /> */}
+
                     <button className="invoiceInfo-btn">Share Bill</button>
                   </div>
                 </div>
