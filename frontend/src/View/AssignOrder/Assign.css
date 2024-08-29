@@ -3,25 +3,27 @@
     font-family: Kaisei Decol;
     font-size: 35pt;
     margin-top: -5%;
+
 }
 @media only screen and (max-width:600px){
     .heding-assign{
         margin-top: -10%;
-        margin-bottom: -5%;
+        margin-bottom: 5%;
     }
 }
 .assign-patti{
     height: 6vh;
-    width: 75vw;
+    width: 80vw;
     background-color: rgba(36, 148, 148, 0.54);
     display: flex;
     justify-content: space-around;
     margin-top: 7%;
+    margin-left: 10%;
 }
 @media only screen and (max-width:600px){
     .assign-patti{
         flex-wrap: wrap;
-        height: 25%;
+        height: 7%;
         width: 90vw;
         font-size: 14pt;
         margin: 0% 0 0 0;
@@ -40,6 +42,13 @@
     display: flex;
     justify-content: space-around;
     text-align: left;
+    margin-left: 10%;
+    width: 80vw;
+}
+@media only screen and (max-width:600px){
+    .assign-informetion{
+        margin-left: 0%;
+    }
 }
 .assign-left{
     margin-top: 10%;
@@ -53,10 +62,11 @@
     }
 }
 .assign-line{
-    height: 250px;
+    height: 280px;
     width: 2px;
     background-color:  rgba(36, 148, 148, 0.54);
-    margin-top: 10%;
+    /* margin-top: 10%; */
+    margin-left: 10px;
 }
 @media only screen and (max-width:600px){
     .assign-line{
@@ -72,7 +82,26 @@
     }
 }
 .aa{
+    /* margin: 5px; */
     font-size: 18pt;
+}
+.pp{
+    margin: 5px;
+    margin-top: 10px;
+    font-size: 18pt;
+
+}
+@media only screen and (max-width:600px){
+    .ppp{
+        display: flex;
+        justify-content: space-around;
+        font-size: 10px;
+        
+        margin-top: -52%;
+        margin-bottom: 30%;
+        width: 100vw;
+        margin-left: -10%;
+    }
 }
 @media only screen and (max-width:600px){
     .aa{
@@ -91,4 +120,35 @@
         height: 5%;
         width: 5%;
     }
+}
+
+.order_list{
+    list-style: none;
+    position: fixed;
+  left: 15px;  
+    margin-top: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.update{
+    height: 40px;
+    width: auto;
+    padding: 0 20px;
+    text-align: center;
+    margin: 5px 0;
+    background: rgb(5,5,5);
+background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgb(96, 98, 98) 10%, rgba(5,5,5,1) 100%);
+color: white;
+border-radius: 10px;
+}
+
+.pending{
+    color: red;
+}
+.working{
+    color: yellow;
+}
+.complete{
+color: green;
 }

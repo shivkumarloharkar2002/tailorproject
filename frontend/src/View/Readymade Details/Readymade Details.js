@@ -48,12 +48,11 @@ export default function Ready() {
         <div className='gcolor'></div>
         <div className='bcolor'></div>
         </div> */}
+        
         </div>
         <p className='left-size'>{data.offer}</p>
         <p className='left-size'> Price:-{data.price}</p>
-        <div className='butns'>
-          <p className='bts'>Buy Now</p>
-        </div>
+        
       </div>
     </div>
         </>

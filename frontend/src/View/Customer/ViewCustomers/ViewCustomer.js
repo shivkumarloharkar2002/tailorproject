@@ -69,10 +69,10 @@ export default function ViewCustomer() {
 
           return (
             <>
-              <Link to='/seecustomer_details'>
+              {/* <Link to='/seecustomer_details'> */}
                 < SearchCard name={info.name} date={info.date} price={info.price} id={info._id} />
 
-              </Link>
+              {/* </Link>  */}
             </>
           );
         })}

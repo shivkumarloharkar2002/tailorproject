@@ -21,7 +21,7 @@ function InvoiceInfo() {
     setGetAllData(getNote.data.data);
   };
   console.log(getAllData);
-
+ 
   useEffect(() => {
     getData();
   }, []);
