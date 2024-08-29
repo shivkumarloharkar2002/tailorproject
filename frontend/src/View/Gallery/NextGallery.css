@@ -1,82 +1,50 @@
-.NCardM {
-    /* border: 2px solid black; */
-    margin: auto;
-    width: 70vw;
-    padding: 10px;
-    box-shadow: 5px 5px 8px 5px lightblue;
-}
 
-.NSecond {
-    display: flex;
-    /* justify-content: space-around; */
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    /* justify-content: space-between; */
-}
-
-.NIMG {
-
-    border-radius: 20px;
-    width: 300px;
-    height: 320px;
-
-}
-
-.MDiv {
-    /* border: 2px solid red; */
-    width: 300px;
-    height: auto;
-
-
-}
-
-.GTITLE {
-    font-size: 30px;
-    text-align: center;
-    color: black;
-    /* font-family: Kaisei Decol; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    margin: 0px 0px 30px 0;
-}
-
-.OrderB {
-    /* background-color: orange; */
-    background: rgb(247, 143, 4);
-    background: linear-gradient(180deg, rgba(247, 143, 4, 1) 0%, rgba(236, 201, 143, 1) 10%, rgba(249, 161, 7, 1) 100%);
-    padding: 6px 20px;
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    font-size: 20px;
-    /* margin-left: 100px; */
-    margin: 20px 0 10px 50px;
-}
-
-.Span {
-    font-size: 19px;
-    font-size: 21px;
-    /* margin: 10px 0px 0px 20px; */
-    margin-left: 30px;
-}
-
-.MDiv2 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.t{
-    margin-left: 39px;
-}.p{
-    margin-left: 20px;
-}
-.s{
-    margin-left: 45px;
-}
-.pr{
-    margin-left: 30px;
-}
+/* new */
 .Description{
-    font-size: 25px;
-    color: rgb(247, 143, 4);
+    color: orange;
+}
+
+.Gallery-img{
+    height: 330px;
+    width: 300px;
+    margin-right: 5%;
+    box-shadow: 2px 2px 3px 1px gray;
+    border-radius: 10px;
+}
+
+
+.Gallery-flex{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5%;
+    width: 80vw;
+    margin:20px auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 11px 2px grey;
+    /* border: 1px solid red; */
+}
+@media only screen and (max-width:600px){
+    .Gallery-flex{
+        flex-wrap: wrap;
+
+    }
+}
+
+.Gleft-size{
+    text-align: left;
+    font-size: 20pt;
+}
+
+
+.Heding-{
+    text-align: center;
+    font-family: Kaisei Decol;
+    font-size: 30pt;
+    margin-top: 5%;
+}
+@media only screen and (max-width:600px){
+    .Heding-{
+        margin-top: 10%;
+    }
 }

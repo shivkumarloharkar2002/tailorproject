@@ -10,7 +10,7 @@ export default function GalleryCard({title, img, id }) {
 
 
         <div className="G_MAIN" >
-          <h2>{title}</h2>
+          {/* <h2>{title}</h2> */}
           <img src={img} className="Img_height " alt="img" />
         </div>
 

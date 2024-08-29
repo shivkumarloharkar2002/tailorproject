@@ -46,29 +46,30 @@ export default function NextGalleryCard() {
 
                                 {/* <div className='backmain1'><Link to='/home'><img src={back} className='backimg' />Back</Link></div> */}
 
-                                <div className='NCardM'>
-                                    <div className='NSecond'>
-                                        <div className='MDiv'>
-                                            <img className='NIMG' src={data.img}></img>
+                                <p className='Heding-'>Details</p>
+
+                                {/* new */}
+                                <div className='Gallery-flex'>
+                                    <img className='Gallery-img' src={data.img} />
+                                    <div>
+                                        <h2 className='Gallery-head'>{data.title}</h2>
+                                        <h3 className='Description'>{data.description}</h3>
+                                        <p className='Gleft-size'>{data.des}</p>
+                                        <p className='Gleft-size'>Sizes :-{data.size}</p>
+                                        <div>
+                                            <p className='Gleft-size'>Color :- {data.Color}</p>
                                         </div>
-
-                                        <div className='MDiv'>
-                                            <h1 className='GTITLE'>{data.title}</h1>
-                                            <h3 className='Description'>{data.description}</h3>
-
-                                            <h4>Color:-<span className='Span '> {data.Color}</span></h4>
-                                            <h4>Type:-<span className='Span t'>{data.cloth_type} </span></h4>
-
-                                            <h4>Pattern:-<span className='Span p'>{data.pattern} </span></h4>
-                                            <h4>Size:-<span className='Span s'>{data.size} </span></h4>
-                                            <h4>Price:- <span className='Span pr'>₹ {data.price} /-</span></h4>
-
-                                            {/* <a href='/addmeasurement'><button className='OrderB'>Order</button></a> */}
+                                        <div>
+                                            <p className='Gleft-size'>Pattern:- {data.pattern}</p>
                                         </div>
+                                        
+                                        <p className='Gleft-size'> Price:- ₹ {data.price}</p>
 
                                     </div>
-
                                 </div>
+                                {/* new */}
+
+
                             </>
                         )
                 })

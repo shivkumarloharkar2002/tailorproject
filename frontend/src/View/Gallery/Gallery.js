@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import gallery from './add-folder.png'
 
 
- 
+
 export default function Gallery() {
 
   const [type, setType] = useState("shirt")
@@ -23,9 +23,6 @@ export default function Gallery() {
     console.log(gallery.data)
   }
 
-
-
-  
   useEffect(
     () => {
       GetAllData();
@@ -37,18 +34,13 @@ export default function Gallery() {
   return (
     <>
       <Header />
-      {/* <div className='Backmain'><Link to='/home'><img src={back} className='Backimg' />Back</Link></div> */}
-
-
 
       <Link to={"/home"} className="link">
         <div className="profile-back">
           <img src={back} alt="" className="Profile-back-img" /><br></br>
-          {/* <h5 className="profile-back-text">Back</h5> */}
+
         </div>
       </Link>
-
-
 
       <div >
         <h2 className='GallaryHedding'>Gallery</h2>
@@ -82,52 +74,31 @@ export default function Gallery() {
           </a>
         </ul>
       </div>
-      {/* <hr className='hr' /> */}
-      {/* {
-        galleryData.map((data) => {
-          console.log(data.type)
-          console.log(data)
-          if (type === data.type)
-            return (
 
-              <GalleryCard className='Margin' img={data.img} id={data.id} imgname={data.price} />
 
+      <div className='Ready_main'>
+
+        {
+          galleryData.reverse().map((data) => {
+            if (type === data.
+              cloth_type
             )
-        })
-      } */}
 
 
+              return (
+                <>
+                  <div className='Main_Card'>
+                    <GalleryCard img={data.img} title={data.title} id={data._id} />
+                  </div>
 
+                </>
+              )
+          }
 
-
-      {
-        galleryData.map((data) => {
-          if (type === data.
-            cloth_type
-          ) <div className='Main_Card'>
-            return (
-              <>
-               
-                  <GalleryCard img={data.img} title={data.title} id={data._id} />
-               
-
-              </>
-            )
-            </div>
+          )
         }
-        
-        )
-      }
 
-
-
-
-
-
-
-
-
-
+      </div>
 
 
 
