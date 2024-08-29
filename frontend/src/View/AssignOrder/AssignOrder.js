@@ -4,7 +4,7 @@ import "./Assign.css";
 import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AssignOrder() {
   const [getAllData, setGetAllData] = useState([]);
@@ -125,39 +125,40 @@ export default function AssignOrder() {
             <p className="aa">Actions</p>
           </div>
 
-          {getAllData.reverse().map((data) => {
+          {getAllData.reverse().map((data,index) => {
             if (type === data.cloth_type) {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">No.</p>
+                  <p className="aa">{index+1}</p>
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  <button
-                    className="update-status-button"
-                    onClick={() => goToUpdatePage(data._id)}
-                  >update staus</button>
+
+                  {data.status === 'pending' || data.status === 'working' ? (
+                     <button onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
+
+                  ) : data.status === 'complete' ? (
+                    <button> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
+                  ) : null}
                 </div>
               );
             } else if (type == "all" && type != data.cloth_type) {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">No.</p>
+                  <p className="aa">{index+1}</p>
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data._id}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  <button
-                    className="updatebutton"
-                    onClick={() => goToUpdatePage(data._id)}
-                  >update status</button>
+
 
                   {data.status === 'pending' || data.status === 'working' ? (
-                    <button>Update Status</button>
+                     <button onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
+
                   ) : data.status === 'complete' ? (
-                    <button>View Bill</button>
+                    <button> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
                   ) : null}
                 </div>
 

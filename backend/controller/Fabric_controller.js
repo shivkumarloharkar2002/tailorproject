@@ -101,9 +101,9 @@ export const deletefabric = async (req, res) => {
 
 
 export const Updatefabric = async (req, res) => {
-    // console.log("this is file", req.file.path)
+    console.log("this is file", req.file.path)
 
-    // const imgurl = await Uploadoncloudinary(req.file.path)
+    const imgurl = await Uploadoncloudinary(req.file.path)
 
     const { id, title, color, price, cloth_type, fabric_type, pattern } = req.body
 
@@ -116,7 +116,7 @@ export const Updatefabric = async (req, res) => {
                 "cloth_type": cloth_type,
                 "fabric_type": fabric_type,
                 "pattern": pattern,
-                // "img1":"link"
+                "img1":imgurl
             }
         })
         res.json({

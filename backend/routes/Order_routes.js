@@ -1,5 +1,5 @@
 import express from "express"
-import { CreateOrder, Getorderdata, Updateorder } from "../controller/Order_controller.js"
+import { CreateOrder, Deleteorder, Getorderdata, Updateorder } from "../controller/Order_controller.js"
 
 export const OrderRoutes= express.Router()
 
@@ -12,3 +12,7 @@ OrderRoutes.get("/getallorder",Getorderdata)
 
 // http://localhost:5555/api/orderroutes/updateorderstatus
 OrderRoutes.put("/updateorderstatus",Updateorder)
+
+
+// http://localhost:5555/api/orderroutes/deleteorder/id
+OrderRoutes.delete("/deleteorder/:id",Deleteorder)

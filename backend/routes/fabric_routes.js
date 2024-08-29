@@ -15,4 +15,4 @@ FabricRoutes.get("/getallfabric",getallfabric)
 
 FabricRoutes.delete("/deletefabric/:id",deletefabric)
 
-FabricRoutes.put("/updatefabric",Updatefabric)
+FabricRoutes.put("/updatefabric",upload.single("imgfile"),Updatefabric)

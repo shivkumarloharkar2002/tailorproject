@@ -79,4 +79,18 @@ export const Updateorder = async (req,res)=>{
 
 }
 
-
+export const Deleteorder = async (req, res) => {
+    try {
+       const { id } = req.params;
+       const orderdelete = await Order.deleteOne({ _id: id })
+       res.json({
+          sucess: true,
+          data: `${id},`,
+          data2: orderdelete,
+          msg: "Car deleted Successfully"
+       })
+    }
+    catch (e) {
+       console.log("Delete", e)
+    }
+ }
