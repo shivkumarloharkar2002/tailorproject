@@ -13,6 +13,12 @@
         padding: 10px;
         background-color: white;
     }
+    .profile_Discount {
+        width: 70vw !important;
+        margin: 20px;
+        text-align: center;
+
+    }
 }
 
 .Ordering_form {

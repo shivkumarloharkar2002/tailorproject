@@ -4,6 +4,7 @@
     box-shadow: 2px 2px 3px 1px gray;
     border-radius: 10px;
 }
+
 .ready-flex{
     display: flex;
     justify-content: space-around;

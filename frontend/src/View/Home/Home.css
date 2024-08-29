@@ -46,16 +46,19 @@
 
 .HText {
     /* font-size: 20px; */
-    font-weight: 800;
+    font-weight: 700;
+    color: white;
     font-family: Kaisei Decol;
 }
-
+.MDetails{
+    color: white;
+}
 
 .HCard h5 {
     color: black;
 } 
 
-.HCard h5:hover { 
+/* .HCard h5:hover { 
     color: blue;
     text-decoration: underline;
-}
+} */

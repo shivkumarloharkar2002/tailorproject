@@ -2,7 +2,10 @@ import React from 'react'
 import './Header.css'
 import Nav from './logo.png'
 import profile from './profile-user (1).png'
-import log from './logout.png'
+import log from './logout.png';
+import home from './home.png'
+import About from './id-card.png'
+import invoice from './bill.png'
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -68,22 +71,22 @@ export default function Header() {
 
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/profile"><img src={profile} className="proImg" /> </a>
+                      <a class="nav-link active co fs-4" aria-current="page" href="/profile"><img src={profile} className="proImg mx-3" />Profile </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active co fs-4" href="/home">Home</a>
+                      <a class="nav-link active co fs-4" href="/home"><img src={home} className="proImg mx-3"></img> Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active co fs-4" href="/about"><img className="co" />About</a>
+                      <a class="nav-link active co fs-4" href="/about"> <img src={About} className="proImg mx-3"></img>About</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link active co fs-4" href="/invoice"><img className="co" /> Invoice</a>
+                      <a class="nav-link active co fs-4" href="/invoice"><img src={invoice} className="proImg mx-3"></img>Invoice</a>
                     </li>
 
              
                     <li class="nav-item">
-                      <a class="nav-link active co" href="/profile"><img src={log} onClick={logout} className="proImg" /></a>
+                      <a class="nav-link active co fs-4" href="/profile"><img src={log} onClick={logout} className="proImg mx-3" />Logout</a>
                     </li>
                  
                   </ul>
