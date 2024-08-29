@@ -35,7 +35,7 @@ export default function AssignOrder() {
       <a href="/home">
         <img className="back-btn" src={back} />
       </a>
-      <p className="heding-assign">Assign Orders</p>
+      <p className="heding-assign">Manage Orders</p>
 
       <div className="assign-main">
         {/* <div className="assign-left">
@@ -49,7 +49,7 @@ export default function AssignOrder() {
 
         {/* categoryes */}
         <ul type="none" className="order_list">
-          <div>
+          <div className="ppp">
             <li
               onClick={() => {
                 setType("all");
@@ -113,7 +113,7 @@ export default function AssignOrder() {
             <p className="aa">Date</p>
             <p className="aa">Stutas</p>
             <p className="aa">Order</p>
-            <p className="aa">Actions</p>
+            {/* <p className="aa">Actions</p> */}
           </div>
 
           {getAllData.reverse().map((data) => {
@@ -123,9 +123,9 @@ export default function AssignOrder() {
                 <div className="assign-informetion">
                   <p className="aa">No.</p>
                   <p className="aa">{date}</p>
-                  <p className="aa">{data.status}</p>
+                  <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  <button className="aa update">Update status</button>
+                  {/* <button className="aa update">Update status</button> */}
                 </div>
               );
             } else if (type == "all" && type != data.cloth_type) {
@@ -134,9 +134,9 @@ export default function AssignOrder() {
                 <div className="assign-informetion">
                   <p className="aa">No.</p>
                   <p className="aa">{date}</p>
-                  <p className="aa">{data.status}</p>
+                  <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
-                  <button className="aa update">Update status</button>
+                  {/* <button className="aa update">Update status</button> */}
                 </div>
               );
             }
