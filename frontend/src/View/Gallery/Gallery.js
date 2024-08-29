@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import gallery from './add-folder.png'
 
 
-
+ 
 export default function Gallery() {
 
   const [type, setType] = useState("shirt")
