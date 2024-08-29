@@ -22,7 +22,6 @@ export default function Update_status() {
   };
   return (
     <div>
-      <p>.</p>
     <h2>Update Status</h2>
     <select
       value={status}
