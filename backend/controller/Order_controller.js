@@ -2,7 +2,6 @@ import mongoose from "mongoose"
 import Order from "../models/Orde_model.js"
 import Customer from "../models/customer_model.js"
 import Usermodel from "../models/usermodel.js"
-import Orders from "../../frontend/src/Component/Orders/Orders.js"
 
 export const CreateOrder = async (req, res) => {
     // const order_id = "orderid" + Math.floor((Math.random() * 1000000))
@@ -80,20 +79,4 @@ export const Updateorder = async (req,res)=>{
 
 }
 
-
-export const Oneorder = async (req,res)=>{
-    const { id } = req.body;
-    try{
-        
-        const orderdata = await Order.findOne({ _id: id })
-        res.json({
-            success: true,
-            data: orderdata,
-            msg: `${id} id details`
-        })
-    }
-    catch(e){
-        console.log(e)
-    }
-}
 
