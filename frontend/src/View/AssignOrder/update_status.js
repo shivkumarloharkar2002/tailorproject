@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function update_stutus() {
+export default function Update_status() {
   return (
     <div>
       Update status
