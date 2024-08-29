@@ -55,7 +55,7 @@ export default function ReadyMade() {
 
           <p onClick={() => {
             setType("pyjama")
-          }} className='Glist-p'>Pyjama</p>
+          }} className='Glist-p'>Payjama</p>
 
 
           <p onClick={() => {
