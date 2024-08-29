@@ -120,18 +120,15 @@ export default function TotalOrderingPage() {
                     {
                         searchData.reverse().map((data) => {
                             // const time = moment(data.createdAt).format('LT');
-                            // const date = (moment(data.createdAt).format("DD MMM YYYY"))
-                            // const todaydate = Date.now()
-                            // const today = (moment(todaydate).format("DD MMM YYYY"))
-                            // console.log(date, today)
-                            // if (date == today)
+
+                            const date = (moment(data.createdAt).format(" MMMM Do YYYY"))
                             const customerName = data.customer_id?.name || "Unknown Customer";
-                            const formattedDate = moment(data.createdAt).format("DD MMM YYYY");
-                                return (
 
-                                    <OrderCard key={data._id} cloth_type={data.cloth_type} date={formattedDate} name={customerName} id={data._id} />
+                            return (
 
-                                )
+                                <OrderCard key={data._id} cloth_type={data.cloth_type} time={date} name={customerName} id={data._id} />
+
+                            )
                         })
 
 
