@@ -26,6 +26,8 @@ import AssignOrder from "../View/AssignOrder/AssignOrder";
 import Ready from "../View/Readymade Details/Readymade Details"
 import { ProtectedRoute } from "../protected_routes/protected_routes";
 import ReadymadeForm from "../View/Admin/ReadymadeForm/ReadymadeForm";
+import ViewCategory from "../View/Customer/ViewCustomers/ViewCategory";
+import Update_status from "../View/AssignOrder/update_status";
 
 
 const routes = createBrowserRouter([
@@ -74,6 +76,10 @@ const routes = createBrowserRouter([
   {
     path: '/seecustomer_details',
     element: <ViewCustomer />
+  },
+  {
+    path: '/viewcategory/:id',
+    element: <ViewCategory />
   },
  
   {
@@ -128,6 +134,10 @@ const routes = createBrowserRouter([
   {
     path:'/performance',
     element: <Performance />
+  },
+  {
+    path:'/updatestatus',
+    element:<Update_status/>
   }
 
   
