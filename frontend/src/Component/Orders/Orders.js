@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Orders.css'
 import Header from '../Header/Header'
 import back from './back-removebg-preview.png'
