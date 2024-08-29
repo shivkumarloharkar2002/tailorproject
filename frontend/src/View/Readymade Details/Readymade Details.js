@@ -31,6 +31,7 @@ export default function Ready() {
           return(
         
         <>
+        
          <Header/>
         <p className='heding-ready'>Details</p>
     <div className='ready-flex'>
