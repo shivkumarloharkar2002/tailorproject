@@ -136,7 +136,7 @@ const routes = createBrowserRouter([
     element: <Performance />
   },
   {
-    path:'/updatestatus',
+    path:'/updatestatus/:id',
     element:<Update_status/>
   }
 
