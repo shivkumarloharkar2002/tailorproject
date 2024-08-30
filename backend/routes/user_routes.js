@@ -10,7 +10,7 @@ UserRoutes.post("/create",upload.single("img"), Userregister)
 UserRoutes.post("/login",UserLogin)
 
 // http://localhost:5555/api/userroutes/updateuser
-UserRoutes.put("/updateuser",Updateuser)
+UserRoutes.put("/updateuser",upload.single("img"),Updateuser)
 
 // http://localhost:5555/api/userroutes/getallusers
 UserRoutes.get("/getallusers", Getallusers)

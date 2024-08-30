@@ -114,6 +114,10 @@ export const UserLogin = async (req, res) => {
 // }
 
 export const Updateuser = async (req, res) => {
+    console.log("this is file", req.file.path)
+
+    const imgurl = await Uploadoncloudinary(req.file.path)
+
     const { username, phone, email, password, user_id, role } = req.body
     try {
         const updateuser = await Usermodel.updateOne({ user_id: user_id }, {
@@ -122,13 +126,14 @@ export const Updateuser = async (req, res) => {
                 email: email,
                 phone: phone,
                 password: password,
-                role: role
+                role: role,
+                img:imgurl
             }
         })
         res.json({
             success: true,
             data: updateuser,
-            msg: `${username} is updated`
+            msg: `${updateuser.username} is updated`
         })
     }
     catch (e) {
@@ -146,6 +151,7 @@ export const Getallusers = async (req, res) => {
         data: alldata
     })
 }
+
 
 // export const Deleteemployee = async (req,res)=>{
 //     const { id } =req.params

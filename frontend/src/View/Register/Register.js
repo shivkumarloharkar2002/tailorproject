@@ -5,6 +5,7 @@ import axios from "axios";
 // import UserCard from "../../Component/Register/UserCard";
 import logo from "./../../assets/Login/login-email.png";
 // import Navbar from "./../../Component/Navbar/Navbar";
+import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
 
 function Register() {
@@ -17,7 +18,7 @@ function Register() {
   // const [id, setId] = useState();
   const [edit, setEdit] = useState(false);
 
-  const[img,setImg]=useState('')
+  const [img, setImg] = useState('')
 
   const saveNote = async (e) => {
     e.preventDefault();
@@ -128,58 +129,64 @@ function Register() {
             if (item.role == "employee") {
               return (
                 <>
-                  <div className="userCard">
-                    <div className="userCard-Info">
-                      <img src={item.img} alt="" className="userCard-img" />
-                      <p className="userCard-para">
-                        {item.username} <br />
-                        <span className="userCard-span">{item.role}</span>
-                      </p>
-                    </div>
+                  <Link to={`/userperformance`}>
+                    <div className="userCard">
+                      <div className="userCard-Info">
+                        <img src={item.img} alt="" className="userCard-img" />
+                        <p className="userCard-para">
+                          {item.username} <br />
+                          <span className="userCard-span">{item.role}</span>
+                        </p>
+                      </div>
 
-                    <div className="userCard-btns">
-                      <button
-                        className="userCard-button edit"
-                        onClick={() => {
-                          Edit(item);
-                        }}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="userCard-button remove"
-                        onClick={() => {
-                          DeleteUser(item);
-                        }}
-                      >
-                        Remove
-                      </button>
+                      <div className="userCard-btns">
+                        <button
+                          className="userCard-button edit"
+                          onClick={() => {
+                            Edit(item);
+                          }}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="userCard-button remove"
+                          onClick={() => {
+                            DeleteUser(item);
+                          }}
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
+
                 </>
               );
             } else {
               return (
                 <>
-                  <div className="userCard">
-                    <div className="userCard-Info">
-                      <img src={item.img} alt="" className="userCard-img" />
-                      <p className="userCard-para">
-                        {item.username} <br />
-                        <span className="userCard-span">{item.role}</span>
-                      </p>
+                  <Link to={`/userperformance`}>
+                    <div className="userCard">
+                      <div className="userCard-Info">
+                        <img src={item.img} alt="" className="userCard-img" />
+                        <p className="userCard-para">
+                          {item.username} <br />
+                          <span className="userCard-span">{item.role}</span>
+                        </p>
+                      </div>
+                      <div className="userCard-btns">
+                        <button
+                          className="userCard-button edit"
+                          onClick={() => {
+                            Edit(item);
+                          }}
+                        >
+                          Edit
+                        </button>
+                      </div>
                     </div>
-                    <div className="userCard-btns">
-                      <button
-                        className="userCard-button edit"
-                        onClick={() => {
-                          Edit(item);
-                        }}
-                      >
-                        Edit
-                      </button>
-                    </div>
-                  </div>
+                  </Link>
+
                 </>
               );
             }

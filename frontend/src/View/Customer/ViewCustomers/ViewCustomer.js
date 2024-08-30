@@ -64,6 +64,7 @@ export default function ViewCustomer() {
               <SearchCard
                 name={info.name}
                 date={info.createdAt}
+                phone={info.phone}
                 // price={info.price}
                 id={info._id}
               />
