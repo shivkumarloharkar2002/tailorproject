@@ -244,7 +244,8 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
 background: linear-gradient(180deg, rgb(247, 121, 4) 0%, rgb(236, 185, 143) 10%, rgb(249, 124, 7) 100%);
 transition: 1s;
     font-size: 14pt;
-
+    text-align: center;
+    padding-top: 0.3%;
 }
 .stutas:hover{
     transform: scale(0.9);
@@ -266,7 +267,7 @@ transition: 1s;
     background: rgb(10,247,9);
 background: linear-gradient(180deg, rgba(10,247,9,1) 0%, rgba(189,247,189,1) 10%, rgba(9,249,4,1) 100%);
 transition: 1s;
-font-size: 20pt;
+font-size: 14pt;
 
 }
 .stutas-tow:hover{
