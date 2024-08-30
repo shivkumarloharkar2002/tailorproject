@@ -10,70 +10,76 @@ import axios from "axios";
 import moment from "moment";
 
 export default function Performance() {
-  const [amount, setAmount] = useState(0);
-  const [amountToday, setAmountToday] = useState(0);
+  const [userTotalAmount, setUserTotalAmount] = useState(0);
+  const [userTotalPending, setUserTotalPending] = useState(0);
+  const [userTotalComplete, setUserTotalComplete] = useState(0);
 
-  const [totalPending, setTotalPending] = useState(0);
-  const [totalComplete, setTotalComplete] = useState(0);
+  const [userTodayAmount, setUserTodayAmount] = useState(0);
+  const [userTodayPending, setUserTodayPending] = useState(0);
+  const [userTodayComplete, setUserTodayComplete] = useState(0);
 
-  const [todayPending, setTodayPending] = useState(0);
-  const [todayComplete, setTodayComplete] = useState(0);
-
-  const [getAllData, setGetAllData] = useState([]);
-
-  const getData = async () => {
+  const getData = async (userId) => {
     try {
       const response = await axios.get(
         `http://localhost:5555/api/orderroutes/getallorder`
       );
       const data = response.data.data;
-      setGetAllData(data);
 
-      let totalAmount = 0;
-      let todayAmount = 0;
+     
+      const userOrders = data.filter((order) => order.userId === userId);
 
-      let totalPendingCount = 0;
-      let totalCompleteCount = 0;
+      
+      let userTotalAmount = 0;
+      let userTotalPending = 0;
+      let userTotalComplete = 0;
 
-      let todayPendingCount = 0;
-      let todayCompleteCount = 0;
+      let userTodayAmount = 0;
+      let userTodayPending = 0;
+      let userTodayComplete = 0;
 
       const today = moment().startOf("day");
 
-      data.forEach((order) => {
-        totalAmount += order.total || 0;
+      userOrders.forEach((order) => {
+        
+        userTotalAmount += order.total || 0;
 
+        
         if (order.status === "pending") {
-          totalPendingCount += 1;
+          userTotalPending += 1;
         } else if (order.status === "complete") {
-          totalCompleteCount += 1;
+          userTotalComplete += 1;
         }
 
+       
         if (moment(order.createdAt).isSame(today, "day")) {
-          todayAmount += order.total || 0;
+          userTodayAmount += order.total || 0;
 
           if (order.status === "pending") {
-            todayPendingCount += 1;
+            userTodayPending += 1;
           } else if (order.status === "complete") {
-            todayCompleteCount += 1;
+            userTodayComplete += 1;
           }
         }
       });
 
-      setAmount(totalAmount);
-      setTotalPending(totalPendingCount);
-      setTotalComplete(totalCompleteCount);
+      
+      setUserTotalAmount(userTotalAmount);
+      setUserTotalPending(userTotalPending);
+      setUserTotalComplete(userTotalComplete);
 
-      setAmountToday(todayAmount);
-      setTodayPending(todayPendingCount);
-      setTodayComplete(todayCompleteCount);
+     
+      setUserTodayAmount(userTodayAmount);
+      setUserTodayPending(userTodayPending);
+      setUserTodayComplete(userTodayComplete);
     } catch (error) {
-      console.error("Error fetching order data:", error);
+      console.error("Error fetching user order data:", error);
     }
   };
 
+  
   useEffect(() => {
-    getData();
+    const userId = "your_user_id_here"; 
+    getData(userId);
   }, []);
 
   return (
@@ -90,22 +96,22 @@ export default function Performance() {
         <div className="flexp">
           <div className="rpart">
             <img className="icon" src={sales} alt="Sales" />
-            <p className="num">₹{amountToday.toFixed(2)}</p>
+            <p className="num">₹{userTodayAmount.toFixed(2)}</p>
             <p className="numi">Total Sales</p>
           </div>
           <div className="jpart">
             <img className="icon" src={wallet} alt="Wallet" />
-            <p className="num">₹{amountToday.toFixed(2)}</p>
+            <p className="num">₹{userTodayAmount.toFixed(2)}</p>
             <p className="numi">Payments Received</p>
           </div>
           <div className="ppart">
             <img className="icon" src={recev} alt="Received" />
-            <p className="num">{todayPending}</p>
+            <p className="num">{userTodayPending}</p>
             <p className="numi">Orders Received</p>
           </div>
           <div className="npart">
             <img className="icon" src={goods} alt="Goods" />
-            <p className="num">{todayComplete}</p>
+            <p className="num">{userTodayComplete}</p>
             <p className="numi">Orders Delivered</p>
           </div>
         </div>
@@ -118,22 +124,22 @@ export default function Performance() {
         <div className="flexp">
           <div className="rpart">
             <img className="icon" src={sales} alt="Sales" />
-            <p className="num">₹{amount.toFixed(2)}</p>
+            <p className="num">₹{userTotalAmount.toFixed(2)}</p>
             <p className="numi">Total Sales</p>
           </div>
           <div className="jpart">
             <img className="icon" src={wallet} alt="Wallet" />
-            <p className="num">₹{amount.toFixed(2)}</p>
+            <p className="num">₹{userTotalAmount.toFixed(2)}</p>
             <p className="numi">Payments Received</p>
           </div>
           <div className="ppart">
             <img className="icon" src={recev} alt="Received" />
-            <p className="num">{totalPending}</p>
+            <p className="num">{userTotalPending}</p>
             <p className="numi">Orders Received</p>
           </div>
           <div className="npart">
             <img className="icon" src={goods} alt="Goods" />
-            <p className="num">{totalComplete}</p>
+            <p className="num">{userTotalComplete}</p>
             <p className="numi">Orders Delivered</p>
           </div>
         </div>
