@@ -32,6 +32,10 @@ export default function SelectFabricCom() {
 
   const [showModal, setShowModal] = useState(false);
 
+  const closeModal = ()=>{
+    setShowModal(false)
+  }
+
   const MyModel = () => {
     return (
       <>
@@ -78,7 +82,7 @@ export default function SelectFabricCom() {
           </h3>
         </div>
 
-        {showModal && <MyModel />}
+        {showModal && <MyModel closeModal={closeModal}/>}
 
         {
           fabric.reverse().map(

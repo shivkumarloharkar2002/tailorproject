@@ -4,8 +4,17 @@ import Header from '../Header/Header'
 import back from './back-removebg-preview.png'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
 
 export default function Orders() {
+
+    const navigate = useNavigate();
+
+    const invoice = () => {
+  
+      navigate("/invoice")
+    }
 
     const [fabricdata, setfabricdata] = useState({})
     const [count, setCount] = useState(1)
@@ -201,7 +210,7 @@ export default function Orders() {
 
                             {/* <h5>Dis_Price: ${discountprice}</h5> */}
                             <div className='profile_Discount'>
-                                <h5>Dis_Price: ${discountprice}</h5>
+                                <h5>Dis_Price: ₹{discountprice}</h5>
 
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
@@ -220,7 +229,7 @@ export default function Orders() {
                             </div>
 
                             <div className='profile_Discount'>
-                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for payjama</span></h5>
+                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for Shirt</span></h5>
 
                                 <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
                             </div>
@@ -232,7 +241,7 @@ export default function Orders() {
             </div> */}
                             <div className='profile_button_last'>
                                 <button className='button_last' onClick={createOrder}>
-                                    <h4 className=''>Order</h4>
+                                    <h4  onClick ={invoice}className=''>Order</h4>
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
@@ -322,7 +331,7 @@ export default function Orders() {
 
                             {/* <h5>Dis_Price: ${discountprice}</h5> */}
                             <div className='profile_Discount'>
-                                <h5>Dis_Price: ${discountprice}</h5>
+                                <h5>Dis_Price: ₹{discountprice}</h5>
 
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
@@ -353,7 +362,7 @@ export default function Orders() {
                         </div> */}
                             <div className='profile_button_last'>
                                 <button className='button_last' onClick={createOrder}>
-                                    <h4 className=''>Send</h4>
+                                <h4  onClick ={invoice}className=''>Order</h4>
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
@@ -441,7 +450,7 @@ export default function Orders() {
 
                             {/* <h5>Dis_Price: ${discountprice}</h5> */}
                             <div className='profile_Discount'>
-                                <h5>Dis_Price: ${discountprice}</h5>
+                                <h5>Dis_Price: ₹{discountprice}</h5>
 
                                 <p className="invoiceInfo-box-color-para-p">
                                     CGST@ {cgstRate}%: {cgstprice.toFixed(2)} <br />
@@ -460,7 +469,7 @@ export default function Orders() {
                             </div>
 
                             <div className='profile_Discount'>
-                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for payjama</span></h5>
+                                <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for Safari</span></h5>
 
                                 <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
                             </div>
@@ -471,7 +480,7 @@ export default function Orders() {
             </div> */}
                             <div className='profile_button_last'>
                                 <button className='button_last' onClick={createOrder}>
-                                    <h4 className=''>Send</h4>
+                                <h4  onClick ={invoice}className=''>Order</h4>
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
