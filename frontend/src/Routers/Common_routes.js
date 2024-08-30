@@ -28,6 +28,7 @@ import ReadymadeForm from "../View/Admin/ReadymadeForm/ReadymadeForm";
 import ViewCategory from "../View/Customer/ViewCustomers/ViewCategory";
 import Update_status from "../View/AssignOrder/update_status";
 import Manage_order from "../View/AssignOrder/manage_order";
+import UserPerformance from "../View/Performance/UserPerformance"
 
 
 const routes = createBrowserRouter([
@@ -42,15 +43,15 @@ const routes = createBrowserRouter([
   },
   {
     path: '/home',
-    element:(<ProtectedRoute> <Home /> </ProtectedRoute>)
+    element: (<ProtectedRoute> <Home /> </ProtectedRoute>)
   },
   {
     path: '/profile',
-    element:(<ProtectedRoute> <Profile/> </ProtectedRoute> )
+    element: (<ProtectedRoute> <Profile /> </ProtectedRoute>)
   },
   {
-    path:'/about',
-    element:<About/>
+    path: '/about',
+    element: <About />
   },
   {
     path: '/customerinfo',
@@ -81,39 +82,39 @@ const routes = createBrowserRouter([
     path: '/viewcategory/:id',
     element: <ViewCategory />
   },
- 
+
   {
     path: '/order',
     element: <TodayOrder />
   },
   {
-     path:'/orderslip',
-     element:<Orders/>
+    path: '/orderslip',
+    element: <Orders />
   },
   {
     path: '/gallery',
     element: <Gallery />
   },
   {
-    path:'/galleryform',
-    element:<GalleryForm/>
+    path: '/galleryform',
+    element: <GalleryForm />
   },
   {
-    path:'/NextGalleryCard/:id',
-    element:<NextGalleryCard/>
+    path: '/NextGalleryCard/:id',
+    element: <NextGalleryCard />
   },
   {
     path: '/totalorders',
     element: <TotalOrderingPage />
   },
- 
+
   {
     path: "/invoice",
     element: <Invoice />
   },
   {
-    path:'/invoiceInfo/:id',
-    element:<InvoiceInfo/>
+    path: '/invoiceInfo/:id',
+    element: <InvoiceInfo />
   },
   {
     path: '/readymade',
@@ -121,27 +122,31 @@ const routes = createBrowserRouter([
   },
   {
     path: '/ready/:id',
-    element: <Ready/>
+    element: <Ready />
   },
   {
-     path:'/readymadeform',
-     element:<ReadymadeForm/>
+    path: '/readymadeform',
+    element: <ReadymadeForm />
   },
   {
-    path:'/orderdetail',
-    element:<AssignOrder/>
+    path: '/orderdetail',
+    element: <AssignOrder />
   },
   {
-    path:'/performance',
+    path: '/performance',
     element: <Performance />
   },
   {
-    path:'/updatestatus/:id',
-    element:<Update_status/>
+    path: '/userperformance',
+    element: <UserPerformance />
   },
   {
-    path:'/manageorder',
-    element:<Manage_order/>
+    path: '/updatestatus/:id',
+    element: <Update_status />
+  },
+  {
+    path: '/manageorder',
+    element: <Manage_order />
   }
 ])
 

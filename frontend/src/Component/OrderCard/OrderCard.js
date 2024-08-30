@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function OrderCard({cloth_type,time,name,id}) {
+export default function OrderCard({cloth_type,time,name,id,}) {
   return (
     <>
     <div className='Order_short'>

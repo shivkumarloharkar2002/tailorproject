@@ -50,14 +50,14 @@ import moment from "moment";
 
 
 export default function TotalOrderingPage() {
+    const [startDate,setStartDate]=useState('');
+    const [lastDate,seLastDAte]=useState('');
+
 
     const [search, setSearch] = useState("");
 
 
     // get allorderin api call
-
-
-
 
     const [getAllData, setGetAllData] = useState([]);
     const getData = async () => {
@@ -88,22 +88,29 @@ export default function TotalOrderingPage() {
             <Link to={"/home"} className="link">
                 <div className="profile-back">
                     <img src={back} alt="" className="profile-back-img" />
-                    {/* <h1 className="profile-back-text">Back</h1> */}
                 </div>
             </Link>
             <div className='MainBody'>
 
-                <div className="invoice-input">
+                <div className="Invoice-input">
+                    <div className="TMain"> 
                     <img src={img} alt="" className="invoice-icon" />
                     <input
                         type="text"
-                        className="invoice-inputs"
+                        className="SearchO"
                         placeholder="Total Order"
                         onChange={(e) => {
                             setSearch(e.target.value);
                         }}
                     />
+                    </div>
+                  <div>  Start Date: <input className="" type="date" value={startDate} onChange={(e)=>setStartDate(e.target.value)}/></div>
+                  <div >  Last Date: <input className="" type="date" value={lastDate} onChange={(e)=>seLastDAte(e.target.value)}/></div>
+
+                 
                 </div>
+                
+
 
 
                 {/* 
