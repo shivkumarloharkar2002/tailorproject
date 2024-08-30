@@ -119,7 +119,7 @@ export default function AssignOrder() {
           <div className="assign-patti">
             {/* <p className="aa">No</p> */}
             <p className="aa">Date</p>
-            <p className="aa">Stutas</p>
+            <p className="aa">Status</p>
             <p className="aa">Order</p>
             <p className="aa">Actions</p>
           </div>
@@ -149,7 +149,7 @@ export default function AssignOrder() {
                   {/* <p className="aa">{index+1}</p> */}
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
-                  <p className="aa">{data._id}</p>
+                  {/* <p className="aa">{data._id}</p> */}
                   <p className="aa">{data.cloth_type}</p>
 
 

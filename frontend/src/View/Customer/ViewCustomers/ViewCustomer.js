@@ -57,7 +57,7 @@ export default function ViewCustomer() {
       <hr className="hr" />
 
       <div className="invoice-shortCards">
-        {searchData.map((info) => {
+        {searchData.reverse().map((info) => {
           return (
             <>
               {/* <Link to='/seecustomer_details'> */}

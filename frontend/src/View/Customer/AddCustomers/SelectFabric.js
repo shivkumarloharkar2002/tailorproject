@@ -96,27 +96,8 @@ export default function SelectFabricCom() {
             }
           )
         }
-
-
-
       </div>
 
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
