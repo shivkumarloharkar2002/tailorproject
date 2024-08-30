@@ -11,6 +11,7 @@ const CustomerSchema = new Schema({
 
     phone: {
         type: Number,
+        minlength: 10,
         required: true,
         unique: true
     },
@@ -22,19 +23,19 @@ const CustomerSchema = new Schema({
         type: String,
 
     },
-    
-      measurement_id:[{ type: Schema.Types.ObjectId, ref: 'Measurement' }],
+
+    measurement_id: [{ type: Schema.Types.ObjectId, ref: 'Measurement' }],
     // measurement_id: [String],
 
-      order_id:[{ type: Schema.Types.ObjectId, ref: 'Order' }],
+    order_id: [{ type: Schema.Types.ObjectId, ref: 'Order' }],
     // order_id: [String],
 
     fabric_id: { type: mongoose.Schema.Types.ObjectId, ref: "Fabric" }, //check karnyasathi ghetl ahe
 
 },
-{
-    timestamps:true
-});
+    {
+        timestamps: true
+    });
 
 const Customer = model("Customer", CustomerSchema);
 export default Customer;
