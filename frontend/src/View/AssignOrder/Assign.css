@@ -13,12 +13,12 @@
 }
 .assign-patti{
     height: 6vh;
-    width: 80vw;
+    width: 90vw;
     background-color: rgba(36, 148, 148, 0.54);
     display: flex;
     justify-content: space-around;
     margin-top: 7%;
-    margin-left: 18vw;
+    margin-left: 10vw;
     margin-bottom: 1%;
 }
 @media only screen and (max-width:600px){
@@ -43,8 +43,8 @@
     display: flex;
     justify-content: space-around;
     text-align: left;
-    margin-left: 18vw;
-    width: 80vw;
+    margin-left: 10vw;
+    width: 90vw;
 }
 @media only screen and (max-width:600px){
     .assign-informetion{
@@ -85,6 +85,9 @@
 }
 .aa{
     /* margin: 5px; */
+    font-size: 24pt;
+}
+.aap{
     font-size: 18pt;
 }
 .pp{
@@ -230,7 +233,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     background: rgb(247, 93, 4);
 background: linear-gradient(180deg, rgb(247, 121, 4) 0%, rgb(236, 185, 143) 10%, rgb(249, 124, 7) 100%);
 transition: 1s;
-
+    font-size: 18pt;
 
 }
 .stutas:hover{
@@ -253,7 +256,7 @@ transition: 1s;
     background: rgb(10,247,9);
 background: linear-gradient(180deg, rgba(10,247,9,1) 0%, rgba(189,247,189,1) 10%, rgba(9,249,4,1) 100%);
 transition: 1s;
-
+font-size: 20pt;
 
 }
 .stutas-tow:hover{
