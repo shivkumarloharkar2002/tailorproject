@@ -43,7 +43,7 @@ export default function SelectFabricCom() {
         <div className='main_fab_form'>
           <button onClick={() => {
             setShowModal(false)
-          }} className='crossbtn'>close</button>
+          }} className='crossbtn'>×</button>
           <FabricForm />
         </div>
       </>
@@ -96,27 +96,8 @@ export default function SelectFabricCom() {
             }
           )
         }
-
-
-
       </div>
 
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

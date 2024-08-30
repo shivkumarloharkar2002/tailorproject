@@ -63,6 +63,7 @@
 }
 
 .Fabform_main {
+  position: relative;
   overflow-y: hidden;
   background-color: rgba(36, 148, 148);
   /* margin: auto; */

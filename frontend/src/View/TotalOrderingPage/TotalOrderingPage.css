@@ -1,3 +1,21 @@
+@media only screen and (max-width:600px) {
+    .input {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-evenly;
+
+        margin-top: 30px;
+        /* background-color: aqua; */
+    }
+
+    .CardBody {
+        padding:0 30px 0 0;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .MainBody {
     width: 80vw;
     /* border: 1px solid red; */
@@ -5,7 +23,28 @@
     margin: auto;
 }
 
-.TMain{
+/* .invoice-shortCards {
+    border: 2px solid red;
+    width: 80vw;
+    min-height: 20px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+} */
+.CardBody {
+
+    width: 80vw;
+    min-height: 20px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid rgb(10, 161, 174); */
+
+
+}
+
+.TMain {
     border: 2px solid rgb(116, 115, 115);
     height: 40px;
     width: auto;
@@ -15,10 +54,11 @@
     border-radius: 10px;
 }
 
-.SearchO{
-    border: none;
-  
+.SearchO {
+    outline: none;
+
 }
+
 .Orderimg {
     height: 60px;
 
@@ -30,8 +70,27 @@
     font-size: 25px;
     /* margin: auto; */
     /* margin: 20px; */
-}.Invoice-input{
+}
+
+.Invoice-input {
     /* border: 1px solid black; */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.searchData {
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: white;
+}
+.buttonC{
+    height:auto;
+    color: white;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    background: rgb(5, 5, 5);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgb(116, 115, 115) 10%, rgba(5, 5, 5, 1) 100%);
 }

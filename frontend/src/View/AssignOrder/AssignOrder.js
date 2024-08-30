@@ -99,7 +99,7 @@ export default function AssignOrder() {
               }}
               className="pp"
             >
-              Pyjama
+              Paijama
             </li>
 
             <li
@@ -119,7 +119,7 @@ export default function AssignOrder() {
           <div className="assign-patti">
             {/* <p className="aa">No</p> */}
             <p className="aa">Date</p>
-            <p className="aa">Stutas</p>
+            <p className="aa">Status</p>
             <p className="aa">Order</p>
             <p className="aa">Actions</p>
           </div>
@@ -130,9 +130,9 @@ export default function AssignOrder() {
               return (
                 <div className="assign-informetion">
                   {/* <p className="aa">{index+1}</p> */}
-                  <p className="aa">{date}</p>
-                  <p className={`aa ${data.status}`}>{data.status}</p>
-                  <p className="aa">{data.cloth_type}</p>
+                  <p className="aap">{date}</p>
+                  <p className={`aap ${data.status}`}>{data.status}</p>
+                  <p className="aap">{data.cloth_type}</p>
 
                   {data.status === 'pending' || data.status === 'working' ? (
                      <button className="stutas" onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
@@ -147,17 +147,17 @@ export default function AssignOrder() {
               return (
                 <div className="assign-informetion">
                   {/* <p className="aa">{index+1}</p> */}
-                  <p className="aa">{date}</p>
-                  <p className={`aa ${data.status}`}>{data.status}</p>
-                  <p className="aa">{data._id}</p>
-                  <p className="aa">{data.cloth_type}</p>
+                  <p className="aap">{date}</p>
+                  <p className={`aap ${data.status}`}>{data.status}</p>
+                  {/* <p className="aa">{data._id}</p> */}
+                  <p className="aap">{data.cloth_type}</p>
 
 
                   {data.status === 'pending' || data.status === 'working' ? (
                      <div className="stutas" onClick={()=>{goToUpdatePage(data._id)}}>Update Status</div>
 
                   ) : data.status === 'complete' ? (
-                    <button className="stutas"> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
+                    <button className="stutas-tow"> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
                   ) : null}
                 </div>
 

@@ -18,7 +18,16 @@
 }
 @media only screen and (max-width:600px){
     .ready-flex{
+        width: 90vw;
         flex-wrap: wrap;
+    }
+    .ready-img{
+        height: 45vh;
+        margin: auto;
+        width: 80vw;
+        /* margin-right: 5%; */
+        box-shadow: 2px 2px 3px 1px gray;
+        border-radius: 10px;
     }
 }
 .pice{
