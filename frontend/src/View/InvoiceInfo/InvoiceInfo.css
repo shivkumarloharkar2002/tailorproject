@@ -22,7 +22,7 @@
     }
     .invoiceInfo-box-color-para-info2{
         width: 80vw !important;
-        margin-top: -20px !important;
+        margin: 25px 0 !important;
         
     }
     .invoiceInfo-box-color-para-p2{
@@ -138,7 +138,7 @@
 .invoiceInfo-box-color-para-info{
     display: flex;
     justify-content: space-around;
-    /* border: 2px solid orange; */
+    /* border: 2px solid yellow; */
     margin:15px auto;
     width: 42vw;
     height: auto;
@@ -177,9 +177,9 @@
 
 .invoiceInfo-box-color-para-info2{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* border: 2px solid red; */
-    margin: auto;
+    margin:25px auto;
     /* margin-top: -40px; */
     width: 26vw;
     height: auto;
