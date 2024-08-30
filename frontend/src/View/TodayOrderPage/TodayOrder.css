@@ -1,3 +1,15 @@
+
+@media only screen and (max-width:600px){
+   
+    .CardBody{
+
+        /* width: 80vw; */
+        /* min-height: 20px; */
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 .MainBody {
     width: 80vw;
     margin: auto;
@@ -41,6 +53,7 @@
 }
 .CardBody{
     /* border: 2px solid black; */
-    width: 80vw;
+    width: 75vw;
+    padding: 0 0 0 45px;
     height: auto;
 }
