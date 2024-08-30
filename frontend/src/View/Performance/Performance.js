@@ -8,8 +8,10 @@ import goods from "./goods.png";
 import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 export default function Performance() {
+  const navigate = useNavigate();
   const [amount, setAmount] = useState(0);
   const [amountToday, setAmountToday] = useState(0);
 
@@ -79,9 +81,9 @@ export default function Performance() {
   return (
     <div>
       <Header />
-      <a href="/home">
-        <img className="back-btn" src={back} alt="Back" />
-      </a>
+      <div className="profile-back" onClick={() => navigate(-1)}>
+        <img src={back} alt="" className="profile-back-img" />
+      </div>
       <p className="heding-about">Performance</p>
       <div className="parfom">
         <div className="hedi">

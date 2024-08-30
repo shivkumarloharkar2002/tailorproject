@@ -8,6 +8,7 @@ import goods from "./goods.png";
 import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 
 export default function Performance() {
   const [userTotalAmount, setUserTotalAmount] = useState(0);
@@ -18,17 +19,19 @@ export default function Performance() {
   const [userTodayPending, setUserTodayPending] = useState(0);
   const [userTodayComplete, setUserTodayComplete] = useState(0);
 
-  const getData = async (userId) => {
+  const { id } = useParams();
+  const getData = async () => {
+      console.log(id)
     try {
       const response = await axios.get(
         `http://localhost:5555/api/orderroutes/getallorder`
       );
       const data = response.data.data;
+      console.log(data)
 
-     
-      const userOrders = data.filter((order) => order.userId === userId);
+      const userOrders = data.filter((order) => order.user_id._id === id);
+      console.log(userOrders)
 
-      
       let userTotalAmount = 0;
       let userTotalPending = 0;
       let userTotalComplete = 0;
@@ -40,17 +43,14 @@ export default function Performance() {
       const today = moment().startOf("day");
 
       userOrders.forEach((order) => {
-        
         userTotalAmount += order.total || 0;
 
-        
         if (order.status === "pending") {
           userTotalPending += 1;
         } else if (order.status === "complete") {
           userTotalComplete += 1;
         }
 
-       
         if (moment(order.createdAt).isSame(today, "day")) {
           userTodayAmount += order.total || 0;
 
@@ -62,12 +62,10 @@ export default function Performance() {
         }
       });
 
-      
       setUserTotalAmount(userTotalAmount);
       setUserTotalPending(userTotalPending);
       setUserTotalComplete(userTotalComplete);
 
-     
       setUserTodayAmount(userTodayAmount);
       setUserTodayPending(userTodayPending);
       setUserTodayComplete(userTodayComplete);
@@ -76,9 +74,8 @@ export default function Performance() {
     }
   };
 
-  
   useEffect(() => {
-    const userId = "your_user_id_here"; 
+    const userId = id;
     getData(userId);
   }, []);
 
