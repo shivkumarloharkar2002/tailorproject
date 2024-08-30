@@ -1,7 +1,8 @@
 @media screen and (max-width:950px) {
     .invoiceInfo-box{
         width: 90vw !important;
-        height: 80vh !important;
+        height: auto !important;
+        padding-bottom: 30px;
     }
     .invoiceInfo-box-info{
         width: 80vw !important;
@@ -21,7 +22,8 @@
     }
     .invoiceInfo-box-color-para-info2{
         width: 80vw !important;
-        margin-top: -80px !important;
+        margin-top: -20px !important;
+        
     }
     .invoiceInfo-box-color-para-p2{
         margin-right: 20px !important;
@@ -37,12 +39,13 @@
 } 
 
 .invoiceInfo-box {
-    height: 93vh;
+    height: auto;
     width: 50vw;
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 20px auto;
     background-color: white;
+    padding-bottom: 30px;
 }
 
 .invoiceInfo-box-logo-img {
@@ -172,12 +175,14 @@
 .invoiceInfo-box-color-para-info2{
     display: flex;
     justify-content: space-around;
-    /* border: 2px solid orange; */
+    /* border: 2px solid red; */
     margin: auto;
-    margin-top: -30px;
+    /* margin-top: -40px; */
     width: 26vw;
     height: auto;
     align-items: center;
+    /* margin-bottom: 30px; */
+    
 }
 
 .invoiceInfo-btn{

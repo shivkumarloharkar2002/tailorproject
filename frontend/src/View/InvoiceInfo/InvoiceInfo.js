@@ -7,11 +7,14 @@ import back from "./../../assets/Back/back.png";
 import { useParams } from "react-router-dom";
 import logo from "./../../assets/Login/logo.png";
 import moment from "moment";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 // import { ReactToPrint } from "react-to-print";
 
 function InvoiceInfo() {
   const { id } = useParams();
   console.log(id);
+  const navigate = useNavigate();
 
   const [getAllData, setGetAllData] = useState([]);
   const getData = async () => {
@@ -21,7 +24,18 @@ function InvoiceInfo() {
     setGetAllData(getNote.data.data);
   };
   console.log(getAllData);
- 
+
+  const Delete = async () => {
+    {
+      await axios.delete(
+        `http://localhost:5555/api/orderroutes/deleteorder/${id}`
+      );
+      getData();
+      navigate("/invoice");
+    }
+    toast.error("Note is deleted Successfully");
+  };
+
   useEffect(() => {
     getData();
   }, []);
@@ -98,7 +112,8 @@ function InvoiceInfo() {
                         <br /> Discount:{data.discount}%
                       </p>
                       <p className="invoiceInfo-box-color-para-p">
-                        CGST@ {data.cgst}%: {data.cgstprice.toFixed(2)} <br /><br/>
+                        CGST@ {data.cgst}%: {data.cgstprice.toFixed(2)} <br />
+                        <br />
                         SGST@ {data.sgst}%: {data.sgstprice.toFixed(2)}
                       </p>
                     </div>
@@ -116,10 +131,8 @@ function InvoiceInfo() {
                     {/* <ReactToPrint
                       trigger={() => {
                         return ( */}
-                          <button className="invoiceInfo-btn">
-                            Print Bill
-                          </button>
-                        {/* );
+                    <button className="invoiceInfo-btn">Print Bill</button>
+                    {/* );
                       }}
                       content={() => this.componentRef}
                       documentTitle="new document"
@@ -127,8 +140,12 @@ function InvoiceInfo() {
                     /> */}
 
                     <button className="invoiceInfo-btn">Share Bill</button>
+                    <button className="invoiceInfo-btn" onClick={Delete}>
+                      Delete Bill
+                    </button>
                   </div>
                 </div>
+                <ToastContainer />
               </>
             );
         })}
