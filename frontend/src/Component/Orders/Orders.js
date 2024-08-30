@@ -144,12 +144,12 @@ export default function Orders() {
 
                 <div className='Ordering_form'>
 
-                    <Link to={"/home"} className="link">
-                        <div className="profile-back">
+                    {/* <Link to={"/home"} className="link"> */}
+                        <div className="profile-back" onClick={() => navigate(-1)}>
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
                             {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
-                    </Link>
+                    {/* </Link> */}
 
                     <div className="order-back_box">
                         <div className='profile_Text'>
@@ -263,12 +263,12 @@ export default function Orders() {
 
                 <div className='Ordering_form'>
 
-                    {/* <Link to={"/home"} className="link">
-                        <div className="profile-back">
+                    {/* <Link to={"/home"} className="link"> */}
+                        <div className="profile-back" onClick={() => navigate(-1)}>
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
-                            <h5 className="profile-back-text">Back</h5>
+                            {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
-                    </Link> */}
+                    {/* </Link>  */}
 
                     <div className="profile-back_box">
                         <div className='profile_Text'>
@@ -382,12 +382,12 @@ export default function Orders() {
 
                 <div className='Ordering_form'>
 
-                    <Link to={"/home"} className="link">
-                        <div className="profile-back">
+                    {/* <Link to={"/home"} className="link"> */}
+                        <div className="profile-back" onClick={() => navigate(-1)}>
                             <img src={back} alt="" className="Profile-back-img" /><br></br>
                             {/* <h5 className="profile-back-text">Back</h5> */}
                         </div>
-                    </Link>
+                    {/* </Link> */}
 
                     <div className="profile-back_box">
                         <div className='profile_Text'>

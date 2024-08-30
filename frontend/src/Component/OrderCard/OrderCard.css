@@ -2,47 +2,70 @@
   .ONamE {
     /* border: 2px solid rgb(152, 150, 150); */
     background: rgb(24, 138, 133);
-    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);    border-radius: 20px;
-    width: 52vw !important;
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);
+    border-radius: 20px;
+    width: 60vw !important;
     height: auto !important;
-    padding: 1px;
-    /* position: relative; */
-    /* left: 25px; */
+
+    padding: 6px;
+
+    position: relative;
+    left: 25px;
 
   }
 
 
-}
 
+}
 
 
 .ONamE {
   /* border: 2px solid rgb(152, 150, 150); */
   background: rgb(24, 138, 133);
-  background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);
+  border-radius: 20px;
   margin: 25px;
-  height: 60px;
-  width: 25vw;
+  height: auto;
+  width: 20vw;
   padding: 1px;
   position: relative;
+  border-radius: 10px;
+
 
 }
 
-.Order_short {
+/* .Order_short {
   display: inline-block;
+  border: 1px solid red;
 
-}
+
+} */
 
 .Category {
-  background-color: orange;
+  background: rgb(247, 143, 4);
+  background: linear-gradient(180deg, rgba(247, 143, 4, 1) 0%, rgba(236, 201, 143, 1) 10%, rgba(249, 161, 7, 1) 100%);
   position: absolute;
   /* top: -11px; */
   padding: 6px;
-  border-radius: 18px 0 10px 0;
-  width: 80px;
+  border-radius: 10px 0 10px 0;
+  width: 6vw;
+  height: 5vh;
   color: black;
   text-align: center;
+  margin: -1px 0 0 -1px;
+}
 
+@media screen and (max-width :678px) {
+  .Category {
+
+    position: absolute;
+  padding: 3px;
+    width: 16vw;
+    height: 3vh;
+    color: black;
+    text-align: center;
+    
+  }
 }
 
 .OrderN {
@@ -58,6 +81,7 @@
 .Date {
   text-align: end;
   color: black;
+  font-size: 12pt;
   margin-right: 10px;
 }
 

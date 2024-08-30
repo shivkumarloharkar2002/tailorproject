@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 import Header from '../../Component/Header/Header'
 import axios from "axios";
 import moment from "moment";
-// import moment from "moment"
 
 
 // const CardData = [
@@ -50,8 +49,8 @@ import moment from "moment";
 
 
 export default function TotalOrderingPage() {
-    const [startDate,setStartDate]=useState('');
-    const [lastDate,seLastDAte]=useState('');
+    const [startDate, setStartDate] = useState();
+    const [enddate, setEnddate] = useState();
 
 
     const [search, setSearch] = useState("");
@@ -68,11 +67,14 @@ export default function TotalOrderingPage() {
     };
     console.log(getAllData);
 
+
+
     const searchData = getAllData.filter((data) => {
         const customerName = data.customer_id?.name || "Unknown Customer";
         const createdAt = data.createdAt || "";
         return (
             customerName.toLowerCase().includes(search.toLowerCase()) ||
+            data.cloth_type.toLowerCase().includes(search.toLowerCase()) ||
             moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
         );
     });
@@ -80,6 +82,29 @@ export default function TotalOrderingPage() {
     useEffect(() => {
         getData();
     }, []);
+
+    const [filterorders, setFilterorders] = useState([])
+
+    const Datefilter = () => {
+        const firstdate = moment(startDate).startOf("day")
+        const lastDate = moment(enddate).endOf("day")
+
+        if (!firstdate.isValid() || !lastDate.isValid()) {
+            alert('Please enter valid dates');
+            return;
+        }
+
+        const filtered = getAllData.filter(order => {
+            const orderDate = moment(order.createdAt).startOf("day")
+            return orderDate.isBetween(firstdate, lastDate, null, '[]'); // Inclusive
+        });
+
+        console.log(filtered)
+
+        setFilterorders(filtered)
+
+
+    }
 
 
     return (
@@ -93,23 +118,24 @@ export default function TotalOrderingPage() {
             <div className='MainBody'>
 
                 <div className="Invoice-input">
-                    <div className="TMain"> 
-                    <img src={img} alt="" className="invoice-icon" />
-                    <input
-                        type="text"
-                        className="SearchO"
-                        placeholder="Total Order"
-                        onChange={(e) => {
-                            setSearch(e.target.value);
-                        }}
-                    />
+                    <div className="TMain">
+                        <img src={img} alt="" className="invoice-icon" />
+                        <input
+                            type="text"
+                            className="SearchO "
+                            placeholder="Total Order"
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }}
+                        />
                     </div>
-                  <div>  Start Date: <input className="" type="date" value={startDate} onChange={(e)=>setStartDate(e.target.value)}/></div>
-                  <div >  Last Date: <input className="" type="date" value={lastDate} onChange={(e)=>seLastDAte(e.target.value)}/></div>
+                    <div className="input">  Start Date: <input className="" type="date" onChange={(e) => setStartDate(e.target.value)} /></div>
+                    <div className="input">  Last Date: <input className="" type="date" onChange={(e) => setEnddate(e.target.value)} /></div>
+                    <button className="searchData input" onClick={Datefilter} >Search date</button>
 
-                 
+
                 </div>
-                
+
 
 
 
