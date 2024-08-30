@@ -4,6 +4,8 @@ import './Ready.css';
 import axios from 'axios';
 import Header from '../../Component/Header/Header';
 import { useParams } from 'react-router-dom';
+import back from '../../Image/back.jpg'
+import { Link } from 'react-router-dom';
 
 export default function Ready() {
 
@@ -33,6 +35,13 @@ export default function Ready() {
               <>
 
                 <Header />
+                <Link to={"/readymade"} className="link">
+        <div className="profile-back">
+          <img src={back} alt="" className="profile-back-img" />
+          <h1 className="profile-back-text"></h1>
+        </div>
+      </Link>
+
                 <p className='heding-ready'>Details</p>
                 <div className='ready-flex'>
                   <img className='ready-img' src={data.img} />
