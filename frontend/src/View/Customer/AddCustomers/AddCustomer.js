@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AddCustomer.css'
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
+import { ToastContainer, toast } from 'react-toastify'
 import back from '../../../Image/back.jpg'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
@@ -31,12 +32,12 @@ export default function AddCustomer() {
 
       // if (registerData.status === 200) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
-      alert("Customer Added Successfully");
+        toast.success("Customer Added Successfully");
       navigate(`/viewcategory/${id}`);
       console.log(customerData);
       // }
     } catch (error) {
-      alert(error);
+      toast.error(error);
     }
   }
 
@@ -76,6 +77,7 @@ export default function AddCustomer() {
         } /><br />
         <input type="submit" value="Add Customer" className=' customer_btn' />
       </form>
+      <ToastContainer/>
     </>
   )
 }

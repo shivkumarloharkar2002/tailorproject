@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./MeasurementForm.css"
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify'
 import { useNavigate } from "react-router-dom";
 import shirt from "./Shirt-Size.webp"
 import kurta from "./kurta.avif"
@@ -68,12 +69,12 @@ export default function MeasurementForm() {
 
       // if (registerData.status === 200) {
       localStorage.setItem("measure", JSON.stringify(measureData.data.data));
-      alert("Measurement Added Successfully");
+      toast.success("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);
       // }
     } catch (error) {
-      alert(error);
+      toast.error(error);
     }
   }
 
@@ -99,12 +100,12 @@ export default function MeasurementForm() {
 
       // if (registerData.status === 200) {
       localStorage.setItem("measure", JSON.stringify(measureData.data.data));
-      alert("Measurement Added Successfully");
+      toast.success("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);
       // }
     } catch (error) {
-      alert(error);
+      toast.success(error);
     }
   }
 
@@ -131,12 +132,12 @@ export default function MeasurementForm() {
 
       // if (registerData.status === 200) {
       localStorage.setItem("measure", JSON.stringify(measureData.data.data));
-      alert("Measurement Added Successfully");
+      toast.success("Measurement Added Successfully");
       navigate("/orderslip");
       console.log(measureData);
       // }
     } catch (error) {
-      alert(error);
+      toast.error(error);
     }
   }
 
@@ -190,6 +191,7 @@ export default function MeasurementForm() {
 
         </form>
       </div>
+      <ToastContainer />
     </>;
   } else if (clothData === "kurta") {
     return <>
@@ -236,6 +238,7 @@ export default function MeasurementForm() {
           }} />
 
         </form>
+        <ToastContainer />
       </div>
     </>;
   } else if (clothData === "pant") {
@@ -292,6 +295,7 @@ export default function MeasurementForm() {
 
         </form>
       </div>
+      <ToastContainer />
     </>;
   } else if (clothData === "payjama") {
     return <>
@@ -347,6 +351,7 @@ export default function MeasurementForm() {
 
         </form>
       </div>
+      <ToastContainer />
     </>;
   } else {
     return <>
@@ -402,6 +407,7 @@ export default function MeasurementForm() {
 
         </form>
       </div>
+      <ToastContainer />
     </>;
   }
 }
