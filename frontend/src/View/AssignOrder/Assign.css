@@ -7,8 +7,9 @@
 }
 @media only screen and (max-width:600px){
     .heding-assign{
-        margin-top: -10%;
+        margin-top: -5%;
         margin-bottom: 5%;
+        font-size: 0pt;
     }
 }
 .assign-patti{
@@ -145,7 +146,7 @@
 @media only screen and (max-width:600px){
     .ppp{
         display: flex;
-        margin-top: -28%;
+        margin-top: -32%;
         
     }
 }
@@ -169,6 +170,7 @@ border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
+    font-size: 14pt;
     padding-top: 0.5%;
     background: rgb(247, 4, 4);
 background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
@@ -189,6 +191,7 @@ background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
     padding-top: 0.5%;
+    font-size: 14pt;
     background: rgb(235, 247, 4);
 background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
 }
@@ -207,6 +210,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     color: black;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
+    font-size: 14pt;
     padding-top: 0.5%;
     background: rgb(10,247,9);
     background: linear-gradient(180deg, rgba(10,247,9,1) 0%, rgba(9,249,4,1) 100%);
@@ -233,7 +237,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     background: rgb(247, 93, 4);
 background: linear-gradient(180deg, rgb(247, 121, 4) 0%, rgb(236, 185, 143) 10%, rgb(249, 124, 7) 100%);
 transition: 1s;
-    font-size: 18pt;
+    font-size: 14pt;
 
 }
 .stutas:hover{
