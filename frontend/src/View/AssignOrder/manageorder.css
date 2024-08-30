@@ -1,41 +1,48 @@
-.Orderdiv{
-    display: flex;
+.Orderdiv {
+  display: flex;
 }
 
-.tablediv{
-    margin: 20px 40px;
-  }
-  
-  table {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    border: 1px solid black;
-  
-    text-align: center;
-    padding: 8px;
-  }
-  
-  
-  .buy{
-    font-weight: bold;
-    color:black;
-    text-decoration: none;
-  }
-  .buy:hover{
-    color:green;
-  }
-  
-  .smallcar{
-    height: 50px;
-    width: 50px;
-  }
-  .editdelte{
-  height: 30px;
-  width: 30px;
-  
-  }
+.tablediv {
+  margin: 20px 40px;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid black;
+
+  text-align: center;
+  padding: 8px;
+}
+
+.updatebutton {
+  margin: 10px;
+  padding: 10px;
+  background-color: none;
+  outline: none;
+  border: none;
+}
+
+.pendings {
+
+  padding: 10px;
+  border-radius: 15px;
+  background-color: red;
+}
+
+.workings {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: yellow;
+}
+
+.completes {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: green;
+}
