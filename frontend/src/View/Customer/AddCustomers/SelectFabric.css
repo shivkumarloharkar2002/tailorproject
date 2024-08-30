@@ -17,6 +17,24 @@
     .fabric_main1-txt {
         margin-top: 20px;
     }
+
+    .crossbtn {
+        position:absolute;
+        margin-top: 15px !important;
+        margin-left: 0vw !important;
+        margin-bottom: -60px;
+        height: 30px;
+        font-size: 28px;
+        background: rgb(235, 5, 5);
+        background: linear-gradient(180deg, rgb(240, 30, 30) 0%, rgb(214, 113, 113) 10%, rgb(245, 45, 45) 100%);
+        color: white;
+        width: auto;
+        padding: 0 10px;
+        border: none;
+        border-radius: 8px;
+        line-height: 25px;
+        font-weight: 600;
+    }
 }
 
 .uploadimgheight {
@@ -94,13 +112,19 @@
 }
 
 .crossbtn {
+    position:absolute;
+    margin-top: 35px;
+    margin-left: 70vw;
+    margin-bottom: -60px;
     height: 30px;
-    font-size: 18px;
-    background: rgb(5, 5, 5);
-    background: linear-gradient(180deg, rgba(5, 5, 5, 1) 0%, rgba(140, 142, 142, 1) 10%, rgba(5, 5, 5, 1) 100%);
+    font-size: 28px;
+    background: rgb(235, 5, 5);
+    background: linear-gradient(180deg, rgb(240, 30, 30) 0%, rgb(214, 113, 113) 10%, rgb(245, 45, 45) 100%);
     color: white;
     width: auto;
-    padding: 0 20px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 8px;
     line-height: 25px;
     font-weight: 600;
 }
