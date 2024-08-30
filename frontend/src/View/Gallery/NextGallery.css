@@ -2,6 +2,7 @@
 /* new */
 .Discription{
     font-size: 30px;
+    text-transform: capitalize;
 }
 
 .Gallery-img{
@@ -15,7 +16,7 @@
 
 .Gallery-flex{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
     padding: 5%;
     width: 80vw;
@@ -27,7 +28,7 @@
 @media only screen and (max-width:600px){
     .Gallery-flex{
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
 
 
     }
@@ -36,6 +37,7 @@
 .Gleft-size{
     text-align: left;
     font-size: 22px;
+    text-transform: capitalize;
 }
 
 
@@ -49,4 +51,9 @@
     .Heding-{
         margin-top: 10%;
     }
+}
+.Gsecond{
+    /* border: 1px solid black; */
+    width: 450px;
+    padding: 10px;
 }

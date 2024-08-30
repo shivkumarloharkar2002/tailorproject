@@ -57,7 +57,9 @@ export default function GalleryForm() {
 
 
 
-
+    // const capitalizedValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1);
+    // setTitle(capitalizedValue);
+    
     return (
         <>
             {/* <Header /> */}
@@ -73,9 +75,10 @@ export default function GalleryForm() {
                 }} /><br />
 
                 <label className='fab_label'> Name </label>:
-                <input type='text' placeholder='Img Name ' className='fab_input' onChange={(e) => {
+                <input type='text name' placeholder='Img Name ' value={title}
+                className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
-                }} /><br />
+                }}  /><br />
 
                 
 
