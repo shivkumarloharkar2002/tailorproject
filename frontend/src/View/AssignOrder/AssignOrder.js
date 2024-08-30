@@ -130,9 +130,9 @@ export default function AssignOrder() {
               return (
                 <div className="assign-informetion">
                   {/* <p className="aa">{index+1}</p> */}
-                  <p className="aa">{date}</p>
-                  <p className={`aa ${data.status}`}>{data.status}</p>
-                  <p className="aa">{data.cloth_type}</p>
+                  <p className="aap">{date}</p>
+                  <p className={`aap ${data.status}`}>{data.status}</p>
+                  <p className="aap">{data.cloth_type}</p>
 
                   {data.status === 'pending' || data.status === 'working' ? (
                      <button className="stutas" onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
