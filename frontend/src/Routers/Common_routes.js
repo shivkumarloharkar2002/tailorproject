@@ -137,7 +137,7 @@ const routes = createBrowserRouter([
     element: <Performance />
   },
   {
-    path: '/userperformance',
+    path: '/userperformance/:id',
     element: <UserPerformance />
   },
   {

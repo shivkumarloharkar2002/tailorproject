@@ -45,11 +45,11 @@ function InvoiceInfo() {
       <Header />
 
       <div className="invoiceInfo">
-        <Link to={"/invoice"} className="link">
-          <div className="profile-back">
+        {/* <Link to={"/invoice"} className="link"> */}
+          <div className="profile-back" onClick={() => navigate(-1)}>
             <img src={back} alt="" className="profile-back-img" />
           </div>
-        </Link>
+        {/* </Link> */}
 
         {getAllData.map((data) => {
           const date = moment(data.createdAt).format("DD MMM YYYY");
