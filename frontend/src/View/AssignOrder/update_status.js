@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import "./Assign.css";
+import Header from '../../Component/Header/Header';
 
 export default function Update_status() {
 
@@ -43,23 +45,26 @@ export default function Update_status() {
 
 
   return (
-    <div>
-      <h2>Update Status</h2>
+    <div className='update-all'>
+      <Header/>
+      
+      <h2 className='heding-update'>Update Status</h2>
+      <div className='update-box'>
       <select
         value={orderdata.status}
         onChange={(e) => {
           setStatus(e.target.value)
           console.log(e.target.value)
         }}
-        className="status-dropdown"
+        className="status-drop"
       >
         <option value="pending">Pending</option>
         <option value="working">Working</option>
         <option value="complete">Complete</option>
-      </select>
-      <button onClick={handleStatusUpdate} className="updatebutton">Update Status</button>
-      <button onClick={() => navigate(-1)} className="updatebutton">Cancel</button>
-
+      </select><br/>
+      <button onClick={handleStatusUpdate} className="update-btn">Update Status</button>
+      <button onClick={() => navigate(-1)} className="update-btns">Cancel</button>
+      </div>
     </div >
   )
 }

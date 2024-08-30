@@ -27,7 +27,7 @@
         height: 7%;
         width: 90vw;
         font-size: 14pt;
-        margin: 0% 0 0 0;
+        margin: 0% 0 0 6%;
     }
 }
 .assign-main{
@@ -49,6 +49,7 @@
 @media only screen and (max-width:600px){
     .assign-informetion{
         margin-left: 0%;
+        margin-top: 1%;
     }
 }
 .assign-left{
@@ -258,5 +259,95 @@ transition: 1s;
         width: 15vw;
         
         font-size: 8pt;
+    }
+}
+.update-all{
+    background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+.heding-update{
+    text-align: center;
+    font-family: Kaisei Decol;
+    font-size: 35pt;
+    margin-top: 20vh;
+    color: white;
+
+}
+@media only screen and (max-width:600px){
+    .heding-update{
+        
+        margin-bottom: 5%;
+    }
+}
+.status-drop{
+    height: 6vh;
+    width: 30vw;
+    font-size: 16pt;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10vh 10vw 5vh 10vw;
+}
+@media only screen and (max-width:600px){
+    .status-drop{
+        height: 4vh;
+        width: 60vw;
+        margin: 5vh 10vw 2vh 5vw;
+    }
+}
+.update-box{
+    background-color: rgba(36, 148, 148, 1);
+    height: 35vh;
+    width: 50vw;
+    margin: 0 25vw;
+    border-radius: 10px;
+
+}
+@media only screen and (max-width:600px){
+    .update-box{
+        height: 25vh;
+        width: 70vw;
+        margin: 0 15vw;
+    }
+}
+.update-btn{
+    height: 6vh;
+    width: 12vw;
+    border: none;
+    box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
+    border-radius: 7px;
+    background: rgb(8, 8, 8);
+background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(77, 77, 76) 10%, rgb(6, 6, 6) 100%);
+color: white;
+font-size: 18pt;
+margin: 0 0 0 10vw;
+}
+@media only screen and (max-width:600px){
+    .update-btn{
+        height: 4vh;
+        width: 45vw;
+        margin-left: 12vw;
+    }
+}
+.update-btns{
+    height: 6vh;
+    width: 12vw;
+    border: none;
+    box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
+    border-radius: 7px;
+    background: rgb(8, 8, 8);
+background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(77, 77, 76) 10%, rgb(6, 6, 6) 100%);
+color: white;
+font-size: 18pt;
+margin: 0 0 0 6vw;
+}
+@media only screen and (max-width:600px){
+    .update-btns{
+        height: 4vh;
+        width: 45vw;
+        margin-left: 12vw;
+        margin-top: 2vh;
     }
 }

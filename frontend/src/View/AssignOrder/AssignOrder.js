@@ -117,7 +117,7 @@ export default function AssignOrder() {
 
         <div>
           <div className="assign-patti">
-            <p className="aa">No</p>
+            {/* <p className="aa">No</p> */}
             <p className="aa">Date</p>
             <p className="aa">Stutas</p>
             <p className="aa">Order</p>
@@ -129,7 +129,7 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">{index+1}</p>
+                  {/* <p className="aa">{index+1}</p> */}
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data.cloth_type}</p>
@@ -146,7 +146,7 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">{index+1}</p>
+                  {/* <p className="aa">{index+1}</p> */}
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data._id}</p>
