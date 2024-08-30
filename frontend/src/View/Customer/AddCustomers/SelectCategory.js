@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './SelectCategory.css'
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
-import back from '../../../Image/back.jpg'
+import back from '../../../Image/back.png'
 // import SelectCategoryCom from '../../../Component/Customercategory/SelectCategoryCom'
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react'

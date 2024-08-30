@@ -29,6 +29,8 @@ import ViewCategory from "../View/Customer/ViewCustomers/ViewCategory";
 import Update_status from "../View/AssignOrder/update_status";
 import Manage_order from "../View/AssignOrder/manage_order";
 import UserPerformance from "../View/Performance/UserPerformance"
+import FabricFV from "../View/AllForms/FabricFV";
+import ReadymadeFV from "../View/AllForms/ReadymadeFV";
 
 
 const routes = createBrowserRouter([
@@ -147,6 +149,14 @@ const routes = createBrowserRouter([
   {
     path: '/manageorder',
     element: <Manage_order />
+  },
+  {
+    path:'/fabricdetails',
+    element:<FabricFV/>
+  },
+  {
+    path:'/readymadedetails',
+    element:<ReadymadeFV/>
   }
 ])
 
