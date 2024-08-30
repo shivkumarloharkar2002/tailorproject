@@ -27,6 +27,7 @@ import { ProtectedRoute } from "../protected_routes/protected_routes";
 import ReadymadeForm from "../View/Admin/ReadymadeForm/ReadymadeForm";
 import ViewCategory from "../View/Customer/ViewCustomers/ViewCategory";
 import Update_status from "../View/AssignOrder/update_status";
+import Manage_order from "../View/AssignOrder/manage_order";
 
 
 const routes = createBrowserRouter([
@@ -137,6 +138,10 @@ const routes = createBrowserRouter([
   {
     path:'/updatestatus/:id',
     element:<Update_status/>
+  },
+  {
+    path:'/manageorder',
+    element:<Manage_order/>
   }
 ])
 
