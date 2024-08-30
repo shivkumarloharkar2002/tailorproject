@@ -89,12 +89,12 @@
     font-size: 24pt;
 }
 .aap{
-    font-size: 18pt;
+    font-size: 14pt;
 }
 .pp{
     margin: 5px;
     margin-top: 10px;
-    font-size: 18pt;
+    font-size: 12pt;
     text-align: center;
     transition: 1s;
 }
@@ -170,7 +170,7 @@ border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
-    font-size: 14pt;
+    font-size: 10pt;
     padding-top: 0.5%;
     background: rgb(247, 4, 4);
 background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
@@ -191,7 +191,7 @@ background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
     padding-top: 0.5%;
-    font-size: 14pt;
+    font-size: 10pt;
     background: rgb(235, 247, 4);
 background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
 }
@@ -210,7 +210,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     color: black;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
-    font-size: 14pt;
+    font-size: 10pt;
     padding-top: 0.5%;
     background: rgb(10,247,9);
     background: linear-gradient(180deg, rgba(10,247,9,1) 0%, rgba(9,249,4,1) 100%);
