@@ -45,7 +45,7 @@ export default function AssignOrder() {
       </a>
       <p className="heding-assign">Manage Orders</p>
 
-      <div className="assign-main">
+      <div >
         {/* <div className="assign-left">
           <p className="aa">All</p>
           <p className="aa">Shirt</p>
@@ -117,11 +117,10 @@ export default function AssignOrder() {
 
         <div>
           <div className="assign-patti">
-            <p className="aa">No</p>
+            {/* <p className="aa">No</p> */}
             <p className="aa">Date</p>
             <p className="aa">Stutas</p>
             <p className="aa">Order</p>
-            <p className="aa">id </p>
             <p className="aa">Actions</p>
           </div>
 
@@ -130,16 +129,16 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">{index+1}</p>
-                  <p className="aa">{date}</p>
-                  <p className={`aa ${data.status}`}>{data.status}</p>
-                  <p className="aa">{data.cloth_type}</p>
+                  {/* <p className="aa">{index+1}</p> */}
+                  <p className="aap">{date}</p>
+                  <p className={`aap ${data.status}`}>{data.status}</p>
+                  <p className="aap">{data.cloth_type}</p>
 
                   {data.status === 'pending' || data.status === 'working' ? (
-                     <button onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
+                     <button className="stutas" onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
 
                   ) : data.status === 'complete' ? (
-                    <button> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
+                    <button className="stutas-tow"> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
                   ) : null}
                 </div>
               );
@@ -147,7 +146,7 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  <p className="aa">{index+1}</p>
+                  {/* <p className="aa">{index+1}</p> */}
                   <p className="aa">{date}</p>
                   <p className={`aa ${data.status}`}>{data.status}</p>
                   <p className="aa">{data._id}</p>
@@ -155,10 +154,10 @@ export default function AssignOrder() {
 
 
                   {data.status === 'pending' || data.status === 'working' ? (
-                     <button onClick={()=>{goToUpdatePage(data._id)}}>Update Status</button>
+                     <div className="stutas" onClick={()=>{goToUpdatePage(data._id)}}>Update Status</div>
 
                   ) : data.status === 'complete' ? (
-                    <button> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
+                    <button className="stutas"> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>
                   ) : null}
                 </div>
 
