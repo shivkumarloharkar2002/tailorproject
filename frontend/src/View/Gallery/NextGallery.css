@@ -1,7 +1,7 @@
 
 /* new */
 .Discription{
-    font-size: 21px;
+    font-size: 30px;
 }
 
 .Gallery-img{
@@ -15,7 +15,7 @@
 
 .Gallery-flex{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
     padding: 5%;
     width: 80vw;
@@ -27,13 +27,15 @@
 @media only screen and (max-width:600px){
     .Gallery-flex{
         flex-wrap: wrap;
+        justify-content: space-evenly;
+
 
     }
 }
 
 .Gleft-size{
     text-align: left;
-    font-size: 20pt;
+    font-size: 22px;
 }
 
 
