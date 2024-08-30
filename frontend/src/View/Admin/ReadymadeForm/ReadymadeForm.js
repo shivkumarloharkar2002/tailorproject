@@ -4,7 +4,7 @@ import "./ReadymadeForm.css"
 import React, { useState } from 'react'
 import back from '../../../Image/back.jpg'
 import { Link } from 'react-router-dom'
-
+import Header from '../../../Component/Header/Header'
 
 
 
@@ -65,10 +65,10 @@ export default function ReadymadeForm() {
 
     return (
         <>
-            {/* <Header /> */}
+            <Header />
 
             <Link to={"/readymade"} className="link">
-                <div style={{ margin: '20px' }}>
+                <div style={{ margin: '130px 0 0 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
                     {/* <h5 className="profile-back-text">Back</h5> */}
                 </div>

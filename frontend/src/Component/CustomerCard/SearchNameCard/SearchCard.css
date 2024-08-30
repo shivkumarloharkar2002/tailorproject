@@ -8,7 +8,7 @@
         color: white;
         line-height: 50px;
         font-size: 22px;
-        /* border: 2px solid black; */
+        border: 2px solid black;
         /* align-self: center; */
         width: 50vw !important;
         overflow: hidden;
@@ -41,9 +41,34 @@
     /* top: -0px; */
    text-align: right;
 }
-.cust_price{
-    width: 95%;
-    position: absolute;
-    text-align: right;
-    bottom: -7px;
+.cust_price {
+        /* border: 2px solid black;  */
+        display: block;
+        /* margin-right: 20px !important; */
+        font-weight: 600;
+        color: white;
+        line-height: 25px;
+        font-size: 18px;
+        align-self: center;
+        margin: 0;
+        width: auto;
+    
+}
+
+@media screen and (max-width:400px) {
+    .cust_info{
+        display: block;
+        margin-left: 0px !important;
+        margin: 0;
+        font-weight: 600;
+        color: white;
+        line-height: 50px;
+        font-size: 22px;
+        border: 2px solid black;
+        /* align-self: center; */
+        width: 40vw !important;
+        overflow: hidden;
+        height: 56px;
+        /* text-align: center; */
+    }
 }

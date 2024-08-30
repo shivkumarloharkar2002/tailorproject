@@ -5,7 +5,7 @@ import moment from "moment";
 // import { useNavigate } from "react-router-dom";
 // import axios from 'axios'
 
-export default function SearchCard({ name, date, id }) {
+export default function SearchCard({ name, date,phone, id }) {
   const todaydate = moment(date).format("DD MMM YYYY");
 
   return (
@@ -13,8 +13,8 @@ export default function SearchCard({ name, date, id }) {
       <div className="invoice-shortCard">
         <Link to={`/viewcategory/${id}`} className="link">
           <div className="invoice-short">
-            <p className="cust_info">{name}</p>
-            <p className="invoice-short-amount">
+            <p className="cust_info">{name}<br/>{phone}</p>
+            <p className="cust_price">
               {todaydate}
               {/* <br />
               Paid- ₹ 
