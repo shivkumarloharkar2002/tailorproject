@@ -55,12 +55,12 @@ function ViewCategory() {
     return (
         <>
             <Header />
-            <Link to={"/customerinfo"} className="link">
-                <div className="profile-back">
+            {/* <Link to={"/customerinfo"} className="link"> */}
+            <div className="profile-back" onClick={() => navigate(-1)}>
                     <img src={back} alt="" className="profile-back-img" />
                     <h1 className="profile-back-text"></h1>
                 </div>
-            </Link>
+            {/* </Link> */}
 
             <h1 style={{ textAlign: 'center' }}>Cloths Type</h1>
             <div className='select_cat_main'>
