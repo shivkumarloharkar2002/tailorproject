@@ -82,6 +82,7 @@ export default function TodayOrder() {
             <div className='MainBody'>
 
                 <div className="invoice-input">
+                    
                     <img src={img} alt="" className="invoice-icon" />
                     <input
                         type="text"
