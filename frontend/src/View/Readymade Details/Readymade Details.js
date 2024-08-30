@@ -4,7 +4,7 @@ import './Ready.css';
 import axios from 'axios';
 import Header from '../../Component/Header/Header';
 import { useParams } from 'react-router-dom';
-import back from '../../Image/back.jpg'
+import back from '../../Image/back.png'
 import { Link } from 'react-router-dom';
 
 export default function Ready() {
@@ -45,7 +45,7 @@ export default function Ready() {
                 <p className='heding-ready'>Details</p>
                 <div className='ready-flex'>
                   <img className='ready-img' src={data.img} />
-                  <div>
+                  <div className='ready_space'>
                     <h2 className='ready-head'>{data.title}</h2>
                     <p className='left-size'>{data.des}</p>
                     <p className='left-size'>Sizes :-{data.size}</p>

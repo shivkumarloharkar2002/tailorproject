@@ -1,17 +1,16 @@
-import axios from 'axios'
+import './ReadymadeFV.css'
+import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
-import "./ReadymadeForm.css"
-import React, { useState } from 'react'
-import back from '../../../Image/back.png'
-import { Link } from 'react-router-dom'
-import Header from '../../../Component/Header/Header'
+import axios from 'axios';
+import Header from '../../Component/Header/Header';
+import { Link } from 'react-router-dom';
+import back from '../../Image/back.png'
 
 
 
+export default function ReadymadeFV() {
 
-export default function ReadymadeForm() {
-
-
+    const [ readymade , setReadymade] = useState([]);
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [color, setColor] = useState('');
@@ -63,10 +62,32 @@ export default function ReadymadeForm() {
     }
 
 
+    const GetReadydata = async () => {
+        const readymaded = await axios.get('http://localhost:5555/api/readymaderoutes/getreadymadedata');
+        setReadymade(readymaded.data.data)
+        console.log(readymaded.data.data)
+      }
+    
+      //delete fabric 
+    
+      const deletecloth = async (data) => {
+        const id = data._id;
+        const deletedata = await axios.delete(`http://localhost:5555/api/${id}`)
+        toast.error(deletedata.data.msg)
+    
+        GetReadydata();
+      }
+
+
+      useEffect(
+        ()=>{
+            GetReadydata();
+        },[]
+      )
     return (
         <>
             <Header />
-
+            <div className='addFabMain'>
             <Link to={"/readymade"} className="link">
                 <div style={{ margin: '130px 0 0 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
@@ -74,7 +95,7 @@ export default function ReadymadeForm() {
                 </div>
             </Link>
 
-            <form className='Fabform_main'>
+            <form className='FabformFV_main'>
                 <h1 className="center">Add Readymade Cloths</h1>
 
 
@@ -160,6 +181,56 @@ export default function ReadymadeForm() {
 
 
             </form>
+
+            <div>
+          <div className='Fabform_list  List_fab'>
+            <h1 className="center">Readymade List</h1>
+            {
+              readymade.reverse().map(
+                (data) => {
+                  return (
+                    <>
+                      <div className='AFmain'>
+                        <h2 style={{ padding: '0 20px' }}>{data.title}</h2>
+                        <div className='AFDIV' >
+                          <div>
+                            <img src={data.img1} className='AFimg' />
+                          </div>
+                          <div className='AFinfo'>
+
+                            <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.color}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4>{data.fabric_type}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>
+                          </div>
+                        </div>
+                        <div className="fabCard-btns">
+                          {/* <button
+                      className="userCard-button edit"
+                    >
+                      Edit
+                    </button> */}
+                          <button
+                            className="userCard-button delete"
+                            onClick={
+                              () => {
+                                deletecloth(data)
+                              }
+                            }
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  )
+                }
+              )
+            }
+          </div>
+        </div>
+        </div>
             <ToastContainer />
         </>
     )
