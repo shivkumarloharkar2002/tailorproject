@@ -89,12 +89,12 @@
     font-size: 24pt;
 }
 .aap{
-    font-size: 14pt;
+    font-size: 18pt;
 }
 .pp{
     margin: 5px;
     margin-top: 10px;
-    font-size: 12pt;
+    font-size: 16pt;
     text-align: center;
     transition: 1s;
 }
@@ -115,10 +115,16 @@
         width: 100vw;
         margin-left: -10%;
     }
+    .pp{
+        font-size: 12pt;
+    }
 }
 @media only screen and (max-width:600px){
     .aa{
         margin: 0 10px;
+        font-size: 12pt;
+    }
+    .aap{
         font-size: 12pt;
     }
 }
@@ -170,8 +176,8 @@ border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
-    font-size: 10pt;
-    padding-top: 0.5%;
+    font-size: 16pt;
+    padding-top: 0.3%;
     background: rgb(247, 4, 4);
 background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
 }
@@ -179,7 +185,7 @@ background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
     .pending{
         height: 3vh;
         width: 14vw;
-        
+        font-size: 10pt;
     }
 }
 .working{
@@ -190,8 +196,8 @@ background: linear-gradient(180deg, rgb(247, 4, 4) 0%, rgb(249, 7, 7) 100%);
     color: black;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
-    padding-top: 0.5%;
-    font-size: 10pt;
+    padding-top: 0.3%;
+    font-size: 16pt;
     background: rgb(235, 247, 4);
 background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
 }
@@ -199,7 +205,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     .working{
         height: 3vh;
         width: 14vw;
-      
+        font-size: 10pt;
     }
 }
 .complete{
@@ -210,8 +216,8 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     color: black;
     box-shadow: 1px 1px 2px 1px rgb(95, 94, 94);
     border-radius: 7px;
-    font-size: 10pt;
-    padding-top: 0.5%;
+    font-size: 16pt;
+    padding-top: 0.3%;
     background: rgb(10,247,9);
     background: linear-gradient(180deg, rgba(10,247,9,1) 0%, rgba(9,249,4,1) 100%);
 }
@@ -219,7 +225,7 @@ background: linear-gradient(180deg, rgb(247, 239, 4) 0% rgb(249, 217, 7) 100%);
     .complete{
         height: 3vh;
         width: 14vw;
-        
+        font-size: 10pt;
     }
 }
 .updatebutton{
