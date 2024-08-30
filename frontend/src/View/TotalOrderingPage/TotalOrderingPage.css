@@ -1,18 +1,24 @@
 .MainBody {
     width: 80vw;
+    /* border: 1px solid red; */
+    margin-top: 20px;
     margin: auto;
 }
 
-.MainOrder {
-    /* height: 40px; */
-    border: 2px solid rgb(152, 150, 150);
-    border-radius: 50px;
-    margin: 20px 10px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-wrap: wrap;
+.TMain{
+    border: 2px solid rgb(116, 115, 115);
+    height: 40px;
+    width: auto;
+    padding: 3px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
 }
 
+.SearchO{
+    border: none;
+  
+}
 .Orderimg {
     height: 60px;
 
@@ -24,4 +30,8 @@
     font-size: 25px;
     /* margin: auto; */
     /* margin: 20px; */
+}.Invoice-input{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
 }
