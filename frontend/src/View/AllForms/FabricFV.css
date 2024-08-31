@@ -1,0 +1,45 @@
+.FabformFV_main {
+    position: relative;
+    overflow-y: hidden;
+    background-color: rgba(36, 148, 148);
+    margin:10% auto;
+    padding: 20px 0;
+    height: auto;
+    width: 40vw;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
+    border-radius: 10px;
+  }
+  
+
+  .addFabMain{
+    display: flex;
+  }
+
+  .Fabform_list{
+    margin-top: 25%;
+    height: 98vh;
+    width: 40vw;
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(36, 148, 148, 0.54);
+    /* border: 6px solid red; */
+  }
+
+  .addFabMain{
+    background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
+    background-size: cover;
+  }
+
+  /* .Fabform_list {
+   
+    /* margin: 50px auto; */
+    /* padding: 20px 0; */
+    /* border: 2px solid black; */
+    
+    /* width: 40vw; */
+    /* color: white; */
+    /* backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
+    border-radius: 10px; */
+  /* }  */
