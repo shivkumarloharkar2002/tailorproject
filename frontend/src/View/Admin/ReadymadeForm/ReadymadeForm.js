@@ -2,7 +2,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import "./ReadymadeForm.css"
 import React, { useState } from 'react'
-import back from '../../../Image/back.jpg'
+import back from '../../../Image/back.png'
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
 

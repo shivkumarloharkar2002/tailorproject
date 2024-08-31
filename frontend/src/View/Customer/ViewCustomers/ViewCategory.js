@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 // import './SelectCategory.css'
 import {useNavigate, Link, useParams } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
-import back from '../../../Image/back.jpg'
+import back from '../../../Image/back.png'
 // import SelectCategoryCom from '../../../Component/Customercategory/SelectCategoryCom'
 
 import shirts from './../../../Image/shirt.jpg'

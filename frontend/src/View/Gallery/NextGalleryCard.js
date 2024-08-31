@@ -51,9 +51,9 @@ export default function NextGalleryCard() {
                                 {/* new */}
                                 <div className='Gallery-flex'>
                                     <img className='Gallery-img' src={data.img} />
-                                    <div>
+                                    <div className='Gsecond'>
                                         <h2 className='Discription'>{data.title}</h2>
-                                        <p className=' Gleft-size'> {data.description}</p>
+                                        <p className=' Gleft-size'>Dis:- {data.description}</p>
                                         {/* <p className='Gleft-size'>Des :-{data.des}</p> */}
                                         <p className='Gleft-size'>Sizes :-{data.size}</p>
                                         <div>
@@ -74,6 +74,7 @@ export default function NextGalleryCard() {
                         )
                 })
             }
+            
         </>
     )
 }

@@ -189,8 +189,9 @@ export default function TotalOrderingPage() {
                     </div>
                     <div className="input">  Start Date: <input className="" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} /></div>
                     <div className="input">  Last Date: <input className="" type="date" value={enddate} onChange={(e) => setEnddate(e.target.value)} /></div>
+                    <div className="input"> <button className="buttonC" onClick={clearDateFilters} >Clear date</button></div>
                     {/* <button className="searchData input" onClick={clearSearch} >clear search</button> */}
-                    <button className="buttonC" onClick={clearDateFilters} >Clear date</button>
+                   
 
 
 
@@ -215,12 +216,13 @@ export default function TotalOrderingPage() {
                         filterData.reverse().map((data) => {
                             // const time = moment(data.createdAt).format('LT');
 
-                            const date = (moment(data.createdAt).format(" MMMM Do YYYY"))
+                            const date = (moment(data.createdAt).format('l'))
                             const customerName = data.customer_id?.name || "Unknown Customer";
+                            const customerNo = data.customer_id?.phone || "Unknown Customer";
 
                             return (
 
-                                <OrderCard key={data._id} cloth_type={data.cloth_type} time={date} name={customerName} id={data._id} />
+                                <OrderCard key={data._id} cloth_type={data.cloth_type} time={date} name={customerName}no={customerNo} id={data._id} />
                             )
                         })
 
