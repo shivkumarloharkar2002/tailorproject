@@ -89,6 +89,13 @@ export default function Home() {
                             <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
+                    {/* <Link to='/manage' className="linkH">
+                        <div className='HCard'>
+                            <img className='Homeimg' src={img8} />
+                            <h3 className='HText'>Manage </h3>
+                            <h5  className='MD'>See Details </h5>
+                        </div>
+                    </Link> */}
                 </div>
 
             </>

@@ -1,0 +1,20 @@
+.MMain{
+    width: 80vw;
+    /* border: 2px solid black; */
+    margin: auto;
+    height: auto;
+    margin-top: 200px;
+}
+
+.ManageMain{
+   
+    text-align: center;
+   display: flex;
+   flex-wrap: wrap;
+    justify-content: space-around;
+}
+.Mimg{
+    height: 200px;
+    width: 200px;
+    /* border: 2px solid; */
+}
