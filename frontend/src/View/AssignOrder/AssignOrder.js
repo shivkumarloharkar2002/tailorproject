@@ -8,6 +8,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function AssignOrder() {
   const [getAllData, setGetAllData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [search, setSearch] = useState([]);
   // category
   const [type, setType] = useState("shirt");
 
@@ -36,6 +38,28 @@ export default function AssignOrder() {
   const goToUpdatePage = (id) => {
     navigate(`/updatestatus/${id}`); // Navigate to the update status page with the ID
   };
+
+  
+
+    const filterDataFn = () => {
+        let filtered = getAllData;
+
+        console.log('Before Filtering:', filtered);
+
+        // Apply search filter
+        if (search) {
+            filtered = filtered.filter((data) => {
+                const customerName = data.customer_id?.name || "Unknown Customer";
+                const createdAt = data.createdAt || "";
+                return (
+                    customerName.toLowerCase().includes(search.toLowerCase()) ||
+                    moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
+                );
+            });
+        }
+
+        console.log('After Search Filtering:', filtered);
+      }
 
   return (
     <div>
@@ -117,7 +141,7 @@ export default function AssignOrder() {
 
         <div>
           <div className="assign-patti">
-            {/* <p className="aa">No</p> */}
+            <p className="aa">Name</p>
             <p className="aa">Date</p>
             <p className="aa">Status</p>
             <p className="aa">Order</p>
@@ -129,7 +153,7 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  {/* <p className="aa">{index+1}</p> */}
+                  <h3 className="aa">{ data.customer_id?.name || "Unknown Customer"}</h3>
                   <p className="aap">{date}</p>
                   <p className={`aap ${data.status}`}>{data.status}</p>
                   <p className="aap">{data.cloth_type}</p>
@@ -146,7 +170,7 @@ export default function AssignOrder() {
               const date = moment(data.createdAt).format("DD MMM YYYY");
               return (
                 <div className="assign-informetion">
-                  {/* <p className="aa">{index+1}</p> */}
+                  <h3 className="aa">{ data.customer_id?.name || "Unknown Customer"}</h3>
                   <p className="aap">{date}</p>
                   <p className={`aap ${data.status}`}>{data.status}</p>
                   {/* <p className="aa">{data._id}</p> */}
