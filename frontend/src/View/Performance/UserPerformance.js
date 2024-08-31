@@ -19,9 +19,14 @@ export default function Performance() {
   const [userTodayPending, setUserTodayPending] = useState(0);
   const [userTodayComplete, setUserTodayComplete] = useState(0);
 
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [role, setRole] = useState();
+
   const { id } = useParams();
   const getData = async () => {
-      console.log(id)
+    console.log(id)
     try {
       const response = await axios.get(
         `http://localhost:5555/api/orderroutes/getallorder`
@@ -44,6 +49,11 @@ export default function Performance() {
 
       userOrders.forEach((order) => {
         userTotalAmount += order.total || 0;
+
+        setName(order.user_id.username)
+        setEmail(order.user_id.email)
+        setPhone(order.user_id.phone)
+        setRole(order.user_id.role)
 
         if (order.status === "pending") {
           userTotalPending += 1;
@@ -85,7 +95,18 @@ export default function Performance() {
       <a href="/home">
         <img className="back-btn" src={back} alt="Back" />
       </a>
+
       <p className="heding-about">Performance</p>
+      <div className="userPerformance-info">
+        <p className="userPerformance-info-text">Name:{name}</p>
+        <p className="userPerformance-info-text">Email:{email}</p>
+        <p className="userPerformance-info-text">Phone:{phone}</p>
+        <p className="userPerformance-info-text">Role:{role}</p>
+      </div>
+
+
+
+
       <div className="parfom">
         <div className="hedi">
           <p className="numh">Today's Performance</p>
