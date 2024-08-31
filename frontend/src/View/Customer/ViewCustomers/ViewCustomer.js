@@ -3,7 +3,7 @@ import "./ViewCustomer.css";
 import customer from "../../../Image/people.png";
 import SearchCard from "../../../Component/CustomerCard/SearchNameCard/SearchCard";
 import { Link } from "react-router-dom";
-import back from "../../../Image/back.jpg";
+import back from "../../../Image/back.png";
 import Header from "../../../Component/Header/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";

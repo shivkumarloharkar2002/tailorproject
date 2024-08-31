@@ -245,6 +245,9 @@ export default function Orders() {
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
+                                    <h3 className=''>Send </h3>
+                                </button>
+                                <button className='button_last'>
                                     <h3 className=''>Print </h3>
                                 </button>
                             </div>
@@ -366,6 +369,9 @@ export default function Orders() {
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
+                                    <h3 className=''>Send </h3>
+                                </button>
+                                <button className='button_last'>
                                     <h3 className=''>Print </h3>
                                 </button>
                             </div>
@@ -484,8 +490,12 @@ export default function Orders() {
                                     {/* <h4 className=''>8767899362</h4> */}
                                 </button>
                                 <button className='button_last'>
+                                    <h3 className=''>Send </h3>
+                                </button>
+                                <button className='button_last'>
                                     <h3 className=''>Print </h3>
                                 </button>
+                               
                             </div>
                         </div>
                     </div>

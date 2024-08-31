@@ -75,3 +75,6 @@
     margin: 5px;
     /* padding: 5px; */
   }
+  .name{
+    text-transform: capitalize;
+  }

@@ -5,7 +5,7 @@ import upload from '../../../Image/upload.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-import back from '../../../Image/back.jpg'
+import back from '../../../Image/back.png'
 import Header from '../../../Component/Header/Header'
 import FabricForm from '../../Admin/FabricForm/FabricForm'
 

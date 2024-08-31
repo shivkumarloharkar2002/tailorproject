@@ -3,7 +3,7 @@ import './AddCustomer.css'
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
 import { ToastContainer, toast } from 'react-toastify'
-import back from '../../../Image/back.jpg'
+import back from '../../../Image/back.png'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
