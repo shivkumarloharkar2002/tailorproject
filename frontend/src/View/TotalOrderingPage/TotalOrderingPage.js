@@ -216,7 +216,7 @@ export default function TotalOrderingPage() {
                         filterData.reverse().map((data) => {
                             // const time = moment(data.createdAt).format('LT');
 
-                            const date = (moment(data.createdAt).format(" MMMM Do YYYY"))
+                            const date = (moment(data.createdAt).format('l'))
                             const customerName = data.customer_id?.name || "Unknown Customer";
                             const customerNo = data.customer_id?.phone || "Unknown Customer";
 
