@@ -13,7 +13,10 @@
   
 
   .addFabMain{
+    /* width: 90vw; */
+    margin: auto;
     display: flex;
+    flex-wrap: wrap;
   }
 
   .Fabform_list{
@@ -31,15 +34,57 @@
     background-size: cover;
   }
 
-  /* .Fabform_list {
-   
-    /* margin: 50px auto; */
-    /* padding: 20px 0; */
-    /* border: 2px solid black; */
-    
-    /* width: 40vw; */
-    /* color: white; */
-    /* backdrop-filter: blur(20px);
-    box-shadow: 0px 0px 30px rgba(170, 171, 187, 0.37);
-    border-radius: 10px; */
-  /* }  */
+  @media screen and (max-width:900px) {
+    .FabformFV_main {
+      width: 100vw !important;
+  
+    }
+  
+    .main_fab_form {
+      width: 100vw;
+      margin: auto;
+      align-items: center;
+  
+    }
+  
+    .fab_label {
+      margin: 20px;
+      width: 10vw !important;
+      font-size: 20px;
+      font-weight: 30;
+      color: white;
+    }
+  
+    .fab_input {
+      margin: 4px;
+      width: 65vw !important;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  
+    .fab_btn {
+      color: white;
+      border-radius: 15px 10px;
+      width: 10px;
+  
+      margin: -100px  0 0 0fa!important;
+      transition: 1s;
+    }
+  
+    .select {
+      margin: 4px;
+      width: 65vw !important;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+  
+    .Fabform_list {
+      width: 90vw !important;
+      text-align: center;
+    }
+  
+    .AFDIV {
+      display: inline-block !important;
+    }
+  }

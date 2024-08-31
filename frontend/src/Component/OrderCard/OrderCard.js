@@ -13,7 +13,8 @@ export default function OrderCard({cloth_type,time,name,no,id,}) {
         <h6 className='Category'>{cloth_type}</h6>
         <h6 className='Date'>{time}</h6>
         <h6 className='OrderN'>{name}</h6>
-        <h6 className='OrderNo'>{no}</h6>
+        
+        <h6 className='Date'>{no}</h6>
 
 
       </div>
