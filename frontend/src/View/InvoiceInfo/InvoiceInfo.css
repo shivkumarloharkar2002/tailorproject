@@ -72,7 +72,7 @@
     /* border: 2px solid red; */
     margin: auto;
     width: 45vw;
-    height: 55vh;
+    height: 50vh;
 }
 
 .invoiceInfo-box-name-para{
@@ -181,7 +181,7 @@
     /* border: 2px solid red; */
     margin:25px auto;
     /* margin-top: -40px; */
-    width: 26vw;
+    width: 40vw;
     height: auto;
     align-items: center;
     /* margin-bottom: 30px; */
@@ -199,4 +199,20 @@
     width: auto;
     padding: 0 20px;
     border-radius: 10px;
+}
+
+
+.invoiceInfo-box-color-para-info3{
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid red; */
+    margin:0 auto;
+    margin-bottom: 40px;
+    margin-top: -30px;
+    width: 50vw;
+    height: 90px;
+    align-items: center;
+    /* margin-bottom: 30px; */
+    background-color: white;
+    border-radius: 00px 0 10px 10px;
 }

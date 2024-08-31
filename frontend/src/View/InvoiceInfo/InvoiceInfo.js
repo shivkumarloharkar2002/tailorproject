@@ -133,27 +133,25 @@ function InvoiceInfo() {
                           /-
                         </p>
                       </div>
-                      <div className="invoiceInfo-box-color-para-info2">
-                        <ReactToPrint
-                          trigger={() => {
-                            return (
-                              <button className="invoiceInfo-btn">
-                                Print Bill
-                              </button>
-                            );
-                          }}
-                          content={() => componentRef.current}
-                          documentTitle="new document"
-                          pageStyle="print"
-                        />
-
-                        <button className="invoiceInfo-btn">Share Bill</button>
-                        <button className="invoiceInfo-btn" onClick={Delete}>
-                          Delete Bill
-                        </button>
-                      </div>
                     </div>
                   </div>
+                </div>
+                <div className="invoiceInfo-box-color-para-info3">
+                  <ReactToPrint
+                    trigger={() => {
+                      return (
+                        <button className="invoiceInfo-btn">Print Bill</button>
+                      );
+                    }}
+                    content={() => componentRef.current}
+                    documentTitle="new document"
+                    pageStyle="print"
+                  />
+
+                  <button className="invoiceInfo-btn">Share Bill</button>
+                  <button className="invoiceInfo-btn" onClick={Delete}>
+                    Delete Bill
+                  </button>
                 </div>
 
                 <ToastContainer />
