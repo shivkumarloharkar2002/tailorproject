@@ -46,10 +46,10 @@ export const GetGalleryData = async (req, res) => {
 
 // delete api
 export const DeleteGallery = async (req, res) => {
-    const id = req.params
-    const fetch = await NewGalleryModel.deleteOne({ _id: _id })
+    const {id} = req.params
+    const fetch = await NewGalleryModel.deleteOne({ _id: id })
     res.json({
-        _id: _id,
+        _id: id,
         data: fetch,
         msg: "Gallery Data Deleted Successfully",
     })
@@ -64,12 +64,12 @@ export const UpdateGallery = async (req, res) => {
 
     const img = await Uploadoncloudinary(req.file.path)
 
-    const { _id, title, price, Color, cloth_type, pattern, size, description } = req.body
+    const { id, title, price, Color, cloth_type, pattern, size, description } = req.body
 
     try {
-        const update = await NewGalleryModel.updateOne({ _id: _id }, {
+        const update = await NewGalleryModel.updateOne({ _id: id }, {
             $set: {
-                
+                "img": img,
                 "title": title,
                 "price": price,
                 "Color": Color,
