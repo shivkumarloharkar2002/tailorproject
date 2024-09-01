@@ -14,7 +14,7 @@ gallery_routes.get('/getgalleryData',GetGalleryData)
 gallery_routes.delete('/deleteGallery',DeleteGallery)
 
 
-gallery_routes.put('/updateGallery',UpdateGallery)
+gallery_routes.put('/updateGallery', upload.single("gallery_img"),UpdateGallery)
 
 
 export default gallery_routes

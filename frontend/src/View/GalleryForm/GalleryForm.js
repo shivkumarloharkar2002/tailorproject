@@ -6,7 +6,6 @@ import Header from '../../Component/Header/Header'
 
 export default function GalleryForm() {
 
-
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [Color, setColor] = useState('');
