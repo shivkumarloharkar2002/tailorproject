@@ -87,6 +87,7 @@ export const deletefabric = async (req, res) => {
             });
         }
 
+        
         // Delete the document from MongoDB
         const deleteDocument = await Fabricmodel.deleteOne({ _id: id });
         res.json({
