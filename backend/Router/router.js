@@ -6,6 +6,7 @@ import MeasurementRoutes from "../routes/measurement_routes.js";
 import express from "express"
 import { OrderRoutes } from "../routes/Order_routes.js";
 import readymade_routes from "../routes/readymade_routes.js";
+import { shilai_rateRoutes } from "../routes/shilai_routes.js";
 
 const Allrouters = express.Router() 
 
@@ -22,5 +23,7 @@ Allrouters.use("/measurementroutes", MeasurementRoutes)
 Allrouters.use("/orderroutes", OrderRoutes)
 
 Allrouters.use("/readymaderoutes",readymade_routes)
+
+Allrouters.use("/shialiroutes",shilai_rateRoutes)
 
 export default Allrouters

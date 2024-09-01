@@ -5,9 +5,7 @@ import axios from "axios";
 // import UserCard from "../../Component/Register/UserCard";
 import logo from "./../../assets/Login/login-email.png";
 // import Navbar from "./../../Component/Navbar/Navbar";
-import { Link } from "react-router-dom";
 import Header from "../../Component/Header/Header";
-import { ToastContainer, toast } from "react-toastify";
 
 function Register() {
   const [username, setUserName] = useState();
@@ -19,40 +17,26 @@ function Register() {
   // const [id, setId] = useState();
   const [edit, setEdit] = useState(false);
 
-  const [img, setImg] = useState('')
+  const[img,setImg]=useState('')
 
   const saveNote = async (e) => {
     e.preventDefault();
 
     if (edit === true) {
-      const updatedata = new FormData()
-      updatedata.append("username", username);
-      updatedata.append("email", email);
-      updatedata.append("password", password);
-      updatedata.append("phone", phone);
-      updatedata.append("role", role);
-      updatedata.append("img", img);
-      updatedata.append("user_id", user_id);
       try {
         const registerData = await axios.put(
           `http://localhost:5555/api/userroutes/updateuser`,
-          // {
-          //   username,
-          //   email,
-          //   password,
-          //   phone,
-          //   role,
-          //   user_id,
-          // }
-          updatedata,
           {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
+            username,
+            email,
+            password,
+            phone,
+            role,
+            user_id,
           }
         );
         getUser();
-        toast.success("Update Successfully");
+        alert("Update Successfully");
         console.log(registerData);
       } catch (error) {
         alert(error);
@@ -87,7 +71,7 @@ function Register() {
         getUser();
         console.log(registerData)
         // if (registerData.status === 200) {
-          toast.success("Register Successfully");
+        alert("Register Successfully");
         console.log(registerData);
         // }
       } catch (error) {
@@ -103,7 +87,7 @@ function Register() {
     setPassword(item.password);
     setUser_id(item.user_id);
     setRole(item.role);
-    setImg(item.img)
+    // setId(item._id);
 
     setEdit(true);
   };
@@ -120,13 +104,13 @@ function Register() {
 
   const DeleteUser = async (item) => {
     {
-      const id = item._id;
+      const id = item.user_id;
       await axios.delete(
         `http://localhost:5555/api/userroutes/deleteuser/${id}`
       );
       getUser();
     }
-    toast.success("Delete Successfully");
+    alert("Delete Successfully");
   };
 
   useEffect(() => {
@@ -145,17 +129,14 @@ function Register() {
               return (
                 <>
                   <div className="userCard">
-                    <Link to={`/userperformance/${item._id}`} className="link">
-                      <div className="userCard-Info">
-                        <img src={item.img} alt="" className="userCard-img" />
-                        <p className="userCard-para">
-                          {item.username} <br />
-                          <span className="userCard-span">{item.role}</span>
-                        </p>
-                      </div>
+                    <div className="userCard-Info">
+                      <img src={item.img} alt="" className="userCard-img" />
+                      <p className="userCard-para">
+                        {item.username} <br />
+                        <span className="userCard-span">{item.role}</span>
+                      </p>
+                    </div>
 
-
-                    </Link>
                     <div className="userCard-btns">
                       <button
                         className="userCard-button edit"
@@ -175,23 +156,19 @@ function Register() {
                       </button>
                     </div>
                   </div>
-
                 </>
               );
             } else {
               return (
                 <>
                   <div className="userCard">
-                    <Link to={`/userperformance/${item._id}`} className="link">
-                      <div className="userCard-Info">
-                        <img src={item.img} alt="" className="userCard-img" />
-                        <p className="userCard-para">
-                          {item.username} <br />
-                          <span className="userCard-span">{item.role}</span>
-                        </p>
-                      </div>
-
-                    </Link>
+                    <div className="userCard-Info">
+                      <img src={item.img} alt="" className="userCard-img" />
+                      <p className="userCard-para">
+                        {item.username} <br />
+                        <span className="userCard-span">{item.role}</span>
+                      </p>
+                    </div>
                     <div className="userCard-btns">
                       <button
                         className="userCard-button edit"
@@ -203,7 +180,6 @@ function Register() {
                       </button>
                     </div>
                   </div>
-
                 </>
               );
             }
