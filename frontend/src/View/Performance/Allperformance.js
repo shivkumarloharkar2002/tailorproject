@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../../Component/Header/Header';
-import './Performance.css';
+import './Allperformance.css';
 import sales from './sales.png';
 import wallet from './wallet.png';
 import recev from './recev.png';
@@ -137,18 +137,20 @@ export default function CombinedPerformance() {
       <div style={{ margin: '130px  0 30px 10px' }} onClick={() => window.history.back()}>
         <img src={back} alt="" className="profile-back-img" />
       </div>
-      <p className="heading-about">Performance</p>
+      <p className="heading-about buttonselect">Performance</p>
 
       {selectedEmployeeId ? (
         <div>
-        
-            <button onClick={() => setSelectedEmployeeId('')}> All Performance</button>
+        <div className='buttonselect'>
+          
+        <button onClick={() => setSelectedEmployeeId('')} className='selectperformance'> All Performance</button>
             <div className="userPerformance-info">
               <p className="userPerformance-info-text">Name: {employeeDetails.username}</p>
               <p className="userPerformance-info-text">Email: {employeeDetails.email}</p>
               <p className="userPerformance-info-text">Phone: {employeeDetails.phone}</p>
               <p className="userPerformance-info-text">Role: {employeeDetails.role}</p>
             </div>
+        </div>
    
           <div className="performance-section">
             <div className="parfom">
@@ -212,26 +214,27 @@ export default function CombinedPerformance() {
         </div>
       ) : (
         <div>
-          <div className="selector">
+          <div className="buttonselect">
             <select
               value={selectedEmployeeId}
               onChange={(e) => setSelectedEmployeeId(e.target.value)}
+              className='selectperformance'
             >
-              <option value="">All</option>
+              <option value="" className='alloption_performance'>All</option>
 
               {employees.map((employee) => (
                 <option key={employee._id} value={employee._id}>
-                  {employee.username}
+                  {employee.username}<br/> {employee.phone}
                 </option>
               ))}
             </select>
           </div>
 
           <div className="performance-section">
-            <p className="numh">All Employees' Performance</p>
+            <p className="numh">All Employee's Performance</p>
             <div className="parfom">
               <div className="hedi">
-                <p className="numh">Total Performance</p>
+                <p className="numh">Today's Performance</p>
               </div>
               <div className="flexp">
                 <div className="rpart">

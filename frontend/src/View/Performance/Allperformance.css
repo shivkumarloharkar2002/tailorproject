@@ -1,0 +1,23 @@
+.selectperformance{
+    border: none;
+    padding: 10px;
+    border-radius:10px;
+    background: rgb(24, 138, 133);
+    background: linear-gradient(180deg, rgba(24, 138, 133, 1) 0%, rgba(144, 203, 203, 1) 10%, rgba(24, 135, 136, 1) 100%);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.buttonselect{
+    width: 80vw;
+    margin:30px auto;
+    /* border: 1px solid red; */
+}
+
+.alloption_performance{
+    border: none;
+}
+
+.heading-about{
+    font-size: 30px;
+}
