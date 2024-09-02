@@ -82,7 +82,7 @@ export default function Performance() {
     <div>
       <Header />
       <div className="profile-back" onClick={() => navigate(-1)}>
-        <img src={back} alt="" className="profile-back-img" />
+        <img src={back} alt="" className="proform-back" />
       </div>
       <p className="heding-about">Performance</p>
       <div className="parfom">
