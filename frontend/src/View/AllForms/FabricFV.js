@@ -218,7 +218,7 @@ export default function FabricFV() {
         </form>
         <div>
           <div className='Fabform_list  List_fab'>
-            <h1 className="center" style={{margin:'40px'}}>Fabric List</h1>
+            <h1 className="center" style={{margin:'30px'}}>Fabric List</h1>
             {
               fabric.reverse().map(
                 (data) => {
