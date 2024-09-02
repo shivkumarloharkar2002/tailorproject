@@ -34,6 +34,7 @@ import ReadymadeFV from "../View/AllForms/ReadymadeFV";
 import Manage from "../View/AllForms/Manage";
 import CombinedPerformance from "../View/Performance/Allperformance";
 import GalleryFV from "../View/AllForms/GalleryFV";
+import StichForm from "../View/StritForm/StritForm";
 
 
 const routes = createBrowserRouter([
@@ -172,6 +173,10 @@ const routes = createBrowserRouter([
   {
     path:'/manage',
     element:<Manage/>
+  },
+  {
+    path:'/stichform',
+    element:<StichForm/>
   }
 ])
 
