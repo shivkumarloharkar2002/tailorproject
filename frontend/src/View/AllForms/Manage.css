@@ -1,13 +1,12 @@
 .MMain{
-    width: 80vw;
+    width: 90vw;
     /* border: 2px solid black; */
     margin: auto;
     height: auto;
-    margin-top: 200px;
+    /* margin-top: 200px; */
 }
 
 .ManageMain{
-   
     text-align: center;
    display: flex;
    flex-wrap: wrap;
@@ -17,4 +16,24 @@
     height: 200px;
     width: 200px;
     /* border: 2px solid; */
+}
+
+.manage_head{
+    margin: 10px;
+    font-size: 30px;
+}
+
+.managecard {
+    text-align: center;
+    display: inline-block;
+    color: black;
+    box-shadow: 1px 1px 16px 1px grey;
+    /* border: 1px solid gray; */
+    border-radius: 15px;
+    margin: 0px;
+    height: 270px;
+    /* min-height: 253px;    */
+    width: 25vw;
+    padding: 10px;
+    align-self: center;
 }

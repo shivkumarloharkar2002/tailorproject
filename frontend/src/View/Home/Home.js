@@ -8,7 +8,7 @@ import img5 from './shopping-bag.png'
 import img6 from './worker.png'
 import img7 from './suit.png'
 import img8 from './dashboard.png'
-
+import upload from './upload.png'
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.js"
 import Header from '../../Component/Header/Header'
@@ -82,20 +82,20 @@ export default function Home() {
                             <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    <Link to='/performance' className="linkH">
+                    <Link to='/allperformance' className="linkH">
                         <div className='HCard'>
                             <img className='Homeimg' src={img8} />
                             <h3 className='HText'>Performance</h3>
                             <h5  className='MD'>See Details </h5>
                         </div>
                     </Link>
-                    {/* <Link to='/manage' className="linkH">
+                    <Link to='/manage' className="linkH">
                         <div className='HCard'>
-                            <img className='Homeimg' src={img8} />
-                            <h3 className='HText'>Manage </h3>
+                            <img className='Homeimg' src={upload} />
+                            <h3 className='HText'>Upload data </h3>
                             <h5  className='MD'>See Details </h5>
                         </div>
-                    </Link> */}
+                    </Link>
                 </div>
 
             </>
