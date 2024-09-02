@@ -258,10 +258,10 @@ export default function ReadymadeFV() {
                             <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4 className='AFh4'>{data.pattern}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4 className='AFh4'>{data.cloth_type}</h4></div>
                           </div>
-                        </div>
-                        <div className="fabCard-btns">
+                        </div><br></br>
+                        {/* <div className="fabCard-btns"> */}
                         <button
-                      className="userCard-button edit"
+                      className="stich_btn edit"
                       onClick={() => {
                         Edit(data);
                       }}
@@ -269,7 +269,7 @@ export default function ReadymadeFV() {
                       Edit
                     </button>
                           <button
-                            className="userCard-button remove"
+                            className="stich_btn remove"
                             onClick={
                               () => {
                                 deletecloth(data)
@@ -279,7 +279,7 @@ export default function ReadymadeFV() {
                             Delete
                           </button>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </>
                   )
                 }

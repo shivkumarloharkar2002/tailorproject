@@ -139,7 +139,7 @@ export default function GalleryFV() {
 <div className='addFabMain'>
         <Header />
         <Link to={"/manage"} className="link">
-                <div style={{ margin: '130px 0 0 10px' }}>
+                <div style={{ margin: '130px 0 -130px 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
                     {/* <h5 className="profile-back-text">Back</h5> */}
                 </div>
@@ -241,10 +241,10 @@ export default function GalleryFV() {
                             {/* <div className='AFcomponents'> <h5 className='AFh5'>Description: </h5><h4>{data.description}</h4></div> */}
 
                           </div>
-                        </div>
-                        <div className="fabCard-btns">
+                        </div><br></br>
+                        {/* <div className="fabCard-btns"> */}
                           <button
-                      className="userCard-button edit"
+                      className="stich_btn edit"
                       onClick={() => {
                         Edit(data);
                       }}
@@ -252,7 +252,7 @@ export default function GalleryFV() {
                       Edit
                     </button>
                           <button
-                            className="userCard-button delete"
+                            className="stich_btn remove"
                             onClick={
                               () => {
                                 deletedata(data)
@@ -262,7 +262,7 @@ export default function GalleryFV() {
                             Delete
                           </button>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </>
                   )
                 }

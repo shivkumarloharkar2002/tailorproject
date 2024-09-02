@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './StritForm.css'
 import axiosInstance from '../../axiosConfing';
 import axios from 'axios'
@@ -33,7 +33,7 @@ export default function StichForm() {
               }
             }
           );
-        //   GetStichdata();
+          GetStichdata();
           console.log(Stichdata);
           toast.success("Updated successfully");
           
@@ -45,7 +45,7 @@ export default function StichForm() {
       formData.append('price', price); // 'price' is a field name
       formData.append('cloth_type', cloth_type); // 'cloth_type' is a field name
       try {
-        const stichsdata = await axiosInstance.post("http://localhost:5555/api/shialiroutes/addshilairate",
+        const stichsdata = await axios.post("http://localhost:5555/api/shialiroutes/addshilairate",
           // {
           // title:title ,
           // color:color,
@@ -69,7 +69,7 @@ export default function StichForm() {
         toast.error(e)
         console.log(e)
       }
-    //   GetStichdata();
+      GetStichdata();
     }
     }
 
@@ -82,13 +82,25 @@ export default function StichForm() {
       }
       //Stich from the form
 
-//   const GetStichdata = async () => {
-//     const stichd = await axiosInstance.get('http://localhost:5555/api/shialiroutes/getallfabric');
-//     setStich(stichd.data.data)
-//     console.log(stichd.data.data)
-//   }
+  const GetStichdata = async () => {
+    const stichd = await axios.get('http://localhost:5555/api/shialiroutes/allrates');
+    setStich(stichd.data.data)
+    console.log(stichd.data.data)
+  }
 
+  const deleteStich= async (data) => {
+    const id = data._id;
+    const deletedata = await axios.delete(`http://localhost:5555/api/shialiroutes/deleterate/${id}`)
+    toast.error(deletedata.data.msg)
 
+    GetStichdata();
+  }
+
+useEffect(
+    ()=>{
+        GetStichdata();
+    },[]
+)
   return (
    <>
    <Header/>
@@ -110,7 +122,7 @@ export default function StichForm() {
         <option value="safari">Suit Safari</option>
     </select><br></br>
     <label className="Stich_label">Price</label>:
-    <input type="number" placeholder="Enter Stich Price"  className='stich_input'
+    <input type="Number" placeholder="Enter Stich Price"  className='stich_input'
     onChange={(e)=>{
         setPrice(e.target.value);
     }}
@@ -135,9 +147,11 @@ export default function StichForm() {
                         <div className='AFDIV' >
                           <div className='AFinfo'>
                             <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4 className='AFh4'>{data.cloth_type}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>Rs.{data.price}</h4></div>
                           </div>
-                        </div>
+                        </div><br></br>
+                        <button className='edit stich_btn' onClick={()=>{Edit(data)}}>Edit</button>
+                        <button className='remove stich_btn' onClick={()=>{deleteStich(data)}}>Delete</button>
                       </div>
                     </>
                   )
