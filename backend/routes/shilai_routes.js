@@ -11,5 +11,5 @@ shilai_rateRoutes.put("/updateshilairate",Shilai_rateUpdate)
 
 shilai_rateRoutes.get("/allrates",Allshilai_rate)
 
-shilai_rateRoutes.delete("/updateshilairate/:id",ShilaiRate_delte)
+shilai_rateRoutes.delete("/deleterate/:id",ShilaiRate_delte)
 
