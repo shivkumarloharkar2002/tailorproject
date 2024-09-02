@@ -23,11 +23,15 @@ export default function Orders() {
     const [fabricdata, setfabricdata] = useState({})
     const [count, setCount] = useState(1)
     const Incre = () => {
-        setCount(count + 1)
+        if (count >= 0) {
+            setCount(count + 1)
+        }
     }
 
     const Decre = () => {
-        setCount(count - 1)
+        if (count > 1) {
+            setCount(count - 1)
+        }
     }
 
     const userData = JSON.parse(localStorage.getItem('user'));
@@ -226,7 +230,7 @@ export default function Orders() {
 
 
                                 <div className='profile_Discount'>
-                                    <h6>Discount:-<input type='number' className='Discount' placeholder='Discount' onChange={handleDiscountChange} /></h6>
+                                    <h6>Discount:-<input type='number' className='Discount' min={0} placeholder='Discount' onChange={handleDiscountChange} /></h6>
                                     {/* targetDate */}
                                     <h6>TargetDate:-
                                         <input type="date" id="date" name="date" onChange={(e) => {
