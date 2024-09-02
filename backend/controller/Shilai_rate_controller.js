@@ -53,3 +53,12 @@ export const ShilaiRate_delte = async (req, res) => {
         console.log(e)
     }
 }
+
+export const Allshilai_rate = async(req,res)=>{
+    const Alldata= await ShilaiRate.find()
+    res.json({
+        success:true,
+        msg:"all shilai rata",
+        data:Alldata
+    })
+}
