@@ -3,6 +3,8 @@ import './FabricFV.css'
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import Header from '../../Component/Header/Header';
+import back from '../../Image/back.png'
+import { Link } from 'react-router-dom'
 
 
 export default function GalleryFV() {
@@ -135,6 +137,12 @@ export default function GalleryFV() {
 
 <div className='addFabMain'>
         <Header />
+        <Link to={"/manage"} className="link">
+                <div style={{ margin: '130px 0 0 10px' }}>
+                    <img src={back} alt="" className="Profile-back-img" /><br></br>
+                    {/* <h5 className="profile-back-text">Back</h5> */}
+                </div>
+            </Link>
         <form className='FabformFV_main' encType="multipart/form-data" method="post">
           <h1 className="center">Gallery</h1>
 

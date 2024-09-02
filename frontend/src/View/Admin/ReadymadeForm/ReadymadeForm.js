@@ -68,7 +68,7 @@ export default function ReadymadeForm() {
             <Header />
 
             <Link to={"/readymade"} className="link">
-                <div style={{ margin: '130px 0 0 10px' }}>
+                <div style={{ margin: '130px 0 10px 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
                     {/* <h5 className="profile-back-text">Back</h5> */}
                 </div>
