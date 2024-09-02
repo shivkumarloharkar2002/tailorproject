@@ -11,7 +11,7 @@
     justify-content: space-around;
     text-align: center;
     padding: 5%;
-    width: 80vw;
+    width: 70vw;
     margin:20px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 11px 2px grey;
@@ -114,6 +114,6 @@
     color: rgb(104, 201, 157);
 }
 
-.ready_space{
+/* .ready_space{
    
-}
+} */

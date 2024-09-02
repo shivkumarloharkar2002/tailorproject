@@ -58,9 +58,7 @@
 
 
 
-.AFDIV {
-  display: flex;
-}
+
 
 .Fabform_main {
   position: relative;
@@ -149,76 +147,3 @@
   border: 1px solid black;
 }
 
-@media screen and (max-width:900px) {
-
-  .AFh5 {
-    width: 30vw !important;
-    /* border: 1px solid black; */
-
-  }
-
-  .AFinfo {
-    width: 40vw;
-    /* border: 1px solid black; */
-  }
-
-  .delete {
-
-    background-color: red;
-    color: white;
-    font-size: 20px;
-    line-height: 40px;
-    border: none;
-    font-weight: 700;
-    border: 11px solid blue;
-    width: auto;
-    margin: auto;
-
-  }
-}
-
-.AFmain {
-  /* border: 1px solid white; */
-  border-radius: 10px;
-  margin: 10px;
-  background-color: rgba(36, 148, 148, 0.467);
-  box-shadow: 0px 0px 10px 1px rgba(170, 171, 187, 0.37);
-
-}
-
-.AFimg {
-  margin: 0 20px;
-  border-radius: 10px;
-  /* border: 1px solid grey; */
-  height: 200px;
-  width: 200px;
-}
-
-.AFh5 {
-  width: 7.5vw;
-  /* border: 1px solid; */
-  padding: 4px;
-}
-
-.AFcomponents {
-  justify-content: space-between;
-  display: flex;
-}
-
-.fabCard-btns {
-  /* border: 1px solid ; */
-  width: 14vw !important;
-  margin: 10px auto;
-}
-
-.delete {
-
-  background-color: red;
-  color: white;
-  font-size: 20px;
-  line-height: 40px;
-  border: none;
-  font-weight: 700;
-  width: auto;
-
-}

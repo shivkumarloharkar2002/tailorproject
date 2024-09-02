@@ -3,6 +3,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import './FabricFV.css'
 import axios from 'axios';
 import Header from '../../Component/Header/Header';
+import { Link } from 'react-router-dom';
+import back from '../../Image/back.png';
+
 
 
 export default function FabricFV() {
@@ -139,6 +142,12 @@ export default function FabricFV() {
     <>
       <div className='addFabMain'>
         <Header />
+        <Link to={"/manage"} className="link">
+                <div style={{ margin: '130px 0 -130px 10px' }}>
+                    <img src={back} alt="" className="Profile-back-img" /><br></br>
+                    {/* <h5 className="profile-back-text">Back</h5> */}
+                </div>
+            </Link>
         <form className='FabformFV_main' encType="multipart/form-data" method="post">
           <h1 className="center">Fabric</h1>
 
@@ -209,7 +218,7 @@ export default function FabricFV() {
         </form>
         <div>
           <div className='Fabform_list  List_fab'>
-            <h1 className="center">Fabric List</h1>
+            <h1 className="center" style={{margin:'40px'}}>Fabric List</h1>
             {
               fabric.reverse().map(
                 (data) => {
@@ -223,11 +232,11 @@ export default function FabricFV() {
                           </div>
                           <div className='AFinfo'>
 
-                            <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.color}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4>{data.fabric_type}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4 className='AFh4'>{data.color}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4 className='AFh4'>{data.fabric_type}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4 className='AFh4'>{data.pattern}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4 className='AFh4'>{data.cloth_type}</h4></div>
                           </div>
                         </div>
                         <div className="fabCard-btns">
@@ -240,7 +249,7 @@ export default function FabricFV() {
                       Edit
                     </button>
                           <button
-                            className="userCard-button delete"
+                            className="userCard-button remove"
                             onClick={
                               () => {
                                 deleteFabric(data)

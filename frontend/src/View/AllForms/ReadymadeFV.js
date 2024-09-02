@@ -19,11 +19,46 @@ export default function ReadymadeFV() {
     const [size, setSize] = useState('');
     const [des, setDes] = useState('');
     const [offer, setOffer] = useState('');
-    const [readymade_img, setImg] = useState('')
+    const [readymade_img, setImg] = useState('');
+    const [ id , setId] = useState('')
+    const [edit, setEdit] = useState(false);
+
+
 
     const saveReadymade = async (e) => {
         e.preventDefault()
 
+        if (edit === true) {
+          const updatedata = new FormData()
+          updatedata.append('title', title);
+          updatedata.append('price', price);
+          updatedata.append('color', color);
+          updatedata.append('cloth_type', cloth_type);
+          updatedata.append('pattern', pattern);
+          updatedata.append('size', size);
+          updatedata.append('des', des);
+          updatedata.append('offer', offer);
+          updatedata.append('readymade_img', readymade_img);
+          updatedata.append('id', id);
+
+
+          try{
+            const updateready = await axios.put(
+              `http://localhost:5555/api/readymaderoutes/updatereadymade/`,
+              updatedata,
+              {
+                headers: {
+                  'Content-Type': 'multipart/form-data'
+                }
+              }
+            )
+            GetReadydata();
+            console.log(updateready);
+            toast.success("Updated successfully");
+          }catch(error){
+            toast.error(error)
+          }
+        }else{
         const formData = new FormData();
         formData.append('title', title);
         formData.append('price', price);
@@ -57,10 +92,27 @@ export default function ReadymadeFV() {
             toast.success(CreateReadymadeData.data.msg)
         }
         catch (e) {
+          toast.error(e)
             console.log(e)
         }
+        GetReadydata()
     }
+  }
 
+    const Edit = async(data)=>{
+     
+      setTitle(data.title);
+      setColor(data.color);
+      setPrice(data.price);
+      setCloth_type(data.cloth_type);
+      setPattern(data.pattern);
+      setSize(data.size);
+      setDes(data.des);
+      setOffer(data.offer);
+      setImg(data.readymade_img);
+      setId(data._id)
+      setEdit(true)
+    }
 
     const GetReadydata = async () => {
         const readymaded = await axios.get('http://localhost:5555/api/readymaderoutes/getreadymadedata');
@@ -72,7 +124,7 @@ export default function ReadymadeFV() {
     
       const deletecloth = async (data) => {
         const id = data._id;
-        const deletedata = await axios.delete(`http://localhost:5555/api/${id}`)
+        const deletedata = await axios.delete(`http://localhost:5555/api/readymaderoutes/deletereadymade/${id}`)
         toast.error(deletedata.data.msg)
     
         GetReadydata();
@@ -88,8 +140,8 @@ export default function ReadymadeFV() {
         <>
             <Header />
             <div className='addFabMain'>
-            <Link to={"/readymade"} className="link">
-                <div style={{ margin: '130px 0 0 10px' }}>
+            <Link to={"/manage"} className="link">
+                <div style={{ margin: '130px 0 -130px 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
                     {/* <h5 className="profile-back-text">Back</h5> */}
                 </div>
@@ -101,36 +153,36 @@ export default function ReadymadeFV() {
 
 
                 <label className='fab_label'>Name</label>:
-                <input type='text' placeholder='Cloth  Name ' className='fab_input' onChange={(e) => {
+                <input type='text' placeholder='Cloth  Name ' value={title} className='fab_input' onChange={(e) => {
                     setTitle(e.target.value)
                 }} /><br />
 
 
 
                 <label className='fab_label'>Description</label>:
-                <input type='text' placeholder='Description ' className='fab_input' onChange={(e) => {
+                <input type='text' placeholder='Description ' value={des} className='fab_input' onChange={(e) => {
                     setDes(e.target.value)
                 }} /><br />
 
                 <label className='fab_label'>Price</label>:
-                <input type='text' placeholder='Img Price ' className='fab_input' onChange={(e) => {
+                <input type='text' placeholder='Img Price ' value={price} className='fab_input' onChange={(e) => {
                     setPrice(e.target.value)
                 }} /><br />
 
                 <label className='fab_label'>Color</label>:
-                <input type='text' placeholder='Img Color ' className='fab_input' onChange={(e) => {
+                <input type='text' placeholder='Img Color ' value={color} className='fab_input' onChange={(e) => {
                     setColor(e.target.value)
                 }} /><br />
 
                 <label className='fab_label'>Offer</label>:
-                <input type='text' placeholder='Offers  ' className='fab_input' onChange={(e) => {
+                <input type='text' placeholder='Offers' value={offer} className='fab_input' onChange={(e) => {
                     setOffer(e.target.value)
                 }} /><br />
 
                 <label className='fab_label'>Cloth Type</label>:
-                <select className='select'
+                <select className='select' value={cloth_type}
                     onChange={(e) => {
-                        setCloth_type(e.target.value)
+                      setCloth_type(e.target.value)
                     }
                     }>
                     <option value="Select cloth_type" aria-disabled>  Select Cloth Type</option>
@@ -143,7 +195,7 @@ export default function ReadymadeFV() {
                 </select><br />
 
                 <label className='fab_label'>Pattern</label>:
-                <select className='select'
+                <select className='select' value={pattern}
                     onChange={(e) => {
                         setPattern(e.target.value)
                     }
@@ -156,7 +208,7 @@ export default function ReadymadeFV() {
                 </select><br />
 
                 <label className='fab_label'>Size</label>:
-                <select className='select'
+                <select className='select' value={size}
                     onChange={(e) => {
                         setSize(e.target.value)
                     }
@@ -177,8 +229,10 @@ export default function ReadymadeFV() {
 
                 {/* <input type='file'/> */}
 
-                <button className='Fab_btn' onClick={saveReadymade}>ADD</button>
-
+                
+{edit === false ? (<button className='Fab_btn'
+            onClick={saveReadymade}>Add</button>):(<button className='Fab_btn'
+              onClick={saveReadymade}>Update</button>)}
 
             </form>
 
@@ -194,25 +248,28 @@ export default function ReadymadeFV() {
                         <h2 style={{ padding: '0 20px' }}>{data.title}</h2>
                         <div className='AFDIV' >
                           <div>
-                            <img src={data.img1} className='AFimg' />
+                            <img src={data.img} className='AFimg' />
                           </div>
                           <div className='AFinfo'>
 
-                            <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.color}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4>{data.fabric_type}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4 className='AFh4'>{data.color}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Size: </h5><h4 className='AFh4'>{data.size}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4 className='AFh4'>{data.pattern}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4 className='AFh4'>{data.cloth_type}</h4></div>
                           </div>
                         </div>
                         <div className="fabCard-btns">
-                          {/* <button
+                        <button
                       className="userCard-button edit"
+                      onClick={() => {
+                        Edit(data);
+                      }}
                     >
                       Edit
-                    </button> */}
+                    </button>
                           <button
-                            className="userCard-button delete"
+                            className="userCard-button remove"
                             onClick={
                               () => {
                                 deletecloth(data)

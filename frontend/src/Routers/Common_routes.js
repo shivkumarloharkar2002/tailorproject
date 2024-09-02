@@ -32,6 +32,8 @@ import UserPerformance from "../View/Performance/UserPerformance"
 import FabricFV from "../View/AllForms/FabricFV";
 import ReadymadeFV from "../View/AllForms/ReadymadeFV";
 import Manage from "../View/AllForms/Manage";
+import CombinedPerformance from "../View/Performance/Allperformance";
+import GalleryFV from "../View/AllForms/GalleryFV";
 
 
 const routes = createBrowserRouter([
@@ -144,6 +146,10 @@ const routes = createBrowserRouter([
     element: <UserPerformance />
   },
   {
+    path:'/allperformance',
+    element:<CombinedPerformance/>
+  },
+  {
     path: '/updatestatus/:id',
     element: <Update_status />
   },
@@ -158,6 +164,10 @@ const routes = createBrowserRouter([
   {
     path:'/readymadedetails',
     element:<ReadymadeFV/>
+  },
+  {
+    path:'/gallerydetails',
+    element:<GalleryFV/>
   },
   {
     path:'/manage',

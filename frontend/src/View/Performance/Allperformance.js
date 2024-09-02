@@ -134,76 +134,81 @@ export default function CombinedPerformance() {
   return (
     <div>
       <Header />
-      <div className="profile-back" onClick={() => window.history.back()}>
+      <div style={{ margin: '130px  0 30px 10px' }} onClick={() => window.history.back()}>
         <img src={back} alt="" className="profile-back-img" />
       </div>
       <p className="heading-about">Performance</p>
 
       {selectedEmployeeId ? (
         <div>
+        
             <button onClick={() => setSelectedEmployeeId('')}> All Performance</button>
-          <div className="employee-details">
-            <p className="userPerformance-info-text">Name: {employeeDetails.username}</p>
-            <p className="userPerformance-info-text">Email: {employeeDetails.email}</p>
-            <p className="userPerformance-info-text">Phone: {employeeDetails.phone}</p>
-            <p className="userPerformance-info-text">Role: {employeeDetails.role}</p>
-          </div>
-
+            <div className="userPerformance-info">
+              <p className="userPerformance-info-text">Name: {employeeDetails.username}</p>
+              <p className="userPerformance-info-text">Email: {employeeDetails.email}</p>
+              <p className="userPerformance-info-text">Phone: {employeeDetails.phone}</p>
+              <p className="userPerformance-info-text">Role: {employeeDetails.role}</p>
+            </div>
+   
           <div className="performance-section">
-            <div className="heading">
-              <p className="numh">Today's Performance</p>
-            </div>
-            <div className="flexp">
-              <div className="rpart">
-                <img className="icon" src={sales} alt="Sales" />
-                <p className="num">₹{individualData.userTodayAmount?.toFixed(2)}</p>
-                <p className="numi">Total Sales</p>
-              </div>
-              <div className="jpart">
-                <img className="icon" src={wallet} alt="Wallet" />
-                <p className="num">₹{individualData.userTodayAmount?.toFixed(2)}</p>
-                <p className="numi">Payments Received</p>
-              </div>
-              <div className="ppart">
-                <img className="icon" src={recev} alt="Received" />
-                <p className="num">{individualData.userTodayPending}</p>
-                <p className="numi">Orders Received</p>
-              </div>
-              <div className="npart">
-                <img className="icon" src={goods} alt="Goods" />
-                <p className="num">{individualData.userTodayComplete}</p>
-                <p className="numi">Orders Delivered</p>
-              </div>
-            </div>
-            <div className="performance-section">
-              <div className="heading">
-                <p className="numh">Total Performance</p>
+            <div className="parfom">
+              <div className="hedi">
+                <p className="numh">Today's Performance</p>
               </div>
               <div className="flexp">
                 <div className="rpart">
                   <img className="icon" src={sales} alt="Sales" />
-                  <p className="num">₹{individualData.userTotalAmount?.toFixed(2)}</p>
+                  <p className="num">₹{individualData.userTodayAmount?.toFixed(2)}</p>
                   <p className="numi">Total Sales</p>
                 </div>
                 <div className="jpart">
                   <img className="icon" src={wallet} alt="Wallet" />
-                  <p className="num">₹{individualData.userTotalAmount?.toFixed(2)}</p>
+                  <p className="num">₹{individualData.userTodayAmount?.toFixed(2)}</p>
                   <p className="numi">Payments Received</p>
                 </div>
                 <div className="ppart">
                   <img className="icon" src={recev} alt="Received" />
-                  <p className="num">{individualData.userTotalPending}</p>
+                  <p className="num">{individualData.userTodayPending}</p>
                   <p className="numi">Orders Received</p>
                 </div>
                 <div className="npart">
                   <img className="icon" src={goods} alt="Goods" />
-                  <p className="num">{individualData.userTotalComplete}</p>
+                  <p className="num">{individualData.userTodayComplete}</p>
                   <p className="numi">Orders Delivered</p>
                 </div>
               </div>
             </div>
+            <div className="performance-section">
+              <div className="parfom">
+                <div className="hedi">
+                  <p className="numh">Total Performance</p>
+                </div>
+                <div className="flexp">
+                  <div className="rpart">
+                    <img className="icon" src={sales} alt="Sales" />
+                    <p className="num">₹{individualData.userTotalAmount?.toFixed(2)}</p>
+                    <p className="numi">Total Sales</p>
+                  </div>
+                  <div className="jpart">
+                    <img className="icon" src={wallet} alt="Wallet" />
+                    <p className="num">₹{individualData.userTotalAmount?.toFixed(2)}</p>
+                    <p className="numi">Payments Received</p>
+                  </div>
+                  <div className="ppart">
+                    <img className="icon" src={recev} alt="Received" />
+                    <p className="num">{individualData.userTotalPending}</p>
+                    <p className="numi">Orders Received</p>
+                  </div>
+                  <div className="npart">
+                    <img className="icon" src={goods} alt="Goods" />
+                    <p className="num">{individualData.userTotalComplete}</p>
+                    <p className="numi">Orders Delivered</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          
+
         </div>
       ) : (
         <div>
@@ -213,7 +218,7 @@ export default function CombinedPerformance() {
               onChange={(e) => setSelectedEmployeeId(e.target.value)}
             >
               <option value="">All</option>
-              
+
               {employees.map((employee) => (
                 <option key={employee._id} value={employee._id}>
                   {employee.username}
@@ -223,33 +228,9 @@ export default function CombinedPerformance() {
           </div>
 
           <div className="performance-section">
-            <div className="heading">
-              <p className="numh">All Employees' Performance</p>
-            </div>
-            <div className="flexp">
-              <div className="rpart">
-                <img className="icon" src={sales} alt="Sales" />
-                <p className="num">₹{allData.amount?.toFixed(2)}</p>
-                <p className="numi">Total Sales</p>
-              </div>
-              <div className="jpart">
-                <img className="icon" src={wallet} alt="Wallet" />
-                <p className="num">₹{allData.amountToday?.toFixed(2)}</p>
-                <p className="numi">Payments Received</p>
-              </div>
-              <div className="ppart">
-                <img className="icon" src={recev} alt="Received" />
-                <p className="num">{allData.todayPending}</p>
-                <p className="numi">Orders Received</p>
-              </div>
-              <div className="npart">
-                <img className="icon" src={goods} alt="Goods" />
-                <p className="num">{allData.todayComplete}</p>
-                <p className="numi">Orders Delivered</p>
-              </div>
-            </div>
-            <div className="performance-section">
-              <div className="heading">
+            <p className="numh">All Employees' Performance</p>
+            <div className="parfom">
+              <div className="hedi">
                 <p className="numh">Total Performance</p>
               </div>
               <div className="flexp">
@@ -260,18 +241,47 @@ export default function CombinedPerformance() {
                 </div>
                 <div className="jpart">
                   <img className="icon" src={wallet} alt="Wallet" />
-                  <p className="num">₹{allData.amount?.toFixed(2)}</p>
+                  <p className="num">₹{allData.amountToday?.toFixed(2)}</p>
                   <p className="numi">Payments Received</p>
                 </div>
                 <div className="ppart">
                   <img className="icon" src={recev} alt="Received" />
-                  <p className="num">{allData.totalPending}</p>
+                  <p className="num">{allData.todayPending}</p>
                   <p className="numi">Orders Received</p>
                 </div>
                 <div className="npart">
                   <img className="icon" src={goods} alt="Goods" />
-                  <p className="num">{allData.totalComplete}</p>
+                  <p className="num">{allData.todayComplete}</p>
                   <p className="numi">Orders Delivered</p>
+                </div>
+              </div>
+            </div>
+            <div className="performance-section">
+              <div className="parfom">
+                <div className="hedi">
+                  <p className="numh">Total Performance</p>
+                </div>
+                <div className="flexp">
+                  <div className="rpart">
+                    <img className="icon" src={sales} alt="Sales" />
+                    <p className="num">₹{allData.amount?.toFixed(2)}</p>
+                    <p className="numi">Total Sales</p>
+                  </div>
+                  <div className="jpart">
+                    <img className="icon" src={wallet} alt="Wallet" />
+                    <p className="num">₹{allData.amount?.toFixed(2)}</p>
+                    <p className="numi">Payments Received</p>
+                  </div>
+                  <div className="ppart">
+                    <img className="icon" src={recev} alt="Received" />
+                    <p className="num">{allData.totalPending}</p>
+                    <p className="numi">Orders Received</p>
+                  </div>
+                  <div className="npart">
+                    <img className="icon" src={goods} alt="Goods" />
+                    <p className="num">{allData.totalComplete}</p>
+                    <p className="numi">Orders Delivered</p>
+                  </div>
                 </div>
               </div>
             </div>
