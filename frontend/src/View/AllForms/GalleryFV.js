@@ -112,15 +112,16 @@ export default function GalleryFV() {
     // get api
     let GetGalleryData = async () => {
         let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
-        setGallery(gallery.data.data)
         console.log(gallery.data.data)
+        setGallery(gallery.data.data)
+      
     }
 
 
     //   delete api
     const deletedata = async (data) => {
         const id = data._id;
-        const deleteGdata = await axios.delete(`http://localhost:5555/api/gallaryroutes/deleteGallery /${id}`)
+        const deleteGdata = await axios.delete(`http://localhost:5555/api/gallaryroutes/deleteGallery/${id}`)
         toast.error(deleteGdata.data.msg)
 
         // get api stored in thise variable
@@ -129,7 +130,7 @@ export default function GalleryFV() {
     useEffect(
         ()=>{
             GetGalleryData(); 
-        }
+        },[]
     )
 
     return (
@@ -218,7 +219,7 @@ export default function GalleryFV() {
 
         <div>
           <div className='Fabform_list  List_fab'>
-            <h1 className="center">Gallery List</h1>
+            <h1 className="center" style={{margin:'30px'}}rae>Gallery List</h1>
             {
               gallery.reverse().map(
                 (data) => {
@@ -228,7 +229,7 @@ export default function GalleryFV() {
                         <h2 style={{ padding: '0 20px' }}>{data.title}</h2>
                         <div className='AFDIV' >
                           <div>
-                            <img src={data.gallery_img} className='AFimg' />
+                            <img src={data.img} className='AFimg' />
                           </div>
                           <div className='AFinfo'>
 
