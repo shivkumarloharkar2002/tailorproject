@@ -17,22 +17,37 @@ function Register() {
   // const [id, setId] = useState();
   const [edit, setEdit] = useState(false);
 
-  const[img,setImg]=useState('')
+  const [img, setImg] = useState('')
 
   const saveNote = async (e) => {
     e.preventDefault();
 
     if (edit === true) {
+
+      const updatedata = new FormData()
+      updatedata.append("username", username);
+      updatedata.append("email", email);
+      updatedata.append("password", password);
+      updatedata.append("phone", phone);
+      updatedata.append("role", role);
+      updatedata.append("img", img);
+      updatedata.append("user_id", user_id);
       try {
         const registerData = await axios.put(
           `http://localhost:5555/api/userroutes/updateuser`,
+          // {
+          // username,
+          // email,
+          // password,
+          // phone,
+          // role,
+          // user_id,
+          // }
+          updatedata,
           {
-            username,
-            email,
-            password,
-            phone,
-            role,
-            user_id,
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
           }
         );
         getUser();
