@@ -20,8 +20,8 @@
   }
 
   .Fabform_list{
-    margin-top: 25%;
-    height: 98vh;
+    margin-top: 23%;
+    height: 95vh;
     width: 40vw;
     color: white;
     border-radius: 10px;
@@ -30,14 +30,15 @@
   }
 
   .addFabMain{
-    background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
-    background-size: cover;
+    width: 90vw;
+    /* background: url("https://t3.ftcdn.net/jpg/02/85/23/86/360_F_285238615_EkyyCQMQZCMzgBZGcKzw1k4819kT6bBB.jpg") no-repeat;
+    background-size: cover; */
   }
 
   @media screen and (max-width:900px) {
     .FabformFV_main {
       width: 100vw !important;
-  
+       margin-top: 45%;
     }
   
     .main_fab_form {
@@ -87,4 +88,89 @@
     .AFDIV {
       display: inline-block !important;
     }
+  }
+
+  .AFDIV {
+    display: flex;
+  }
+
+  @media screen and (max-width:900px) {
+
+    .AFh5 {
+      width: 30vw !important;
+      /* border: 1px solid black; */
+  
+    }
+  
+    .AFinfo {
+      width: 40vw;
+      /* border: 1px solid black; */
+    }
+  
+    .delete {
+  
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      line-height: 40px;
+      border: none;
+      font-weight: 700;
+      border: 11px solid blue;
+      width: auto;
+      margin: auto;
+  
+    }
+  }
+  
+  .AFmain {
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    margin: 10px;
+    background-color: rgba(36, 148, 148, 0.467);
+    box-shadow: 0px 0px 10px 1px rgba(170, 171, 187, 0.37);
+  
+  }
+  
+  .AFimg {
+    margin: 0 20px;
+    border-radius: 10px;
+    /* border: 1px solid grey; */
+    height: 200px;
+    width: 200px;
+  }
+  
+  .AFh5 {
+    width: 7.5vw;
+    /* border: 1px solid; */
+    padding: 4px;
+  }
+  .AFh4{
+    width:3vw;
+    /* border: 1px solid; */
+    padding: 4px;
+  }
+  
+  .AFcomponents {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+    /* border: 4px solid black; */
+  }
+  
+  .fabCard-btns {
+    /* border: 1px solid ; */
+    width: 14vw !important;
+    margin: 10px auto;
+  }
+  
+  .delete {
+  
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    border: none;
+    font-weight: 700;
+    width: auto;
+  
   }
