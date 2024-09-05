@@ -30,6 +30,7 @@ export default function AddCustomer() {
       );
       const id =customerData.data.data._id
 
+    
       // if (registerData.status === 200) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
         toast.success("Customer Added Successfully");

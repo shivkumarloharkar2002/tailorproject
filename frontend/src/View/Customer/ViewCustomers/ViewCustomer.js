@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import back from "../../../Image/back.png";
 import Header from "../../../Component/Header/Header";
 import axios from "axios";
+// import moment from "moment";
 import { useState, useEffect } from "react";
 
 export default function ViewCustomer() {
@@ -21,13 +22,43 @@ export default function ViewCustomer() {
   };
 
   const searchData = getCustomerData.filter((getcustomer) => {
-    return getcustomer.name.toLowerCase().includes(search.toLowerCase());
+    return getcustomer.name.toLowerCase().includes(search.toLowerCase())
+    // getcustomer.phone.toLowerCase().includes(search.toLowerCase()) 
     
   });
 
+
+  //filter
+
+  
+    // const [filterData, setFilterData] = useState([]);
+
+    // const filterDataFn = () => {
+    //     let filtered = getCustomerData;
+
+    //     console.log('Before Filtering:', filtered);
+
+        // Apply search filter
+      //   if (search) {
+      //       filtered = filtered.filter((data) => {
+      //           const customerName = data.customer_id?.name || "Unknown Customer";
+      //           const customerNo = data.customer_id?.phone || "Unknown Customer";
+      //           return (
+      //               customerName.toLowerCase().includes(search.toLowerCase()) ||
+      //               customerNo.toLowerCase().includes(search.toLowerCase())
+      //           );
+      //       });
+      //   }
+
+      //   console.log('After Search Filtering:', filtered);
+      //   setFilterData(filtered);
+      // }
+
   useEffect(() => {
+    // filterDataFn();
     getUser();
-  }, []);
+  },[])
+  //  [search , getCustomerData]);
 
   return (
     <>
@@ -60,11 +91,11 @@ export default function ViewCustomer() {
       <div className="invoice-shortCards">
         {searchData.reverse().map((info) => {
           
-           const customerNo = info.customer_id?.phone || "Unknown Customer";
+          //  const customerNo = info.customer_id?.phone || "Unknown Customer";
           return (
             <>
               {/* <Link to='/seecustomer_details'> */}
-              <SearchCard  key={info._id} name={info.name}  date={info.createdAt}  phone={customerNo} id={info._id}/>
+              <SearchCard  key={info._id} name={info.name}  date={info.createdAt}  phone={info.phone} id={info._id}/>
 
               {/* </Link>  */}
             </>
