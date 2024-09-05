@@ -51,15 +51,24 @@ export const AllCustomerdata = async (req, res) => {
 }
 
 export const Onecustomer = async (req,res)=>{
-    const { id } = req.params;
+    const { name , phone } = req.body;
     try{
         
-        const OneD = await Customer.findOne({ _id: id })
+        const OneD = await Customer.findOne({ 
+            name: name ,
+            phone:phone
+         })
+         if(OneD){
+            res.json({
+                msg:`${name} is already Registerd see on view customer `
+            })
+         }
+     else{
         res.json({
-            success: true,
-            data: OneD,
-            msg: `${id} id details`
+             Success:false,
+             msg:"Register Now"
         })
+     }
     }
     catch(e){
         console.log(e)
