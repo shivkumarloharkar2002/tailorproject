@@ -234,7 +234,7 @@ export default function GalleryFV() {
                           <div className='AFinfo'>
 
                             <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.Color}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>₹{data.price}/-</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Size: </h5><h4>{data.size}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>

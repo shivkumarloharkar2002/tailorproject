@@ -137,21 +137,22 @@ export default function CombinedPerformance() {
       <div style={{ margin: '130px  0 30px 10px' }} onClick={() => window.history.back()}>
         <img src={back} alt="" className="profile-back-img" />
       </div>
-      <p className="heading-about buttonselect">Performance</p>
 
       {selectedEmployeeId ? (
         <div>
-        <div className='buttonselect'>
-          
-        <button onClick={() => setSelectedEmployeeId('')} className='selectperformance'> All Performance</button>
-            <div className="userPerformance-info">
-              <p className="userPerformance-info-text">Name: {employeeDetails.username}</p>
-              <p className="userPerformance-info-text">Email: {employeeDetails.email}</p>
-              <p className="userPerformance-info-text">Phone: {employeeDetails.phone}</p>
-              <p className="userPerformance-info-text">Role: {employeeDetails.role}</p>
-            </div>
-        </div>
-   
+          <div className='buttonselector'>
+            <p className="buttonselect">Performance</p>
+
+            <button onClick={() => setSelectedEmployeeId('')} className='selectperformance'> All Performance</button>
+
+          </div>
+          <div className="userPerformance-info">
+            <p className="userPerformance-info-text">Name: <span className="userPerformance-info-span">{employeeDetails.username}</span></p>
+            <p className="userPerformance-info-text">Email: <span className="userPerformance-info-span">{employeeDetails.email}</span></p>
+            <p className="userPerformance-info-text">Phone: <span className="userPerformance-info-span">{employeeDetails.phone}</span></p>
+            <p className="userPerformance-info-text">Role: <span className="userPerformance-info-span">{employeeDetails.role}</span></p>
+          </div>
+
           <div className="performance-section">
             <div className="parfom">
               <div className="hedi">
@@ -214,7 +215,8 @@ export default function CombinedPerformance() {
         </div>
       ) : (
         <div>
-          <div className="buttonselect">
+          <div className="buttonselector">
+            <p className="buttonselect">Performance:</p>
             <select
               value={selectedEmployeeId}
               onChange={(e) => setSelectedEmployeeId(e.target.value)}
@@ -223,8 +225,8 @@ export default function CombinedPerformance() {
               <option value="" className='alloption_performance'>All</option>
 
               {employees.map((employee) => (
-                <option key={employee._id} value={employee._id}>
-                  {employee.username}<br/> {employee.phone}
+                <option key={employee._id} value={employee._id} className='alloption_performance-option'>
+                  {employee.username}<br /> {employee.phone}
                 </option>
               ))}
             </select>
