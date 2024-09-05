@@ -22,6 +22,7 @@ export default function ViewCustomer() {
 
   const searchData = getCustomerData.filter((getcustomer) => {
     return getcustomer.name.toLowerCase().includes(search.toLowerCase());
+    
   });
 
   useEffect(() => {
@@ -58,16 +59,12 @@ export default function ViewCustomer() {
 
       <div className="invoice-shortCards">
         {searchData.reverse().map((info) => {
+          
+           const customerNo = info.customer_id?.phone || "Unknown Customer";
           return (
             <>
               {/* <Link to='/seecustomer_details'> */}
-              <SearchCard
-                name={info.name}
-                date={info.createdAt}
-                phone={info.phone}
-                // price={info.price}
-                id={info._id}
-              />
+              <SearchCard  key={info._id} name={info.name}  date={info.createdAt}  phone={customerNo} id={info._id}/>
 
               {/* </Link>  */}
             </>
