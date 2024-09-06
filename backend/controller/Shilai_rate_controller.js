@@ -23,13 +23,13 @@ export const Shilai_rateUpdate = async (req, res) => {
     try {
       const  updatedata = await ShilaiRate.updateOne({ _id: id }, {
             $set: {
-                "cloth_type": cloth_type,
-                "rate": rate
+                cloth_type: cloth_type,
+                rate: rate
             }
         })
         res.json({
             success: true,
-            msg: `${cloth_type} is rate updted`,
+            msg: ` ${id} ${cloth_type} ${rate}`,
             data: updatedata
         })
     }
