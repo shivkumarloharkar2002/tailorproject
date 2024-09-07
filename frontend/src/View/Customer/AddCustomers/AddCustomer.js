@@ -28,7 +28,7 @@ export default function AddCustomer() {
           address
         }
       );
-      const id =customerData.data.data._id
+      const id = customerData.data.data._id
 
     
       // if (registerData.status === 200) { 
