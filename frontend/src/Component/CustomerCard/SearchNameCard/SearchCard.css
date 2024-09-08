@@ -1,5 +1,11 @@
 .searchCard{
-    height: 100px;
+    height: auto;
+}
+
+.sdate{
+    padding: 5px;
+    /* border: 1px solid; */
+    margin: 15px 0 !important;
 }
 
 @media screen and (max-width:900px) {
@@ -15,7 +21,8 @@
         /* align-self: center; */
         width: 50vw !important;
         overflow: hidden;
-        height: 90px;
+        height: auto !important;
+        padding: 5px;
         /* text-align: center; */
     }
 }
@@ -33,7 +40,7 @@
     /* align-self: center; */
     width: 13vw;
     overflow: hidden;
-    height: 90px;
+    height: 80px;
     /* text-align: center; */
 }
 
@@ -67,12 +74,13 @@
         font-weight: 600;
         color: white;
         line-height: 50px;
+        padding-left: 4px;
         font-size: 22px;
-        border: 2px solid black;
+        /* border: 2px solid black; */
         /* align-self: center; */
         width: 40vw !important;
         overflow: hidden;
-        height: 90px;
+        height: auto;
         /* text-align: center; */
     }
 }

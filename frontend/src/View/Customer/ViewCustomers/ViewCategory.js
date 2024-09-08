@@ -21,26 +21,26 @@ function ViewCategory() {
 
     const [getAllData, setGetAllData] = useState();
 
-    const getData = async () => {
-        try {
-            const getNote = await axios.get(
-                `http://localhost:5555/api/customerroutes/oneD/${id}`
-            );
-            console.log(getNote)
-            setGetAllData(getNote.data.data);
-        }
-        catch (e) {
-            console.log(e)
-        }
-    };
-    console.log(getAllData);
-    localStorage.setItem("customer", JSON.stringify(getAllData));
+    // const getData = async () => {
+    //     try {
+    //         const getNote = await axios.get(
+    //             `http://localhost:5555/api/customerroutes/oneD/${id}`
+    //         );
+    //         console.log(getNote)
+    //         setGetAllData(getNote.data.data);
+    //     }
+    //     catch (e) {
+    //         console.log(e)
+    //     }
+    // };
+    // console.log(getAllData);
+    // localStorage.setItem("customer", JSON.stringify(getAllData));
 
-    useEffect(() => {
-        if (id) { // Ensure 'id' is available before fetching data
-            getData();
-        }
-    }, [id]);
+    // useEffect(() => {
+    //     if (id) { // Ensure 'id' is available before fetching data
+    //         getData();
+    //     }
+    // }, [id]);
 
 
 
