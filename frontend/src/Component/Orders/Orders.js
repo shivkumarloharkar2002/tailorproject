@@ -292,7 +292,7 @@ export default function Orders() {
                     </div>
                     {/* </Link>  */}
 
-                    <div className="profile-back_box">
+                    <div className="order-back_box">
 
                         <div className='profile_Text'>
                             <div ref={componentRef}>
@@ -404,7 +404,6 @@ export default function Orders() {
                             </div>
                         </div>
                     </div>
-
                 </div >
             </>
         )
