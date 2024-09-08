@@ -18,6 +18,12 @@ export default function AddCustomer() {
 
   const saveCustomer = async (e) => {
     e.preventDefault()
+
+
+    if (!/^\d{9,12}$/.test(phone)) {
+      toast.error('Phone number must be  10 digits');
+      return;
+  }
     try {
       const customerData = await axios.post(
         `http://localhost:5555/api/customerroutes/create`,
@@ -29,16 +35,20 @@ export default function AddCustomer() {
         }
       );
       const id = customerData.data.data._id
-
+toast.success("Customer Added Successfully")
     
       // if (registerData.status === 200) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
-        toast.success("Customer Added Successfully");
+        // toast.success("Customer Added Successfully");
       navigate(`/viewcategory/${id}`);
       console.log(customerData);
       // }
     } catch (error) {
-      toast.error(error);
+      if (error.response && error.response.status === 400) {
+        toast.error('Customer is already registered. See on view customer page.');
+      } else {
+        toast.error(error.response?.data?.message || 'An error occurred');
+      }
     }
   }
 
@@ -48,7 +58,7 @@ export default function AddCustomer() {
     <>
       <Header />
       <Link to={"/home"} className="link">
-        <div className="profile-back">
+        <div style={{margin: '130px 0 50px 10px'}}>
           <img src={back} alt="" className="profile-back-img" />
           <h1 className="profile-back-text"></h1>
         </div>
@@ -56,22 +66,22 @@ export default function AddCustomer() {
 
       <form className='customer_form' onSubmit={saveCustomer}>
         <h1 className='form_head'>Customer Information</h1>
-        <input type='text' placeholder='Customer Name' className='customer_input' required onChange={
+        <input type='text' placeholder='Customer Name' value={name} className='customer_input' required onChange={
           (e) => {
             setName(e.target.value)
           }
         } /><br />
-        <input type='text' placeholder='Customer E-mail' className='customer_input' required onChange={
+        <input type='text' placeholder='Customer E-mail' value={email} className='customer_input'  onChange={
           (e) => {
             setEmail(e.target.value)
           }
         } /><br />
-        <input type='number' placeholder='Customer Phone' className='customer_input' required onChange={
+        <input type='number' placeholder='Customer Phone' value={phone}  className='customer_input'    pattern="\d*"  maxLength="10" required onChange={
           (e) => {
             setPhone(e.target.value)
           }
         } /><br />
-        <input type='text' placeholder='Customer Address' className='customer_input'required onChange={
+        <input type='text' placeholder='Customer Address' value={address}  className='customer_input'required onChange={
           (e) => {
             setAddress(e.target.value)
           }

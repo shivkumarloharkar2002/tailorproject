@@ -11,20 +11,21 @@ export const Customerregister = async (req, res) => {
             phone: phone
         })
         if (OneD) {
-             res.json({
+            return res.status(400).json({
                 data: OneD,
                 msg: `${name} is already Registerd see on view customer `
             })
         }
-        else {
+        
             const customerdata = await Customer.create({
                 Customer_id, name, phone, address, email, measurement_id, order_id, fabric_id
             })
-             res.json({
-                success: true, msg: "customer added",
+            return res.status(201).json({
+                success: true, 
+                msg: "customer added",
                 data: customerdata
             })
-        }
+        
     }
     catch (e) {
         console.log(e)
@@ -59,27 +60,27 @@ export const AllCustomerdata = async (req, res) => {
     }
 }
 
-export const Onecustomer = async (req, res) => {
-    const { name, phone } = req.body;
-    try {
+// export const Onecustomer = async (req, res) => {
+//     const { name, phone } = req.body;
+//     try {
 
-        const OneD = await Customer.findOne({
-            name: name,
-            phone: phone
-        })
-        if (OneD) {
-            res.json({
-                msg: `${name} is already Registerd see on view customer `
-            })
-        }
-        else {
-            res.json({
-                Success: false,
-                msg: "Register Now"
-            })
-        }
-    }
-    catch (e) {
-        console.log(e)
-    }
-}
+//         const OneD = await Customer.findOne({
+//             name: name,
+//             phone: phone
+//         })
+//         if (OneD) {
+//             res.json({
+//                 msg: `${name} is already Registerd see on view customer `
+//             })
+//         }
+//         else {
+//             res.json({
+//                 Success: false,
+//                 msg: "Register Now"
+//             })
+//         }
+//     }
+//     catch (e) {
+//         console.log(e)
+//     }
+// }

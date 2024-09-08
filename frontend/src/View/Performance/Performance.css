@@ -84,6 +84,22 @@
     .npart{
         margin: 5%;
     }
+    .userPerformance-info-text{
+        /* display: block; */
+        font-size: 24px;
+        font-weight: 600;
+        font-family: serif;
+        }
+    .userPerformance-info{
+        height: 200px !important;
+        width: 80vw;
+        /* border: 2px solid black; */
+        margin:auto;
+        display: flex;
+        justify-content: left !important;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }
 .icon{
     height: 40%;

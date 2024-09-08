@@ -11,7 +11,7 @@ const CustomerSchema = new Schema({
 
     phone: {
         type: Number,
-        maxlength: 10,
+        minlength: 10,
         required: true,
         unique: true
     },
