@@ -1,21 +1,40 @@
 .Orderdiv {
   display: flex;
 }
+@media only screen and (max-width:600px){
+  .tablediv {
+    width: 70vw;
+    margin: auto;
+    /* border: 1px solid red; */
+    /* margin: 20px 40px; */
+  }
+}
 
 .tablediv {
-  margin: 20px 40px;
+  width: 80vw;
+  margin: auto;
+  /* border: 1px solid red; */
+  /* margin: 20px 40px; */
 }
 
 table {
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-collapse: collapse;
-  width: 100%;
+  width: 80vw;
 }
 
-th,
-td {
-  border: 1px solid black;
-
+.thead{
+  font-size: 20px;
+}
+td{
+  border: 1px solid transparent;
+  border-bottom:rgba(36, 148, 148, 0.54); ;
+    text-align: center;
+    padding: 8px;
+}
+th {
+  border: 1px solid transparent;
+border-bottom: 3px solid  rgba(36, 148, 148, 0.54); 
   text-align: center;
   padding: 8px;
 }
@@ -28,21 +47,12 @@ td {
   border: none;
 }
 
-.pendings {
 
-  padding: 10px;
-  border-radius: 15px;
-  background-color: red;
+
+.butmargin{
+  margin: 5px;
 }
 
-.workings {
-  padding: 10px;
-  border-radius: 15px;
-  background-color: yellow;
-}
-
-.completes {
-  padding: 10px;
-  border-radius: 15px;
-  background-color: green;
-}
+/* .indexrow{
+  border-right: 3px solid  rgba(36, 148, 148, 0.54);
+} */

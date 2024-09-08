@@ -9,13 +9,23 @@
 .ManageMain{
     text-align: center;
    display: flex;
-   flex-wrap: wrap;
     justify-content: space-around;
+}
+@media only screen and (max-width:600px){
+    .ManageMain{
+        display: inline-block;
+    }
 }
 .Mimg{
     height: 200px;
     width: 200px;
     /* border: 2px solid; */
+}
+@media only screen and (max-width:600px){
+    .Mimg{
+        height: 33vh;
+        width: 80vw;
+    }
 }
 
 .manage_head{
@@ -36,4 +46,11 @@
     width: 25vw;
     padding: 10px;
     align-self: center;
+}
+@media only screen and (max-width:600px){
+    .managecard{
+        height: 35vh;
+        width: 90vw;
+        margin-top: 3%;
+    }
 }

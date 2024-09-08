@@ -1,3 +1,12 @@
+.searchCard{
+    height: auto;
+}
+
+.sdate{
+    padding: 5px;
+    /* border: 1px solid; */
+    margin: 15px 0 !important;
+}
 
 @media screen and (max-width:900px) {
     .cust_info{
@@ -6,13 +15,14 @@
         margin: 0;
         font-weight: 600;
         color: white;
-        line-height: 50px;
+        line-height: 90px;
         font-size: 22px;
         /* border: 2px solid black; */
         /* align-self: center; */
         width: 50vw !important;
         overflow: hidden;
-        height: 56px;
+        height: auto !important;
+        padding: 5px;
         /* text-align: center; */
     }
 }
@@ -28,11 +38,12 @@
     font-size: 22px;
     /* border: 2px solid black; */
     /* align-self: center; */
-    width: 7vw;
+    width: 13vw;
     overflow: hidden;
-    height: 56px;
+    height: 80px;
     /* text-align: center; */
 }
+
 
 .cust_date{
     /* border: 1px solid; */
@@ -50,7 +61,7 @@
         line-height: 25px;
         font-size: 18px;
         align-self: center;
-        margin: 0;
+        margin:5px;
         width: auto;
     
 }
@@ -63,12 +74,13 @@
         font-weight: 600;
         color: white;
         line-height: 50px;
+        padding-left: 4px;
         font-size: 22px;
-        border: 2px solid black;
+        /* border: 2px solid black; */
         /* align-self: center; */
         width: 40vw !important;
         overflow: hidden;
-        height: 56px;
+        height: auto;
         /* text-align: center; */
     }
 }

@@ -218,7 +218,7 @@ export default function FabricFV() {
         </form>
         <div>
           <div className='Fabform_list  List_fab'>
-            <h1 className="center" style={{margin:'40px'}}>Fabric List</h1>
+            <h1 className="center" style={{margin:'30px'}}>Fabric List</h1>
             {
               fabric.reverse().map(
                 (data) => {
@@ -233,15 +233,15 @@ export default function FabricFV() {
                           <div className='AFinfo'>
 
                             <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4 className='AFh4'>{data.color}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4 className='AFh4'>₹{data.price}/-</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Fabric type: </h5><h4 className='AFh4'>{data.fabric_type}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4 className='AFh4'>{data.pattern}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4 className='AFh4'>{data.cloth_type}</h4></div>
                           </div>
-                        </div>
-                        <div className="fabCard-btns">
+                        </div><br></br>
+                        {/* <div className="fabCard-btns"> */}
                           <button
-                      className="userCard-button edit"
+                      className="stich_btn edit"
                       onClick={() => {
                         Edit(data);
                       }}
@@ -249,7 +249,7 @@ export default function FabricFV() {
                       Edit
                     </button>
                           <button
-                            className="userCard-button remove"
+                            className="stich_btn remove"
                             onClick={
                               () => {
                                 deleteFabric(data)
@@ -259,7 +259,7 @@ export default function FabricFV() {
                             Delete
                           </button>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </>
                   )
                 }

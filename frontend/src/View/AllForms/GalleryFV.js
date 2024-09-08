@@ -112,15 +112,16 @@ export default function GalleryFV() {
     // get api
     let GetGalleryData = async () => {
         let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
-        setGallery(gallery.data.data)
         console.log(gallery.data.data)
+        setGallery(gallery.data.data)
+      
     }
 
 
     //   delete api
     const deletedata = async (data) => {
         const id = data._id;
-        const deleteGdata = await axios.delete(`http://localhost:5555/api/gallaryroutes/deleteGallery /${id}`)
+        const deleteGdata = await axios.delete(`http://localhost:5555/api/gallaryroutes/deleteGallery/${id}`)
         toast.error(deleteGdata.data.msg)
 
         // get api stored in thise variable
@@ -129,7 +130,7 @@ export default function GalleryFV() {
     useEffect(
         ()=>{
             GetGalleryData(); 
-        }
+        },[]
     )
 
     return (
@@ -138,7 +139,7 @@ export default function GalleryFV() {
 <div className='addFabMain'>
         <Header />
         <Link to={"/manage"} className="link">
-                <div style={{ margin: '130px 0 0 10px' }}>
+                <div style={{ margin: '130px 0 -130px 10px' }}>
                     <img src={back} alt="" className="Profile-back-img" /><br></br>
                     {/* <h5 className="profile-back-text">Back</h5> */}
                 </div>
@@ -218,7 +219,7 @@ export default function GalleryFV() {
 
         <div>
           <div className='Fabform_list  List_fab'>
-            <h1 className="center">Gallery List</h1>
+            <h1 className="center" style={{margin:'30px'}}rae>Gallery List</h1>
             {
               gallery.reverse().map(
                 (data) => {
@@ -228,22 +229,22 @@ export default function GalleryFV() {
                         <h2 style={{ padding: '0 20px' }}>{data.title}</h2>
                         <div className='AFDIV' >
                           <div>
-                            <img src={data.gallery_img} className='AFimg' />
+                            <img src={data.img} className='AFimg' />
                           </div>
                           <div className='AFinfo'>
 
                             <div className='AFcomponents'> <h5 className='AFh5'>Color: </h5><h4>{data.Color}</h4></div>
-                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>{data.price}</h4></div>
+                            <div className='AFcomponents'> <h5 className='AFh5'>Price: </h5><h4>₹{data.price}/-</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Size: </h5><h4>{data.size}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Pattern: </h5><h4>{data.pattern}</h4></div>
                             <div className='AFcomponents'> <h5 className='AFh5'>Cloth Type: </h5><h4>{data.cloth_type}</h4></div>
                             {/* <div className='AFcomponents'> <h5 className='AFh5'>Description: </h5><h4>{data.description}</h4></div> */}
 
                           </div>
-                        </div>
-                        <div className="fabCard-btns">
+                        </div><br></br>
+                        {/* <div className="fabCard-btns"> */}
                           <button
-                      className="userCard-button edit"
+                      className="stich_btn edit"
                       onClick={() => {
                         Edit(data);
                       }}
@@ -251,7 +252,7 @@ export default function GalleryFV() {
                       Edit
                     </button>
                           <button
-                            className="userCard-button delete"
+                            className="stich_btn remove"
                             onClick={
                               () => {
                                 deletedata(data)
@@ -261,7 +262,7 @@ export default function GalleryFV() {
                             Delete
                           </button>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </>
                   )
                 }
