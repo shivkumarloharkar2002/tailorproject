@@ -30,7 +30,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 10px auto;
-    margin-left: 10vw;
+    margin-left: 11vw;
     /* margin-top: 7%;
     margin-left: 10vw;
     margin-bottom: 1%; */
@@ -122,15 +122,16 @@
     font-size: 24pt;
     /* width: 10vw; */
     list-style: 50px;
+    /* margin-left: 30px; */
 }
 
 .aap {
     font-size: 18px;
     font-family: serif;
-    
-    width: 10vw;
+
+    width: auto;
     /* border: 2px solid black; */
-    margin-left: -10px;
+    /* margin-left: -10px; */
     align-self: center;
 }
 
@@ -174,7 +175,7 @@
     }
 
     .aap {
-        font-size: 12pt;
+        font-size: 16;
     }
 }
 
@@ -462,11 +463,12 @@
         margin-top: 2vh;
     }
     .customer_name {
-        font-size: 20px;
+        font-size: 17px !important;
         font-weight: 600;
-        width: 20vw !important;
+        width: 16vw !important;
         height: auto;
         /* border: 2px solid black; */
+        margin-left: 0px !important;
     }
 }
 
@@ -476,6 +478,8 @@
     width: 11vw;
     height: auto;
     /* border: 2px solid black; */
+    margin-left: -50px;
+    text-align: center;
 }
 
 /* .status{
