@@ -8,6 +8,7 @@ import recev from './recev.png';
 import goods from './goods.png';
 import back from './back.png';
 import moment from 'moment';
+import axiosInstance from '../../axiosConfing';
 
 export default function CombinedPerformance() {
   const [employees, setEmployees] = useState([]);
@@ -19,7 +20,7 @@ export default function CombinedPerformance() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/api/userroutes/getallusers');
+        const response = await axiosInstance.get('userroutes/getallusers');
         setEmployees(response.data.data);
       } catch (error) {
         console.error('Error fetching employees:', error);
@@ -32,7 +33,7 @@ export default function CombinedPerformance() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/api/orderroutes/getallorder');
+        const response = await axiosInstance.get('orderroutes/getallorder');
         const data = response.data.data;
 
         // Calculate all employees' performance

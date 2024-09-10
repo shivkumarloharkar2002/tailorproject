@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import Header from '../../Component/Header/Header'
 import axios from "axios";
 import moment from "moment"
+import axiosInstance from "../../axiosConfing";
 
 
 
@@ -51,8 +52,8 @@ export default function TodayOrder() {
     // get allorderin api call
     const [getAllData, setGetAllData] = useState([]);
     const getData = async () => {
-        const getNote = await axios.get(
-            `http://localhost:5555/api/orderroutes/getallorder`
+        const getNote = await axiosInstance.get(
+            `orderroutes/getallorder`
         );
         setGetAllData(getNote.data.data);
     };

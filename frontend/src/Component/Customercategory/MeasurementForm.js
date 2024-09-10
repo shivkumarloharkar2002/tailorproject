@@ -8,6 +8,7 @@ import kurta from "./kurta.avif"
 import pant from "./pant.jpg"
 import payjama from "./pyjamas.webp"
 import suit from "./suits.webp"
+import axiosInstance from '../../axiosConfing';
 
 
 export default function MeasurementForm() {
@@ -54,8 +55,8 @@ export default function MeasurementForm() {
     e.preventDefault()
 
     try {
-      const measureData = await axios.post(
-        `http://localhost:5555/api/measurementroutes/shirt`,
+      const measureData = await axiosInstance.post(
+        `measurementroutes/shirt`,
         {
           category,
           collar,
@@ -82,8 +83,8 @@ export default function MeasurementForm() {
     e.preventDefault()
 
     try {
-      const measureData = await axios.post(
-        `http://localhost:5555/api/measurementroutes/pant`,
+      const measureData = await axiosInstance.post(
+        `measurementroutes/pant`,
         {
           category,
 
@@ -114,8 +115,8 @@ export default function MeasurementForm() {
     e.preventDefault()
 
     try {
-      const measureData = await axios.post(
-        `http://localhost:5555/api/measurementroutes/safari`,
+      const measureData = await axiosInstance.post(
+        `measurementroutes/safari`,
         {
           category,
 

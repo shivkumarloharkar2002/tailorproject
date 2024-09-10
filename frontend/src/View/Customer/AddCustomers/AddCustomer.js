@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import back from '../../../Image/back.png'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import axiosInstance from '../../../axiosConfing'
 
 export default function AddCustomer() {
 
@@ -25,8 +26,8 @@ export default function AddCustomer() {
       return;
   }
     try {
-      const customerData = await axios.post(
-        `http://localhost:5555/api/customerroutes/create`,
+      const customerData = await axiosInstance.post(
+        `customerroutes/create`,
         {
           name,
           email,
@@ -37,7 +38,7 @@ export default function AddCustomer() {
       const id = customerData.data.data._id
 toast.success("Customer Added Successfully")
     
-      if (customerData.status === 200) { 
+      if (customerData.status === 201) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
       navigate(`/viewcategory/${id}`);
       console.log(customerData);

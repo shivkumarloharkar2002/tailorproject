@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import "./Assign.css";
 import Header from '../../Component/Header/Header';
+import axiosInstance from '../../axiosConfing';
 
 export default function Update_status() {
 
@@ -14,7 +15,7 @@ export default function Update_status() {
 
   const [orderdata, setorderdata] = useState({})
   const Getorderdata = async () => {
-    const order= await axios.get('http://localhost:5555/api/orderroutes/getallorder');
+    const order= await axiosInstance.get('orderroutes/getallorder');
     const orderd = order.data.data
     console.log(orderd);
 
@@ -32,7 +33,7 @@ export default function Update_status() {
 
   const handleStatusUpdate = async () => {
     try {
-      const update = await axios.put("http://localhost:5555/api/orderroutes/updateorderstatus", { id, status })
+      const update = await axiosInstance.put("orderroutes/updateorderstatus", { id, status })
       console.log(update)
 
       // Redirect back to the previous page

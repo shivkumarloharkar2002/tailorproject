@@ -8,6 +8,7 @@ import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
+import axiosInstance from "../../axiosConfing";
 
 export default function Manage_order() {
     const [getAllData, setGetAllData] = useState([]);
@@ -15,8 +16,8 @@ export default function Manage_order() {
     const [type, setType] = useState("shirt"); 
 
     const getData = async () => {
-        const getNote = await axios.get(
-            `http://localhost:5555/api/orderroutes/getallorder`
+        const getNote = await axiosInstance.get(
+            `orderroutes/getallorder`
         );
         setGetAllData(getNote.data.data);
     };

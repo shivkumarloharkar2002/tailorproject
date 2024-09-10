@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './NextOrderingpage.css'
 import Header from '../Header/Header'
 import img from "./../../assets/Login/logo.png"
+import axiosInstance from '../../axiosConfing';
 
 export default function NextOrderingPage() {
 
@@ -11,8 +12,8 @@ export default function NextOrderingPage() {
 
     const [getAllData, setGetAllData] = useState([]);
     const getData = async () => {
-        const getNote = await axios.get(
-            `http://localhost:5555/api/orderroutes/getallorder`
+        const getNote = await axiosInstance.get(
+            `orderroutes/getallorder`
         );
         setGetAllData(getNote.data.data);
     };

@@ -6,6 +6,7 @@ import Header from '../../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import back from '../../Image/back.png'
 import { Link } from 'react-router-dom';
+import axiosInstance from '../../axiosConfing';
 
 export default function Ready() {
 
@@ -13,7 +14,7 @@ export default function Ready() {
   const [ReadyData, setReadyData] = useState([]);
 
   const GetReadydata = async () => {
-    const readymade = await axios.get('http://localhost:5555/api/readymaderoutes/getreadymadedata');
+    const readymade = await axiosInstance.get('readymaderoutes/getreadymadedata');
     setReadyData(readymade.data.data);
     console.log(readymade.data)
   }

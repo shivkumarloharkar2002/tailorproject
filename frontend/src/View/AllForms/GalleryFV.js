@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import Header from '../../Component/Header/Header';
 import back from '../../Image/back.png'
 import { Link } from 'react-router-dom'
+import axiosInstance from '../../axiosConfing';
 
 
 export default function GalleryFV() {
@@ -43,7 +44,7 @@ export default function GalleryFV() {
 
 
             try {
-                const formdata = await axios.put(`http://localhost:5555/api/gallaryroutes/updateGallery`, updateformData,
+                const formdata = await axiosInstance.put(`gallaryroutes/updateGallery`, updateformData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'
@@ -74,7 +75,7 @@ export default function GalleryFV() {
             formData.append('gallery_img', gallery_img);
 
             try {
-                const gallerydata = await axios.post('http://localhost:5555/api/gallaryroutes/addgallery', formData,
+                const gallerydata = await axiosInstance.post('gallaryroutes/addgallery', formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'
@@ -111,7 +112,7 @@ export default function GalleryFV() {
 
     // get api
     let GetGalleryData = async () => {
-        let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
+        let gallery = await axiosInstance.get('gallaryroutes/getgalleryData');
         console.log(gallery.data.data)
         setGallery(gallery.data.data)
       
@@ -121,7 +122,7 @@ export default function GalleryFV() {
     //   delete api
     const deletedata = async (data) => {
         const id = data._id;
-        const deleteGdata = await axios.delete(`http://localhost:5555/api/gallaryroutes/deleteGallery/${id}`)
+        const deleteGdata = await axiosInstance.delete(`gallaryroutes/deleteGallery/${id}`)
         toast.error(deleteGdata.data.msg)
 
         // get api stored in thise variable

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import './FabricForm.css'
 import axios from 'axios';
+import axiosInstance from '../../../axiosConfing';
 
 
 export default function FabricForm() {
@@ -28,7 +29,7 @@ export default function FabricForm() {
     formData.append('imgfile', imgfile); // 'img1' is a field name, and img1 is the file object
 
     try {
-      const Fabricdata = await axios.post("http://localhost:5555/api/fabricroutes/addfabric",
+      const Fabricdata = await axiosInstance.post("fabricroutes/addfabric",
         // {
         // title:title ,
         // color:color,
@@ -57,7 +58,7 @@ export default function FabricForm() {
   //fabric from the form
 
   const GetFabricdata = async () => {
-    const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    const fabricd = await axiosInstance.get('fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }
@@ -66,7 +67,7 @@ export default function FabricForm() {
 
   const deleteFabric = async (data) => {
     const id = data._id;
-    const deletedata = await axios.delete(`http://localhost:5555/api/fabricroutes/deletefabric/${id}`)
+    const deletedata = await axiosInstance.delete(`fabricroutes/deletefabric/${id}`)
     toast.error(deletedata.data.msg)
 
     GetFabricdata();
