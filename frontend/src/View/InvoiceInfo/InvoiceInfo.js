@@ -77,7 +77,7 @@ function InvoiceInfo() {
                     <div className="invoiceInfo-box-info">
                       <div className="invoiceInfo-box-name-para">
                         <p className="invoiceInfo-box-name">
-                          Bill No: 2{/* {data.order} */}
+                          Bill No: {data.billNumber ? data.billNumber : "1"}
                         </p>
                         <p className="invoiceInfo-box-name">{date}</p>
                       </div>
