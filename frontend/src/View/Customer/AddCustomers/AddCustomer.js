@@ -37,12 +37,11 @@ export default function AddCustomer() {
       const id = customerData.data.data._id
 toast.success("Customer Added Successfully")
     
-      // if (registerData.status === 200) { 
+      if (customerData.status === 200) { 
         localStorage.setItem("customer", JSON.stringify(customerData.data.data));
-        // toast.success("Customer Added Successfully");
       navigate(`/viewcategory/${id}`);
       console.log(customerData);
-      // }
+      }
     } catch (error) {
       if (error.response && error.response.status === 400) {
         toast.error('Customer is already registered. See on view customer page.');
