@@ -13,7 +13,7 @@
 @media only screen and (max-width:950px) {
     .heding-assign {
         position: sticky;
-        margin-top: 5%;
+        margin-top: 7%;
         top: 100px;
         background-color: white;
         width: 100vw;
@@ -47,7 +47,7 @@
         font-size: 14pt;
         /* margin: 0% 0 0 6%; */
         margin-left: 0;
-        top: 200px;
+        top: 198px;
         margin-bottom: 60px;
 
 
@@ -125,7 +125,9 @@
 }
 
 .aap {
-    font-size: 18pt;
+    font-size: 18px;
+    font-family: serif;
+    
     width: 10vw;
     /* border: 2px solid black; */
     margin-left: -10px;
@@ -388,7 +390,7 @@
     height: 6vh;
     width: 30vw;
     font-size: 16pt;
-    border-radius: 8px;
+    border-radius: 8px; 
     text-align: center;
     margin: 10vh 10vw 5vh 10vw;
 }
@@ -459,6 +461,13 @@
         margin-left: 12vw;
         margin-top: 2vh;
     }
+    .customer_name {
+        font-size: 20px;
+        font-weight: 600;
+        width: 20vw !important;
+        height: auto;
+        /* border: 2px solid black; */
+    }
 }
 
 .customer_name {
@@ -466,7 +475,7 @@
     font-weight: 600;
     width: 11vw;
     height: auto;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 /* .status{
