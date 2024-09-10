@@ -53,7 +53,7 @@ export default function AssignOrder() {
         const createdAt = data.createdAt || "";
         return (
           customerName.toLowerCase().includes(search.toLowerCase()) ||
-          moment(createdAt).format("DD MMM YYYY").includes(search.toLowerCase())
+          moment(createdAt).format("DD/MM/YYYY").includes(search.toLowerCase())
         );
       });
     }
@@ -152,7 +152,7 @@ export default function AssignOrder() {
 
           {getAllData.reverse().map((data, index) => {
             if (type === data.cloth_type) {
-              const date = moment(data.createdAt).format("DD MMM YYYY");
+              const date = moment(data.createdAt).format("DD/MM/YYYY");
               return (
                 <div className="assign-informetion">
                   <h3 className="aap customer_name">{data.customer_id?.name || "Unknown Customer"}</h3>
@@ -161,7 +161,7 @@ export default function AssignOrder() {
                   <p className="aap">{data.cloth_type}</p>
 
                   {data.status === 'pending' || data.status === 'working' ? (
-                    <button className="stutas" onClick={() => { goToUpdatePage(data._id) }}>Update Status</button>
+                    <button className="stutas" onClick={() => { goToUpdatePage(data._id) }}>Update</button>
 
                   ) : data.status === 'complete' ? (
                     <button className="stutas-tow"> <Link to={`/invoiceInfo/${data._id}`} className='link'>View bill</Link></button>

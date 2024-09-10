@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Manage_order() {
     const [getAllData, setGetAllData] = useState([]);
     // category
-    const [type, setType] = useState("shirt");
+    const [type, setType] = useState("shirt"); 
 
     const getData = async () => {
         const getNote = await axios.get(
