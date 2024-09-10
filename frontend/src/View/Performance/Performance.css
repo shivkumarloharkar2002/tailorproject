@@ -1,160 +1,186 @@
-.parfom{
+.parfom {
     height: auto;
     width: auto;
-    margin:1vh 10% 5% 10%;
+    margin: 1vh 10% 5% 10%;
     border: 2px solid rgba(36, 148, 148, 1);
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px gray;
     padding: 1% 0;
 }
-.hedi{
+
+.hedi {
     background-color: rgba(36, 148, 148, 0.54);
     height: 6vh;
     width: 78vw;
     border-radius: 5px;
     box-shadow: 2px 2px 3px 1px gray;
-    margin:-1% auto 2% auto;
+    margin: -1% auto 2% auto;
     padding-top: 0.1vh;
 }
-.flexp{
+
+.flexp {
     display: flex;
     justify-content: space-around;
 
 }
-@media only screen and (max-width:600px){
-    .flexp{
+
+@media only screen and (max-width:600px) {
+    .flexp {
         flex-wrap: wrap;
     }
-    .hedi{
+
+    .hedi {
         width: 80vw;
     }
 }
-.rpart{
+
+.rpart {
     height: 150px;
     width: 180px;
-    background: rgb(249,12,4);
-    background: linear-gradient(180deg, rgba(249,12,4,1) 0%, rgba(249,160,160,1) 10%, rgba(252,10,7,1) 100%);;
-    margin: 1% ;
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px 1px gray;
-}
-@media only screen and (max-width:600px){
-    .rpart{
-        margin: 5%;
-    }
-}
-.jpart{
-    height: 150px;
-    width: 180px;
-    background: rgb(238,4,249);
-    background: linear-gradient(180deg, rgba(238,4,249,1) 0%, rgba(238,160,249,1) 10%, rgba(228,7,252,1) 100%);
+    background: rgb(249, 12, 4);
+    background: linear-gradient(180deg, rgba(249, 12, 4, 1) 0%, rgba(249, 160, 160, 1) 10%, rgba(252, 10, 7, 1) 100%);
+    ;
     margin: 1%;
     border-radius: 5px;
     box-shadow: 2px 2px 3px 1px gray;
 }
-@media only screen and (max-width:600px){
-    .jpart{
+
+@media only screen and (max-width:600px) {
+    .rpart {
         margin: 5%;
     }
 }
-.ppart{
+
+.jpart {
     height: 150px;
     width: 180px;
-    background: rgb(249,230,4);
-    background: linear-gradient(180deg, rgba(249,230,4,1) 0%, rgba(249,242,160,1) 10%, rgba(252,245,7,1) 100%);
+    background: rgb(238, 4, 249);
+    background: linear-gradient(180deg, rgba(238, 4, 249, 1) 0%, rgba(238, 160, 249, 1) 10%, rgba(228, 7, 252, 1) 100%);
     margin: 1%;
     border-radius: 5px;
     box-shadow: 2px 2px 3px 1px gray;
 }
-@media only screen and (max-width:600px){
-    .ppart{
+
+@media only screen and (max-width:600px) {
+    .jpart {
         margin: 5%;
     }
 }
-.npart{
+
+.ppart {
     height: 150px;
     width: 180px;
-    background: rgb(3,185,186);
-    background: linear-gradient(180deg, rgba(3,185,186,1) 0%, rgba(131,204,204,1) 10%, rgba(2,196,196,1) 100%);
+    background: rgb(249, 230, 4);
+    background: linear-gradient(180deg, rgba(249, 230, 4, 1) 0%, rgba(249, 242, 160, 1) 10%, rgba(252, 245, 7, 1) 100%);
     margin: 1%;
     border-radius: 5px;
     box-shadow: 2px 2px 3px 1px gray;
 }
-@media only screen and (max-width:600px){
-    .npart{
+
+@media only screen and (max-width:600px) {
+    .ppart {
         margin: 5%;
     }
-    .userPerformance-info-text{
+}
+
+.npart {
+    height: 150px;
+    width: 180px;
+    background: rgb(3, 185, 186);
+    background: linear-gradient(180deg, rgba(3, 185, 186, 1) 0%, rgba(131, 204, 204, 1) 10%, rgba(2, 196, 196, 1) 100%);
+    margin: 1%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 1px gray;
+}
+
+@media only screen and (max-width:600px) {
+    .npart {
+        margin: 5%;
+    }
+
+    .userPerformance-info-text {
         /* display: block; */
         font-size: 24px;
         font-weight: 600;
         font-family: serif;
-        }
-    .userPerformance-info{
+    }
+
+    .userPerformance-info {
         height: 200px !important;
         width: 80vw;
         /* border: 2px solid black; */
-        margin:auto;
+        margin: auto;
         display: flex;
         justify-content: left !important;
         flex-wrap: wrap;
         align-items: center;
     }
+    .userPerformance-info-text{
+        width: 80vw;
+    }
 }
-.icon{
+
+.icon {
     height: 40%;
     width: 32%;
     margin: 10px 0 0 34%;
 }
-.num{
+
+.num {
     /* color: white; */
     text-align: center;
     margin-top: -5px;
     font-family: Kaisei Decol;
     font-size: 20pt;
 }
-.numi{
+
+.numi {
     text-align: center;
     font-family: Kaisei Decol;
     font-size: 14pt;
     margin-top: -20px;
 }
-.numh{
+
+.numh {
     text-align: center;
     font-family: Kaisei Decol;
     font-size: 20pt;
     margin-top: -5px;
 }
-.cent{
+
+.cent {
     margin: 0 0 0 10%;
 }
 
 
-.userPerformance-info{
+.userPerformance-info {
     height: 80px;
     width: 80vw;
     /* border: 2px solid black; */
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.userPerformance-info-text{
+.userPerformance-info-text {
     display: block;
     font-size: 24px;
     font-weight: 600;
     font-family: serif;
-    
+
+
 
 }
-.proform-back{
+
+.proform-back {
     height: 5vh;
     margin-left: -15vw;
 }
-@media only screen and (max-width:600px){
-    .proform-back{
+
+@media only screen and (max-width:600px) {
+    .proform-back {
         margin-left: -30vw;
     }
 }

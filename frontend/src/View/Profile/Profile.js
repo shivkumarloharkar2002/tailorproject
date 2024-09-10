@@ -18,7 +18,7 @@ function Profile() {
         </div>
       </Link>
 
-      <h1 className="profile-head">Profile</h1>
+      <h1 className="profile-head">Profile</h1> 
 
       <div className="profile-box">
         <img src={profileData.img} alt="" className="profile-box-img" />
