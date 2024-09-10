@@ -2,14 +2,19 @@ import mongoose, { Schema, model } from "mongoose";
 
 const OrderSchema = new Schema({
 
-  order_id:{type:Schema.Types.ObjectId,
+  order_id: {
+    type: Schema.Types.ObjectId,
   },
 
-  user_id: {type:mongoose.Schema.Types.ObjectId, ref:"User" },
+  user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 
-  customer_id: {type:mongoose.Schema.Types.ObjectId, ref:"Customer" },
+  customer_id: { type: mongoose.Schema.Types.ObjectId, ref: "Customer" },
 
-  measurement_id:  {type:mongoose.Schema.Types.ObjectId, ref:"Measurement" },
+  measurement_id: { type: mongoose.Schema.Types.ObjectId, ref: "Measurement" },
+
+  billNumber: {
+    type: Number
+  },
 
   cloth_type: {
     type: String,
@@ -19,17 +24,21 @@ const OrderSchema = new Schema({
 
   status: {
     type: String,
-    enum: ["pending","working", "complete"],
+    enum: ["pending", "working", "complete"],
     default: "pending", // default value
   },
   targetDate: {
-    type:String
+    type: String
   },
-  fabric_price:{
+  fabric_price: {
     type: Number,
     required: true,
   },
-  cloth_stich:{
+  fabric_size: {
+    type: Number,
+  },
+
+  cloth_stich: {
     type: Number,
     required: true,
   },
@@ -47,7 +56,7 @@ const OrderSchema = new Schema({
     type: Number,
     required: true,
   },
-  discounted_price:{
+  discounted_price: {
     type: Number,
     required: true,
   },
@@ -67,17 +76,17 @@ const OrderSchema = new Schema({
     type: Number,
     // required: true,
   },
-  transaction_id:{
-    type:String
+  transaction_id: {
+    type: String
   },
   total: {
     type: Number,
     required: true,
   }
 },
-{
-  timestamps:true
-}
+  {
+    timestamps: true
+  }
 );
 
 const Order = model("Order", OrderSchema);
