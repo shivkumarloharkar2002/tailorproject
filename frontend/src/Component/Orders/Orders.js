@@ -267,7 +267,7 @@ export default function Orders() {
                                 </div>
 
                                 <div className='profile_Discount'>
-                                    <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for Shirt</span></h5>
+                                    <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for {itemType}</span></h5>
 
                                     <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
                                 </div>
@@ -376,7 +376,7 @@ export default function Orders() {
                                 </div>
                                 <div className='profile_Discount'>
                                     <h5>Fabric price:-{fabricdata.price}</h5>
-                                    <h5>Shirt stich:-{stitchRate}</h5>
+                                    <h5>{itemType} stich:-{stitchRate}</h5>
 
 
                                 </div>
@@ -505,7 +505,7 @@ export default function Orders() {
                                 </div>
                                 <div className='profile_Discount'>
                                     <h5>Fabric price:-{fabricdata.price}</h5>
-                                    <h5>Shirt stich:-{stitchRate}</h5>
+                                    <h5>{itemType} stich:-{stitchRate.toFixed(2)}</h5>
 
 
                                 </div>
