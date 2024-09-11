@@ -9,6 +9,7 @@ import back from "./../../assets/Back/back.jpg";
 import axios from "axios";
 import { useEffect } from "react";
 import moment from "moment";
+import axiosInstance from "../../axiosConfing";
 
 function Invoice() {
   const [amount, setAmount] = useState(0);
@@ -17,8 +18,8 @@ function Invoice() {
 
   const [getAllData, setGetAllData] = useState([]);
   const getData = async () => {
-    const getNote = await axios.get(
-      `http://localhost:5555/api/orderroutes/getallorder`
+    const getNote = await axiosInstance.get(
+      `orderroutes/getallorder`
     );
     setGetAllData(getNote.data.data);
   };

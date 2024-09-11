@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 // print
 import { ReactToPrint } from "react-to-print";
+import axiosInstance from '../../axiosConfing'
 
 
 export default function Orders() {
@@ -50,7 +51,7 @@ export default function Orders() {
     console.log(fabricData)
 
     const GetFabricdata = async () => {
-        const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+        const fabricd = await axiosInstance.get('fabricroutes/getallfabric');
         const fabricList = fabricd.data.data
         console.log(fabricList);
 
@@ -130,7 +131,7 @@ export default function Orders() {
         // (console.log("ids", customerData._id, userData._id, measureData._id))
         try {
 
-            const createorderdata = await axios.post("http://localhost:5555/api/orderroutes/addorder", {
+            const createorderdata = await axiosInstance.post("orderroutes/addorder", {
 
                 customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount, targetDate: targetdate
             })

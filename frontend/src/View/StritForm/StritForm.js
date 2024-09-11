@@ -24,8 +24,8 @@ export default function StichForm() {
       updatedata.append('id', id);
 
       try{
-          const Stichdata = await axios.put(
-            `http://localhost:5555/api/shialiroutes/updateshilairate/` , 
+          const Stichdata = await axiosInstance.put(
+            `shialiroutes/updateshilairate/` , 
             updatedata,
             {
               headers: {
@@ -45,7 +45,7 @@ export default function StichForm() {
       formData.append('price', price); // 'price' is a field name
       formData.append('cloth_type', cloth_type); // 'cloth_type' is a field name
       try {
-        const stichsdata = await axios.post("http://localhost:5555/api/shialiroutes/addshilairate",
+        const stichsdata = await axiosInstance.post("shialiroutes/addshilairate",
           // {
           // title:title ,
           // color:color,
@@ -83,14 +83,14 @@ export default function StichForm() {
       //Stich from the form
 
   const GetStichdata = async () => {
-    const stichd = await axios.get('http://localhost:5555/api/shialiroutes/allrates');
+    const stichd = await axiosInstance.get('shialiroutes/allrates');
     setStich(stichd.data.data)
     console.log(stichd.data.data)
   }
 
   const deleteStich= async (data) => {
     const id = data._id;
-    const deletedata = await axios.delete(`http://localhost:5555/api/shialiroutes/deleterate/${id}`)
+    const deletedata = await axiosInstance.delete(`shialiroutes/deleterate/${id}`)
     toast.error(deletedata.data.msg)
 
     GetStichdata();

@@ -9,6 +9,7 @@ import back from "./back.png";
 import axios from "axios";
 import moment from "moment";
 import { useParams } from "react-router-dom";
+import axiosInstance from "../../axiosConfing";
 
 export default function Performance() {
   const [userTotalAmount, setUserTotalAmount] = useState(0);
@@ -28,8 +29,8 @@ export default function Performance() {
   const getData = async () => {
     console.log(id)
     try {
-      const response = await axios.get(
-        `http://localhost:5555/api/orderroutes/getallorder`
+      const response = await axiosInstance.get(
+        `orderroutes/getallorder`
       );
       const data = response.data.data;
       console.log(data)

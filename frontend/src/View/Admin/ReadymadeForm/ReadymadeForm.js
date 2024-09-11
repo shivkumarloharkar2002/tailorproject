@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import back from '../../../Image/back.png'
 import { Link } from 'react-router-dom'
 import Header from '../../../Component/Header/Header'
+import axiosInstance from '../../../axiosConfing'
 
 
 
@@ -36,7 +37,7 @@ export default function ReadymadeForm() {
         formData.append('offer', offer);
         formData.append('readymade_img', readymade_img);
         try {
-            const CreateReadymadeData = await axios.post('http://localhost:5555/api/readymaderoutes/addreadymade',
+            const CreateReadymadeData = await axiosInstance.post('readymaderoutes/addreadymade',
                 // {
                 //     "title": title,
                 //     "img": img,

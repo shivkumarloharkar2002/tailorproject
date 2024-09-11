@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
 import gallery from './add-folder.png'
+import axiosInstance from '../../axiosConfing'
 
 
 
@@ -18,7 +19,7 @@ export default function Gallery() {
 
   let GetAllData = async () => {
     // pute the get api path
-    let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
+    let gallery = await axiosInstance.get('gallaryroutes/getgalleryData');
     setGalleryData(gallery.data.data)
     console.log(gallery.data)
   }

@@ -5,6 +5,7 @@ import axios from 'axios';
 import Header from '../../Component/Header/Header';
 import { Link } from 'react-router-dom';
 import back from '../../Image/back.png'
+import axiosInstance from '../../axiosConfing';
 
 
 
@@ -43,8 +44,8 @@ export default function ReadymadeFV() {
 
 
           try{
-            const updateready = await axios.put(
-              `http://localhost:5555/api/readymaderoutes/updatereadymade/`,
+            const updateready = await axiosInstance.put(
+              `readymaderoutes/updatereadymade/`,
               updatedata,
               {
                 headers: {
@@ -70,7 +71,7 @@ export default function ReadymadeFV() {
         formData.append('offer', offer);
         formData.append('readymade_img', readymade_img);
         try {
-            const CreateReadymadeData = await axios.post('http://localhost:5555/api/readymaderoutes/addreadymade',
+            const CreateReadymadeData = await axiosInstance.post('readymaderoutes/addreadymade',
                 // {
                 //     "title": title,
                 //     "img": img,
@@ -115,7 +116,7 @@ export default function ReadymadeFV() {
     }
 
     const GetReadydata = async () => {
-        const readymaded = await axios.get('http://localhost:5555/api/readymaderoutes/getreadymadedata');
+        const readymaded = await axiosInstance.get('readymaderoutes/getreadymadedata');
         setReadymade(readymaded.data.data)
         console.log(readymaded.data.data)
       }
@@ -124,7 +125,7 @@ export default function ReadymadeFV() {
     
       const deletecloth = async (data) => {
         const id = data._id;
-        const deletedata = await axios.delete(`http://localhost:5555/api/readymaderoutes/deletereadymade/${id}`)
+        const deletedata = await axiosInstance.delete(`readymaderoutes/deletereadymade/${id}`)
         toast.error(deletedata.data.msg)
     
         GetReadydata();

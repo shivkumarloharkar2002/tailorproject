@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axiosInstance from "../../axiosConfing";
 
 function Login() {
   const [email, setEmail] = useState();
@@ -17,8 +18,8 @@ function Login() {
   const loginData = async (e) => {
     e.preventDefault();
     try {
-      const logData = await axios.post(
-        `http://localhost:5555/api/userroutes/login`,
+      const logData = await axiosInstance.post(
+        `userroutes/login`,
         {
           email,
           password,
