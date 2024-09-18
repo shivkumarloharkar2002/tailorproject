@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - 3000:3000
+    container_name: frontend-container
+    networks:
+      - mern-networks
+    depends_on:
+      - backend
+
+  backend:
+    build: './backend'
+      context: './backend'
+      dockerfile : Dockerfile.prod
+    ports:
+      -5555:5555
+    container_name: backend-container
+    networks:
+      - mern-networks
+    depends_on:
+      - mongo 
+
+
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
