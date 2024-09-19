@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 // print
 import { ReactToPrint } from "react-to-print";
+import axiosInstance from '../../axiosConfing'
 
 
 export default function Orders() {
@@ -43,14 +44,13 @@ export default function Orders() {
     const measureData = JSON.parse(localStorage.getItem('measure'));
     console.log(measureData)
 
-    const clothData = localStorage.getItem('cloth');
-    console.log(clothData)
+
 
     const fabricData = localStorage.getItem('fabric');
     console.log(fabricData)
 
     const GetFabricdata = async () => {
-        const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+        const fabricd = await axiosInstance.get('fabricroutes/getallfabric');
         const fabricList = fabricd.data.data
         console.log(fabricList);
 
@@ -65,25 +65,28 @@ export default function Orders() {
             GetFabricdata()
         }, []
     )
-    const [itemType, setItemType] = useState('pant');
-    const getStitchRate = (itemType) => {
-        switch (itemType) {
-            case 'shirt':
-                return 400.00;
-            case 'pant':
-                return 500.00;
-            case 'kurta':
-                return 500.00;
-            case 'payjama':
-                return 500.00;
-            case 'safari':
-                return 1200.00;
-            default:
-                return 0.00; // Default rate for unknown types
-        }
-    };
+    const clothData = localStorage.getItem('cloth');
+    console.log(clothData)
 
-    const [stitchRate, setStitchRate] = useState(getStitchRate(clothData))
+    // const [itemType, setItemType] = useState('pant');
+    // const getStitchRate = (itemType) => {
+    //     switch (itemType) {
+    //         case 'shirt':
+    //             return 400.00;
+    //         case 'pant':
+    //             return 500.00;
+    //         case 'kurta':
+    //             return 500.00;
+    //         case 'payjama':
+    //             return 500.00;
+    //         case 'safari':
+    //             return 1200.00;
+    //         default:
+    //             return 0.00; // Default rate for unknown types
+    //     }
+    // };
+
+    // const [stitchRate, setStitchRate] = useState(getStitchRate(clothData))
 
     const [cgstRate, setCgstRate] = useState(9); // Default rate of 9%
     const [sgstRate, setSgstRate] = useState(9); // Default rate of 9%
@@ -94,6 +97,31 @@ export default function Orders() {
     const [totalAmount, setTotalAmount] = useState(0);
 
     // const [shirtstich, setshirtstich] = useState(500)
+
+    const [itemType, setItemType] = useState(clothData || 'pant'); // Default to 'pant' if clothData is null
+    const [stitchRate, setStitchRate] = useState(0);
+
+    useEffect(() => {
+        const fetchStitchRate = async () => {
+            try {
+                const response = await axiosInstance.get(`shialiroutes/shilairate/${itemType}`);
+                if (response.data.success) {
+                    setStitchRate(response.data.rate);
+                    console.log("shtich",response.data.rate)
+                } else {
+                    console.error(response.data.message);
+                    setStitchRate(0); // Default rate if not found
+                }
+            } catch (error) {
+                console.error('Error fetching stitch rate', error);
+                setStitchRate(0); // Default rate in case of error
+            }
+        };
+
+        if (itemType) {
+            fetchStitchRate();
+        }
+    }, [itemType]); // Fetch when itemType changes
 
 
 
@@ -130,7 +158,7 @@ export default function Orders() {
         // (console.log("ids", customerData._id, userData._id, measureData._id))
         try {
 
-            const createorderdata = await axios.post("http://localhost:5555/api/orderroutes/addorder", {
+            const createorderdata = await axiosInstance.post("orderroutes/addorder", {
 
                 customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount, targetDate: targetdate
             })
@@ -213,7 +241,7 @@ export default function Orders() {
                                 </div>
                                 <div className='profile_Discount'>
                                     <h5>Fabric price:-{fabricdata.price}</h5>
-                                    <h5>Shirt stich:-{stitchRate}</h5>
+                                    <h5>{itemType} stich:-{stitchRate}</h5>
 
 
                                 </div>
@@ -239,7 +267,7 @@ export default function Orders() {
                                 </div>
 
                                 <div className='profile_Discount'>
-                                    <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for Shirt</span></h5>
+                                    <h5 >Actual Price:{clothfabric.toFixed(2)} <span className='Total_Price_span'>//for {itemType}</span></h5>
 
                                     <h4 >Total:-<span className=''>{totalAmount.toFixed(2)}</span>/-</h4>
                                 </div>
@@ -348,7 +376,7 @@ export default function Orders() {
                                 </div>
                                 <div className='profile_Discount'>
                                     <h5>Fabric price:-{fabricdata.price}</h5>
-                                    <h5>Shirt stich:-{stitchRate}</h5>
+                                    <h5>{itemType} stich:-{stitchRate}</h5>
 
 
                                 </div>
@@ -477,7 +505,7 @@ export default function Orders() {
                                 </div>
                                 <div className='profile_Discount'>
                                     <h5>Fabric price:-{fabricdata.price}</h5>
-                                    <h5>Shirt stich:-{stitchRate}</h5>
+                                    <h5>{itemType} stich:-{stitchRate.toFixed(2)}</h5>
 
 
                                 </div>

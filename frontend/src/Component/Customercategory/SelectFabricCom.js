@@ -5,6 +5,7 @@ import upload from '../../Image/upload.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import axiosInstance from '../../axiosConfing'
 
 export default function SelectFabricCom() {
 
@@ -19,7 +20,7 @@ export default function SelectFabricCom() {
   };
 
   const GetFabricdata= async()=>{
-    const fabricd =await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    const fabricd =await axiosInstance.get('fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }

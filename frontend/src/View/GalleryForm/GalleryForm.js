@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import "./GalleryForm.css"
 import React, { useState } from 'react'
 import Header from '../../Component/Header/Header'
+import axiosInstance from '../../axiosConfing'
 
 export default function GalleryForm() {
 
@@ -28,7 +29,7 @@ export default function GalleryForm() {
         formData.append('description', description);
         formData.append('gallery_img', gallery_img);
         try {
-            const CreateGalleryData = await axios.post('http://localhost:5555/api/gallaryroutes/addgallery',
+            const CreateGalleryData = await axiosInstance.post('gallaryroutes/addgallery',
                 // {
                 //     "title": title,
                 //     "img": img,

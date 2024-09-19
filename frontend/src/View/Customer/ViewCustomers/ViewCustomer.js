@@ -8,14 +8,15 @@ import Header from "../../../Component/Header/Header";
 import axios from "axios";
 // import moment from "moment";
 import { useState, useEffect } from "react";
+import axiosInstance from "../../../axiosConfing";
 
 export default function ViewCustomer() {
   const [getCustomerData, setGetCustomerData] = useState([]);
   const [search, setSearch] = useState("");
 
   const getUser = async () => {
-    const getNote = await axios.get(
-      "http://localhost:5555/api/customerroutes/getcustomer"
+    const getNote = await axiosInstance.get(
+      "customerroutes/getcustomer"
     );
     setGetCustomerData(getNote.data.data);
     console.log(getNote.data.data);

@@ -62,3 +62,18 @@ export const Allshilai_rate = async(req,res)=>{
         data:Alldata
     })
 }
+
+export const Shilai_rate = async (req, res) => {
+    const { cloth_type } = req.params;
+    try {
+        const stitchRate = await ShilaiRate.findOne({ cloth_type });
+        if (stitchRate) {
+            res.json({ success: true, rate: stitchRate.rate });
+        } else {
+            res.json({ success: false, message: 'Cloth type not found' });
+        }
+    } catch (e) {
+        console.error(e);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};

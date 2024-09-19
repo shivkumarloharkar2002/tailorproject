@@ -6,6 +6,7 @@ import axios from "axios";
 import logo from "./../../assets/Login/login-email.png";
 // import Navbar from "./../../Component/Navbar/Navbar";
 import Header from "../../Component/Header/Header";
+import axiosInstance from "../../axiosConfing";
 
 function Register() {
   const [username, setUserName] = useState();
@@ -33,8 +34,8 @@ function Register() {
       updatedata.append("img", img);
       updatedata.append("user_id", user_id);
       try {
-        const registerData = await axios.put(
-          `http://localhost:5555/api/userroutes/updateuser`,
+        const registerData = await axiosInstance.put(
+          `userroutes/updateuser`,
           // {
           // username,
           // email,
@@ -66,8 +67,8 @@ function Register() {
       createData.append("role", role);
       createData.append("img", img);
       try {
-        const registerData = await axios.post(
-          `http://localhost:5555/api/userroutes/create`,
+        const registerData = await axiosInstance.post(
+          `userroutes/create`,
           // {
           //   username,
           //   email,
@@ -110,8 +111,8 @@ function Register() {
   const [getUserData, setGetUserData] = useState([]);
 
   const getUser = async () => {
-    const getNote = await axios.get(
-      "http://localhost:5555/api/userroutes/getallusers"
+    const getNote = await axiosInstance.get(
+      "userroutes/getallusers"
     );
     setGetUserData(getNote.data.data);
     console.log(getNote);
@@ -120,8 +121,8 @@ function Register() {
   const DeleteUser = async (item) => {
     {
       const id = item.user_id;
-      await axios.delete(
-        `http://localhost:5555/api/userroutes/deleteuser/${id}`
+      await axiosInstance.delete(
+        `userroutes/deleteuser/${id}`
       );
       getUser();
     }

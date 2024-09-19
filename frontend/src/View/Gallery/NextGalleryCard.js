@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import back from '../../Image/back.jpg'
 
 import './NextGallery.css'
+import axiosInstance from '../../axiosConfing';
 
 
 export default function NextGalleryCard() {
@@ -17,7 +18,7 @@ export default function NextGalleryCard() {
 
     let GetAllData = async () => {
         // pute the get api path
-        let gallery = await axios.get('http://localhost:5555/api/gallaryroutes/getgalleryData');
+        let gallery = await axiosInstance.get('gallaryroutes/getgalleryData');
         setGalleryData(gallery.data.data)
     }
     useEffect(

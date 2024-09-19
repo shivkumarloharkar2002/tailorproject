@@ -7,16 +7,24 @@ import Allrouters from './Router/router.js';
 import multer from 'multer';
 
 
+
 const app = express()
 app.use(express.json())
-app.use(cors())
-const port = 5555
+app.use(cors({
+    origin: 'http://localhost:3000', 
+    credentials: true,  
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+}));
+
 
 Database()
 
- 
-app.listen(port, () => {
-    console.log(`${port} is connected`)
+import dotenv  from 'dotenv'
+dotenv.config()
+
+app.listen(process.env.PORT, () => {
+    console.log(`${process.env.PORT} is connected`)
 })
 
 app.get("/", (req, res) => {

@@ -8,6 +8,7 @@ import axios from 'axios'
 import back from '../../../Image/back.png'
 import Header from '../../../Component/Header/Header'
 import FabricForm from '../../Admin/FabricForm/FabricForm'
+import axiosInstance from '../../../axiosConfing'
 
 export default function SelectFabricCom() {
 
@@ -25,7 +26,7 @@ export default function SelectFabricCom() {
   // };
 
   const GetFabricdata = async () => {
-    const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    const fabricd = await axiosInstance.get('fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }

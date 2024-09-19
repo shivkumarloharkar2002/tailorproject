@@ -6,6 +6,7 @@ import back from '../../Image/back.png'
 import axios from 'axios'
 import Header from '../../Component/Header/Header'
 import gallery from '../Gallery/add-folder.png'
+import axiosInstance from '../../axiosConfing'
 
 
 export default function ReadyMade() {
@@ -15,7 +16,7 @@ export default function ReadyMade() {
   const [ReadyData, setReadyData] = useState([]);
 
   const GetReadydata = async () => {
-    const readymade = await axios.get('http://localhost:5555/api/readymaderoutes/getreadymadedata');
+    const readymade = await axiosInstance.get('readymaderoutes/getreadymadedata');
     setReadyData(readymade.data.data);
     console.log(readymade.data)
   }

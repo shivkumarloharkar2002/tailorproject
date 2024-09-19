@@ -5,6 +5,7 @@ import axios from 'axios';
 import Header from '../../Component/Header/Header';
 import { Link } from 'react-router-dom';
 import back from '../../Image/back.png';
+import axiosInstance from '../../axiosConfing';
 
 
 
@@ -40,8 +41,8 @@ export default function FabricFV() {
       updatedata.append('id', id);
 
       try{
-          const fabdata = await axios.put(
-            `http://localhost:5555/api/fabricroutes/updatefabric/` , 
+          const fabdata = await axiosInstance.put(
+            `fabricroutes/updatefabric/` , 
             updatedata,
             {
               headers: {
@@ -67,7 +68,7 @@ export default function FabricFV() {
       formData.append('imgfile', imgfile); // 'img1' is a field name, and img1 is the file object
   
       try {
-        const Fabricdata = await axios.post("http://localhost:5555/api/fabricroutes/addfabric",
+        const Fabricdata = await axiosInstance.post("fabricroutes/addfabric",
           // {
           // title:title ,
           // color:color,
@@ -115,7 +116,7 @@ export default function FabricFV() {
   //fabric from the form
 
   const GetFabricdata = async () => {
-    const fabricd = await axios.get('http://localhost:5555/api/fabricroutes/getallfabric');
+    const fabricd = await axiosInstance.get('fabricroutes/getallfabric');
     setFabric(fabricd.data.data)
     console.log(fabricd.data.data)
   }
@@ -124,7 +125,7 @@ export default function FabricFV() {
 
   const deleteFabric = async (data) => {
     const id = data._id;
-    const deletedata = await axios.delete(`http://localhost:5555/api/fabricroutes/deletefabric/${id}`)
+    const deletedata = await axiosInstance.delete(`fabricroutes/deletefabric/${id}`)
     toast.error(deletedata.data.msg)
 
     GetFabricdata();

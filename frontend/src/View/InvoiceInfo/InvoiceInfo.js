@@ -10,6 +10,7 @@ import moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { ReactToPrint } from "react-to-print";
+import axiosInstance from "../../axiosConfing";
 
 function InvoiceInfo() {
   const componentRef = useRef();
@@ -19,8 +20,8 @@ function InvoiceInfo() {
 
   const [getAllData, setGetAllData] = useState([]);
   const getData = async () => {
-    const getNote = await axios.get(
-      `http://localhost:5555/api/orderroutes/getallorder`
+    const getNote = await axiosInstance.get(
+      `orderroutes/getallorder`
     );
     setGetAllData(getNote.data.data);
   };
@@ -28,8 +29,8 @@ function InvoiceInfo() {
 
   const Delete = async () => {
     {
-      await axios.delete(
-        `http://localhost:5555/api/orderroutes/deleteorder/${id}`
+      await axiosInstance.delete(
+        `orderroutes/deleteorder/${id}`
       );
       getData();
       navigate("/invoice");
