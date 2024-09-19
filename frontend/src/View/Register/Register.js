@@ -119,8 +119,9 @@ function Register() {
   };
 
   const DeleteUser = async (item) => {
+
     {
-      const id = item.user_id;
+      const id = item._id;
       await axiosInstance.delete(
         `userroutes/deleteuser/${id}`
       );
