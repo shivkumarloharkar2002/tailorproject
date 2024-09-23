@@ -7,6 +7,7 @@ import logo from "./../../assets/Login/login-email.png";
 // import Navbar from "./../../Component/Navbar/Navbar";
 import Header from "../../Component/Header/Header";
 import axiosInstance from "../../axiosConfing";
+import { ToastContainer, toast } from "react-toastify";
 
 function Register() {
   const [username, setUserName] = useState();
@@ -87,11 +88,12 @@ function Register() {
         getUser();
         console.log(registerData)
         // if (registerData.status === 200) {
-        alert("Register Successfully");
+          toast.success("Register Successfully");
         console.log(registerData);
         // }
       } catch (error) {
-        alert(error);
+        // alert(error);
+        toast.error(error);
       }
     }
   };
@@ -295,7 +297,7 @@ function Register() {
           </form>
         </div>
       </div>
-
+      <ToastContainer />
       {/* footer */}
     </div>
   );

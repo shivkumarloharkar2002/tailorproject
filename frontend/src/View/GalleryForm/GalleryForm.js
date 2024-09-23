@@ -4,6 +4,8 @@ import "./GalleryForm.css"
 import React, { useState } from 'react'
 import Header from '../../Component/Header/Header'
 import axiosInstance from '../../axiosConfing'
+import back from "./back.jpg"
+import { Link } from 'react-router-dom'
 
 export default function GalleryForm() {
 
@@ -63,6 +65,13 @@ export default function GalleryForm() {
     return (
         <>
             {/* <Header /> */}
+            <Header />
+            <Link to={"/gallery"} className="link">
+                <div style={{ margin: '130px 0 10px 10px' }}>
+                    <img src={back} alt="" className="Profile-back-img" /><br></br>
+                    {/* <h5 className="profile-back-text">Back</h5> */}
+                </div>
+            </Link>
 
 
             

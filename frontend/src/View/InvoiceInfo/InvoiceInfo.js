@@ -149,7 +149,7 @@ function InvoiceInfo() {
                     pageStyle="print"
                   />
 
-                  <button className="invoiceInfo-btn">Share Bill</button>
+                  // <button className="invoiceInfo-btn">Share Bill</button>
                   <button className="invoiceInfo-btn" onClick={Delete}>
                     Delete Bill
                   </button>

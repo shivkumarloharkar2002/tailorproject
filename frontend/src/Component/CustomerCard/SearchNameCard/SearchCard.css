@@ -11,7 +11,8 @@
 @media screen and (max-width:900px) {
     .cust_info{
         display: block;
-        margin-left: 10px !important;
+        /* margin-left: 10px !important; */
+        margin-left: 5px !important;
         margin: 0;
         font-weight: 600;
         color: white;
@@ -19,7 +20,8 @@
         font-size: 22px;
         /* border: 2px solid black; */
         /* align-self: center; */
-        width: 50vw !important;
+        /* width: 50vw !important; */
+        width: 45vw !important;
         overflow: hidden;
         height: auto !important;
         padding: 5px;

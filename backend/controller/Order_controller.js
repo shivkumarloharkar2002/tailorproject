@@ -20,9 +20,9 @@ export const CreateOrder = async (req, res) => {
 
     const bill_Number = billNumberDoc.currentBillNumber
 
-    const {  customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, total, targetDate,fabric_size } = req.body
+    const { name, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, fabric_type, cloth_stich, quantity, actualprice, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, total, targetDate, fabric_size,phone } = req.body
     try {
-        const orderdata = await Order.create({billNumber: bill_Number, "order_id": Morder_id, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, transaction_id, total, targetDate,fabric_size })
+        const orderdata = await Order.create({ billNumber: bill_Number, "order_id": Morder_id, customer_id, user_id, discount, measurement_id, cloth_type, status, fabric_price, cloth_stich, quantity, actualprice, discounted_price, discounted_price, cgstRate, cgstprice, sgstRate, sgstprice, transaction_id, total, targetDate, fabric_size })
 
         // const mongodbid = orderdata._id
         console.log(orderdata)
@@ -34,8 +34,28 @@ export const CreateOrder = async (req, res) => {
             }
         }, {
             new: true
-        }
-        )
+        })
+
+        const smsContent = `
+        Dear ${name},
+    
+        Thank you for your order! Here are the details:
+    
+        Order Number: ${bill_Number}
+        Date of Order: ${orderdata.createdAt}
+        Item Description: ${cloth_type}, ${fabric_type}
+        Quantity: ${quantity}
+        Total Price: ${total}
+    
+        If you have any questions, feel free to contact us.998890000`;
+
+        // Send SMS using 2Factor API (No authentication token here as per the request)
+        axios.post('https://2factor.in/API/V1/{your-api-key}/SMS/+91' + phone + '/AUTOGEN', {
+            From: 'SENDERID',
+            To: phone,
+            Msg: smsContent,
+            TemplateName: 'your-template-name'
+        })
 
         res.json({
             success: true,

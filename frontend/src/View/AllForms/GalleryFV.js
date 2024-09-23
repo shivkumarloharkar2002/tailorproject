@@ -3,7 +3,7 @@ import './FabricFV.css'
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import Header from '../../Component/Header/Header';
-import back from '../../Image/back.png'
+import back from './back.jpg'
 import { Link } from 'react-router-dom'
 import axiosInstance from '../../axiosConfing';
 

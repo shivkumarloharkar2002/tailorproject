@@ -160,7 +160,9 @@ export default function Orders() {
 
             const createorderdata = await axiosInstance.post("orderroutes/addorder", {
 
-                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount, targetDate: targetdate
+                customer_id: customerData._id, user_id: userData._id, discount: discount, measurement_id: measureData._id, cloth_type: fabricdata.cloth_type, fabric_price: fabricdata.price, cloth_stich: stitchRate, quantity: count, actualprice: clothfabric, discounted_price: discountprice, discount: discount, cgstRate: cgstRate, cgstprice: cgstprice, sgstRate: sgstRate, sgstprice: cgstprice, total: totalAmount, targetDate: targetdate,
+                fabric_type:fabricdata.title,name:customerData.name, 
+                phone:customerData.phone, 
             })
             console.log(createorderdata)
         }
