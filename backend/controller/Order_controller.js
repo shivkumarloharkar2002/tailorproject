@@ -50,19 +50,20 @@ export const CreateOrder = async (req, res) => {
         If you have any questions, feel free to contact us.998890000`;
 
         // Send SMS using 2Factor API (No authentication token here as per the request)
-        axios.post('https://2factor.in/API/V1/{your-api-key}/SMS/+91' + phone + '/AUTOGEN', {
-            From: 'SENDERID',
-            To: phone,
-            Msg: smsContent,
-            TemplateName: 'your-template-name'
-        })
+        // axios.post('https://2factor.in/API/R1/', new URLSearchParams({
+        //     module: 'TRANS_SMS',            // SMS type
+        //     apikey: '7e825d24-XXXX-XXXX-XXXX-0200cd93604211',  // your API key here
+        //     to: `91${phone}`,               // recipient's phone number
+        //     from: 'SENDERID',               // DLT approved sender ID
+        //     msg: smsContent                 // message content
+        // }))
 
-        res.json({
-            success: true,
-            msg: "ordered",
-            data: orderdata,
-            data2: customerhistory
-        })
+        // res.json({
+        //     success: true,
+        //     msg: "ordered",
+        //     data: orderdata,
+        //     data2: customerhistory
+        // })
 
     }
     catch (e) {
